@@ -269,6 +269,15 @@ namespace WindowsFormsApp2
         private void buttonWidokKolowy_Click(object sender, EventArgs e)
         {
             trybKolowy();
+            //Kod do usunięcia testowanie focusu uc_form_operacji
+            var q = from o in SingletonBaza.Instance.BazaDC.operacje
+                    select o;
+            operacje test = q.FirstOrDefault();
+            uc_formularz_operacja1.Wybrana = test;
+            uc_formularz_operacja1.Focus();
+
+
+
         }
 
         private void buttonWidokKolumnowy_Click(object sender, EventArgs e)
@@ -285,6 +294,23 @@ namespace WindowsFormsApp2
         {
             labelInfoKalendarz.Visible = false;
             listViewGlowne.Visible = true;
+            listViewGlowne.Items.Clear();
+
+            var query = SingletonBaza.Instance.BazaDC.operacje;
+            foreach (var row in query)
+            {
+                var
+                nowy_rekord = listViewGlowne.Items.Add(row.id_operacji.ToString());
+                nowy_rekord.SubItems.Add(row.uzytkownicy.imie + " " + row.uzytkownicy.nazwisko);
+                nowy_rekord.SubItems.Add(row.nazwa);
+                nowy_rekord.SubItems.Add(row.kwota.ToString());
+                nowy_rekord.SubItems.Add(row.data.ToShortDateString());
+                nowy_rekord.SubItems.Add(row.kategoria.typ);
+                nowy_rekord.SubItems.Add(row.kategoria.nazwa);
+                nowy_rekord.SubItems.Add(row.forma_platnosci.nazwa);
+                nowy_rekord.SubItems.Add(row.opis);
+            }
+
             chartGlowny.Visible = false;
         }
 

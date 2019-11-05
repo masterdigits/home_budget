@@ -74,7 +74,9 @@ namespace WindowsFormsApp2
             {
                 panelGlowny PG = new panelGlowny(query.FirstOrDefault());
                 this.Hide();
+                PG.Closed += (s, args) => this.Close();
                 PG.ShowDialog();
+                
             }
             else
             {

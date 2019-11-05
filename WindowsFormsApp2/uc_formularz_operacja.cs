@@ -37,6 +37,7 @@ namespace WindowsFormsApp2
             InitializeComponent();
             this.operacjaDoEdycji = o;
 
+            tb_nazwa.Text = operacjaDoEdycji.nazwa;
             dateTimePickerDate.Value = operacjaDoEdycji.data;
             comboBoxCategory.SelectedItem = operacjaDoEdycji.kategoria;
             comboBoxOperationForm.SelectedItem = operacjaDoEdycji.forma_platnosci;
@@ -71,6 +72,7 @@ namespace WindowsFormsApp2
         private void Czysc()
         {
             CzyszcKategorie();
+            tb_nazwa.Clear();
             comboBoxOperationForm.SelectedItem = null;
             nm_kwota.Value = 0;
             richTextBoxDescription.Clear();
@@ -80,6 +82,8 @@ namespace WindowsFormsApp2
         private bool ValidationAddEditForm()
         {
             bool Check = false;
+            //Sprawdzanie tekstu???
+
 
             if (comboBoxOperationForm.SelectedIndex == -1)
             {
@@ -139,6 +143,7 @@ namespace WindowsFormsApp2
                     SingletonBaza.Instance.BazaDC.operacje.InsertOnSubmit(operacjaDoEdycji);
                 }
 
+                operacjaDoEdycji.nazwa = tb_nazwa.Text;
                 operacjaDoEdycji.kategoria = comboBoxCategory.SelectedItem as kategoria;
                 operacjaDoEdycji.forma_platnosci = comboBoxOperationForm.SelectedItem as forma_platnosci;
                 operacjaDoEdycji.data = dateTimePickerDate.Value;
@@ -188,18 +193,13 @@ namespace WindowsFormsApp2
                 {
                     radioButtonIncome.Checked = true;
                 }
-
+                tb_nazwa.Text = operacjaDoEdycji.nazwa;
                 comboBoxCategory.SelectedItem = operacjaDoEdycji.kategoria;
                 comboBoxOperationForm.SelectedItem = operacjaDoEdycji.forma_platnosci;
                 nm_kwota.Value = operacjaDoEdycji.kwota;
                 richTextBoxDescription.Text = operacjaDoEdycji.opis;
                 dateTimePickerDate.Value = operacjaDoEdycji.data;
             }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

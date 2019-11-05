@@ -3,7 +3,7 @@
   <Table Name="dbo.forma_platnosci" Member="forma_platnosci">
     <Type Name="forma_platnosci">
       <Column Name="id_forma_platnosci" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nazwa" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="nazwa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="forma_platnosci_operacje" Member="operacje" ThisKey="id_forma_platnosci" OtherKey="id_forma_platnosci" Type="operacje" />
     </Type>
   </Table>
@@ -48,6 +48,7 @@
       <Column Name="id_forma_platnosci" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="cyklicznosc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="opis" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="nazwa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="forma_platnosci_operacje" Member="forma_platnosci" ThisKey="id_forma_platnosci" OtherKey="id_forma_platnosci" Type="forma_platnosci" IsForeignKey="true" />
       <Association Name="uzytkownicy_operacje" Member="uzytkownicy" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="uzytkownicy" IsForeignKey="true" />
       <Association Name="kategoria_operacje" Member="kategoria" ThisKey="id_kategoria" OtherKey="id_kategoria" Type="kategoria" IsForeignKey="true" />

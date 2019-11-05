@@ -177,7 +177,7 @@ namespace WindowsFormsApp2
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwa", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwa", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
 		public string nazwa
 		{
 			get
@@ -881,6 +881,8 @@ namespace WindowsFormsApp2
 		
 		private string _opis;
 		
+		private string _nazwa;
+		
 		private EntityRef<forma_platnosci> _forma_platnosci;
 		
 		private EntityRef<uzytkownicy> _uzytkownicy;
@@ -907,6 +909,8 @@ namespace WindowsFormsApp2
     partial void OncyklicznoscChanged();
     partial void OnopisChanging(string value);
     partial void OnopisChanged();
+    partial void OnnazwaChanging(string value);
+    partial void OnnazwaChanged();
     #endregion
 		
 		public operacje()
@@ -1085,6 +1089,26 @@ namespace WindowsFormsApp2
 					this._opis = value;
 					this.SendPropertyChanged("opis");
 					this.OnopisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwa", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nazwa
+		{
+			get
+			{
+				return this._nazwa;
+			}
+			set
+			{
+				if ((this._nazwa != value))
+				{
+					this.OnnazwaChanging(value);
+					this.SendPropertyChanging();
+					this._nazwa = value;
+					this.SendPropertyChanged("nazwa");
+					this.OnnazwaChanged();
 				}
 			}
 		}

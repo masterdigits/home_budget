@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_formularz_operacja));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_nazwa = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxCykliczny = new System.Windows.Forms.CheckBox();
             this.nm_kwota = new System.Windows.Forms.NumericUpDown();
             this.labelWriteNumber = new System.Windows.Forms.Label();
             this.labelWritePrice = new System.Windows.Forms.Label();
@@ -52,7 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonReset = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.checkBoxCykliczny = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nm_kwota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -62,6 +64,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.tb_nazwa);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.checkBoxCykliczny);
             this.panel1.Controls.Add(this.nm_kwota);
             this.panel1.Controls.Add(this.labelWriteNumber);
@@ -88,12 +92,43 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 346);
+            this.panel1.Size = new System.Drawing.Size(335, 362);
             this.panel1.TabIndex = 0;
+            // 
+            // tb_nazwa
+            // 
+            this.tb_nazwa.Location = new System.Drawing.Point(138, 13);
+            this.tb_nazwa.Name = "tb_nazwa";
+            this.tb_nazwa.Size = new System.Drawing.Size(174, 20);
+            this.tb_nazwa.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 17);
+            this.label1.TabIndex = 121;
+            this.label1.Text = "Nazwa operacji";
+            // 
+            // checkBoxCykliczny
+            // 
+            this.checkBoxCykliczny.AutoSize = true;
+            this.checkBoxCykliczny.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.checkBoxCykliczny.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxCykliczny.Location = new System.Drawing.Point(135, 67);
+            this.checkBoxCykliczny.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxCykliczny.Name = "checkBoxCykliczny";
+            this.checkBoxCykliczny.Size = new System.Drawing.Size(177, 18);
+            this.checkBoxCykliczny.TabIndex = 120;
+            this.checkBoxCykliczny.Text = "Ustaw jako przychód cykliczny";
+            this.checkBoxCykliczny.UseVisualStyleBackColor = false;
             // 
             // nm_kwota
             // 
-            this.nm_kwota.Location = new System.Drawing.Point(141, 197);
+            this.nm_kwota.Location = new System.Drawing.Point(135, 226);
             this.nm_kwota.Name = "nm_kwota";
             this.nm_kwota.Size = new System.Drawing.Size(177, 20);
             this.nm_kwota.TabIndex = 119;
@@ -103,7 +138,7 @@
             this.labelWriteNumber.AutoSize = true;
             this.labelWriteNumber.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelWriteNumber.ForeColor = System.Drawing.Color.Red;
-            this.labelWriteNumber.Location = new System.Drawing.Point(245, 222);
+            this.labelWriteNumber.Location = new System.Drawing.Point(237, 251);
             this.labelWriteNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelWriteNumber.Name = "labelWriteNumber";
             this.labelWriteNumber.Size = new System.Drawing.Size(73, 14);
@@ -116,7 +151,7 @@
             this.labelWritePrice.AutoSize = true;
             this.labelWritePrice.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelWritePrice.ForeColor = System.Drawing.Color.Red;
-            this.labelWritePrice.Location = new System.Drawing.Point(243, 222);
+            this.labelWritePrice.Location = new System.Drawing.Point(237, 251);
             this.labelWritePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelWritePrice.Name = "labelWritePrice";
             this.labelWritePrice.Size = new System.Drawing.Size(75, 14);
@@ -129,7 +164,7 @@
             this.labelChooseCategory.AutoSize = true;
             this.labelChooseCategory.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelChooseCategory.ForeColor = System.Drawing.Color.Red;
-            this.labelChooseCategory.Location = new System.Drawing.Point(199, 175);
+            this.labelChooseCategory.Location = new System.Drawing.Point(193, 204);
             this.labelChooseCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelChooseCategory.Name = "labelChooseCategory";
             this.labelChooseCategory.Size = new System.Drawing.Size(104, 14);
@@ -142,7 +177,7 @@
             this.labelChoosePaymentForm.AutoSize = true;
             this.labelChoosePaymentForm.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelChoosePaymentForm.ForeColor = System.Drawing.Color.Red;
-            this.labelChoosePaymentForm.Location = new System.Drawing.Point(199, 120);
+            this.labelChoosePaymentForm.Location = new System.Drawing.Point(193, 149);
             this.labelChoosePaymentForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelChoosePaymentForm.Name = "labelChoosePaymentForm";
             this.labelChoosePaymentForm.Size = new System.Drawing.Size(137, 14);
@@ -153,7 +188,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(162, 222);
+            this.pictureBox5.Location = new System.Drawing.Point(156, 251);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(33, 20);
@@ -165,7 +200,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(162, 169);
+            this.pictureBox3.Location = new System.Drawing.Point(156, 198);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(33, 20);
@@ -177,7 +212,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(162, 114);
+            this.pictureBox2.Location = new System.Drawing.Point(156, 143);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 20);
@@ -189,7 +224,7 @@
             // comboBoxCategory
             // 
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(141, 143);
+            this.comboBoxCategory.Location = new System.Drawing.Point(135, 172);
             this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(177, 21);
@@ -198,7 +233,7 @@
             // comboBoxOperationForm
             // 
             this.comboBoxOperationForm.FormattingEnabled = true;
-            this.comboBoxOperationForm.Location = new System.Drawing.Point(141, 89);
+            this.comboBoxOperationForm.Location = new System.Drawing.Point(135, 118);
             this.comboBoxOperationForm.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxOperationForm.Name = "comboBoxOperationForm";
             this.comboBoxOperationForm.Size = new System.Drawing.Size(177, 21);
@@ -206,7 +241,7 @@
             // 
             // richTextBoxDescription
             // 
-            this.richTextBoxDescription.Location = new System.Drawing.Point(141, 247);
+            this.richTextBoxDescription.Location = new System.Drawing.Point(135, 276);
             this.richTextBoxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
             this.richTextBoxDescription.Size = new System.Drawing.Size(177, 44);
@@ -217,7 +252,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(55, 143);
+            this.label7.Location = new System.Drawing.Point(49, 172);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 17);
@@ -227,7 +262,7 @@
             // radioButtonIncome
             // 
             this.radioButtonIncome.AutoSize = true;
-            this.radioButtonIncome.Location = new System.Drawing.Point(246, 60);
+            this.radioButtonIncome.Location = new System.Drawing.Point(240, 89);
             this.radioButtonIncome.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonIncome.Name = "radioButtonIncome";
             this.radioButtonIncome.Size = new System.Drawing.Size(69, 17);
@@ -240,7 +275,7 @@
             // radioButtonExpense
             // 
             this.radioButtonExpense.AutoSize = true;
-            this.radioButtonExpense.Location = new System.Drawing.Point(141, 60);
+            this.radioButtonExpense.Location = new System.Drawing.Point(135, 89);
             this.radioButtonExpense.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonExpense.Name = "radioButtonExpense";
             this.radioButtonExpense.Size = new System.Drawing.Size(68, 17);
@@ -252,7 +287,7 @@
             // 
             // dateTimePickerDate
             // 
-            this.dateTimePickerDate.Location = new System.Drawing.Point(141, 10);
+            this.dateTimePickerDate.Location = new System.Drawing.Point(135, 39);
             this.dateTimePickerDate.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
             this.dateTimePickerDate.Size = new System.Drawing.Size(177, 20);
@@ -262,7 +297,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(33, 247);
+            this.label6.Location = new System.Drawing.Point(27, 276);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 17);
@@ -273,7 +308,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(54, 196);
+            this.label5.Location = new System.Drawing.Point(48, 225);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 17);
@@ -284,7 +319,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 89);
+            this.label4.Location = new System.Drawing.Point(16, 118);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 17);
@@ -295,19 +330,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 59);
+            this.label3.Location = new System.Drawing.Point(32, 88);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 92;
             this.label3.Text = "Typ operacji";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 10);
+            this.label2.Location = new System.Drawing.Point(26, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 17);
@@ -317,7 +351,7 @@
             // buttonReset
             // 
             this.buttonReset.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReset.Location = new System.Drawing.Point(162, 295);
+            this.buttonReset.Location = new System.Drawing.Point(156, 324);
             this.buttonReset.Margin = new System.Windows.Forms.Padding(2);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(156, 26);
@@ -329,7 +363,7 @@
             // buttonSave
             // 
             this.buttonSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.Location = new System.Drawing.Point(35, 295);
+            this.buttonSave.Location = new System.Drawing.Point(29, 324);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(117, 26);
@@ -338,26 +372,13 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // checkBoxCykliczny
-            // 
-            this.checkBoxCykliczny.AutoSize = true;
-            this.checkBoxCykliczny.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.checkBoxCykliczny.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxCykliczny.Location = new System.Drawing.Point(141, 38);
-            this.checkBoxCykliczny.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBoxCykliczny.Name = "checkBoxCykliczny";
-            this.checkBoxCykliczny.Size = new System.Drawing.Size(177, 18);
-            this.checkBoxCykliczny.TabIndex = 120;
-            this.checkBoxCykliczny.Text = "Ustaw jako przychód cykliczny";
-            this.checkBoxCykliczny.UseVisualStyleBackColor = false;
-            // 
             // uc_formularz_operacja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "uc_formularz_operacja";
-            this.Size = new System.Drawing.Size(350, 346);
+            this.Size = new System.Drawing.Size(335, 362);
             this.Enter += new System.EventHandler(this.uc_formularz_operacja_Enter);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -395,5 +416,7 @@
         private System.Windows.Forms.NumericUpDown nm_kwota;
         private System.Windows.Forms.Label labelChooseCategory;
         private System.Windows.Forms.CheckBox checkBoxCykliczny;
+        private System.Windows.Forms.TextBox tb_nazwa;
+        private System.Windows.Forms.Label label1;
     }
 }

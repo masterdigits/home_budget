@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainerGlowny = new System.Windows.Forms.SplitContainer();
             this.splitContainerMenuBoczne = new System.Windows.Forms.SplitContainer();
             this.buttonDodajWydatek = new System.Windows.Forms.Button();
@@ -72,6 +72,8 @@
             this.columnKategoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnOpis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewGlowny = new System.Windows.Forms.ListView();
+            this.columnForma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnTyp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerGlowny)).BeginInit();
             this.splitContainerGlowny.Panel1.SuspendLayout();
@@ -149,7 +151,7 @@
             this.buttonDodajWydatek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonDodajWydatek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDodajWydatek.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajWydatek.Location = new System.Drawing.Point(2, 110);
+            this.buttonDodajWydatek.Location = new System.Drawing.Point(11, 113);
             this.buttonDodajWydatek.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDodajWydatek.Name = "buttonDodajWydatek";
             this.buttonDodajWydatek.Size = new System.Drawing.Size(317, 62);
@@ -165,7 +167,7 @@
             this.buttonDodajPrzychód.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonDodajPrzychód.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDodajPrzychód.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajPrzychód.Location = new System.Drawing.Point(2, 30);
+            this.buttonDodajPrzychód.Location = new System.Drawing.Point(11, 42);
             this.buttonDodajPrzychód.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDodajPrzychód.Name = "buttonDodajPrzychód";
             this.buttonDodajPrzychód.Size = new System.Drawing.Size(317, 62);
@@ -594,19 +596,19 @@
             // 
             // chartGlowny
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartGlowny.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "ChartArea1";
+            this.chartGlowny.ChartAreas.Add(chartArea1);
             this.chartGlowny.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend3.Name = "Legend1";
-            this.chartGlowny.Legends.Add(legend3);
+            legend1.Name = "Legend1";
+            this.chartGlowny.Legends.Add(legend1);
             this.chartGlowny.Location = new System.Drawing.Point(0, 0);
             this.chartGlowny.Margin = new System.Windows.Forms.Padding(2);
             this.chartGlowny.Name = "chartGlowny";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartGlowny.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartGlowny.Series.Add(series1);
             this.chartGlowny.Size = new System.Drawing.Size(1453, 650);
             this.chartGlowny.TabIndex = 3;
             this.chartGlowny.Text = "chart1";
@@ -620,7 +622,9 @@
             this.columnOperacja,
             this.columnKwota,
             this.columnData,
+            this.columnTyp,
             this.columnKategoria,
+            this.columnForma,
             this.columnOpis});
             this.listViewGlowne.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewGlowne.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -665,12 +669,14 @@
             // 
             // columnKategoria
             // 
+            this.columnKategoria.DisplayIndex = 5;
             this.columnKategoria.Text = "Kategoria";
             this.columnKategoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnKategoria.Width = 200;
             // 
             // columnOpis
             // 
+            this.columnOpis.DisplayIndex = 6;
             this.columnOpis.Text = "Opis";
             this.columnOpis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnOpis.Width = 200;
@@ -686,8 +692,19 @@
             this.listViewGlowny.TabIndex = 0;
             this.listViewGlowny.UseCompatibleStateImageBehavior = false;
             // 
+            // columnForma
+            // 
+            this.columnForma.Text = "Forma platności";
+            // 
+            // columnTyp
+            // 
+            this.columnTyp.DisplayIndex = 8;
+            this.columnTyp.Text = "Typ";
+            this.columnTyp.Width = 120;
+            // 
             // uc_formularz_operacja1
             // 
+            this.uc_formularz_operacja1.AkualnieZalogowany = null;
             this.uc_formularz_operacja1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_formularz_operacja1.Location = new System.Drawing.Point(0, 0);
             this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
@@ -779,5 +796,7 @@
         private System.Windows.Forms.Button buttonPowiadomienia;
         private System.Windows.Forms.ColumnHeader columnUżytkownicy;
         private uc_formularz_operacja uc_formularz_operacja1;
+        private System.Windows.Forms.ColumnHeader columnForma;
+        private System.Windows.Forms.ColumnHeader columnTyp;
     }
 }
