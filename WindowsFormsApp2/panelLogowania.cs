@@ -14,15 +14,27 @@ namespace WindowsFormsApp2
 {
     public partial class panelLogowania : Form
     {
-        SqlCommand cmd;
-        SqlConnection con;
-        SqlDataAdapter da;
+
         public panelLogowania()
         {
             InitializeComponent();
             tryb_loguj();
         }
-
+        String login
+        {
+            get
+            {
+                return textBoxLogin1.Text;
+            }
+        }
+        String haslo
+        {
+            get
+            {
+                // Tutaj musi być funkcja hasujaca, która też używana jest do rejestracji!!!
+                return textBoxHaslo1.Text;
+            }
+        }
         private void linkLabel_register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             tryb_rejestracja();
@@ -54,13 +66,13 @@ namespace WindowsFormsApp2
         private void buttonZaloguj_Click(object sender, EventArgs e)
         {
 
-            SqlConnection con = new SqlConnection(@" Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\mkkar\Desktop\Budzet\budzet_domowy\WindowsFormsApp2\baza.mdf; Integrated Security = True; Connect Timeout = 30");
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) from Uzytkownicy where login ='" + textBoxLogin1.Text + "' and haslo='" + textBoxHaslo1.Text + "'", con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows[0][0].ToString() == "1")
+            var query = from uzytkownik in SingletonBaza.Instance.BazaDC.uzytkownicy
+                        where uzytkownik.login == login
+                        && uzytkownik.haslo == haslo
+                        select uzytkownik;
+            if (query.Any())
             {
-                panelGlowny PG = new panelGlowny();
+                panelGlowny PG = new panelGlowny(query.FirstOrDefault());
                 this.Hide();
                 PG.ShowDialog();
             }
@@ -73,22 +85,19 @@ namespace WindowsFormsApp2
 
         private void buttonRejestracja_Click(object sender, EventArgs e)
         {
-            con = new SqlConnection(@" Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\mkkar\Desktop\Budzet\budzet_domowy\WindowsFormsApp2\baza.mdf; Integrated Security = True; Connect Timeout = 30");
-            con.Open();
-            cmd = new SqlCommand("Insert INTO Uzytkownicy(imie, nazwisko, login, haslo, email) values (@imie, @nazwisko, @login, @haslo, @email)", con);
-            cmd.Parameters.AddWithValue("@imie", textBoxImie.Text);
-            cmd.Parameters.AddWithValue("@nazwisko", textBoxNazwisko.Text);
-            cmd.Parameters.AddWithValue("@login", textBoxLogin.Text);
-            cmd.Parameters.AddWithValue("@haslo", textBoxHaslo.Text);
-            cmd.Parameters.AddWithValue("@email", textBoxEmail.Text);
-            cmd.ExecuteNonQuery();
+            uzytkownicy nowy = new uzytkownicy();
+            //Tutaj walidacja jest potrzebna oraz gdy dodajemy haslo funkcja hashujaca !!!
+            nowy.imie = textBoxImie.Text;
+            nowy.nazwisko = textBoxNazwisko.Text;
+            nowy.email = textBoxEmail.Text;
+            nowy.login = textBoxLogin.Text;
+            nowy.haslo = textBoxHaslo.Text;
+            // Tutaj jest możliwy wybór roli jak nie to 
+            nowy.id_roli = 1;
 
-            // string userText = textBoxULogin.Text;
-            //string passText = textBoxHaslo.Text;
-            /*
-             * 
-             */
-            //string stRole = "administrator"; 
+            SingletonBaza.Instance.BazaDC.uzytkownicy.InsertOnSubmit(nowy);
+            SingletonBaza.Instance.BazaDC.SubmitChanges();
+
             MessageBox.Show("Udana rejestracja");
 
 
@@ -102,6 +111,7 @@ namespace WindowsFormsApp2
             panelGlowny PG = new panelGlowny();
             this.Hide();
             PG.ShowDialog();
+
         }
     }
 }

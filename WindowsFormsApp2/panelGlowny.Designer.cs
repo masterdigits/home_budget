@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.splitContainerGlowny = new System.Windows.Forms.SplitContainer();
             this.splitContainerMenuBoczne = new System.Windows.Forms.SplitContainer();
             this.buttonDodajWydatek = new System.Windows.Forms.Button();
             this.buttonDodajPrzychód = new System.Windows.Forms.Button();
             this.splitContainerMenuBoczneWidok = new System.Windows.Forms.SplitContainer();
-            this.comboBoxKategoria = new System.Windows.Forms.ComboBox();
-            this.checkBoxCykliczny = new System.Windows.Forms.CheckBox();
-            this.buttonReset = new System.Windows.Forms.Button();
-            this.buttonZapisz = new System.Windows.Forms.Button();
-            this.richTextBoxDodaj = new System.Windows.Forms.RichTextBox();
-            this.dateTimePickerDodajOperacje = new System.Windows.Forms.DateTimePicker();
-            this.textBoxDodajKwote = new System.Windows.Forms.TextBox();
             this.buttonWidokTabelka = new System.Windows.Forms.Button();
             this.buttonWidokKolumnowy = new System.Windows.Forms.Button();
             this.buttonWidokKolowy = new System.Windows.Forms.Button();
@@ -79,6 +72,7 @@
             this.columnKategoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnOpis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewGlowny = new System.Windows.Forms.ListView();
+            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerGlowny)).BeginInit();
             this.splitContainerGlowny.Panel1.SuspendLayout();
             this.splitContainerGlowny.Panel2.SuspendLayout();
@@ -107,6 +101,7 @@
             this.splitContainerGlowny.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerGlowny.IsSplitterFixed = true;
             this.splitContainerGlowny.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerGlowny.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainerGlowny.Name = "splitContainerGlowny";
             // 
             // splitContainerGlowny.Panel1
@@ -117,8 +112,9 @@
             // splitContainerGlowny.Panel2
             // 
             this.splitContainerGlowny.Panel2.Controls.Add(this.splitContainerFiltr);
-            this.splitContainerGlowny.Size = new System.Drawing.Size(1908, 945);
+            this.splitContainerGlowny.Size = new System.Drawing.Size(1806, 890);
             this.splitContainerGlowny.SplitterDistance = 350;
+            this.splitContainerGlowny.SplitterWidth = 3;
             this.splitContainerGlowny.TabIndex = 0;
             // 
             // splitContainerMenuBoczne
@@ -128,6 +124,7 @@
             this.splitContainerMenuBoczne.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerMenuBoczne.IsSplitterFixed = true;
             this.splitContainerMenuBoczne.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerMenuBoczne.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainerMenuBoczne.Name = "splitContainerMenuBoczne";
             this.splitContainerMenuBoczne.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -140,8 +137,9 @@
             // splitContainerMenuBoczne.Panel2
             // 
             this.splitContainerMenuBoczne.Panel2.Controls.Add(this.splitContainerMenuBoczneWidok);
-            this.splitContainerMenuBoczne.Size = new System.Drawing.Size(350, 945);
+            this.splitContainerMenuBoczne.Size = new System.Drawing.Size(350, 890);
             this.splitContainerMenuBoczne.SplitterDistance = 200;
+            this.splitContainerMenuBoczne.SplitterWidth = 3;
             this.splitContainerMenuBoczne.TabIndex = 0;
             // 
             // buttonDodajWydatek
@@ -151,9 +149,10 @@
             this.buttonDodajWydatek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonDodajWydatek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDodajWydatek.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajWydatek.Location = new System.Drawing.Point(3, 136);
+            this.buttonDodajWydatek.Location = new System.Drawing.Point(2, 110);
+            this.buttonDodajWydatek.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDodajWydatek.Name = "buttonDodajWydatek";
-            this.buttonDodajWydatek.Size = new System.Drawing.Size(423, 76);
+            this.buttonDodajWydatek.Size = new System.Drawing.Size(317, 62);
             this.buttonDodajWydatek.TabIndex = 1;
             this.buttonDodajWydatek.Text = "Dodaj wydatek";
             this.buttonDodajWydatek.UseVisualStyleBackColor = true;
@@ -166,9 +165,10 @@
             this.buttonDodajPrzychód.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonDodajPrzychód.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDodajPrzychód.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajPrzychód.Location = new System.Drawing.Point(3, 37);
+            this.buttonDodajPrzychód.Location = new System.Drawing.Point(2, 30);
+            this.buttonDodajPrzychód.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDodajPrzychód.Name = "buttonDodajPrzychód";
-            this.buttonDodajPrzychód.Size = new System.Drawing.Size(423, 76);
+            this.buttonDodajPrzychód.Size = new System.Drawing.Size(317, 62);
             this.buttonDodajPrzychód.TabIndex = 0;
             this.buttonDodajPrzychód.Text = "Dodaj przychód";
             this.buttonDodajPrzychód.UseVisualStyleBackColor = true;
@@ -180,6 +180,7 @@
             this.splitContainerMenuBoczneWidok.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainerMenuBoczneWidok.IsSplitterFixed = true;
             this.splitContainerMenuBoczneWidok.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerMenuBoczneWidok.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainerMenuBoczneWidok.Name = "splitContainerMenuBoczneWidok";
             this.splitContainerMenuBoczneWidok.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -187,13 +188,7 @@
             // 
             this.splitContainerMenuBoczneWidok.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.splitContainerMenuBoczneWidok.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.splitContainerMenuBoczneWidok.Panel1.Controls.Add(this.comboBoxKategoria);
-            this.splitContainerMenuBoczneWidok.Panel1.Controls.Add(this.checkBoxCykliczny);
-            this.splitContainerMenuBoczneWidok.Panel1.Controls.Add(this.buttonReset);
-            this.splitContainerMenuBoczneWidok.Panel1.Controls.Add(this.buttonZapisz);
-            this.splitContainerMenuBoczneWidok.Panel1.Controls.Add(this.richTextBoxDodaj);
-            this.splitContainerMenuBoczneWidok.Panel1.Controls.Add(this.dateTimePickerDodajOperacje);
-            this.splitContainerMenuBoczneWidok.Panel1.Controls.Add(this.textBoxDodajKwote);
+            this.splitContainerMenuBoczneWidok.Panel1.Controls.Add(this.uc_formularz_operacja1);
             // 
             // splitContainerMenuBoczneWidok.Panel2
             // 
@@ -203,96 +198,10 @@
             this.splitContainerMenuBoczneWidok.Panel2.Controls.Add(this.buttonWidokKolowy);
             this.splitContainerMenuBoczneWidok.Panel2.Controls.Add(this.buttonWidokKalendarz);
             this.splitContainerMenuBoczneWidok.Panel2.Controls.Add(this.buttonWidokLiniowy);
-            this.splitContainerMenuBoczneWidok.Size = new System.Drawing.Size(350, 741);
-            this.splitContainerMenuBoczneWidok.SplitterDistance = 369;
+            this.splitContainerMenuBoczneWidok.Size = new System.Drawing.Size(350, 687);
+            this.splitContainerMenuBoczneWidok.SplitterDistance = 317;
+            this.splitContainerMenuBoczneWidok.SplitterWidth = 3;
             this.splitContainerMenuBoczneWidok.TabIndex = 0;
-            // 
-            // comboBoxKategoria
-            // 
-            this.comboBoxKategoria.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBoxKategoria.ForeColor = System.Drawing.Color.DimGray;
-            this.comboBoxKategoria.FormattingEnabled = true;
-            this.comboBoxKategoria.Location = new System.Drawing.Point(54, 154);
-            this.comboBoxKategoria.Name = "comboBoxKategoria";
-            this.comboBoxKategoria.Size = new System.Drawing.Size(372, 29);
-            this.comboBoxKategoria.TabIndex = 2;
-            this.comboBoxKategoria.Text = "Wybierz kategorię";
-            this.comboBoxKategoria.Click += new System.EventHandler(this.comboBoxKategoria_Click);
-            // 
-            // checkBoxCykliczny
-            // 
-            this.checkBoxCykliczny.AutoSize = true;
-            this.checkBoxCykliczny.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.checkBoxCykliczny.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxCykliczny.Location = new System.Drawing.Point(54, 24);
-            this.checkBoxCykliczny.Name = "checkBoxCykliczny";
-            this.checkBoxCykliczny.Size = new System.Drawing.Size(254, 23);
-            this.checkBoxCykliczny.TabIndex = 7;
-            this.checkBoxCykliczny.Text = "Ustaw jako przychód cykliczny";
-            this.checkBoxCykliczny.UseVisualStyleBackColor = false;
-            // 
-            // buttonReset
-            // 
-            this.buttonReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.buttonReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReset.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonReset.Location = new System.Drawing.Point(51, 306);
-            this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(172, 43);
-            this.buttonReset.TabIndex = 6;
-            this.buttonReset.Text = "Resetuj";
-            this.buttonReset.UseVisualStyleBackColor = false;
-            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
-            // 
-            // buttonZapisz
-            // 
-            this.buttonZapisz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonZapisz.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonZapisz.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.buttonZapisz.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.buttonZapisz.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonZapisz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonZapisz.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonZapisz.Location = new System.Drawing.Point(254, 306);
-            this.buttonZapisz.Name = "buttonZapisz";
-            this.buttonZapisz.Size = new System.Drawing.Size(172, 43);
-            this.buttonZapisz.TabIndex = 5;
-            this.buttonZapisz.Text = "Zapisz";
-            this.buttonZapisz.UseVisualStyleBackColor = false;
-            // 
-            // richTextBoxDodaj
-            // 
-            this.richTextBoxDodaj.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.richTextBoxDodaj.ForeColor = System.Drawing.Color.DimGray;
-            this.richTextBoxDodaj.Location = new System.Drawing.Point(54, 202);
-            this.richTextBoxDodaj.Name = "richTextBoxDodaj";
-            this.richTextBoxDodaj.Size = new System.Drawing.Size(372, 70);
-            this.richTextBoxDodaj.TabIndex = 4;
-            this.richTextBoxDodaj.Text = "Dodaj opcjonalny opis";
-            this.richTextBoxDodaj.Click += new System.EventHandler(this.richTextBoxDodaj_Click);
-            // 
-            // dateTimePickerDodajOperacje
-            // 
-            this.dateTimePickerDodajOperacje.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePickerDodajOperacje.Location = new System.Drawing.Point(54, 109);
-            this.dateTimePickerDodajOperacje.Name = "dateTimePickerDodajOperacje";
-            this.dateTimePickerDodajOperacje.Size = new System.Drawing.Size(372, 28);
-            this.dateTimePickerDodajOperacje.TabIndex = 2;
-            // 
-            // textBoxDodajKwote
-            // 
-            this.textBoxDodajKwote.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxDodajKwote.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxDodajKwote.Location = new System.Drawing.Point(54, 64);
-            this.textBoxDodajKwote.Name = "textBoxDodajKwote";
-            this.textBoxDodajKwote.Size = new System.Drawing.Size(372, 28);
-            this.textBoxDodajKwote.TabIndex = 1;
-            this.textBoxDodajKwote.Text = "Dodaj kwotę przychodu";
-            this.textBoxDodajKwote.Click += new System.EventHandler(this.textBoxDodajKwote_Click);
             // 
             // buttonWidokTabelka
             // 
@@ -300,9 +209,10 @@
             this.buttonWidokTabelka.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonWidokTabelka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWidokTabelka.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWidokTabelka.Location = new System.Drawing.Point(8, 6);
+            this.buttonWidokTabelka.Location = new System.Drawing.Point(8, 93);
+            this.buttonWidokTabelka.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWidokTabelka.Name = "buttonWidokTabelka";
-            this.buttonWidokTabelka.Size = new System.Drawing.Size(454, 59);
+            this.buttonWidokTabelka.Size = new System.Drawing.Size(340, 48);
             this.buttonWidokTabelka.TabIndex = 5;
             this.buttonWidokTabelka.Text = "Tabela";
             this.buttonWidokTabelka.UseVisualStyleBackColor = true;
@@ -314,9 +224,10 @@
             this.buttonWidokKolumnowy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonWidokKolumnowy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWidokKolumnowy.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWidokKolumnowy.Location = new System.Drawing.Point(8, 267);
+            this.buttonWidokKolumnowy.Location = new System.Drawing.Point(8, 305);
+            this.buttonWidokKolumnowy.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWidokKolumnowy.Name = "buttonWidokKolumnowy";
-            this.buttonWidokKolumnowy.Size = new System.Drawing.Size(454, 64);
+            this.buttonWidokKolumnowy.Size = new System.Drawing.Size(340, 52);
             this.buttonWidokKolumnowy.TabIndex = 4;
             this.buttonWidokKolumnowy.Text = "Wykres kolumnowy";
             this.buttonWidokKolumnowy.UseVisualStyleBackColor = true;
@@ -328,9 +239,10 @@
             this.buttonWidokKolowy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonWidokKolowy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWidokKolowy.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWidokKolowy.Location = new System.Drawing.Point(8, 198);
+            this.buttonWidokKolowy.Location = new System.Drawing.Point(8, 249);
+            this.buttonWidokKolowy.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWidokKolowy.Name = "buttonWidokKolowy";
-            this.buttonWidokKolowy.Size = new System.Drawing.Size(454, 64);
+            this.buttonWidokKolowy.Size = new System.Drawing.Size(340, 52);
             this.buttonWidokKolowy.TabIndex = 3;
             this.buttonWidokKolowy.Text = "Wykres kołowy";
             this.buttonWidokKolowy.UseVisualStyleBackColor = true;
@@ -342,9 +254,10 @@
             this.buttonWidokKalendarz.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonWidokKalendarz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWidokKalendarz.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWidokKalendarz.Location = new System.Drawing.Point(8, 70);
+            this.buttonWidokKalendarz.Location = new System.Drawing.Point(8, 145);
+            this.buttonWidokKalendarz.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWidokKalendarz.Name = "buttonWidokKalendarz";
-            this.buttonWidokKalendarz.Size = new System.Drawing.Size(454, 59);
+            this.buttonWidokKalendarz.Size = new System.Drawing.Size(340, 48);
             this.buttonWidokKalendarz.TabIndex = 0;
             this.buttonWidokKalendarz.Text = "Kalendarz";
             this.buttonWidokKalendarz.UseVisualStyleBackColor = true;
@@ -356,9 +269,10 @@
             this.buttonWidokLiniowy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonWidokLiniowy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWidokLiniowy.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWidokLiniowy.Location = new System.Drawing.Point(8, 134);
+            this.buttonWidokLiniowy.Location = new System.Drawing.Point(8, 197);
+            this.buttonWidokLiniowy.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWidokLiniowy.Name = "buttonWidokLiniowy";
-            this.buttonWidokLiniowy.Size = new System.Drawing.Size(454, 59);
+            this.buttonWidokLiniowy.Size = new System.Drawing.Size(340, 48);
             this.buttonWidokLiniowy.TabIndex = 2;
             this.buttonWidokLiniowy.Text = "Wykres liniowy";
             this.buttonWidokLiniowy.UseVisualStyleBackColor = true;
@@ -370,6 +284,7 @@
             this.splitContainerFiltr.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerFiltr.IsSplitterFixed = true;
             this.splitContainerFiltr.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerFiltr.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainerFiltr.Name = "splitContainerFiltr";
             this.splitContainerFiltr.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -398,8 +313,9 @@
             // splitContainerFiltr.Panel2
             // 
             this.splitContainerFiltr.Panel2.Controls.Add(this.splitContainerSaldo);
-            this.splitContainerFiltr.Size = new System.Drawing.Size(1554, 945);
+            this.splitContainerFiltr.Size = new System.Drawing.Size(1453, 890);
             this.splitContainerFiltr.SplitterDistance = 80;
+            this.splitContainerFiltr.SplitterWidth = 3;
             this.splitContainerFiltr.TabIndex = 0;
             // 
             // buttonPowiadomienia
@@ -413,9 +329,10 @@
             this.buttonPowiadomienia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPowiadomienia.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPowiadomienia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPowiadomienia.Location = new System.Drawing.Point(127, 3);
+            this.buttonPowiadomienia.Location = new System.Drawing.Point(95, 2);
+            this.buttonPowiadomienia.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPowiadomienia.Name = "buttonPowiadomienia";
-            this.buttonPowiadomienia.Size = new System.Drawing.Size(234, 34);
+            this.buttonPowiadomienia.Size = new System.Drawing.Size(176, 28);
             this.buttonPowiadomienia.TabIndex = 26;
             this.buttonPowiadomienia.Text = "Powiadomienia";
             this.buttonPowiadomienia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -428,18 +345,20 @@
             this.comboBoxFiltrUzytkownik.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxFiltrUzytkownik.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxFiltrUzytkownik.FormattingEnabled = true;
-            this.comboBoxFiltrUzytkownik.Location = new System.Drawing.Point(190, 53);
+            this.comboBoxFiltrUzytkownik.Location = new System.Drawing.Point(142, 43);
+            this.comboBoxFiltrUzytkownik.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxFiltrUzytkownik.Name = "comboBoxFiltrUzytkownik";
-            this.comboBoxFiltrUzytkownik.Size = new System.Drawing.Size(159, 27);
+            this.comboBoxFiltrUzytkownik.Size = new System.Drawing.Size(120, 24);
             this.comboBoxFiltrUzytkownik.TabIndex = 24;
             this.comboBoxFiltrUzytkownik.Text = "Wybierz użytkownika";
             // 
             // textBoxSzukajWOpisie
             // 
             this.textBoxSzukajWOpisie.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxSzukajWOpisie.Location = new System.Drawing.Point(1015, 105);
+            this.textBoxSzukajWOpisie.Location = new System.Drawing.Point(761, 85);
+            this.textBoxSzukajWOpisie.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSzukajWOpisie.Name = "textBoxSzukajWOpisie";
-            this.textBoxSzukajWOpisie.Size = new System.Drawing.Size(192, 27);
+            this.textBoxSzukajWOpisie.Size = new System.Drawing.Size(145, 23);
             this.textBoxSzukajWOpisie.TabIndex = 22;
             // 
             // buttonWyszukaj
@@ -448,9 +367,10 @@
             this.buttonWyszukaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonWyszukaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWyszukaj.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWyszukaj.Location = new System.Drawing.Point(1247, 105);
+            this.buttonWyszukaj.Location = new System.Drawing.Point(935, 85);
+            this.buttonWyszukaj.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWyszukaj.Name = "buttonWyszukaj";
-            this.buttonWyszukaj.Size = new System.Drawing.Size(180, 29);
+            this.buttonWyszukaj.Size = new System.Drawing.Size(135, 24);
             this.buttonWyszukaj.TabIndex = 21;
             this.buttonWyszukaj.Text = "Wyszukaj";
             this.buttonWyszukaj.UseVisualStyleBackColor = true;
@@ -459,9 +379,10 @@
             // 
             this.labelSzukajWOpisie.AutoSize = true;
             this.labelSzukajWOpisie.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSzukajWOpisie.Location = new System.Drawing.Point(855, 109);
+            this.labelSzukajWOpisie.Location = new System.Drawing.Point(641, 89);
+            this.labelSzukajWOpisie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSzukajWOpisie.Name = "labelSzukajWOpisie";
-            this.labelSzukajWOpisie.Size = new System.Drawing.Size(139, 22);
+            this.labelSzukajWOpisie.Size = new System.Drawing.Size(109, 17);
             this.labelSzukajWOpisie.TabIndex = 20;
             this.labelSzukajWOpisie.Text = "Szukaj w opisie";
             // 
@@ -469,9 +390,10 @@
             // 
             this.textBoxFiltrKwotaDo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxFiltrKwotaDo.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxFiltrKwotaDo.Location = new System.Drawing.Point(650, 105);
+            this.textBoxFiltrKwotaDo.Location = new System.Drawing.Point(488, 85);
+            this.textBoxFiltrKwotaDo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFiltrKwotaDo.Name = "textBoxFiltrKwotaDo";
-            this.textBoxFiltrKwotaDo.Size = new System.Drawing.Size(192, 27);
+            this.textBoxFiltrKwotaDo.Size = new System.Drawing.Size(145, 23);
             this.textBoxFiltrKwotaDo.TabIndex = 19;
             this.textBoxFiltrKwotaDo.Text = "100 000 zł";
             this.textBoxFiltrKwotaDo.Click += new System.EventHandler(this.textBoxFiltrKwotaDo_Click);
@@ -480,9 +402,10 @@
             // 
             this.textBoxFiltrKwotaOd.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxFiltrKwotaOd.ForeColor = System.Drawing.Color.DimGray;
-            this.textBoxFiltrKwotaOd.Location = new System.Drawing.Point(394, 105);
+            this.textBoxFiltrKwotaOd.Location = new System.Drawing.Point(296, 85);
+            this.textBoxFiltrKwotaOd.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFiltrKwotaOd.Name = "textBoxFiltrKwotaOd";
-            this.textBoxFiltrKwotaOd.Size = new System.Drawing.Size(192, 27);
+            this.textBoxFiltrKwotaOd.Size = new System.Drawing.Size(145, 23);
             this.textBoxFiltrKwotaOd.TabIndex = 18;
             this.textBoxFiltrKwotaOd.Text = "100 zł";
             this.textBoxFiltrKwotaOd.Click += new System.EventHandler(this.textBoxFiltrKwotaOd_Click);
@@ -492,9 +415,10 @@
             this.comboBoxFiltrKategoria.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxFiltrKategoria.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxFiltrKategoria.FormattingEnabled = true;
-            this.comboBoxFiltrKategoria.Location = new System.Drawing.Point(61, 105);
+            this.comboBoxFiltrKategoria.Location = new System.Drawing.Point(46, 85);
+            this.comboBoxFiltrKategoria.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxFiltrKategoria.Name = "comboBoxFiltrKategoria";
-            this.comboBoxFiltrKategoria.Size = new System.Drawing.Size(262, 27);
+            this.comboBoxFiltrKategoria.Size = new System.Drawing.Size(198, 24);
             this.comboBoxFiltrKategoria.TabIndex = 17;
             this.comboBoxFiltrKategoria.Text = "Wybierz kategorię";
             this.comboBoxFiltrKategoria.Click += new System.EventHandler(this.comboBoxFiltrKategoria_Click);
@@ -503,9 +427,10 @@
             // 
             this.labelDoKwota.AutoSize = true;
             this.labelDoKwota.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelDoKwota.Location = new System.Drawing.Point(598, 109);
+            this.labelDoKwota.Location = new System.Drawing.Point(448, 89);
+            this.labelDoKwota.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDoKwota.Name = "labelDoKwota";
-            this.labelDoKwota.Size = new System.Drawing.Size(35, 22);
+            this.labelDoKwota.Size = new System.Drawing.Size(27, 17);
             this.labelDoKwota.TabIndex = 16;
             this.labelDoKwota.Text = "Do";
             // 
@@ -514,9 +439,10 @@
             this.labelOdKwota.AutoSize = true;
             this.labelOdKwota.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelOdKwota.ForeColor = System.Drawing.Color.Black;
-            this.labelOdKwota.Location = new System.Drawing.Point(341, 109);
+            this.labelOdKwota.Location = new System.Drawing.Point(256, 89);
+            this.labelOdKwota.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelOdKwota.Name = "labelOdKwota";
-            this.labelOdKwota.Size = new System.Drawing.Size(36, 22);
+            this.labelOdKwota.Size = new System.Drawing.Size(28, 17);
             this.labelOdKwota.TabIndex = 15;
             this.labelOdKwota.Text = "Od";
             // 
@@ -524,9 +450,10 @@
             // 
             this.checkBoxFiltrZaawansowany.AutoSize = true;
             this.checkBoxFiltrZaawansowany.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxFiltrZaawansowany.Location = new System.Drawing.Point(1220, 56);
+            this.checkBoxFiltrZaawansowany.Location = new System.Drawing.Point(915, 46);
+            this.checkBoxFiltrZaawansowany.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxFiltrZaawansowany.Name = "checkBoxFiltrZaawansowany";
-            this.checkBoxFiltrZaawansowany.Size = new System.Drawing.Size(207, 21);
+            this.checkBoxFiltrZaawansowany.Size = new System.Drawing.Size(172, 19);
             this.checkBoxFiltrZaawansowany.TabIndex = 13;
             this.checkBoxFiltrZaawansowany.Text = "Pokaż filtry zaawansowane";
             this.checkBoxFiltrZaawansowany.UseVisualStyleBackColor = true;
@@ -536,9 +463,10 @@
             // 
             this.labelDoData.AutoSize = true;
             this.labelDoData.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelDoData.Location = new System.Drawing.Point(750, 56);
+            this.labelDoData.Location = new System.Drawing.Point(562, 46);
+            this.labelDoData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDoData.Name = "labelDoData";
-            this.labelDoData.Size = new System.Drawing.Size(35, 22);
+            this.labelDoData.Size = new System.Drawing.Size(27, 17);
             this.labelDoData.TabIndex = 12;
             this.labelDoData.Text = "Do";
             // 
@@ -546,18 +474,20 @@
             // 
             this.dateTimePickerFiltrDo.CalendarFont = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePickerFiltrDo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePickerFiltrDo.Location = new System.Drawing.Point(800, 52);
+            this.dateTimePickerFiltrDo.Location = new System.Drawing.Point(600, 42);
+            this.dateTimePickerFiltrDo.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFiltrDo.Name = "dateTimePickerFiltrDo";
-            this.dateTimePickerFiltrDo.Size = new System.Drawing.Size(334, 25);
+            this.dateTimePickerFiltrDo.Size = new System.Drawing.Size(252, 21);
             this.dateTimePickerFiltrDo.TabIndex = 11;
             // 
             // labelOdData
             // 
             this.labelOdData.AutoSize = true;
             this.labelOdData.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelOdData.Location = new System.Drawing.Point(341, 56);
+            this.labelOdData.Location = new System.Drawing.Point(256, 46);
+            this.labelOdData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelOdData.Name = "labelOdData";
-            this.labelOdData.Size = new System.Drawing.Size(36, 22);
+            this.labelOdData.Size = new System.Drawing.Size(28, 17);
             this.labelOdData.TabIndex = 8;
             this.labelOdData.Text = "Od";
             // 
@@ -565,9 +495,10 @@
             // 
             this.dateTimePickerFiltrOd.CalendarFont = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dateTimePickerFiltrOd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateTimePickerFiltrOd.Location = new System.Drawing.Point(394, 52);
+            this.dateTimePickerFiltrOd.Location = new System.Drawing.Point(296, 42);
+            this.dateTimePickerFiltrOd.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerFiltrOd.Name = "dateTimePickerFiltrOd";
-            this.dateTimePickerFiltrOd.Size = new System.Drawing.Size(334, 25);
+            this.dateTimePickerFiltrOd.Size = new System.Drawing.Size(252, 21);
             this.dateTimePickerFiltrOd.TabIndex = 10;
             // 
             // comboBoxFiltrWyborOperacji
@@ -575,9 +506,10 @@
             this.comboBoxFiltrWyborOperacji.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxFiltrWyborOperacji.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxFiltrWyborOperacji.FormattingEnabled = true;
-            this.comboBoxFiltrWyborOperacji.Location = new System.Drawing.Point(25, 52);
+            this.comboBoxFiltrWyborOperacji.Location = new System.Drawing.Point(19, 42);
+            this.comboBoxFiltrWyborOperacji.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxFiltrWyborOperacji.Name = "comboBoxFiltrWyborOperacji";
-            this.comboBoxFiltrWyborOperacji.Size = new System.Drawing.Size(159, 27);
+            this.comboBoxFiltrWyborOperacji.Size = new System.Drawing.Size(120, 24);
             this.comboBoxFiltrWyborOperacji.TabIndex = 3;
             this.comboBoxFiltrWyborOperacji.Text = "Wybierz operację";
             this.comboBoxFiltrWyborOperacji.Click += new System.EventHandler(this.comboBoxFiltrWyborOperacji_Click);
@@ -592,9 +524,10 @@
             this.buttonUstawienia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUstawienia.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonUstawienia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUstawienia.Location = new System.Drawing.Point(394, 5);
+            this.buttonUstawienia.Location = new System.Drawing.Point(296, 4);
+            this.buttonUstawienia.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUstawienia.Name = "buttonUstawienia";
-            this.buttonUstawienia.Size = new System.Drawing.Size(239, 34);
+            this.buttonUstawienia.Size = new System.Drawing.Size(179, 28);
             this.buttonUstawienia.TabIndex = 1;
             this.buttonUstawienia.Text = "Panel administratora";
             this.buttonUstawienia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -611,9 +544,10 @@
             this.buttonWyloguj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
             this.buttonWyloguj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWyloguj.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWyloguj.Location = new System.Drawing.Point(701, 3);
+            this.buttonWyloguj.Location = new System.Drawing.Point(526, 2);
+            this.buttonWyloguj.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWyloguj.Name = "buttonWyloguj";
-            this.buttonWyloguj.Size = new System.Drawing.Size(154, 34);
+            this.buttonWyloguj.Size = new System.Drawing.Size(116, 28);
             this.buttonWyloguj.TabIndex = 0;
             this.buttonWyloguj.Text = "Wyloguj się";
             this.buttonWyloguj.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -626,6 +560,7 @@
             this.splitContainerSaldo.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerSaldo.IsSplitterFixed = true;
             this.splitContainerSaldo.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerSaldo.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainerSaldo.Name = "splitContainerSaldo";
             this.splitContainerSaldo.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -639,8 +574,9 @@
             // splitContainerSaldo.Panel2
             // 
             this.splitContainerSaldo.Panel2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.splitContainerSaldo.Size = new System.Drawing.Size(1554, 861);
+            this.splitContainerSaldo.Size = new System.Drawing.Size(1453, 807);
             this.splitContainerSaldo.SplitterDistance = 650;
+            this.splitContainerSaldo.SplitterWidth = 3;
             this.splitContainerSaldo.TabIndex = 0;
             // 
             // labelInfoKalendarz
@@ -648,28 +584,30 @@
             this.labelInfoKalendarz.AutoSize = true;
             this.labelInfoKalendarz.BackColor = System.Drawing.Color.White;
             this.labelInfoKalendarz.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelInfoKalendarz.Location = new System.Drawing.Point(250, 300);
+            this.labelInfoKalendarz.Location = new System.Drawing.Point(188, 244);
+            this.labelInfoKalendarz.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelInfoKalendarz.Name = "labelInfoKalendarz";
-            this.labelInfoKalendarz.Size = new System.Drawing.Size(994, 49);
+            this.labelInfoKalendarz.Size = new System.Drawing.Size(805, 40);
             this.labelInfoKalendarz.TabIndex = 4;
             this.labelInfoKalendarz.Text = "KALENDARZ W TRAKCIE PRZYGOTOWYWANIA";
             this.labelInfoKalendarz.Visible = false;
             // 
             // chartGlowny
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartGlowny.ChartAreas.Add(chartArea1);
+            chartArea3.Name = "ChartArea1";
+            this.chartGlowny.ChartAreas.Add(chartArea3);
             this.chartGlowny.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartGlowny.Legends.Add(legend1);
+            legend3.Name = "Legend1";
+            this.chartGlowny.Legends.Add(legend3);
             this.chartGlowny.Location = new System.Drawing.Point(0, 0);
+            this.chartGlowny.Margin = new System.Windows.Forms.Padding(2);
             this.chartGlowny.Name = "chartGlowny";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartGlowny.Series.Add(series1);
-            this.chartGlowny.Size = new System.Drawing.Size(1554, 650);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartGlowny.Series.Add(series3);
+            this.chartGlowny.Size = new System.Drawing.Size(1453, 650);
             this.chartGlowny.TabIndex = 3;
             this.chartGlowny.Text = "chart1";
             this.chartGlowny.Visible = false;
@@ -689,8 +627,9 @@
             this.listViewGlowne.GridLines = true;
             this.listViewGlowne.HideSelection = false;
             this.listViewGlowne.Location = new System.Drawing.Point(0, 0);
+            this.listViewGlowne.Margin = new System.Windows.Forms.Padding(2);
             this.listViewGlowne.Name = "listViewGlowne";
-            this.listViewGlowne.Size = new System.Drawing.Size(1554, 650);
+            this.listViewGlowne.Size = new System.Drawing.Size(1453, 650);
             this.listViewGlowne.TabIndex = 2;
             this.listViewGlowne.UseCompatibleStateImageBehavior = false;
             this.listViewGlowne.View = System.Windows.Forms.View.Details;
@@ -741,18 +680,28 @@
             this.listViewGlowny.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewGlowny.HideSelection = false;
             this.listViewGlowny.Location = new System.Drawing.Point(0, 0);
+            this.listViewGlowny.Margin = new System.Windows.Forms.Padding(2);
             this.listViewGlowny.Name = "listViewGlowny";
-            this.listViewGlowny.Size = new System.Drawing.Size(1554, 650);
+            this.listViewGlowny.Size = new System.Drawing.Size(1453, 650);
             this.listViewGlowny.TabIndex = 0;
             this.listViewGlowny.UseCompatibleStateImageBehavior = false;
             // 
+            // uc_formularz_operacja1
+            // 
+            this.uc_formularz_operacja1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_formularz_operacja1.Location = new System.Drawing.Point(0, 0);
+            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(350, 317);
+            this.uc_formularz_operacja1.TabIndex = 0;
+            // 
             // panelGlowny
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1908, 945);
+            this.ClientSize = new System.Drawing.Size(1806, 890);
             this.Controls.Add(this.splitContainerGlowny);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "panelGlowny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Budżet domowy";
@@ -769,7 +718,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMenuBoczne)).EndInit();
             this.splitContainerMenuBoczne.ResumeLayout(false);
             this.splitContainerMenuBoczneWidok.Panel1.ResumeLayout(false);
-            this.splitContainerMenuBoczneWidok.Panel1.PerformLayout();
             this.splitContainerMenuBoczneWidok.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMenuBoczneWidok)).EndInit();
             this.splitContainerMenuBoczneWidok.ResumeLayout(false);
@@ -795,16 +743,9 @@
         private System.Windows.Forms.SplitContainer splitContainerFiltr;
         private System.Windows.Forms.Button buttonDodajWydatek;
         private System.Windows.Forms.Button buttonDodajPrzychód;
-        private System.Windows.Forms.RichTextBox richTextBoxDodaj;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDodajOperacje;
-        private System.Windows.Forms.TextBox textBoxDodajKwote;
-        private System.Windows.Forms.Button buttonZapisz;
-        private System.Windows.Forms.Button buttonReset;
-        private System.Windows.Forms.CheckBox checkBoxCykliczny;
         private System.Windows.Forms.SplitContainer splitContainerSaldo;
         private System.Windows.Forms.Button buttonUstawienia;
         private System.Windows.Forms.Button buttonWyloguj;
-        private System.Windows.Forms.ComboBox comboBoxKategoria;
         private System.Windows.Forms.ComboBox comboBoxFiltrWyborOperacji;
         private System.Windows.Forms.Label labelDoData;
         private System.Windows.Forms.DateTimePicker dateTimePickerFiltrDo;
@@ -837,5 +778,6 @@
         private System.Windows.Forms.ComboBox comboBoxFiltrUzytkownik;
         private System.Windows.Forms.Button buttonPowiadomienia;
         private System.Windows.Forms.ColumnHeader columnUżytkownicy;
+        private uc_formularz_operacja uc_formularz_operacja1;
     }
 }

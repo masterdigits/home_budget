@@ -84,6 +84,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingletonBaza.cs" />
+    <Compile Include="uc_formularz_operacja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_formularz_operacja.Designer.cs">
+      <DependentUpon>uc_formularz_operacja.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="panelGlowny.resx">
       <DependentUpon>panelGlowny.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +106,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="uc_formularz_operacja.resx">
+      <DependentUpon>uc_formularz_operacja.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Baza.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>Baza.designer.cs</LastGenOutput>

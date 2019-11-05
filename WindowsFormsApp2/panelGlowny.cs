@@ -12,8 +12,18 @@ namespace WindowsFormsApp2
 {
     public partial class panelGlowny : Form
     {
+        uzytkownicy Aktualnie_zalogowany;
+
         public panelGlowny()
         {
+            InitializeComponent();
+        }
+
+        public panelGlowny(uzytkownicy u)
+        {
+            Aktualnie_zalogowany = u;
+            //Wyslij do kontrolki
+            // nazwa.AkualnieZalogowany = Aktualnie_zalogowany;
             InitializeComponent();
         }
 
@@ -23,10 +33,7 @@ namespace WindowsFormsApp2
         private void panelGlowny_Load(object sender, EventArgs e)
         {
             trybDodajPrzychod();
-            foreach(kategoria kat in SingletonBaza.Instance.BazaDC.kategoria)
-            {
-                MessageBox.Show(kat.nazwa);
-            }
+            uc_formularz_operacja1.AkualnieZalogowany = Aktualnie_zalogowany;
         }
 
         private void panelGlowny_Activated(object sender, EventArgs e)
@@ -54,7 +61,7 @@ namespace WindowsFormsApp2
                     buttonDodajPrzychód.Top = this.ClientSize.Height / 28;
                     buttonDodajWydatek.Top = buttonDodajPrzychód.Height + 50;
                 }
-
+                /*
                 // Wielkosc i lokalizacja kontrolek w panelu dodawania przychodów i wydatków
                 {
                     splitContainerMenuBoczne.SplitterDistance = this.ClientSize.Height / 4;
@@ -86,7 +93,7 @@ namespace WindowsFormsApp2
                     richTextBoxDodaj.Top = comboBoxKategoria.Top + comboBoxKategoria.Height + (comboBoxKategoria.Height / 2) + 5;
                     checkBoxCykliczny.Top = richTextBoxDodaj.Top + richTextBoxDodaj.Height + (comboBoxKategoria.Height / 2) + 5;
                 }
-
+                
                 // Wielkosc i lokalizacja przyciskow w panelu wybierania widoku
                 {
                     splitContainerMenuBoczneWidok.SplitterDistance = buttonReset.Top + (buttonReset.Top / 4);
@@ -115,7 +122,7 @@ namespace WindowsFormsApp2
                     buttonWidokKolumnowy.Top = buttonWidokLiniowy.Top + buttonWidokKolumnowy.Height + (buttonWidokKolumnowy.Height / 6);
                     buttonWidokKolowy.Top = buttonWidokKolumnowy.Top + buttonWidokKolowy.Height + (buttonWidokKolowy.Height / 6);
                 }
-
+                */
                 // Wielkosc i lokalizacja kontrolek w gornym panelu filtrowania
                 {
                     splitContainerFiltr.SplitterDistance = this.ClientSize.Height / 10;
@@ -226,23 +233,27 @@ namespace WindowsFormsApp2
         private void trybDodajPrzychod()
         {
             splitContainerMenuBoczneWidok.Panel1.BackColor = Color.FromArgb(128, 255, 170);
+            /*
             checkBoxCykliczny.BackColor = Color.FromArgb(128, 255, 170);
             buttonReset.BackColor = Color.FromArgb(230, 255, 230);
             buttonZapisz.BackColor = Color.FromArgb(230, 255, 230);
             textBoxDodajKwote.Text = "Dodaj kwotę przychodu";
             textBoxDodajKwote.ForeColor = Color.DimGray;
             trybPrzychod = true;
+            */
         }
 
         private void trybDodajWydatek()
         {
             splitContainerMenuBoczneWidok.Panel1.BackColor = Color.FromArgb(255, 128, 128);
+            /*
             checkBoxCykliczny.BackColor = Color.FromArgb(255, 128, 128);
             buttonReset.BackColor = Color.FromArgb(255, 230, 230);
             buttonZapisz.BackColor = Color.FromArgb(255, 230, 230);
             textBoxDodajKwote.Text = "Dodaj kwotę wydatku";
             textBoxDodajKwote.ForeColor = Color.DimGray;
             trybPrzychod = false;
+            */
         }
 
         private void buttonWidokKalendarz_Click(object sender, EventArgs e)
@@ -306,6 +317,7 @@ namespace WindowsFormsApp2
             chartGlowny.Visible = true;
         }
 
+        /*
         private void textBoxDodajKwote_Click(object sender, EventArgs e)
         {
             if (textBoxDodajKwote.Text  == "Dodaj kwotę przychodu" || textBoxDodajKwote.Text == "Dodaj kwotę wydatku")
@@ -314,7 +326,7 @@ namespace WindowsFormsApp2
                 textBoxDodajKwote.ForeColor = Color.Black;
             }
         }
-
+        
         private void comboBoxKategoria_Click(object sender, EventArgs e)
         {
             if (comboBoxKategoria.Text == "Wybierz kategorię")
@@ -349,7 +361,7 @@ namespace WindowsFormsApp2
             richTextBoxDodaj.Text = "Dodaj opcjonalny opis";
             richTextBoxDodaj.ForeColor = Color.DimGray;
         }
-
+        */
         private void comboBoxFiltrWyborOperacji_Click(object sender, EventArgs e)
         {
             if (comboBoxFiltrWyborOperacji.Text == "Wybierz operację")
