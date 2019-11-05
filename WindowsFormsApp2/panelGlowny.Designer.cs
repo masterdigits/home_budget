@@ -394,7 +394,6 @@
             this.splitContainerFiltr.Panel1.Controls.Add(this.comboBoxFiltrWyborOperacji);
             this.splitContainerFiltr.Panel1.Controls.Add(this.buttonUstawienia);
             this.splitContainerFiltr.Panel1.Controls.Add(this.buttonWyloguj);
-            this.splitContainerFiltr.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainerFiltr_Panel1_Paint);
             // 
             // splitContainerFiltr.Panel2
             // 

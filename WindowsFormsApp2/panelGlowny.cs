@@ -23,6 +23,10 @@ namespace WindowsFormsApp2
         private void panelGlowny_Load(object sender, EventArgs e)
         {
             trybDodajPrzychod();
+            foreach(kategoria kat in SingletonBaza.Instance.BazaDC.kategoria)
+            {
+                MessageBox.Show(kat.nazwa);
+            }
         }
 
         private void panelGlowny_Activated(object sender, EventArgs e)
