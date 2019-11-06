@@ -36,6 +36,7 @@
             this.buttonDodajWydatek = new System.Windows.Forms.Button();
             this.buttonDodajPrzychód = new System.Windows.Forms.Button();
             this.splitContainerMenuBoczneWidok = new System.Windows.Forms.SplitContainer();
+            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             this.buttonWidokTabelka = new System.Windows.Forms.Button();
             this.buttonWidokKolumnowy = new System.Windows.Forms.Button();
             this.buttonWidokKolowy = new System.Windows.Forms.Button();
@@ -69,12 +70,11 @@
             this.columnOperacja = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKwota = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnData = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnTyp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnKategoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnForma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnOpis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewGlowny = new System.Windows.Forms.ListView();
-            this.columnForma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnTyp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerGlowny)).BeginInit();
             this.splitContainerGlowny.Panel1.SuspendLayout();
             this.splitContainerGlowny.Panel2.SuspendLayout();
@@ -201,9 +201,18 @@
             this.splitContainerMenuBoczneWidok.Panel2.Controls.Add(this.buttonWidokKalendarz);
             this.splitContainerMenuBoczneWidok.Panel2.Controls.Add(this.buttonWidokLiniowy);
             this.splitContainerMenuBoczneWidok.Size = new System.Drawing.Size(350, 687);
-            this.splitContainerMenuBoczneWidok.SplitterDistance = 317;
+            this.splitContainerMenuBoczneWidok.SplitterDistance = 318;
             this.splitContainerMenuBoczneWidok.SplitterWidth = 3;
             this.splitContainerMenuBoczneWidok.TabIndex = 0;
+            // 
+            // uc_formularz_operacja1
+            // 
+            this.uc_formularz_operacja1.AkualnieZalogowany = null;
+            this.uc_formularz_operacja1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_formularz_operacja1.Location = new System.Drawing.Point(0, 0);
+            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(350, 318);
+            this.uc_formularz_operacja1.TabIndex = 0;
             // 
             // buttonWidokTabelka
             // 
@@ -667,12 +676,22 @@
             this.columnData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnData.Width = 150;
             // 
+            // columnTyp
+            // 
+            this.columnTyp.DisplayIndex = 8;
+            this.columnTyp.Text = "Typ";
+            this.columnTyp.Width = 120;
+            // 
             // columnKategoria
             // 
             this.columnKategoria.DisplayIndex = 5;
             this.columnKategoria.Text = "Kategoria";
             this.columnKategoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnKategoria.Width = 200;
+            // 
+            // columnForma
+            // 
+            this.columnForma.Text = "Forma platności";
             // 
             // columnOpis
             // 
@@ -691,25 +710,6 @@
             this.listViewGlowny.Size = new System.Drawing.Size(1453, 650);
             this.listViewGlowny.TabIndex = 0;
             this.listViewGlowny.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnForma
-            // 
-            this.columnForma.Text = "Forma platności";
-            // 
-            // columnTyp
-            // 
-            this.columnTyp.DisplayIndex = 8;
-            this.columnTyp.Text = "Typ";
-            this.columnTyp.Width = 120;
-            // 
-            // uc_formularz_operacja1
-            // 
-            this.uc_formularz_operacja1.AkualnieZalogowany = null;
-            this.uc_formularz_operacja1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_formularz_operacja1.Location = new System.Drawing.Point(0, 0);
-            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
-            this.uc_formularz_operacja1.Size = new System.Drawing.Size(350, 317);
-            this.uc_formularz_operacja1.TabIndex = 0;
             // 
             // panelGlowny
             // 

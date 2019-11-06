@@ -90,6 +90,24 @@
     <Compile Include="uc_formularz_operacja.Designer.cs">
       <DependentUpon>uc_formularz_operacja.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_kalendarz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_kalendarz.designer.cs">
+      <DependentUpon>uc_kalendarz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_operacja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_operacja.designer.cs">
+      <DependentUpon>uc_operacja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_panel_dnia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_panel_dnia.designer.cs">
+      <DependentUpon>uc_panel_dnia.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="panelGlowny.resx">
       <DependentUpon>panelGlowny.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +126,15 @@
     </Compile>
     <EmbeddedResource Include="uc_formularz_operacja.resx">
       <DependentUpon>uc_formularz_operacja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_kalendarz.resx">
+      <DependentUpon>uc_kalendarz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_operacja.resx">
+      <DependentUpon>uc_operacja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_panel_dnia.resx">
+      <DependentUpon>uc_panel_dnia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Baza.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
