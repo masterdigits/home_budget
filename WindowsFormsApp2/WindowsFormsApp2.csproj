@@ -108,6 +108,7 @@
     <Compile Include="uc_panel_dnia.designer.cs">
       <DependentUpon>uc_panel_dnia.cs</DependentUpon>
     </Compile>
+    <Compile Include="uzytkownicy.cs" />
     <EmbeddedResource Include="panelGlowny.resx">
       <DependentUpon>panelGlowny.cs</DependentUpon>
     </EmbeddedResource>

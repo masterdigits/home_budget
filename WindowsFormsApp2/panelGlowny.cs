@@ -12,7 +12,6 @@ namespace WindowsFormsApp2
 {
     public partial class panelGlowny : Form
     {
-        uc_kalendarz kalendarz;
         uzytkownicy Aktualnie_zalogowany;
 
         public panelGlowny()
@@ -260,7 +259,7 @@ namespace WindowsFormsApp2
         private void buttonWidokKalendarz_Click(object sender, EventArgs e)
         {
             //trybWidokKalendarz();
-            kalendarz = new uc_kalendarz(Aktualnie_zalogowany);
+            uc_kalendarz kalendarz = new uc_kalendarz(Aktualnie_zalogowany);
             splitContainerSaldo.Panel1.Controls.Clear();
             kalendarz.Dock = DockStyle.Fill;
             splitContainerSaldo.Panel1.Controls.Add(kalendarz);

@@ -13,6 +13,7 @@ namespace WindowsFormsApp2
     public partial class uc_panel_dnia : UserControl
     {
         uzytkownicy Aktualny;
+        List<uzytkownicy> Wybrani_uzytkownicy = new List<uzytkownicy>();
         DateTime data;
         internal DateTime Dzien
         {
@@ -26,12 +27,23 @@ namespace WindowsFormsApp2
                 lb_nazwa_dnia.Text = data.Date.Day.ToString();
             }
         }
+        internal List<uzytkownicy> WybraniUzytkownicy
+        {
+            get
+            {
+                return Wybrani_uzytkownicy;
+            }
+            set
+            {
+                Wybrani_uzytkownicy = value;
+            }
+        }
 
         public uc_panel_dnia()
         {
             InitializeComponent();
         }
-        public uc_panel_dnia(DateTime d, uzytkownicy akt)
+        public uc_panel_dnia(DateTime d,uzytkownicy akt)
         {
             InitializeComponent();
             Aktualny = akt;
@@ -45,16 +57,22 @@ namespace WindowsFormsApp2
         public void wyswietl_operacje()
         {
             flP_dane_operacji.Controls.Clear();
-            var query = from op in Aktualny.operacje
-                        where op.data == data
-                        select op;
             lb_nazwa_dnia.Text = data.Day.ToString();
-            if (query != null)
+            if (Wybrani_uzytkownicy.Count > 0)
             {
-                foreach (operacje o in query)
+                foreach (uzytkownicy u in Wybrani_uzytkownicy)
                 {
-                    uc_operacja nowy = new uc_operacja(o);
-                    flP_dane_operacji.Controls.Add(nowy);
+                    var query = from op in u.operacje
+                                where op.data == data
+                                select op;
+                    if (query != null)
+                    {
+                        foreach (operacje o in query)
+                        {
+                            uc_operacja nowy = new uc_operacja(o);
+                            flP_dane_operacji.Controls.Add(nowy);
+                        }
+                    }
                 }
             }
         }

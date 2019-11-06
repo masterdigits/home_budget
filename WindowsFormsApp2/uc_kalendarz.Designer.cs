@@ -30,7 +30,7 @@
         {
             this.tlp_głowny = new System.Windows.Forms.TableLayoutPanel();
             this.pn_ustawienia_kal = new System.Windows.Forms.Panel();
-            this.cb_uzytkownik = new System.Windows.Forms.ComboBox();
+            this.chlb_uzytkownicy = new System.Windows.Forms.CheckedListBox();
             this.cb_rok = new System.Windows.Forms.ComboBox();
             this.cb_miesiac = new System.Windows.Forms.ComboBox();
             this.btn_poprzedni_miesiac = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@
             // 
             // pn_ustawienia_kal
             // 
-            this.pn_ustawienia_kal.Controls.Add(this.cb_uzytkownik);
+            this.pn_ustawienia_kal.Controls.Add(this.chlb_uzytkownicy);
             this.pn_ustawienia_kal.Controls.Add(this.cb_rok);
             this.pn_ustawienia_kal.Controls.Add(this.cb_miesiac);
             this.pn_ustawienia_kal.Controls.Add(this.btn_poprzedni_miesiac);
@@ -83,23 +83,26 @@
             this.pn_ustawienia_kal.Size = new System.Drawing.Size(1401, 94);
             this.pn_ustawienia_kal.TabIndex = 2;
             // 
-            // cb_uzytkownik
+            // chlb_uzytkownicy
             // 
-            this.cb_uzytkownik.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cb_uzytkownik.FormattingEnabled = true;
-            this.cb_uzytkownik.Location = new System.Drawing.Point(594, 25);
-            this.cb_uzytkownik.Name = "cb_uzytkownik";
-            this.cb_uzytkownik.Size = new System.Drawing.Size(121, 37);
-            this.cb_uzytkownik.TabIndex = 5;
+            this.chlb_uzytkownicy.CheckOnClick = true;
+            this.chlb_uzytkownicy.FormattingEnabled = true;
+            this.chlb_uzytkownicy.Location = new System.Drawing.Point(29, 14);
+            this.chlb_uzytkownicy.Name = "chlb_uzytkownicy";
+            this.chlb_uzytkownicy.Size = new System.Drawing.Size(120, 64);
+            this.chlb_uzytkownicy.TabIndex = 6;
+            this.chlb_uzytkownicy.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chlb_uzytkownicy_ItemCheck);
+            this.chlb_uzytkownicy.SelectedIndexChanged += new System.EventHandler(this.chlb_uzytkownicy_SelectedIndexChanged);
             // 
             // cb_rok
             // 
             this.cb_rok.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cb_rok.FormattingEnabled = true;
-            this.cb_rok.Location = new System.Drawing.Point(781, 25);
+            this.cb_rok.Location = new System.Drawing.Point(789, 25);
             this.cb_rok.Name = "cb_rok";
             this.cb_rok.Size = new System.Drawing.Size(121, 37);
             this.cb_rok.TabIndex = 4;
+            this.cb_rok.SelectedIndexChanged += new System.EventHandler(this.cb_rok_SelectedIndexChanged);
             // 
             // cb_miesiac
             // 
@@ -109,6 +112,7 @@
             this.cb_miesiac.Name = "cb_miesiac";
             this.cb_miesiac.Size = new System.Drawing.Size(121, 37);
             this.cb_miesiac.TabIndex = 3;
+            this.cb_miesiac.SelectedIndexChanged += new System.EventHandler(this.cb_miesiac_SelectedIndexChanged);
             // 
             // btn_poprzedni_miesiac
             // 
@@ -281,6 +285,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cb_uzytkownik;
+        private System.Windows.Forms.CheckedListBox chlb_uzytkownicy;
     }
 }
