@@ -12,10 +12,12 @@ namespace WindowsFormsApp2
 {
     public partial class uc_kalendarz : UserControl
     {
+
         DateTime firstDay;
         uzytkownicy Aktualny;
         List<uzytkownicy> Wybrani_uzytkownicy = new List<uzytkownicy>();
-        uc_panel_dnia[,] panele_dnia;
+        Dictionary<DateTime, uc_panel_dnia> panele_dnia = new Dictionary<DateTime,uc_panel_dnia>();
+        //uc_panel_dnia[,] panele_dnia;
         public enum DniTygodnia
         {
             Monday = 0,
@@ -57,7 +59,6 @@ namespace WindowsFormsApp2
 
         public void wczytaj_kalendarz()
         {
-            panele_dnia = new uc_panel_dnia[6,7];
             tlp_kalendarz.ColumnStyles[0].SizeType = SizeType.AutoSize;
             int ile = 0 - (int)System.Enum.Parse(typeof(DniTygodnia), firstDay.DayOfWeek.ToString());
             for (int i = 1; i < 7; i++)
@@ -65,7 +66,7 @@ namespace WindowsFormsApp2
                 for (int j = 0; j < 7; j++)
                 {
                     uc_panel_dnia upd = new uc_panel_dnia(firstDay.AddDays(ile), Aktualny);
-                    panele_dnia[i - 1, j] = upd;
+                    panele_dnia.Add(firstDay.AddDays(ile), upd);
                     ile++;
                     tlp_kalendarz.Controls.Add(upd, j, i);
                 }
@@ -78,20 +79,21 @@ namespace WindowsFormsApp2
             odswierz_operacje();
 
         }
+
         private void odswierz_operacje()
         {
             if (panele_dnia != null)
             {
+                Dictionary<DateTime, uc_panel_dnia> nowy = new Dictionary<DateTime, uc_panel_dnia>();
                 int ile = 0 - (int)System.Enum.Parse(typeof(DniTygodnia), firstDay.DayOfWeek.ToString());
-                for (int i = 1; i < 7; i++)
+                foreach(KeyValuePair<DateTime,uc_panel_dnia> entry in panele_dnia)
                 {
-                    for (int j = 0; j < 7; j++)
-                    {
-                        panele_dnia[i - 1, j].Dzien = firstDay.AddDays(ile);
-                        panele_dnia[i - 1, j].wyswietl_operacje();
-                        ile++;
-                    }
+                    entry.Value.Dzien = firstDay.AddDays(ile);
+                    entry.Value.wyswietl_operacje();
+                    nowy.Add(entry.Value.Dzien, entry.Value);
+                    ile++;
                 }
+                panele_dnia = nowy;
             }
         }
 
@@ -151,20 +153,14 @@ namespace WindowsFormsApp2
                 }
                 if (Wybrani_uzytkownicy.Count > 0)
                 {
-                    for (int i = 1; i < 7; i++)
+                    foreach (KeyValuePair<DateTime, uc_panel_dnia> entry in panele_dnia)
                     {
-                        for (int j = 0; j < 7; j++)
-                        {
-                            panele_dnia[i - 1, j].WybraniUzytkownicy = Wybrani_uzytkownicy;
-                        }
+                        entry.Value.WybraniUzytkownicy = Wybrani_uzytkownicy;
                     }
                 }
-                for (int i = 1; i < 7; i++)
+                foreach (KeyValuePair<DateTime, uc_panel_dnia> entry in panele_dnia)
                 {
-                    for (int j = 0; j < 7; j++)
-                    {
-                        panele_dnia[i - 1, j].wyswietl_operacje();
-                    }
+                    entry.Value.wyswietl_operacje();
                 }
             }
         }
@@ -187,5 +183,12 @@ namespace WindowsFormsApp2
                 odswierz_operacje();
             }
         }
+
+        // Kod do odswierzania dnia po zmianie
+        public void odswierz_panel_dnia(DateTime dzien)
+        {
+            panele_dnia[dzien].wyswietl_operacje();
+        }
+
     }
 }

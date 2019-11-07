@@ -13,7 +13,7 @@ namespace WindowsFormsApp2
     public partial class panelGlowny : Form
     {
         uzytkownicy Aktualnie_zalogowany;
-
+        uc_kalendarz kalendarz;
         public panelGlowny()
         {
             InitializeComponent();
@@ -259,7 +259,7 @@ namespace WindowsFormsApp2
         private void buttonWidokKalendarz_Click(object sender, EventArgs e)
         {
             //trybWidokKalendarz();
-            uc_kalendarz kalendarz = new uc_kalendarz(Aktualnie_zalogowany);
+            kalendarz = new uc_kalendarz(Aktualnie_zalogowany);
             splitContainerSaldo.Panel1.Controls.Clear();
             kalendarz.Dock = DockStyle.Fill;
             splitContainerSaldo.Panel1.Controls.Add(kalendarz);
@@ -346,6 +346,7 @@ namespace WindowsFormsApp2
             labelInfoKalendarz.Visible = false;
             chartGlowny.Visible = true;
         }
+
 
         /*
         private void textBoxDodajKwote_Click(object sender, EventArgs e)
@@ -440,6 +441,18 @@ namespace WindowsFormsApp2
             this.Hide();
             PL.ShowDialog();
         }
+        // Tutaj jest co dodałem do odswierzania kalendarza 
+
+        public void odswierz_dany_dzien(DateTime dzien)
+        {
+            if(kalendarz != null)
+            {
+                kalendarz.odswierz_panel_dnia(dzien);
+            }
+        }
+
+
+
 
     }
 }

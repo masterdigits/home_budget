@@ -13,6 +13,7 @@ namespace WindowsFormsApp2
 
     public partial class uc_operacja : UserControl
     {
+
         operacje wyswietlanaOperacja;
         bool pokaz_wiecej = true;
         public static Image resizeImage(Image imgToResize, Size size)
@@ -58,8 +59,68 @@ namespace WindowsFormsApp2
                 pokaz_wiecej = !pokaz_wiecej;
             }
         }
+        //EventHandler doubleclick
+        // To nie dziala niżej :(
+        /*
+        protected override void OnControlAdded(ControlEventArgs e)
+        {
+            e.Control.DoubleClick += uc_operacja_DoubleClick;
+            
+            base.OnControlAdded(e);
+        }
 
+        private void uc_operacja_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("jestem");
+            foreach( Control c in ((panelGlowny)this.FindForm()).Controls)
+            {
+                if(c.Name == "uc_formularz_operacja1")
+                {
+                    uc_formularz_operacja ucfo = c as uc_formularz_operacja;
+                    if( ucfo != null)
+                    {
+                        ucfo.Wybrana = wyswietlanaOperacja;
+                        ucfo.Focus();
+                        return;
+                    }
+                }
+            }
+        }
+        */
+        private void panel1_DoubleClick(object sender, EventArgs e)
+        {
+            uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+                .FirstOrDefault() as uc_formularz_operacja;
+                    if (ucfo != null)
+                    {
+                        ucfo.Wybrana = wyswietlanaOperacja;
+                        ucfo.Focus();
+                        return;
+                    }          
+        }
 
-      
+        private void lb_kwota_Click(object sender, EventArgs e)
+        {
+            uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+    .FirstOrDefault() as uc_formularz_operacja;
+            if (ucfo != null)
+            {
+                ucfo.Wybrana = wyswietlanaOperacja;
+                ucfo.Focus();
+                return;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+    .FirstOrDefault() as uc_formularz_operacja;
+            if (ucfo != null)
+            {
+                ucfo.Wybrana = wyswietlanaOperacja;
+                ucfo.Focus();
+                return;
+            }
+        }
     }
 }

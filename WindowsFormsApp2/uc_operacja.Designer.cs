@@ -26,6 +26,7 @@
         /// Metoda wymagana do obsługi projektanta — nie należy modyfikować 
         /// jej zawartości w edytorze kodu.
         /// </summary>
+        /// 
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -77,6 +78,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 24);
             this.panel1.TabIndex = 0;
+            this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
             // 
             // label1
             // 
@@ -89,6 +91,7 @@
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Lokaty i konto oszczędnościowe";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lb_kwota
             // 
@@ -100,6 +103,7 @@
             this.lb_kwota.Size = new System.Drawing.Size(64, 26);
             this.lb_kwota.TabIndex = 4;
             this.lb_kwota.Text = "1000";
+            this.lb_kwota.Click += new System.EventHandler(this.lb_kwota_Click);
             // 
             // btn_arrow
             // 
@@ -138,6 +142,7 @@
             this.MinimumSize = new System.Drawing.Size(200, 30);
             this.Name = "uc_operacja";
             this.Size = new System.Drawing.Size(206, 36);
+            //this.DoubleClick += new System.EventHandler(this.uc_operacja_DoubleClick);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
