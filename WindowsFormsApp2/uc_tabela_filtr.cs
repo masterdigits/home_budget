@@ -85,10 +85,7 @@ namespace WindowsFormsApp2
             {
                 f_nazwa = tb_nazwa.Text;
             }
-            if (f_nazwa == null)
-            {
-                MessageBox.Show("f_nazwa jest pusta");
-            }
+
             if (chlb_uzytkownicy.CheckedItems.Count > 0)
             {
 
@@ -99,25 +96,16 @@ namespace WindowsFormsApp2
                     f_uzyt.Add(u);
                 }
             }
-            if(f_uzyt == null)
-            {
-                MessageBox.Show("f_uzyt jest puste");
-            }
 
             if (uc_dodaj_date1.Data_od != DateTime.MinValue)
             {
-                MessageBox.Show(uc_dodaj_date1.Data_od.ToShortDateString());
                 od_data = uc_dodaj_date1.Data_od;
             }
             if (uc_dodaj_date1.Data_do != DateTime.MinValue)
             {
-                MessageBox.Show(uc_dodaj_date1.Data_do.ToShortDateString());
                 do_data = uc_dodaj_date1.Data_do;
             }
-            if (do_data == DateTime.MinValue)
-            {
-                MessageBox.Show("do_data jest pusta");
-            }
+
             if (comboBoxFiltrKategoria.SelectedItem != null)
             {
                 f_kategoria = comboBoxFiltrKategoria.SelectedItem as kategoria;
