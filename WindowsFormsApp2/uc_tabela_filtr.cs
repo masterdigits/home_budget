@@ -48,7 +48,10 @@ namespace WindowsFormsApp2
                 nowy_rekord.SubItems.Add(o.kategoria.nazwa);
                 nowy_rekord.SubItems.Add(o.forma_platnosci.nazwa);
                 nowy_rekord.SubItems.Add(o.opis);
-                listViewGlowne.Items.Remove(dict_rekordy[id]);
+                if (dict_rekordy.ContainsKey(id))
+                {
+                    listViewGlowne.Items.Remove(dict_rekordy[id]);
+                }                
                 dict_rekordy[id] = nowy_rekord;
             }
         }
