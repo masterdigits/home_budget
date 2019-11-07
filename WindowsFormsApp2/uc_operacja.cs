@@ -43,7 +43,6 @@ namespace WindowsFormsApp2
 
         private void btn_arrow_Click(object sender, EventArgs e)
         {
-            List<Label> customLabels = new List<Label>();
             if (!pokaz_wiecej)
             {
                 btn_arrow.ImageIndex = 1;
@@ -53,7 +52,6 @@ namespace WindowsFormsApp2
             {
                 Label label = new Label();
                 label.Text = wyswietlanaOperacja.opis;
-                customLabels.Add(label);
                 flowLayoutPanel1.Controls.Add(label);
                 btn_arrow.ImageIndex = 0;
                 pokaz_wiecej = !pokaz_wiecej;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace WindowsFormsApp2
 {
@@ -53,11 +54,9 @@ namespace WindowsFormsApp2
         {
             Aktualny = akt;
             InitializeComponent();
-            firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
         }
         public void odswierz_operacje()
         {
-            MessageBox.Show(firstDay.ToShortDateString());
             foreach (KeyValuePair<DateTime, uc_panel_dnia> entry in panele_dnia)
             {
                 entry.Value.wyswietl_operacje();
@@ -66,6 +65,7 @@ namespace WindowsFormsApp2
 
         public void wczytaj_kalendarz()
         {
+            firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             tlp_kalendarz.ColumnStyles[0].SizeType = SizeType.AutoSize;
             int ile = 0 - (int)System.Enum.Parse(typeof(DniTygodnia), firstDay.DayOfWeek.ToString());
             for (int i = 1; i < 7; i++)
@@ -114,7 +114,6 @@ namespace WindowsFormsApp2
         {
             wczytaj_lata();
             wczytaj_miesiace();
-           // cb_miesiac.SelectedItem = (Miesiace)DateTime.Now.Month;
             wczytaj_kalendarz();
             wczytaj_uzytkownikow();
         }
@@ -152,7 +151,7 @@ namespace WindowsFormsApp2
 
         private void chlb_uzytkownicy_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (panele_dnia.Count > 0)
+            if (panele_dnia.Count > 0 && firstDay!= null)
             {
                 if (e.NewValue == CheckState.Checked)
                 {

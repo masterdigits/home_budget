@@ -13,6 +13,7 @@ namespace WindowsFormsApp2
     public partial class panelGlowny : Form
     {
         uzytkownicy Aktualnie_zalogowany;
+        uc_tabela_filtr tabela_fitlr;
         uc_kalendarz kalendarz;
         public panelGlowny()
         {
@@ -122,7 +123,7 @@ namespace WindowsFormsApp2
                     buttonWidokKolumnowy.Top = buttonWidokLiniowy.Top + buttonWidokKolumnowy.Height + (buttonWidokKolumnowy.Height / 6);
                     buttonWidokKolowy.Top = buttonWidokKolumnowy.Top + buttonWidokKolowy.Height + (buttonWidokKolowy.Height / 6);
                 }
-                */
+                
                 // Wielkosc i lokalizacja kontrolek w gornym panelu filtrowania
                 {
                     splitContainerFiltr.SplitterDistance = this.ClientSize.Height / 10;
@@ -188,11 +189,13 @@ namespace WindowsFormsApp2
                     buttonUstawienia.Top = splitContainerFiltr.Panel1.Top;
                     buttonPowiadomienia.Top = splitContainerFiltr.Panel1.Top;
                 }
+                */
             }
         }
-
+        /*
         private void checkBoxFiltrZaawansowany_CheckedChanged(object sender, EventArgs e)
         {
+
             CheckBox c = (CheckBox)sender as CheckBox;
 
             if (c.Checked == true)
@@ -209,7 +212,8 @@ namespace WindowsFormsApp2
                 resetFiltruZaawansowanego();
             }
         }
-
+        */
+        /*
         private void resetFiltruZaawansowanego()
         {
             comboBoxFiltrKategoria.Text = "Wybierz kategorię";
@@ -219,7 +223,7 @@ namespace WindowsFormsApp2
             textBoxFiltrKwotaDo.ForeColor = Color.DimGray;
             textBoxFiltrKwotaDo.ForeColor = Color.DimGray;
         }
-
+        */
         private void buttonDodajPrzychód_Click(object sender, EventArgs e)
         {
             trybDodajPrzychod();
@@ -260,19 +264,19 @@ namespace WindowsFormsApp2
         {
             //trybWidokKalendarz();
             kalendarz = new uc_kalendarz(Aktualnie_zalogowany);
-            splitContainerSaldo.Panel1.Controls.Clear();
+            splitContainerGlowny.Panel2.Controls.Clear();
             kalendarz.Dock = DockStyle.Fill;
-            splitContainerSaldo.Panel1.Controls.Add(kalendarz);
+            splitContainerGlowny.Panel2.Controls.Add(kalendarz);
         }
 
         private void buttonWidokLiniowy_Click(object sender, EventArgs e)
         {
-            trybWidokLiniowy();
+            //trybWidokLiniowy();
         }
 
         private void buttonWidokKolowy_Click(object sender, EventArgs e)
         {
-            trybKolowy();
+            //trybKolowy();
             //Kod do usunięcia testowanie focusu uc_form_operacji
             var q = from o in SingletonBaza.Instance.BazaDC.operacje
                     select o;
@@ -286,14 +290,22 @@ namespace WindowsFormsApp2
 
         private void buttonWidokKolumnowy_Click(object sender, EventArgs e)
         {
-            trybKolumnowy();
+            //trybKolumnowy();
         }
 
         private void buttonWidokTabelka_Click(object sender, EventArgs e)
         {
-            trybWidokTabelka();
+            tabela_fitlr = new uc_tabela_filtr(Aktualnie_zalogowany);
+            splitContainerGlowny.Panel2.Controls.Clear();
+            tabela_fitlr.Dock = DockStyle.Fill;
+            splitContainerGlowny.Panel2.Controls.Add(tabela_fitlr);
+            //trybWidokTabelka();
         }
-
+        //Kot do zmienienia
+        /*
+        Dictionary<int,operacje> dict_operacje = new Dictionary<int, operacje>();
+        Dictionary<int, ListViewItem> dict_rekordy = new Dictionary<int, ListViewItem>();
+        
         private void trybWidokTabelka()
         {
             labelInfoKalendarz.Visible = false;
@@ -313,11 +325,13 @@ namespace WindowsFormsApp2
                 nowy_rekord.SubItems.Add(row.kategoria.nazwa);
                 nowy_rekord.SubItems.Add(row.forma_platnosci.nazwa);
                 nowy_rekord.SubItems.Add(row.opis);
+                dict_operacje.Add(row.id_operacji,row);
+                dict_rekordy.Add(row.id_operacji, nowy_rekord);
             }
 
             chartGlowny.Visible = false;
         }
-
+        .
         private void trybWidokKalendarz()
         {
             labelInfoKalendarz.Visible = true;
@@ -332,7 +346,7 @@ namespace WindowsFormsApp2
             chartGlowny.Visible = true;
             chartGlowny.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
         }
-
+        
         private void trybKolowy()
         {
             chartGlowny.Visible = true;
@@ -347,7 +361,7 @@ namespace WindowsFormsApp2
             chartGlowny.Visible = true;
         }
 
-
+        */
         /*
         private void textBoxDodajKwote_Click(object sender, EventArgs e)
         {
@@ -392,7 +406,7 @@ namespace WindowsFormsApp2
             richTextBoxDodaj.Text = "Dodaj opcjonalny opis";
             richTextBoxDodaj.ForeColor = Color.DimGray;
         }
-        */
+
         private void comboBoxFiltrWyborOperacji_Click(object sender, EventArgs e)
         {
             if (comboBoxFiltrWyborOperacji.Text == "Wybierz operację")
@@ -428,7 +442,7 @@ namespace WindowsFormsApp2
                 textBoxFiltrKwotaDo.ForeColor = Color.Black;
             }
         }
-
+        */
         private void panelGlowny_MouseClick(object sender, MouseEventArgs e)
         {
 
