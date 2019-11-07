@@ -466,7 +466,10 @@ namespace WindowsFormsApp2
         }
         public void odsiwerz_dana_operacje_w_tabeli(int id)
         {
-            tabela_fitlr.odswierz_dana_operacje(id);
+            if (tabela_fitlr != null)
+            {
+                tabela_fitlr.odswierz_dana_operacje(id);
+            }
         }
     }
 }

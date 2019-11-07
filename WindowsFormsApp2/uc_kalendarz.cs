@@ -193,7 +193,10 @@ namespace WindowsFormsApp2
         // Kod do odswierzania dnia po zmianie
         public void odswierz_panel_dnia(DateTime dzien)
         {
-            panele_dnia[dzien].wyswietl_operacje();
+            if (panele_dnia.ContainsKey(dzien))
+            {
+                panele_dnia[dzien].wyswietl_operacje();
+            }
         }
 
     }

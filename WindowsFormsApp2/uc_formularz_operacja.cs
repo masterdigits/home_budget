@@ -142,7 +142,7 @@ namespace WindowsFormsApp2
                     operacjaDoEdycji = new operacje();
                     SingletonBaza.Instance.BazaDC.operacje.InsertOnSubmit(operacjaDoEdycji);
                 }
-
+                DateTime stara_data = operacjaDoEdycji.data;
                 operacjaDoEdycji.nazwa = tb_nazwa.Text;
                 operacjaDoEdycji.kategoria = comboBoxCategory.SelectedItem as kategoria;
                 operacjaDoEdycji.forma_platnosci = comboBoxOperationForm.SelectedItem as forma_platnosci;
@@ -152,7 +152,12 @@ namespace WindowsFormsApp2
                 operacjaDoEdycji.opis = richTextBoxDescription.Text;
                 operacjaDoEdycji.uzytkownicy = AkualnieZalogowany;
                 SingletonBaza.Instance.BazaDC.SubmitChanges();
+                
                 ((panelGlowny) this.FindForm()).odswierz_dany_dzien(operacjaDoEdycji.data);
+                if(operacjaDoEdycji.data!= stara_data)
+                {
+                    ((panelGlowny)this.FindForm()).odswierz_dany_dzien(stara_data);
+                }
                 ((panelGlowny)this.FindForm()).odsiwerz_dana_operacje_w_tabeli(operacjaDoEdycji.id_operacji);
                 ResetOperacji();
                 
@@ -175,6 +180,7 @@ namespace WindowsFormsApp2
         {
             Czysc();
             ResetOperacji();
+            ((panelGlowny)this.FindForm()).Focus();
         }
 
         private void uc_formularz_operacja_Enter(object sender, EventArgs e)
