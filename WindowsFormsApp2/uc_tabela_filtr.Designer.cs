@@ -372,6 +372,7 @@
             this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
             this.usuńToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuńToolStripMenuItem.Text = "Usuń";
+            this.usuńToolStripMenuItem.Click += new System.EventHandler(this.usuńToolStripMenuItem_Click);
             // 
             // uc_tabela_filtr
             // 

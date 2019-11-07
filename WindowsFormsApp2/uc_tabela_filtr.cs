@@ -33,7 +33,7 @@ namespace WindowsFormsApp2
             var query = from op in SingletonBaza.Instance.BazaDC.operacje
                         where op.id_operacji == id
                         select op;
-            if(query.FirstOrDefault()!=null)
+            if (query.FirstOrDefault() != null)
             {
                 operacje o = query.FirstOrDefault();
                 dict_operacje[id] = o;
@@ -98,7 +98,7 @@ namespace WindowsFormsApp2
         private void buttonWyszukaj_Click(object sender, EventArgs e)
         {
             String f_nazwa = null;
-            List<uzytkownicy> f_uzyt= null;
+            List<uzytkownicy> f_uzyt = null;
             DateTime od_data = DateTime.MinValue;
             DateTime do_data = DateTime.MinValue;
             kategoria f_kategoria = null;
@@ -148,11 +148,12 @@ namespace WindowsFormsApp2
             }
             foreach (KeyValuePair<int, operacje> entry in dict_operacje)
             {
-                if (!entry.Value.filtr(f_nazwa, f_uzyt,od_data,do_data,
-                    f_kategoria,od_kwota,do_kwota,f_opis))
+                if (!entry.Value.filtr(f_nazwa, f_uzyt, od_data, do_data,
+                    f_kategoria, od_kwota, do_kwota, f_opis))
                 {
                     listViewGlowne.Items.Remove(dict_rekordy[entry.Key]);
-                }else
+                }
+                else
                 {
                     if (!listViewGlowne.Items.Contains(dict_rekordy[entry.Key]))
                     {
@@ -189,7 +190,7 @@ namespace WindowsFormsApp2
         {
             var row = listViewGlowne.SelectedItems;
 
-            if(row.Count ==1)
+            if (row.Count == 1)
             {
                 uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
     .FirstOrDefault() as uc_formularz_operacja;
@@ -198,6 +199,26 @@ namespace WindowsFormsApp2
                     ucfo.Wybrana = dict_operacje[Int32.Parse(row[0].Name)];
                     ucfo.Focus();
                     return;
+                }
+            }
+        }
+
+        private void usuńToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var row = listViewGlowne.SelectedItems;
+            if (row.Count == 1)
+            {
+                var confirmResult = MessageBox.Show("Czy na pewno chcesz usunąć ten rekord?",
+    "Potwierdź usunięcie",
+    MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    int id = Int32.Parse(row[0].Name);
+                    SingletonBaza.Instance.BazaDC.operacje.DeleteOnSubmit(dict_operacje[id]);
+                    dict_operacje.Remove(id);
+                    listViewGlowne.Items.Remove(dict_rekordy[id]);
+                    dict_rekordy.Remove(id);
+                    SingletonBaza.Instance.BazaDC.SubmitChanges();
                 }
             }
         }
