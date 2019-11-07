@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainerFiltr = new System.Windows.Forms.SplitContainer();
             this.nm_kwota_do = new System.Windows.Forms.NumericUpDown();
@@ -54,6 +55,9 @@
             this.columnKategoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnForma = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnOpis = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MenuEdycji = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.edytujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerFiltr)).BeginInit();
             this.splitContainerFiltr.Panel1.SuspendLayout();
@@ -61,6 +65,7 @@
             this.splitContainerFiltr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nm_kwota_do)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nm_kwota_od)).BeginInit();
+            this.MenuEdycji.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -280,8 +285,10 @@
             this.columnKategoria,
             this.columnForma,
             this.columnOpis});
+            this.listViewGlowne.ContextMenuStrip = this.MenuEdycji;
             this.listViewGlowne.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewGlowne.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listViewGlowne.FullRowSelect = true;
             this.listViewGlowne.GridLines = true;
             this.listViewGlowne.HideSelection = false;
             this.listViewGlowne.Location = new System.Drawing.Point(0, 0);
@@ -345,6 +352,27 @@
             this.columnOpis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnOpis.Width = 200;
             // 
+            // MenuEdycji
+            // 
+            this.MenuEdycji.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.edytujToolStripMenuItem,
+            this.usuńToolStripMenuItem});
+            this.MenuEdycji.Name = "MenuEdycji";
+            this.MenuEdycji.Size = new System.Drawing.Size(181, 70);
+            // 
+            // edytujToolStripMenuItem
+            // 
+            this.edytujToolStripMenuItem.Name = "edytujToolStripMenuItem";
+            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.edytujToolStripMenuItem.Text = "Edytuj";
+            this.edytujToolStripMenuItem.Click += new System.EventHandler(this.edytujToolStripMenuItem_Click);
+            // 
+            // usuńToolStripMenuItem
+            // 
+            this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
+            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuńToolStripMenuItem.Text = "Usuń";
+            // 
             // uc_tabela_filtr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +389,7 @@
             this.splitContainerFiltr.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nm_kwota_do)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nm_kwota_od)).EndInit();
+            this.MenuEdycji.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -393,5 +422,8 @@
         private System.Windows.Forms.ColumnHeader columnKategoria;
         private System.Windows.Forms.ColumnHeader columnForma;
         private System.Windows.Forms.ColumnHeader columnOpis;
+        private System.Windows.Forms.ContextMenuStrip MenuEdycji;
+        private System.Windows.Forms.ToolStripMenuItem edytujToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
     }
 }

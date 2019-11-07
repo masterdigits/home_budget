@@ -28,7 +28,30 @@ namespace WindowsFormsApp2
             InitializeComponent();
             AkualnieZalogowany = akt;
         }
-
+        public void odswierz_dana_operacje(int id)
+        {
+            var query = from op in SingletonBaza.Instance.BazaDC.operacje
+                        where op.id_operacji == id
+                        select op;
+            if(query.FirstOrDefault()!=null)
+            {
+                operacje o = query.FirstOrDefault();
+                dict_operacje[id] = o;
+                var
+                nowy_rekord = listViewGlowne.Items.Add(o.id_operacji.ToString());
+                nowy_rekord.Name = o.id_operacji.ToString();
+                nowy_rekord.SubItems.Add(o.uzytkownicy.imie + " " + o.uzytkownicy.nazwisko);
+                nowy_rekord.SubItems.Add(o.nazwa);
+                nowy_rekord.SubItems.Add(o.kwota.ToString());
+                nowy_rekord.SubItems.Add(o.data.ToShortDateString());
+                nowy_rekord.SubItems.Add(o.kategoria.typ);
+                nowy_rekord.SubItems.Add(o.kategoria.nazwa);
+                nowy_rekord.SubItems.Add(o.forma_platnosci.nazwa);
+                nowy_rekord.SubItems.Add(o.opis);
+                listViewGlowne.Items.Remove(dict_rekordy[id]);
+                dict_rekordy[id] = nowy_rekord;
+            }
+        }
 
         private void trybWidokTabelka()
         {
@@ -40,6 +63,7 @@ namespace WindowsFormsApp2
             {
                 var
                 nowy_rekord = listViewGlowne.Items.Add(row.id_operacji.ToString());
+                nowy_rekord.Name = row.id_operacji.ToString();
                 nowy_rekord.SubItems.Add(row.uzytkownicy.imie + " " + row.uzytkownicy.nazwisko);
                 nowy_rekord.SubItems.Add(row.nazwa);
                 nowy_rekord.SubItems.Add(row.kwota.ToString());
@@ -159,6 +183,23 @@ namespace WindowsFormsApp2
         {
             wczytaj_kategorie();
             CzyszcKategorie();
+        }
+
+        private void edytujToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var row = listViewGlowne.SelectedItems;
+
+            if(row.Count ==1)
+            {
+                uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+    .FirstOrDefault() as uc_formularz_operacja;
+                if (ucfo != null)
+                {
+                    ucfo.Wybrana = dict_operacje[Int32.Parse(row[0].Name)];
+                    ucfo.Focus();
+                    return;
+                }
+            }
         }
     }
 }

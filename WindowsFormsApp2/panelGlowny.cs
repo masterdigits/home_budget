@@ -464,9 +464,9 @@ namespace WindowsFormsApp2
                 kalendarz.odswierz_panel_dnia(dzien);
             }
         }
-
-
-
-
+        public void odsiwerz_dana_operacje_w_tabeli(int id)
+        {
+            tabela_fitlr.odswierz_dana_operacje(id);
+        }
     }
 }

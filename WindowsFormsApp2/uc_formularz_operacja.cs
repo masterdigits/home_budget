@@ -153,6 +153,7 @@ namespace WindowsFormsApp2
                 operacjaDoEdycji.uzytkownicy = AkualnieZalogowany;
                 SingletonBaza.Instance.BazaDC.SubmitChanges();
                 ((panelGlowny) this.FindForm()).odswierz_dany_dzien(operacjaDoEdycji.data);
+                ((panelGlowny)this.FindForm()).odsiwerz_dana_operacje_w_tabeli(operacjaDoEdycji.id_operacji);
                 ResetOperacji();
                 
             }
