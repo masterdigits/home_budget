@@ -38,6 +38,7 @@
             this.lb_kwota = new System.Windows.Forms.Label();
             this.btn_arrow = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_usun = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,22 +62,22 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(206, 36);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(206, 56);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.btn_usun);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lb_kwota);
             this.panel1.Controls.Add(this.btn_arrow);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 24);
+            this.panel1.Size = new System.Drawing.Size(200, 44);
             this.panel1.TabIndex = 0;
             this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
             // 
@@ -85,7 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(70, 1);
+            this.label1.Location = new System.Drawing.Point(73, 7);
             this.label1.MaximumSize = new System.Drawing.Size(80, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
@@ -98,7 +99,7 @@
             this.lb_kwota.AutoSize = true;
             this.lb_kwota.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lb_kwota.ForeColor = System.Drawing.Color.Coral;
-            this.lb_kwota.Location = new System.Drawing.Point(0, 1);
+            this.lb_kwota.Location = new System.Drawing.Point(3, 6);
             this.lb_kwota.Name = "lb_kwota";
             this.lb_kwota.Size = new System.Drawing.Size(64, 26);
             this.lb_kwota.TabIndex = 4;
@@ -112,7 +113,7 @@
             this.btn_arrow.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_arrow.ImageIndex = 1;
             this.btn_arrow.ImageList = this.imageList1;
-            this.btn_arrow.Location = new System.Drawing.Point(177, 1);
+            this.btn_arrow.Location = new System.Drawing.Point(177, 24);
             this.btn_arrow.Name = "btn_arrow";
             this.btn_arrow.Size = new System.Drawing.Size(20, 20);
             this.btn_arrow.TabIndex = 3;
@@ -125,11 +126,24 @@
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 33);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 53);
             this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(200, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 1);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // btn_usun
+            // 
+            this.btn_usun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_usun.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_usun.ForeColor = System.Drawing.Color.Red;
+            this.btn_usun.Location = new System.Drawing.Point(177, 0);
+            this.btn_usun.Name = "btn_usun";
+            this.btn_usun.Size = new System.Drawing.Size(23, 24);
+            this.btn_usun.TabIndex = 6;
+            this.btn_usun.Text = "X";
+            this.btn_usun.UseVisualStyleBackColor = true;
+            this.btn_usun.Click += new System.EventHandler(this.btn_usun_Click);
             // 
             // uc_operacja
             // 
@@ -139,10 +153,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(200, 30);
+            this.MinimumSize = new System.Drawing.Size(200, 50);
             this.Name = "uc_operacja";
-            this.Size = new System.Drawing.Size(206, 36);
-            //this.DoubleClick += new System.EventHandler(this.uc_operacja_DoubleClick);
+            this.Size = new System.Drawing.Size(206, 56);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -161,5 +174,6 @@
         private System.Windows.Forms.Label lb_kwota;
         private System.Windows.Forms.Button btn_arrow;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btn_usun;
     }
 }

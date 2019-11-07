@@ -55,7 +55,14 @@ namespace WindowsFormsApp2
             InitializeComponent();
             firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
         }
-
+        public void odswierz_operacje()
+        {
+            MessageBox.Show(firstDay.ToShortDateString());
+            foreach (KeyValuePair<DateTime, uc_panel_dnia> entry in panele_dnia)
+            {
+                entry.Value.wyswietl_operacje();
+            }
+        }
 
         public void wczytaj_kalendarz()
         {
@@ -76,11 +83,11 @@ namespace WindowsFormsApp2
         private void btn_nast_miesiac_Click(object sender, EventArgs e)
         {
             firstDay = firstDay.AddMonths(1);
-            odswierz_operacje();
+            przesun_miesiac();
 
         }
 
-        private void odswierz_operacje()
+        private void przesun_miesiac()
         {
             if (panele_dnia != null)
             {
@@ -100,31 +107,35 @@ namespace WindowsFormsApp2
         private void btn_poprzedni_miesiac_Click(object sender, EventArgs e)
         {
             firstDay = firstDay.AddMonths(-1);
-            odswierz_operacje();
+            przesun_miesiac();
         }
 
         private void uc_kalendarz_Load(object sender, EventArgs e)
         {
             wczytaj_lata();
             wczytaj_miesiace();
-            cb_rok.SelectedItem = DateTime.Now.Year;
-            cb_miesiac.SelectedItem = (Miesiace)DateTime.Now.Month;
+           // cb_miesiac.SelectedItem = (Miesiace)DateTime.Now.Month;
             wczytaj_kalendarz();
             wczytaj_uzytkownikow();
         }
 
         private void wczytaj_lata()
         {
-            var query = from op in SingletonBaza.Instance.BazaDC.operacje
-                        select op.data.Year;
-            cb_rok.DataSource = query.Distinct();
+            List<int> lata = new List<int>();
+            int ten_rok = DateTime.Now.Year;
+            for(int i= 10; i>=-10; i--)
+            {
+                lata.Add(ten_rok - i);
+            }
+            cb_rok.DataSource = lata;
+            cb_rok.SelectedItem = DateTime.Now.Year;
         }
         private void wczytaj_miesiace()
         {
-            var query = from op in SingletonBaza.Instance.BazaDC.operacje
-                        where op.data.Year == (int)cb_rok.SelectedItem
-                        select (Miesiace) op.data.Month;
-            cb_miesiac.DataSource = query.Distinct();
+            cb_miesiac.DataSource = Enum.GetValues(typeof(Miesiace))
+                .Cast<Miesiace>()
+                ;
+            cb_miesiac.SelectedItem = (Miesiace)DateTime.Now.Month;
         }
 
         private void wczytaj_uzytkownikow()
@@ -141,7 +152,7 @@ namespace WindowsFormsApp2
 
         private void chlb_uzytkownicy_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (panele_dnia != null)
+            if (panele_dnia.Count > 0)
             {
                 if (e.NewValue == CheckState.Checked)
                 {
@@ -158,29 +169,25 @@ namespace WindowsFormsApp2
                         entry.Value.WybraniUzytkownicy = Wybrani_uzytkownicy;
                     }
                 }
-                foreach (KeyValuePair<DateTime, uc_panel_dnia> entry in panele_dnia)
-                {
-                    entry.Value.wyswietl_operacje();
-                }
+                odswierz_operacje();
             }
         }
 
         private void cb_rok_SelectedIndexChanged(object sender, EventArgs e)
         {
-            wczytaj_miesiace();
-            if (firstDay != null && panele_dnia != null)
+            if (firstDay != null && panele_dnia.Count > 0)
             {
                 firstDay = new DateTime((int)cb_rok.SelectedItem, firstDay.Month, 1);
-                odswierz_operacje();
+                przesun_miesiac();
             }
         }
 
         private void cb_miesiac_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (firstDay != null && panele_dnia!=null)
+            if (firstDay != null && panele_dnia.Count > 0)
             {
                 firstDay = new DateTime(firstDay.Year, (int)System.Enum.Parse(typeof(Miesiace), cb_miesiac.SelectedItem.ToString()), 1);
-                odswierz_operacje();
+                przesun_miesiac();
             }
         }
 

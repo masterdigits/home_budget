@@ -122,5 +122,16 @@ namespace WindowsFormsApp2
                 return;
             }
         }
+
+        private void btn_usun_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Czy chcesz usunać operacje?", "Usuwanie operacji", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                SingletonBaza.Instance.BazaDC.operacje.DeleteOnSubmit(wyswietlanaOperacja);
+                SingletonBaza.Instance.BazaDC.SubmitChanges();
+                this.Parent.Controls.Remove(this);
+            }
+        }
     }
 }
