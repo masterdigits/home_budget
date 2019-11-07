@@ -30,16 +30,15 @@
         {
             this.splitContainerGlowny = new System.Windows.Forms.SplitContainer();
             this.splitContainerMenuBoczne = new System.Windows.Forms.SplitContainer();
-            this.uc_dodaj_date1 = new WindowsFormsApp2.uc_dodaj_date();
             this.buttonDodajWydatek = new System.Windows.Forms.Button();
             this.buttonDodajPrzychód = new System.Windows.Forms.Button();
             this.splitContainerMenuBoczneWidok = new System.Windows.Forms.SplitContainer();
-            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             this.buttonWidokTabelka = new System.Windows.Forms.Button();
             this.buttonWidokKolumnowy = new System.Windows.Forms.Button();
             this.buttonWidokKolowy = new System.Windows.Forms.Button();
             this.buttonWidokKalendarz = new System.Windows.Forms.Button();
             this.buttonWidokLiniowy = new System.Windows.Forms.Button();
+            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerGlowny)).BeginInit();
             this.splitContainerGlowny.Panel1.SuspendLayout();
             this.splitContainerGlowny.SuspendLayout();
@@ -85,7 +84,6 @@
             // splitContainerMenuBoczne.Panel1
             // 
             this.splitContainerMenuBoczne.Panel1.BackColor = System.Drawing.Color.White;
-            this.splitContainerMenuBoczne.Panel1.Controls.Add(this.uc_dodaj_date1);
             this.splitContainerMenuBoczne.Panel1.Controls.Add(this.buttonDodajWydatek);
             this.splitContainerMenuBoczne.Panel1.Controls.Add(this.buttonDodajPrzychód);
             // 
@@ -97,15 +95,6 @@
             this.splitContainerMenuBoczne.SplitterWidth = 3;
             this.splitContainerMenuBoczne.TabIndex = 0;
             // 
-            // uc_dodaj_date1
-            // 
-            this.uc_dodaj_date1.AutoSize = true;
-            this.uc_dodaj_date1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_dodaj_date1.Location = new System.Drawing.Point(64, 13);
-            this.uc_dodaj_date1.Name = "uc_dodaj_date1";
-            this.uc_dodaj_date1.Size = new System.Drawing.Size(290, 36);
-            this.uc_dodaj_date1.TabIndex = 2;
-            // 
             // buttonDodajWydatek
             // 
             this.buttonDodajWydatek.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -113,7 +102,7 @@
             this.buttonDodajWydatek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonDodajWydatek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDodajWydatek.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajWydatek.Location = new System.Drawing.Point(11, 136);
+            this.buttonDodajWydatek.Location = new System.Drawing.Point(11, 77);
             this.buttonDodajWydatek.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDodajWydatek.Name = "buttonDodajWydatek";
             this.buttonDodajWydatek.Size = new System.Drawing.Size(317, 62);
@@ -129,7 +118,7 @@
             this.buttonDodajPrzychód.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonDodajPrzychód.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDodajPrzychód.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodajPrzychód.Location = new System.Drawing.Point(8, 70);
+            this.buttonDodajPrzychód.Location = new System.Drawing.Point(11, 11);
             this.buttonDodajPrzychód.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDodajPrzychód.Name = "buttonDodajPrzychód";
             this.buttonDodajPrzychód.Size = new System.Drawing.Size(317, 62);
@@ -163,18 +152,9 @@
             this.splitContainerMenuBoczneWidok.Panel2.Controls.Add(this.buttonWidokKalendarz);
             this.splitContainerMenuBoczneWidok.Panel2.Controls.Add(this.buttonWidokLiniowy);
             this.splitContainerMenuBoczneWidok.Size = new System.Drawing.Size(350, 687);
-            this.splitContainerMenuBoczneWidok.SplitterDistance = 25;
+            this.splitContainerMenuBoczneWidok.SplitterDistance = 325;
             this.splitContainerMenuBoczneWidok.SplitterWidth = 3;
             this.splitContainerMenuBoczneWidok.TabIndex = 0;
-            // 
-            // uc_formularz_operacja1
-            // 
-            this.uc_formularz_operacja1.AkualnieZalogowany = null;
-            this.uc_formularz_operacja1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uc_formularz_operacja1.Location = new System.Drawing.Point(0, 0);
-            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
-            this.uc_formularz_operacja1.Size = new System.Drawing.Size(350, 25);
-            this.uc_formularz_operacja1.TabIndex = 0;
             // 
             // buttonWidokTabelka
             // 
@@ -251,6 +231,15 @@
             this.buttonWidokLiniowy.UseVisualStyleBackColor = true;
             this.buttonWidokLiniowy.Click += new System.EventHandler(this.buttonWidokLiniowy_Click);
             // 
+            // uc_formularz_operacja1
+            // 
+            this.uc_formularz_operacja1.AkualnieZalogowany = null;
+            this.uc_formularz_operacja1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uc_formularz_operacja1.Location = new System.Drawing.Point(0, 0);
+            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(350, 325);
+            this.uc_formularz_operacja1.TabIndex = 0;
+            // 
             // panelGlowny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,7 +259,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerGlowny)).EndInit();
             this.splitContainerGlowny.ResumeLayout(false);
             this.splitContainerMenuBoczne.Panel1.ResumeLayout(false);
-            this.splitContainerMenuBoczne.Panel1.PerformLayout();
             this.splitContainerMenuBoczne.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMenuBoczne)).EndInit();
             this.splitContainerMenuBoczne.ResumeLayout(false);
@@ -295,6 +283,5 @@
         private System.Windows.Forms.Button buttonWidokKolowy;
         private System.Windows.Forms.Button buttonWidokTabelka;
         private uc_formularz_operacja uc_formularz_operacja1;
-        private uc_dodaj_date uc_dodaj_date1;
     }
 }
