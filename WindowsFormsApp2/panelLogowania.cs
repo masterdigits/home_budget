@@ -68,12 +68,14 @@ namespace WindowsFormsApp2
 
             var query = from uzytkownik in SingletonBaza.Instance.BazaDC.uzytkownicy
                         where uzytkownik.login == login
-                        && uzytkownik.haslo == haslo
+                        && uzytkownik.haslo == 
+                        hashowanie.GetHashString(haslo)
                         select uzytkownik;
             if (query.Any())
             {
                 panelGlowny PG = new panelGlowny(query.FirstOrDefault());
                 this.Hide();
+                SingletonBaza.ustaw_zalogowanego(query.FirstOrDefault());
                 PG.Closed += (s, args) => this.Close();
                 PG.ShowDialog();
                 
@@ -93,7 +95,7 @@ namespace WindowsFormsApp2
             nowy.nazwisko = textBoxNazwisko.Text;
             nowy.email = textBoxEmail.Text;
             nowy.login = textBoxLogin.Text;
-            nowy.haslo = textBoxHaslo.Text;
+            nowy.haslo = hashowanie.GetHashString(textBoxHaslo.Text);
             // Tutaj jest możliwy wybór roli jak nie to 
             nowy.id_roli = 1;
 
@@ -110,10 +112,6 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panelGlowny PG = new panelGlowny();
-            this.Hide();
-            PG.ShowDialog();
-
         }
     }
 }

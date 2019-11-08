@@ -1,5 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="baza_danych" Class="BazaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=baza-home-budget-pentagram.database.windows.net;Initial Catalog=baza_danych;User ID=kornfix1991;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False" SettingsObjectName="WindowsFormsApp2.Properties.Settings" SettingsPropertyName="baza_danychConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.uzytkownicy" Member="uzytkownicy">
+    <Type Name="uzytkownicy">
+      <Column Name="id_uzytkownika" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="imie" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nazwisko" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sesja" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="login" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="haslo" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="id_roli" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="uzytkownicy_operacje" Member="operacje" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="operacje" />
+      <Association Name="uzytkownicy_powiadomienia" Member="powiadomienia" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="powiadomienia" />
+      <Association Name="role_uzytkownicy" Member="role" ThisKey="id_roli" OtherKey="id_roli" Type="role" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.forma_platnosci" Member="forma_platnosci">
     <Type Name="forma_platnosci">
       <Column Name="id_forma_platnosci" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -7,26 +22,28 @@
       <Association Name="forma_platnosci_operacje" Member="operacje" ThisKey="id_forma_platnosci" OtherKey="id_forma_platnosci" Type="operacje" />
     </Type>
   </Table>
-  <Table Name="dbo.uzytkownicy" Member="uzytkownicy">
-    <Type Name="uzytkownicy">
-      <Column Name="id_uzytkownika" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="imie" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="nazwisko" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="login" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="haslo" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
-      <Column Name="id_roli" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="uzytkownicy_powiadomienia" Member="powiadomienia" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="powiadomienia" />
-      <Association Name="uzytkownicy_operacje" Member="operacje" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="operacje" />
-      <Association Name="role_uzytkownicy" Member="role" ThisKey="id_roli" OtherKey="id_roli" Type="role" IsForeignKey="true" />
+  <Table Name="dbo.kategoria" Member="kategoria">
+    <Type Name="kategoria">
+      <Column Name="id_kategoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nazwa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="typ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="kategoria_operacje" Member="operacje" ThisKey="id_kategoria" OtherKey="id_kategoria" Type="operacje" />
     </Type>
   </Table>
-  <Table Name="dbo.role" Member="role">
-    <Type Name="role">
-      <Column Name="id_roli" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+  <Table Name="dbo.operacje" Member="operacje">
+    <Type Name="operacje">
+      <Column Name="id_operacji" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="nazwa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="opis" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
-      <Association Name="role_uzytkownicy" Member="uzytkownicy" ThisKey="id_roli" OtherKey="id_roli" Type="uzytkownicy" />
+      <Column Name="kwota" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="id_kategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_uzytkownika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_forma_platnosci" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cyklicznosc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="opis" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="forma_platnosci_operacje" Member="forma_platnosci" ThisKey="id_forma_platnosci" OtherKey="id_forma_platnosci" Type="forma_platnosci" IsForeignKey="true" />
+      <Association Name="kategoria_operacje" Member="kategoria" ThisKey="id_kategoria" OtherKey="id_kategoria" Type="kategoria" IsForeignKey="true" />
+      <Association Name="uzytkownicy_operacje" Member="uzytkownicy" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="uzytkownicy" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.powiadomienia" Member="powiadomienia">
@@ -38,28 +55,12 @@
       <Association Name="uzytkownicy_powiadomienia" Member="uzytkownicy" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="uzytkownicy" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.operacje" Member="operacje">
-    <Type Name="operacje">
-      <Column Name="id_operacji" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="kwota" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
-      <Column Name="id_kategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_uzytkownika" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_forma_platnosci" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="cyklicznosc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="opis" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+  <Table Name="dbo.role" Member="role">
+    <Type Name="role">
+      <Column Name="id_roli" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nazwa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="forma_platnosci_operacje" Member="forma_platnosci" ThisKey="id_forma_platnosci" OtherKey="id_forma_platnosci" Type="forma_platnosci" IsForeignKey="true" />
-      <Association Name="uzytkownicy_operacje" Member="uzytkownicy" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="uzytkownicy" IsForeignKey="true" />
-      <Association Name="kategoria_operacje" Member="kategoria" ThisKey="id_kategoria" OtherKey="id_kategoria" Type="kategoria" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.kategoria" Member="kategoria">
-    <Type Name="kategoria">
-      <Column Name="id_kategoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="nazwa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="typ" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="kategoria_operacje" Member="operacje" ThisKey="id_kategoria" OtherKey="id_kategoria" Type="operacje" />
+      <Column Name="opis" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="role_uzytkownicy" Member="uzytkownicy" ThisKey="id_roli" OtherKey="id_roli" Type="uzytkownicy" />
     </Type>
   </Table>
 </Database>

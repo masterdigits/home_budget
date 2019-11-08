@@ -30,24 +30,24 @@ namespace WindowsFormsApp2
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertforma_platnosci(forma_platnosci instance);
-    partial void Updateforma_platnosci(forma_platnosci instance);
-    partial void Deleteforma_platnosci(forma_platnosci instance);
     partial void Insertuzytkownicy(uzytkownicy instance);
     partial void Updateuzytkownicy(uzytkownicy instance);
     partial void Deleteuzytkownicy(uzytkownicy instance);
-    partial void Insertrole(role instance);
-    partial void Updaterole(role instance);
-    partial void Deleterole(role instance);
-    partial void Insertpowiadomienia(powiadomienia instance);
-    partial void Updatepowiadomienia(powiadomienia instance);
-    partial void Deletepowiadomienia(powiadomienia instance);
-    partial void Insertoperacje(operacje instance);
-    partial void Updateoperacje(operacje instance);
-    partial void Deleteoperacje(operacje instance);
+    partial void Insertforma_platnosci(forma_platnosci instance);
+    partial void Updateforma_platnosci(forma_platnosci instance);
+    partial void Deleteforma_platnosci(forma_platnosci instance);
     partial void Insertkategoria(kategoria instance);
     partial void Updatekategoria(kategoria instance);
     partial void Deletekategoria(kategoria instance);
+    partial void Insertoperacje(operacje instance);
+    partial void Updateoperacje(operacje instance);
+    partial void Deleteoperacje(operacje instance);
+    partial void Insertpowiadomienia(powiadomienia instance);
+    partial void Updatepowiadomienia(powiadomienia instance);
+    partial void Deletepowiadomienia(powiadomienia instance);
+    partial void Insertrole(role instance);
+    partial void Updaterole(role instance);
+    partial void Deleterole(role instance);
     #endregion
 		
 		public BazaDataContext() : 
@@ -80,14 +80,6 @@ namespace WindowsFormsApp2
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<forma_platnosci> forma_platnosci
-		{
-			get
-			{
-				return this.GetTable<forma_platnosci>();
-			}
-		}
-		
 		public System.Data.Linq.Table<uzytkownicy> uzytkownicy
 		{
 			get
@@ -96,19 +88,19 @@ namespace WindowsFormsApp2
 			}
 		}
 		
-		public System.Data.Linq.Table<role> role
+		public System.Data.Linq.Table<forma_platnosci> forma_platnosci
 		{
 			get
 			{
-				return this.GetTable<role>();
+				return this.GetTable<forma_platnosci>();
 			}
 		}
 		
-		public System.Data.Linq.Table<powiadomienia> powiadomienia
+		public System.Data.Linq.Table<kategoria> kategoria
 		{
 			get
 			{
-				return this.GetTable<powiadomienia>();
+				return this.GetTable<kategoria>();
 			}
 		}
 		
@@ -120,12 +112,347 @@ namespace WindowsFormsApp2
 			}
 		}
 		
-		public System.Data.Linq.Table<kategoria> kategoria
+		public System.Data.Linq.Table<powiadomienia> powiadomienia
 		{
 			get
 			{
-				return this.GetTable<kategoria>();
+				return this.GetTable<powiadomienia>();
 			}
+		}
+		
+		public System.Data.Linq.Table<role> role
+		{
+			get
+			{
+				return this.GetTable<role>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.uzytkownicy")]
+	public partial class uzytkownicy : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_uzytkownika;
+		
+		private string _imie;
+		
+		private string _nazwisko;
+		
+		private string _email;
+		
+		private string _sesja;
+		
+		private string _login;
+		
+		private string _haslo;
+		
+		private System.Nullable<int> _id_roli;
+		
+		private EntitySet<operacje> _operacje;
+		
+		private EntitySet<powiadomienia> _powiadomienia;
+		
+		private EntityRef<role> _role;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_uzytkownikaChanging(int value);
+    partial void Onid_uzytkownikaChanged();
+    partial void OnimieChanging(string value);
+    partial void OnimieChanged();
+    partial void OnnazwiskoChanging(string value);
+    partial void OnnazwiskoChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void OnsesjaChanging(string value);
+    partial void OnsesjaChanged();
+    partial void OnloginChanging(string value);
+    partial void OnloginChanged();
+    partial void OnhasloChanging(string value);
+    partial void OnhasloChanged();
+    partial void Onid_roliChanging(System.Nullable<int> value);
+    partial void Onid_roliChanged();
+    #endregion
+		
+		public uzytkownicy()
+		{
+			this._operacje = new EntitySet<operacje>(new Action<operacje>(this.attach_operacje), new Action<operacje>(this.detach_operacje));
+			this._powiadomienia = new EntitySet<powiadomienia>(new Action<powiadomienia>(this.attach_powiadomienia), new Action<powiadomienia>(this.detach_powiadomienia));
+			this._role = default(EntityRef<role>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_uzytkownika", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_uzytkownika
+		{
+			get
+			{
+				return this._id_uzytkownika;
+			}
+			set
+			{
+				if ((this._id_uzytkownika != value))
+				{
+					this.Onid_uzytkownikaChanging(value);
+					this.SendPropertyChanging();
+					this._id_uzytkownika = value;
+					this.SendPropertyChanged("id_uzytkownika");
+					this.Onid_uzytkownikaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imie", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string imie
+		{
+			get
+			{
+				return this._imie;
+			}
+			set
+			{
+				if ((this._imie != value))
+				{
+					this.OnimieChanging(value);
+					this.SendPropertyChanging();
+					this._imie = value;
+					this.SendPropertyChanged("imie");
+					this.OnimieChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwisko", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nazwisko
+		{
+			get
+			{
+				return this._nazwisko;
+			}
+			set
+			{
+				if ((this._nazwisko != value))
+				{
+					this.OnnazwiskoChanging(value);
+					this.SendPropertyChanging();
+					this._nazwisko = value;
+					this.SendPropertyChanged("nazwisko");
+					this.OnnazwiskoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this.OnemailChanging(value);
+					this.SendPropertyChanging();
+					this._email = value;
+					this.SendPropertyChanged("email");
+					this.OnemailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sesja", DbType="VarChar(500)")]
+		public string sesja
+		{
+			get
+			{
+				return this._sesja;
+			}
+			set
+			{
+				if ((this._sesja != value))
+				{
+					this.OnsesjaChanging(value);
+					this.SendPropertyChanging();
+					this._sesja = value;
+					this.SendPropertyChanged("sesja");
+					this.OnsesjaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_login", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string login
+		{
+			get
+			{
+				return this._login;
+			}
+			set
+			{
+				if ((this._login != value))
+				{
+					this.OnloginChanging(value);
+					this.SendPropertyChanging();
+					this._login = value;
+					this.SendPropertyChanged("login");
+					this.OnloginChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_haslo", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string haslo
+		{
+			get
+			{
+				return this._haslo;
+			}
+			set
+			{
+				if ((this._haslo != value))
+				{
+					this.OnhasloChanging(value);
+					this.SendPropertyChanging();
+					this._haslo = value;
+					this.SendPropertyChanged("haslo");
+					this.OnhasloChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_roli", DbType="Int")]
+		public System.Nullable<int> id_roli
+		{
+			get
+			{
+				return this._id_roli;
+			}
+			set
+			{
+				if ((this._id_roli != value))
+				{
+					if (this._role.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_roliChanging(value);
+					this.SendPropertyChanging();
+					this._id_roli = value;
+					this.SendPropertyChanged("id_roli");
+					this.Onid_roliChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="uzytkownicy_operacje", Storage="_operacje", ThisKey="id_uzytkownika", OtherKey="id_uzytkownika")]
+		public EntitySet<operacje> operacje
+		{
+			get
+			{
+				return this._operacje;
+			}
+			set
+			{
+				this._operacje.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="uzytkownicy_powiadomienia", Storage="_powiadomienia", ThisKey="id_uzytkownika", OtherKey="id_uzytkownika")]
+		public EntitySet<powiadomienia> powiadomienia
+		{
+			get
+			{
+				return this._powiadomienia;
+			}
+			set
+			{
+				this._powiadomienia.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="role_uzytkownicy", Storage="_role", ThisKey="id_roli", OtherKey="id_roli", IsForeignKey=true)]
+		public role role
+		{
+			get
+			{
+				return this._role.Entity;
+			}
+			set
+			{
+				role previousValue = this._role.Entity;
+				if (((previousValue != value) 
+							|| (this._role.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._role.Entity = null;
+						previousValue.uzytkownicy.Remove(this);
+					}
+					this._role.Entity = value;
+					if ((value != null))
+					{
+						value.uzytkownicy.Add(this);
+						this._id_roli = value.id_roli;
+					}
+					else
+					{
+						this._id_roli = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("role");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_operacje(operacje entity)
+		{
+			this.SendPropertyChanging();
+			entity.uzytkownicy = this;
+		}
+		
+		private void detach_operacje(operacje entity)
+		{
+			this.SendPropertyChanging();
+			entity.uzytkownicy = null;
+		}
+		
+		private void attach_powiadomienia(powiadomienia entity)
+		{
+			this.SendPropertyChanging();
+			entity.uzytkownicy = this;
+		}
+		
+		private void detach_powiadomienia(powiadomienia entity)
+		{
+			this.SendPropertyChanging();
+			entity.uzytkownicy = null;
 		}
 	}
 	
@@ -243,357 +570,54 @@ namespace WindowsFormsApp2
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.uzytkownicy")]
-	public partial class uzytkownicy : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.kategoria")]
+	public partial class kategoria : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id_uzytkownika;
-		
-		private string _imie;
-		
-		private string _nazwisko;
-		
-		private string _email;
-		
-		private string _login;
-		
-		private string _haslo;
-		
-		private System.Nullable<int> _id_roli;
-		
-		private EntitySet<powiadomienia> _powiadomienia;
-		
-		private EntitySet<operacje> _operacje;
-		
-		private EntityRef<role> _role;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_uzytkownikaChanging(int value);
-    partial void Onid_uzytkownikaChanged();
-    partial void OnimieChanging(string value);
-    partial void OnimieChanged();
-    partial void OnnazwiskoChanging(string value);
-    partial void OnnazwiskoChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    partial void OnloginChanging(string value);
-    partial void OnloginChanged();
-    partial void OnhasloChanging(string value);
-    partial void OnhasloChanged();
-    partial void Onid_roliChanging(System.Nullable<int> value);
-    partial void Onid_roliChanged();
-    #endregion
-		
-		public uzytkownicy()
-		{
-			this._powiadomienia = new EntitySet<powiadomienia>(new Action<powiadomienia>(this.attach_powiadomienia), new Action<powiadomienia>(this.detach_powiadomienia));
-			this._operacje = new EntitySet<operacje>(new Action<operacje>(this.attach_operacje), new Action<operacje>(this.detach_operacje));
-			this._role = default(EntityRef<role>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_uzytkownika", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_uzytkownika
-		{
-			get
-			{
-				return this._id_uzytkownika;
-			}
-			set
-			{
-				if ((this._id_uzytkownika != value))
-				{
-					this.Onid_uzytkownikaChanging(value);
-					this.SendPropertyChanging();
-					this._id_uzytkownika = value;
-					this.SendPropertyChanged("id_uzytkownika");
-					this.Onid_uzytkownikaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imie", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string imie
-		{
-			get
-			{
-				return this._imie;
-			}
-			set
-			{
-				if ((this._imie != value))
-				{
-					this.OnimieChanging(value);
-					this.SendPropertyChanging();
-					this._imie = value;
-					this.SendPropertyChanged("imie");
-					this.OnimieChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwisko", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nazwisko
-		{
-			get
-			{
-				return this._nazwisko;
-			}
-			set
-			{
-				if ((this._nazwisko != value))
-				{
-					this.OnnazwiskoChanging(value);
-					this.SendPropertyChanging();
-					this._nazwisko = value;
-					this.SendPropertyChanged("nazwisko");
-					this.OnnazwiskoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string email
-		{
-			get
-			{
-				return this._email;
-			}
-			set
-			{
-				if ((this._email != value))
-				{
-					this.OnemailChanging(value);
-					this.SendPropertyChanging();
-					this._email = value;
-					this.SendPropertyChanged("email");
-					this.OnemailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_login", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string login
-		{
-			get
-			{
-				return this._login;
-			}
-			set
-			{
-				if ((this._login != value))
-				{
-					this.OnloginChanging(value);
-					this.SendPropertyChanging();
-					this._login = value;
-					this.SendPropertyChanged("login");
-					this.OnloginChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_haslo", DbType="VarChar(40) NOT NULL", CanBeNull=false)]
-		public string haslo
-		{
-			get
-			{
-				return this._haslo;
-			}
-			set
-			{
-				if ((this._haslo != value))
-				{
-					this.OnhasloChanging(value);
-					this.SendPropertyChanging();
-					this._haslo = value;
-					this.SendPropertyChanged("haslo");
-					this.OnhasloChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_roli", DbType="Int")]
-		public System.Nullable<int> id_roli
-		{
-			get
-			{
-				return this._id_roli;
-			}
-			set
-			{
-				if ((this._id_roli != value))
-				{
-					if (this._role.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_roliChanging(value);
-					this.SendPropertyChanging();
-					this._id_roli = value;
-					this.SendPropertyChanged("id_roli");
-					this.Onid_roliChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="uzytkownicy_powiadomienia", Storage="_powiadomienia", ThisKey="id_uzytkownika", OtherKey="id_uzytkownika")]
-		public EntitySet<powiadomienia> powiadomienia
-		{
-			get
-			{
-				return this._powiadomienia;
-			}
-			set
-			{
-				this._powiadomienia.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="uzytkownicy_operacje", Storage="_operacje", ThisKey="id_uzytkownika", OtherKey="id_uzytkownika")]
-		public EntitySet<operacje> operacje
-		{
-			get
-			{
-				return this._operacje;
-			}
-			set
-			{
-				this._operacje.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="role_uzytkownicy", Storage="_role", ThisKey="id_roli", OtherKey="id_roli", IsForeignKey=true)]
-		public role role
-		{
-			get
-			{
-				return this._role.Entity;
-			}
-			set
-			{
-				role previousValue = this._role.Entity;
-				if (((previousValue != value) 
-							|| (this._role.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._role.Entity = null;
-						previousValue.uzytkownicy.Remove(this);
-					}
-					this._role.Entity = value;
-					if ((value != null))
-					{
-						value.uzytkownicy.Add(this);
-						this._id_roli = value.id_roli;
-					}
-					else
-					{
-						this._id_roli = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("role");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_powiadomienia(powiadomienia entity)
-		{
-			this.SendPropertyChanging();
-			entity.uzytkownicy = this;
-		}
-		
-		private void detach_powiadomienia(powiadomienia entity)
-		{
-			this.SendPropertyChanging();
-			entity.uzytkownicy = null;
-		}
-		
-		private void attach_operacje(operacje entity)
-		{
-			this.SendPropertyChanging();
-			entity.uzytkownicy = this;
-		}
-		
-		private void detach_operacje(operacje entity)
-		{
-			this.SendPropertyChanging();
-			entity.uzytkownicy = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.role")]
-	public partial class role : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_roli;
+		private int _id_kategoria;
 		
 		private string _nazwa;
 		
-		private string _opis;
+		private string _typ;
 		
-		private EntitySet<uzytkownicy> _uzytkownicy;
+		private EntitySet<operacje> _operacje;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onid_roliChanging(int value);
-    partial void Onid_roliChanged();
+    partial void Onid_kategoriaChanging(int value);
+    partial void Onid_kategoriaChanged();
     partial void OnnazwaChanging(string value);
     partial void OnnazwaChanged();
-    partial void OnopisChanging(string value);
-    partial void OnopisChanged();
+    partial void OntypChanging(string value);
+    partial void OntypChanged();
     #endregion
 		
-		public role()
+		public kategoria()
 		{
-			this._uzytkownicy = new EntitySet<uzytkownicy>(new Action<uzytkownicy>(this.attach_uzytkownicy), new Action<uzytkownicy>(this.detach_uzytkownicy));
+			this._operacje = new EntitySet<operacje>(new Action<operacje>(this.attach_operacje), new Action<operacje>(this.detach_operacje));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_roli", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_roli
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_kategoria", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_kategoria
 		{
 			get
 			{
-				return this._id_roli;
+				return this._id_kategoria;
 			}
 			set
 			{
-				if ((this._id_roli != value))
+				if ((this._id_kategoria != value))
 				{
-					this.Onid_roliChanging(value);
+					this.Onid_kategoriaChanging(value);
 					this.SendPropertyChanging();
-					this._id_roli = value;
-					this.SendPropertyChanged("id_roli");
-					this.Onid_roliChanged();
+					this._id_kategoria = value;
+					this.SendPropertyChanged("id_kategoria");
+					this.Onid_kategoriaChanged();
 				}
 			}
 		}
@@ -618,36 +642,36 @@ namespace WindowsFormsApp2
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_opis", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
-		public string opis
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_typ", DbType="VarChar(50)")]
+		public string typ
 		{
 			get
 			{
-				return this._opis;
+				return this._typ;
 			}
 			set
 			{
-				if ((this._opis != value))
+				if ((this._typ != value))
 				{
-					this.OnopisChanging(value);
+					this.OntypChanging(value);
 					this.SendPropertyChanging();
-					this._opis = value;
-					this.SendPropertyChanged("opis");
-					this.OnopisChanged();
+					this._typ = value;
+					this.SendPropertyChanged("typ");
+					this.OntypChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="role_uzytkownicy", Storage="_uzytkownicy", ThisKey="id_roli", OtherKey="id_roli")]
-		public EntitySet<uzytkownicy> uzytkownicy
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="kategoria_operacje", Storage="_operacje", ThisKey="id_kategoria", OtherKey="id_kategoria")]
+		public EntitySet<operacje> operacje
 		{
 			get
 			{
-				return this._uzytkownicy;
+				return this._operacje;
 			}
 			set
 			{
-				this._uzytkownicy.Assign(value);
+				this._operacje.Assign(value);
 			}
 		}
 		
@@ -671,16 +695,393 @@ namespace WindowsFormsApp2
 			}
 		}
 		
-		private void attach_uzytkownicy(uzytkownicy entity)
+		private void attach_operacje(operacje entity)
 		{
 			this.SendPropertyChanging();
-			entity.role = this;
+			entity.kategoria = this;
 		}
 		
-		private void detach_uzytkownicy(uzytkownicy entity)
+		private void detach_operacje(operacje entity)
 		{
 			this.SendPropertyChanging();
-			entity.role = null;
+			entity.kategoria = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.operacje")]
+	public partial class operacje : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_operacji;
+		
+		private System.DateTime _data;
+		
+		private string _nazwa;
+		
+		private decimal _kwota;
+		
+		private int _id_kategoria;
+		
+		private int _id_uzytkownika;
+		
+		private System.Nullable<int> _id_forma_platnosci;
+		
+		private System.Nullable<System.DateTime> _cyklicznosc;
+		
+		private string _opis;
+		
+		private EntityRef<forma_platnosci> _forma_platnosci;
+		
+		private EntityRef<kategoria> _kategoria;
+		
+		private EntityRef<uzytkownicy> _uzytkownicy;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_operacjiChanging(int value);
+    partial void Onid_operacjiChanged();
+    partial void OndataChanging(System.DateTime value);
+    partial void OndataChanged();
+    partial void OnnazwaChanging(string value);
+    partial void OnnazwaChanged();
+    partial void OnkwotaChanging(decimal value);
+    partial void OnkwotaChanged();
+    partial void Onid_kategoriaChanging(int value);
+    partial void Onid_kategoriaChanged();
+    partial void Onid_uzytkownikaChanging(int value);
+    partial void Onid_uzytkownikaChanged();
+    partial void Onid_forma_platnosciChanging(System.Nullable<int> value);
+    partial void Onid_forma_platnosciChanged();
+    partial void OncyklicznoscChanging(System.Nullable<System.DateTime> value);
+    partial void OncyklicznoscChanged();
+    partial void OnopisChanging(string value);
+    partial void OnopisChanged();
+    #endregion
+		
+		public operacje()
+		{
+			this._forma_platnosci = default(EntityRef<forma_platnosci>);
+			this._kategoria = default(EntityRef<kategoria>);
+			this._uzytkownicy = default(EntityRef<uzytkownicy>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_operacji", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_operacji
+		{
+			get
+			{
+				return this._id_operacji;
+			}
+			set
+			{
+				if ((this._id_operacji != value))
+				{
+					this.Onid_operacjiChanging(value);
+					this.SendPropertyChanging();
+					this._id_operacji = value;
+					this.SendPropertyChanged("id_operacji");
+					this.Onid_operacjiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
+		public System.DateTime data
+		{
+			get
+			{
+				return this._data;
+			}
+			set
+			{
+				if ((this._data != value))
+				{
+					this.OndataChanging(value);
+					this.SendPropertyChanging();
+					this._data = value;
+					this.SendPropertyChanged("data");
+					this.OndataChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwa", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nazwa
+		{
+			get
+			{
+				return this._nazwa;
+			}
+			set
+			{
+				if ((this._nazwa != value))
+				{
+					this.OnnazwaChanging(value);
+					this.SendPropertyChanging();
+					this._nazwa = value;
+					this.SendPropertyChanged("nazwa");
+					this.OnnazwaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kwota", DbType="Decimal(10,2) NOT NULL")]
+		public decimal kwota
+		{
+			get
+			{
+				return this._kwota;
+			}
+			set
+			{
+				if ((this._kwota != value))
+				{
+					this.OnkwotaChanging(value);
+					this.SendPropertyChanging();
+					this._kwota = value;
+					this.SendPropertyChanged("kwota");
+					this.OnkwotaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_kategoria", DbType="Int NOT NULL")]
+		public int id_kategoria
+		{
+			get
+			{
+				return this._id_kategoria;
+			}
+			set
+			{
+				if ((this._id_kategoria != value))
+				{
+					if (this._kategoria.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_kategoriaChanging(value);
+					this.SendPropertyChanging();
+					this._id_kategoria = value;
+					this.SendPropertyChanged("id_kategoria");
+					this.Onid_kategoriaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_uzytkownika", DbType="Int NOT NULL")]
+		public int id_uzytkownika
+		{
+			get
+			{
+				return this._id_uzytkownika;
+			}
+			set
+			{
+				if ((this._id_uzytkownika != value))
+				{
+					if (this._uzytkownicy.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_uzytkownikaChanging(value);
+					this.SendPropertyChanging();
+					this._id_uzytkownika = value;
+					this.SendPropertyChanged("id_uzytkownika");
+					this.Onid_uzytkownikaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_forma_platnosci", DbType="Int")]
+		public System.Nullable<int> id_forma_platnosci
+		{
+			get
+			{
+				return this._id_forma_platnosci;
+			}
+			set
+			{
+				if ((this._id_forma_platnosci != value))
+				{
+					if (this._forma_platnosci.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_forma_platnosciChanging(value);
+					this.SendPropertyChanging();
+					this._id_forma_platnosci = value;
+					this.SendPropertyChanged("id_forma_platnosci");
+					this.Onid_forma_platnosciChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cyklicznosc", DbType="DateTime")]
+		public System.Nullable<System.DateTime> cyklicznosc
+		{
+			get
+			{
+				return this._cyklicznosc;
+			}
+			set
+			{
+				if ((this._cyklicznosc != value))
+				{
+					this.OncyklicznoscChanging(value);
+					this.SendPropertyChanging();
+					this._cyklicznosc = value;
+					this.SendPropertyChanged("cyklicznosc");
+					this.OncyklicznoscChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_opis", DbType="VarChar(200)")]
+		public string opis
+		{
+			get
+			{
+				return this._opis;
+			}
+			set
+			{
+				if ((this._opis != value))
+				{
+					this.OnopisChanging(value);
+					this.SendPropertyChanging();
+					this._opis = value;
+					this.SendPropertyChanged("opis");
+					this.OnopisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="forma_platnosci_operacje", Storage="_forma_platnosci", ThisKey="id_forma_platnosci", OtherKey="id_forma_platnosci", IsForeignKey=true)]
+		public forma_platnosci forma_platnosci
+		{
+			get
+			{
+				return this._forma_platnosci.Entity;
+			}
+			set
+			{
+				forma_platnosci previousValue = this._forma_platnosci.Entity;
+				if (((previousValue != value) 
+							|| (this._forma_platnosci.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._forma_platnosci.Entity = null;
+						previousValue.operacje.Remove(this);
+					}
+					this._forma_platnosci.Entity = value;
+					if ((value != null))
+					{
+						value.operacje.Add(this);
+						this._id_forma_platnosci = value.id_forma_platnosci;
+					}
+					else
+					{
+						this._id_forma_platnosci = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("forma_platnosci");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="kategoria_operacje", Storage="_kategoria", ThisKey="id_kategoria", OtherKey="id_kategoria", IsForeignKey=true)]
+		public kategoria kategoria
+		{
+			get
+			{
+				return this._kategoria.Entity;
+			}
+			set
+			{
+				kategoria previousValue = this._kategoria.Entity;
+				if (((previousValue != value) 
+							|| (this._kategoria.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._kategoria.Entity = null;
+						previousValue.operacje.Remove(this);
+					}
+					this._kategoria.Entity = value;
+					if ((value != null))
+					{
+						value.operacje.Add(this);
+						this._id_kategoria = value.id_kategoria;
+					}
+					else
+					{
+						this._id_kategoria = default(int);
+					}
+					this.SendPropertyChanged("kategoria");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="uzytkownicy_operacje", Storage="_uzytkownicy", ThisKey="id_uzytkownika", OtherKey="id_uzytkownika", IsForeignKey=true)]
+		public uzytkownicy uzytkownicy
+		{
+			get
+			{
+				return this._uzytkownicy.Entity;
+			}
+			set
+			{
+				uzytkownicy previousValue = this._uzytkownicy.Entity;
+				if (((previousValue != value) 
+							|| (this._uzytkownicy.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._uzytkownicy.Entity = null;
+						previousValue.operacje.Remove(this);
+					}
+					this._uzytkownicy.Entity = value;
+					if ((value != null))
+					{
+						value.operacje.Add(this);
+						this._id_uzytkownika = value.id_uzytkownika;
+					}
+					else
+					{
+						this._id_uzytkownika = default(int);
+					}
+					this.SendPropertyChanged("uzytkownicy");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -859,221 +1260,79 @@ namespace WindowsFormsApp2
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.operacje")]
-	public partial class operacje : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.role")]
+	public partial class role : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id_operacji;
-		
-		private System.DateTime _data;
-		
-		private decimal _kwota;
-		
-		private int _id_kategoria;
-		
-		private int _id_uzytkownika;
-		
-		private System.Nullable<int> _id_forma_platnosci;
-		
-		private System.Nullable<System.DateTime> _cyklicznosc;
-		
-		private string _opis;
+		private int _id_roli;
 		
 		private string _nazwa;
 		
-		private EntityRef<forma_platnosci> _forma_platnosci;
+		private string _opis;
 		
-		private EntityRef<uzytkownicy> _uzytkownicy;
-		
-		private EntityRef<kategoria> _kategoria;
+		private EntitySet<uzytkownicy> _uzytkownicy;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onid_operacjiChanging(int value);
-    partial void Onid_operacjiChanged();
-    partial void OndataChanging(System.DateTime value);
-    partial void OndataChanged();
-    partial void OnkwotaChanging(decimal value);
-    partial void OnkwotaChanged();
-    partial void Onid_kategoriaChanging(int value);
-    partial void Onid_kategoriaChanged();
-    partial void Onid_uzytkownikaChanging(int value);
-    partial void Onid_uzytkownikaChanged();
-    partial void Onid_forma_platnosciChanging(System.Nullable<int> value);
-    partial void Onid_forma_platnosciChanged();
-    partial void OncyklicznoscChanging(System.Nullable<System.DateTime> value);
-    partial void OncyklicznoscChanged();
-    partial void OnopisChanging(string value);
-    partial void OnopisChanged();
+    partial void Onid_roliChanging(int value);
+    partial void Onid_roliChanged();
     partial void OnnazwaChanging(string value);
     partial void OnnazwaChanged();
+    partial void OnopisChanging(string value);
+    partial void OnopisChanged();
     #endregion
 		
-		public operacje()
+		public role()
 		{
-			this._forma_platnosci = default(EntityRef<forma_platnosci>);
-			this._uzytkownicy = default(EntityRef<uzytkownicy>);
-			this._kategoria = default(EntityRef<kategoria>);
+			this._uzytkownicy = new EntitySet<uzytkownicy>(new Action<uzytkownicy>(this.attach_uzytkownicy), new Action<uzytkownicy>(this.detach_uzytkownicy));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_operacji", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_operacji
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_roli", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_roli
 		{
 			get
 			{
-				return this._id_operacji;
+				return this._id_roli;
 			}
 			set
 			{
-				if ((this._id_operacji != value))
+				if ((this._id_roli != value))
 				{
-					this.Onid_operacjiChanging(value);
+					this.Onid_roliChanging(value);
 					this.SendPropertyChanging();
-					this._id_operacji = value;
-					this.SendPropertyChanged("id_operacji");
-					this.Onid_operacjiChanged();
+					this._id_roli = value;
+					this.SendPropertyChanged("id_roli");
+					this.Onid_roliChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_data", DbType="DateTime NOT NULL")]
-		public System.DateTime data
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwa", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nazwa
 		{
 			get
 			{
-				return this._data;
+				return this._nazwa;
 			}
 			set
 			{
-				if ((this._data != value))
+				if ((this._nazwa != value))
 				{
-					this.OndataChanging(value);
+					this.OnnazwaChanging(value);
 					this.SendPropertyChanging();
-					this._data = value;
-					this.SendPropertyChanged("data");
-					this.OndataChanged();
+					this._nazwa = value;
+					this.SendPropertyChanged("nazwa");
+					this.OnnazwaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kwota", DbType="Decimal(10,2) NOT NULL")]
-		public decimal kwota
-		{
-			get
-			{
-				return this._kwota;
-			}
-			set
-			{
-				if ((this._kwota != value))
-				{
-					this.OnkwotaChanging(value);
-					this.SendPropertyChanging();
-					this._kwota = value;
-					this.SendPropertyChanged("kwota");
-					this.OnkwotaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_kategoria", DbType="Int NOT NULL")]
-		public int id_kategoria
-		{
-			get
-			{
-				return this._id_kategoria;
-			}
-			set
-			{
-				if ((this._id_kategoria != value))
-				{
-					if (this._kategoria.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_kategoriaChanging(value);
-					this.SendPropertyChanging();
-					this._id_kategoria = value;
-					this.SendPropertyChanged("id_kategoria");
-					this.Onid_kategoriaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_uzytkownika", DbType="Int NOT NULL")]
-		public int id_uzytkownika
-		{
-			get
-			{
-				return this._id_uzytkownika;
-			}
-			set
-			{
-				if ((this._id_uzytkownika != value))
-				{
-					if (this._uzytkownicy.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_uzytkownikaChanging(value);
-					this.SendPropertyChanging();
-					this._id_uzytkownika = value;
-					this.SendPropertyChanged("id_uzytkownika");
-					this.Onid_uzytkownikaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_forma_platnosci", DbType="Int")]
-		public System.Nullable<int> id_forma_platnosci
-		{
-			get
-			{
-				return this._id_forma_platnosci;
-			}
-			set
-			{
-				if ((this._id_forma_platnosci != value))
-				{
-					if (this._forma_platnosci.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_forma_platnosciChanging(value);
-					this.SendPropertyChanging();
-					this._id_forma_platnosci = value;
-					this.SendPropertyChanged("id_forma_platnosci");
-					this.Onid_forma_platnosciChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cyklicznosc", DbType="DateTime")]
-		public System.Nullable<System.DateTime> cyklicznosc
-		{
-			get
-			{
-				return this._cyklicznosc;
-			}
-			set
-			{
-				if ((this._cyklicznosc != value))
-				{
-					this.OncyklicznoscChanging(value);
-					this.SendPropertyChanging();
-					this._cyklicznosc = value;
-					this.SendPropertyChanged("cyklicznosc");
-					this.OncyklicznoscChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_opis", DbType="VarChar(200)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_opis", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
 		public string opis
 		{
 			get
@@ -1093,251 +1352,16 @@ namespace WindowsFormsApp2
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwa", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nazwa
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="role_uzytkownicy", Storage="_uzytkownicy", ThisKey="id_roli", OtherKey="id_roli")]
+		public EntitySet<uzytkownicy> uzytkownicy
 		{
 			get
 			{
-				return this._nazwa;
+				return this._uzytkownicy;
 			}
 			set
 			{
-				if ((this._nazwa != value))
-				{
-					this.OnnazwaChanging(value);
-					this.SendPropertyChanging();
-					this._nazwa = value;
-					this.SendPropertyChanged("nazwa");
-					this.OnnazwaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="forma_platnosci_operacje", Storage="_forma_platnosci", ThisKey="id_forma_platnosci", OtherKey="id_forma_platnosci", IsForeignKey=true)]
-		public forma_platnosci forma_platnosci
-		{
-			get
-			{
-				return this._forma_platnosci.Entity;
-			}
-			set
-			{
-				forma_platnosci previousValue = this._forma_platnosci.Entity;
-				if (((previousValue != value) 
-							|| (this._forma_platnosci.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._forma_platnosci.Entity = null;
-						previousValue.operacje.Remove(this);
-					}
-					this._forma_platnosci.Entity = value;
-					if ((value != null))
-					{
-						value.operacje.Add(this);
-						this._id_forma_platnosci = value.id_forma_platnosci;
-					}
-					else
-					{
-						this._id_forma_platnosci = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("forma_platnosci");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="uzytkownicy_operacje", Storage="_uzytkownicy", ThisKey="id_uzytkownika", OtherKey="id_uzytkownika", IsForeignKey=true)]
-		public uzytkownicy uzytkownicy
-		{
-			get
-			{
-				return this._uzytkownicy.Entity;
-			}
-			set
-			{
-				uzytkownicy previousValue = this._uzytkownicy.Entity;
-				if (((previousValue != value) 
-							|| (this._uzytkownicy.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._uzytkownicy.Entity = null;
-						previousValue.operacje.Remove(this);
-					}
-					this._uzytkownicy.Entity = value;
-					if ((value != null))
-					{
-						value.operacje.Add(this);
-						this._id_uzytkownika = value.id_uzytkownika;
-					}
-					else
-					{
-						this._id_uzytkownika = default(int);
-					}
-					this.SendPropertyChanged("uzytkownicy");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="kategoria_operacje", Storage="_kategoria", ThisKey="id_kategoria", OtherKey="id_kategoria", IsForeignKey=true)]
-		public kategoria kategoria
-		{
-			get
-			{
-				return this._kategoria.Entity;
-			}
-			set
-			{
-				kategoria previousValue = this._kategoria.Entity;
-				if (((previousValue != value) 
-							|| (this._kategoria.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._kategoria.Entity = null;
-						previousValue.operacje.Remove(this);
-					}
-					this._kategoria.Entity = value;
-					if ((value != null))
-					{
-						value.operacje.Add(this);
-						this._id_kategoria = value.id_kategoria;
-					}
-					else
-					{
-						this._id_kategoria = default(int);
-					}
-					this.SendPropertyChanged("kategoria");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.kategoria")]
-	public partial class kategoria : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_kategoria;
-		
-		private string _nazwa;
-		
-		private string _typ;
-		
-		private EntitySet<operacje> _operacje;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_kategoriaChanging(int value);
-    partial void Onid_kategoriaChanged();
-    partial void OnnazwaChanging(string value);
-    partial void OnnazwaChanged();
-    partial void OntypChanging(string value);
-    partial void OntypChanged();
-    #endregion
-		
-		public kategoria()
-		{
-			this._operacje = new EntitySet<operacje>(new Action<operacje>(this.attach_operacje), new Action<operacje>(this.detach_operacje));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_kategoria", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_kategoria
-		{
-			get
-			{
-				return this._id_kategoria;
-			}
-			set
-			{
-				if ((this._id_kategoria != value))
-				{
-					this.Onid_kategoriaChanging(value);
-					this.SendPropertyChanging();
-					this._id_kategoria = value;
-					this.SendPropertyChanged("id_kategoria");
-					this.Onid_kategoriaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nazwa", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nazwa
-		{
-			get
-			{
-				return this._nazwa;
-			}
-			set
-			{
-				if ((this._nazwa != value))
-				{
-					this.OnnazwaChanging(value);
-					this.SendPropertyChanging();
-					this._nazwa = value;
-					this.SendPropertyChanged("nazwa");
-					this.OnnazwaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_typ", DbType="VarChar(50)")]
-		public string typ
-		{
-			get
-			{
-				return this._typ;
-			}
-			set
-			{
-				if ((this._typ != value))
-				{
-					this.OntypChanging(value);
-					this.SendPropertyChanging();
-					this._typ = value;
-					this.SendPropertyChanged("typ");
-					this.OntypChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="kategoria_operacje", Storage="_operacje", ThisKey="id_kategoria", OtherKey="id_kategoria")]
-		public EntitySet<operacje> operacje
-		{
-			get
-			{
-				return this._operacje;
-			}
-			set
-			{
-				this._operacje.Assign(value);
+				this._uzytkownicy.Assign(value);
 			}
 		}
 		
@@ -1361,16 +1385,16 @@ namespace WindowsFormsApp2
 			}
 		}
 		
-		private void attach_operacje(operacje entity)
+		private void attach_uzytkownicy(uzytkownicy entity)
 		{
 			this.SendPropertyChanging();
-			entity.kategoria = this;
+			entity.role = this;
 		}
 		
-		private void detach_operacje(operacje entity)
+		private void detach_uzytkownicy(uzytkownicy entity)
 		{
 			this.SendPropertyChanging();
-			entity.kategoria = null;
+			entity.role = null;
 		}
 	}
 }

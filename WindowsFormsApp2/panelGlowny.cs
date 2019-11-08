@@ -227,6 +227,8 @@ namespace WindowsFormsApp2
         private void buttonDodajPrzychód_Click(object sender, EventArgs e)
         {
             trybDodajPrzychod();
+
+            MessageBox.Show(SingletonBaza.sprawdz_sesje().ToString());
         }
 
         private void buttonDodajWydatek_Click(object sender, EventArgs e)

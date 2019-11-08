@@ -69,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Baza.dbml</DependentUpon>
     </Compile>
+    <Compile Include="hashowanie.cs" />
     <Compile Include="operacje.cs" />
     <Compile Include="panelGlowny.cs">
       <SubType>Form</SubType>
