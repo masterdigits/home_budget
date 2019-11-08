@@ -477,8 +477,9 @@ namespace WindowsFormsApp2
 
         private void timer_sesja_Tick(object sender, EventArgs e)
         {
-            if (SingletonBaza.sprawdz_sesje())
+            if (!SingletonBaza.sprawdz_sesje())
             {
+                timer_sesja.Stop();
                 MessageBox.Show("Ktoś zalogowal się na konto na innym urządzeniu!");
                 this.Close();
             }
