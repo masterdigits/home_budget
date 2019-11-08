@@ -227,8 +227,7 @@ namespace WindowsFormsApp2
         private void buttonDodajPrzychód_Click(object sender, EventArgs e)
         {
             trybDodajPrzychod();
-            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
-                SingletonBaza.Instance.BazaDC);
+
             MessageBox.Show(SingletonBaza.sprawdz_sesje().ToString());
         }
 

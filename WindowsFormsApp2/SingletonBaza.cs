@@ -40,6 +40,8 @@ namespace WindowsFormsApp2
         }
         public static string sprawdz_sesje()
         {
+            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+            SingletonBaza.Instance.BazaDC.uzytkownicy);
             var q = from u in SingletonBaza._instance.BazaDC.uzytkownicy
                     where Akt.id_uzytkownika == u.id_uzytkownika
                     select u;
