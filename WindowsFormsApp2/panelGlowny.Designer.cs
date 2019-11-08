@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainerGlowny = new System.Windows.Forms.SplitContainer();
             this.splitContainerMenuBoczne = new System.Windows.Forms.SplitContainer();
             this.buttonDodajWydatek = new System.Windows.Forms.Button();
@@ -39,6 +40,7 @@
             this.buttonWidokKalendarz = new System.Windows.Forms.Button();
             this.buttonWidokLiniowy = new System.Windows.Forms.Button();
             this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
+            this.timer_sesja = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerGlowny)).BeginInit();
             this.splitContainerGlowny.Panel1.SuspendLayout();
             this.splitContainerGlowny.SuspendLayout();
@@ -152,7 +154,7 @@
             this.splitContainerMenuBoczneWidok.Panel2.Controls.Add(this.buttonWidokKalendarz);
             this.splitContainerMenuBoczneWidok.Panel2.Controls.Add(this.buttonWidokLiniowy);
             this.splitContainerMenuBoczneWidok.Size = new System.Drawing.Size(350, 687);
-            this.splitContainerMenuBoczneWidok.SplitterDistance = 325;
+            this.splitContainerMenuBoczneWidok.SplitterDistance = 326;
             this.splitContainerMenuBoczneWidok.SplitterWidth = 3;
             this.splitContainerMenuBoczneWidok.TabIndex = 0;
             // 
@@ -237,8 +239,13 @@
             this.uc_formularz_operacja1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uc_formularz_operacja1.Location = new System.Drawing.Point(0, 0);
             this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
-            this.uc_formularz_operacja1.Size = new System.Drawing.Size(350, 325);
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(350, 326);
             this.uc_formularz_operacja1.TabIndex = 0;
+            // 
+            // timer_sesja
+            // 
+            this.timer_sesja.Interval = 30000;
+            this.timer_sesja.Tick += new System.EventHandler(this.timer_sesja_Tick);
             // 
             // panelGlowny
             // 
@@ -283,5 +290,6 @@
         private System.Windows.Forms.Button buttonWidokKolowy;
         private System.Windows.Forms.Button buttonWidokTabelka;
         private uc_formularz_operacja uc_formularz_operacja1;
+        private System.Windows.Forms.Timer timer_sesja;
     }
 }

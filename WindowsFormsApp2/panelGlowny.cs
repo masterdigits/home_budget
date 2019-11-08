@@ -35,6 +35,7 @@ namespace WindowsFormsApp2
         {
             trybDodajPrzychod();
             uc_formularz_operacja1.AkualnieZalogowany = Aktualnie_zalogowany;
+            timer_sesja.Start();
         }
 
         private void panelGlowny_Activated(object sender, EventArgs e)
@@ -471,6 +472,15 @@ namespace WindowsFormsApp2
             if (tabela_fitlr != null)
             {
                 tabela_fitlr.odswierz_dana_operacje(id);
+            }
+        }
+
+        private void timer_sesja_Tick(object sender, EventArgs e)
+        {
+            if (SingletonBaza.sprawdz_sesje())
+            {
+                MessageBox.Show("Ktoś zalogowal się na konto na innym urządzeniu!");
+                this.Close();
             }
         }
     }

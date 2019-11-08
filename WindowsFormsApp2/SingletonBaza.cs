@@ -38,7 +38,7 @@ namespace WindowsFormsApp2
                 return _sesja;
             }
         }
-        public static string sprawdz_sesje()
+        public static bool sprawdz_sesje()
         {
             SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
             SingletonBaza.Instance.BazaDC.uzytkownicy);
@@ -47,10 +47,10 @@ namespace WindowsFormsApp2
                     select u;
             if(q.FirstOrDefault()!= null && _sesja== q.FirstOrDefault().sesja)
             {
-                return q.FirstOrDefault().sesja;
+                return true;
             }else
             {
-                return "";
+                return false;
             }
         }
 
