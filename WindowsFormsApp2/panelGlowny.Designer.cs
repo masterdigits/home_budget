@@ -244,6 +244,7 @@
             // 
             // timer_sesja
             // 
+            this.timer_sesja.Interval = 5000;
             this.timer_sesja.Tick += new System.EventHandler(this.timer_sesja_Tick);
             // 
             // panelGlowny
