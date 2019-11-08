@@ -38,17 +38,17 @@ namespace WindowsFormsApp2
                 return _sesja;
             }
         }
-        public static bool sprawdz_sesje()
+        public static string sprawdz_sesje()
         {
             var q = from u in SingletonBaza._instance.BazaDC.uzytkownicy
                     where Akt.id_uzytkownika == u.id_uzytkownika
                     select u;
             if(q.FirstOrDefault()!= null && _sesja== q.FirstOrDefault().sesja)
             {
-                return true;
+                return q.FirstOrDefault().sesja;
             }else
             {
-                return false;
+                return "";
             }
         }
 
