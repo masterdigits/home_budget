@@ -70,7 +70,7 @@ namespace WindowsFormsApp2
                         foreach (operacje o in query)
                         {
                             uc_operacja nowy = new uc_operacja(o);
-                            
+                            //nowy.Anchor = AnchorStyles.None;
                             flP_dane_operacji.Controls.Add(nowy);
                         }
                     }

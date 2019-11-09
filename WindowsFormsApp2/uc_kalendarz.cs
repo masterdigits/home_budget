@@ -66,7 +66,6 @@ namespace WindowsFormsApp2
         public void wczytaj_kalendarz()
         {
             firstDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            //tlp_kalendarz.ColumnStyles[0].SizeType = SizeType.AutoSize;
             int ile = 0 - (int)System.Enum.Parse(typeof(DniTygodnia), firstDay.DayOfWeek.ToString());
             for (int i = 1; i < 7; i++)
             {
@@ -74,6 +73,7 @@ namespace WindowsFormsApp2
                 {
                     uc_panel_dnia upd = new uc_panel_dnia(firstDay.AddDays(ile), Aktualny);
                     upd.Dock = DockStyle.Fill;
+                    
                     panele_dnia.Add(firstDay.AddDays(ile), upd);
                     ile++;
                     tlp_kalendarz.Controls.Add(upd, j, i);
@@ -84,6 +84,11 @@ namespace WindowsFormsApp2
         private void btn_nast_miesiac_Click(object sender, EventArgs e)
         {
             firstDay = firstDay.AddMonths(1);
+            cb_miesiac.SelectedItem = (Miesiace)firstDay.Month;
+            if( (int) cb_rok.SelectedItem != firstDay.Year )
+            {
+                cb_rok.SelectedItem = firstDay.Year;
+            }
             przesun_miesiac();
 
         }
@@ -108,6 +113,11 @@ namespace WindowsFormsApp2
         private void btn_poprzedni_miesiac_Click(object sender, EventArgs e)
         {
             firstDay = firstDay.AddMonths(-1);
+            cb_miesiac.SelectedItem = (Miesiace)firstDay.Month;
+            if ((int)cb_rok.SelectedItem != firstDay.Year)
+            {
+                cb_rok.SelectedItem = firstDay.Year;
+            }
             przesun_miesiac();
         }
 
