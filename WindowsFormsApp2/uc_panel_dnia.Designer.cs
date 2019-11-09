@@ -38,6 +38,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -50,7 +51,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(205, 56);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(212, 56);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -61,7 +62,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(199, 44);
+            this.panel1.Size = new System.Drawing.Size(206, 44);
             this.panel1.TabIndex = 0;
             // 
             // lb_nazwa_dnia
@@ -69,7 +70,7 @@
             this.lb_nazwa_dnia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_nazwa_dnia.AutoSize = true;
             this.lb_nazwa_dnia.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lb_nazwa_dnia.Location = new System.Drawing.Point(150, 5);
+            this.lb_nazwa_dnia.Location = new System.Drawing.Point(157, 5);
             this.lb_nazwa_dnia.Name = "lb_nazwa_dnia";
             this.lb_nazwa_dnia.Size = new System.Drawing.Size(44, 31);
             this.lb_nazwa_dnia.TabIndex = 0;
@@ -83,7 +84,7 @@
             this.flP_dane_operacji.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flP_dane_operacji.Location = new System.Drawing.Point(3, 53);
             this.flP_dane_operacji.Name = "flP_dane_operacji";
-            this.flP_dane_operacji.Size = new System.Drawing.Size(199, 1);
+            this.flP_dane_operacji.Size = new System.Drawing.Size(206, 1);
             this.flP_dane_operacji.TabIndex = 1;
             // 
             // uc_panel_dnia
@@ -92,10 +93,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MaximumSize = new System.Drawing.Size(235, 0);
             this.Name = "uc_panel_dnia";
-            this.Size = new System.Drawing.Size(205, 56);
+            this.Size = new System.Drawing.Size(212, 56);
             this.Load += new System.EventHandler(this.uc_panel_dnia_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

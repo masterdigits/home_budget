@@ -377,6 +377,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(335, 362);
             this.Name = "uc_formularz_operacja";
             this.Size = new System.Drawing.Size(335, 362);
             this.Enter += new System.EventHandler(this.uc_formularz_operacja_Enter);

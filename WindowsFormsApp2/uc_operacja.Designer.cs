@@ -34,11 +34,11 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_usun = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_kwota = new System.Windows.Forms.Label();
             this.btn_arrow = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_usun = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +79,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 44);
             this.panel1.TabIndex = 0;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
+            // 
+            // btn_usun
+            // 
+            this.btn_usun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_usun.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_usun.ForeColor = System.Drawing.Color.Red;
+            this.btn_usun.Location = new System.Drawing.Point(177, 0);
+            this.btn_usun.Name = "btn_usun";
+            this.btn_usun.Size = new System.Drawing.Size(23, 24);
+            this.btn_usun.TabIndex = 6;
+            this.btn_usun.Text = "X";
+            this.btn_usun.UseVisualStyleBackColor = true;
+            this.btn_usun.Click += new System.EventHandler(this.btn_usun_Click);
             // 
             // label1
             // 
@@ -132,25 +146,13 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 1);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // btn_usun
-            // 
-            this.btn_usun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_usun.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_usun.ForeColor = System.Drawing.Color.Red;
-            this.btn_usun.Location = new System.Drawing.Point(177, 0);
-            this.btn_usun.Name = "btn_usun";
-            this.btn_usun.Size = new System.Drawing.Size(23, 24);
-            this.btn_usun.TabIndex = 6;
-            this.btn_usun.Text = "X";
-            this.btn_usun.UseVisualStyleBackColor = true;
-            this.btn_usun.Click += new System.EventHandler(this.btn_usun_Click);
-            // 
             // uc_operacja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(200, 50);

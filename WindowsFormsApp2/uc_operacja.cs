@@ -131,5 +131,10 @@ namespace WindowsFormsApp2
                 this.Parent.Controls.Remove(this);
             }
         }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            this.Focus();
+        }
     }
 }
