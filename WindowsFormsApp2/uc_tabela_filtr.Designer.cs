@@ -57,10 +57,10 @@
             this.MenuEdycji = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.edytujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uc_dodaj_date1 = new WindowsFormsApp2.uc_dodaj_date();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.uc_dodaj_date1 = new WindowsFormsApp2.uc_dodaj_date();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerFiltr)).BeginInit();
             this.splitContainerFiltr.Panel1.SuspendLayout();
@@ -371,17 +371,6 @@
             this.usuńToolStripMenuItem.Text = "Usuń";
             this.usuńToolStripMenuItem.Click += new System.EventHandler(this.usuńToolStripMenuItem_Click);
             // 
-            // uc_dodaj_date1
-            // 
-            this.uc_dodaj_date1.AutoSize = true;
-            this.uc_dodaj_date1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_dodaj_date1.BackColor = System.Drawing.Color.AliceBlue;
-            this.uc_dodaj_date1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_dodaj_date1.Location = new System.Drawing.Point(629, 11);
-            this.uc_dodaj_date1.Name = "uc_dodaj_date1";
-            this.uc_dodaj_date1.Size = new System.Drawing.Size(296, 38);
-            this.uc_dodaj_date1.TabIndex = 101;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -416,6 +405,17 @@
             this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 106;
             this.label3.Text = "Typ operacji";
+            // 
+            // uc_dodaj_date1
+            // 
+            this.uc_dodaj_date1.AutoSize = true;
+            this.uc_dodaj_date1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.uc_dodaj_date1.BackColor = System.Drawing.Color.Transparent;
+            this.uc_dodaj_date1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_dodaj_date1.Location = new System.Drawing.Point(629, 11);
+            this.uc_dodaj_date1.Name = "uc_dodaj_date1";
+            this.uc_dodaj_date1.Size = new System.Drawing.Size(296, 38);
+            this.uc_dodaj_date1.TabIndex = 101;
             // 
             // uc_tabela_filtr
             // 
