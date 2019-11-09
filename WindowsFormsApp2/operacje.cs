@@ -57,7 +57,7 @@ namespace WindowsFormsApp2
             {
                 return false;
             }
-            if(f_opis!=null && opis.Contains(f_opis))
+            if(f_opis!=null && !opis.Contains(f_opis))
             {
                 return false;
             }

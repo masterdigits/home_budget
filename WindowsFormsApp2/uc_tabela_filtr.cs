@@ -160,6 +160,7 @@ namespace WindowsFormsApp2
                 {
                     if (!listViewGlowne.Items.Contains(dict_rekordy[entry.Key]))
                     {
+                        
                         listViewGlowne.Items.Add(dict_rekordy[entry.Key]);
                     }
                 }
@@ -222,6 +223,7 @@ namespace WindowsFormsApp2
                     listViewGlowne.Items.Remove(dict_rekordy[id]);
                     dict_rekordy.Remove(id);
                     SingletonBaza.Instance.BazaDC.SubmitChanges();
+                    
                 }
             }
         }

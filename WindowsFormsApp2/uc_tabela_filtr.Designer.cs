@@ -33,7 +33,6 @@
             this.splitContainerFiltr = new System.Windows.Forms.SplitContainer();
             this.nm_kwota_do = new System.Windows.Forms.NumericUpDown();
             this.nm_kwota_od = new System.Windows.Forms.NumericUpDown();
-            this.uc_dodaj_date1 = new WindowsFormsApp2.uc_dodaj_date();
             this.radioButtonIncome = new System.Windows.Forms.RadioButton();
             this.radioButtonExpense = new System.Windows.Forms.RadioButton();
             this.chlb_uzytkownicy = new System.Windows.Forms.CheckedListBox();
@@ -58,6 +57,10 @@
             this.MenuEdycji = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.edytujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uc_dodaj_date1 = new WindowsFormsApp2.uc_dodaj_date();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerFiltr)).BeginInit();
             this.splitContainerFiltr.Panel1.SuspendLayout();
@@ -75,7 +78,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1285, 880);
+            this.panel1.Size = new System.Drawing.Size(1403, 880);
             this.panel1.TabIndex = 0;
             // 
             // splitContainerFiltr
@@ -91,6 +94,9 @@
             // splitContainerFiltr.Panel1
             // 
             this.splitContainerFiltr.Panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.splitContainerFiltr.Panel1.Controls.Add(this.label3);
+            this.splitContainerFiltr.Panel1.Controls.Add(this.label2);
+            this.splitContainerFiltr.Panel1.Controls.Add(this.label1);
             this.splitContainerFiltr.Panel1.Controls.Add(this.uc_dodaj_date1);
             this.splitContainerFiltr.Panel1.Controls.Add(this.nm_kwota_do);
             this.splitContainerFiltr.Panel1.Controls.Add(this.nm_kwota_od);
@@ -109,14 +115,14 @@
             // splitContainerFiltr.Panel2
             // 
             this.splitContainerFiltr.Panel2.Controls.Add(this.listViewGlowne);
-            this.splitContainerFiltr.Size = new System.Drawing.Size(1285, 880);
+            this.splitContainerFiltr.Size = new System.Drawing.Size(1403, 880);
             this.splitContainerFiltr.SplitterDistance = 150;
             this.splitContainerFiltr.SplitterWidth = 3;
             this.splitContainerFiltr.TabIndex = 1;
             // 
             // nm_kwota_do
             // 
-            this.nm_kwota_do.Location = new System.Drawing.Point(191, 108);
+            this.nm_kwota_do.Location = new System.Drawing.Point(440, 100);
             this.nm_kwota_do.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -128,7 +134,7 @@
             // 
             // nm_kwota_od
             // 
-            this.nm_kwota_od.Location = new System.Drawing.Point(191, 82);
+            this.nm_kwota_od.Location = new System.Drawing.Point(240, 100);
             this.nm_kwota_od.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -138,21 +144,10 @@
             this.nm_kwota_od.Size = new System.Drawing.Size(120, 20);
             this.nm_kwota_od.TabIndex = 102;
             // 
-            // uc_dodaj_date1
-            // 
-            this.uc_dodaj_date1.AutoSize = true;
-            this.uc_dodaj_date1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_dodaj_date1.BackColor = System.Drawing.Color.AliceBlue;
-            this.uc_dodaj_date1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.uc_dodaj_date1.Location = new System.Drawing.Point(703, 44);
-            this.uc_dodaj_date1.Name = "uc_dodaj_date1";
-            this.uc_dodaj_date1.Size = new System.Drawing.Size(296, 38);
-            this.uc_dodaj_date1.TabIndex = 101;
-            // 
             // radioButtonIncome
             // 
             this.radioButtonIncome.AutoSize = true;
-            this.radioButtonIncome.Location = new System.Drawing.Point(449, 45);
+            this.radioButtonIncome.Location = new System.Drawing.Point(405, 34);
             this.radioButtonIncome.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonIncome.Name = "radioButtonIncome";
             this.radioButtonIncome.Size = new System.Drawing.Size(69, 17);
@@ -165,7 +160,7 @@
             // radioButtonExpense
             // 
             this.radioButtonExpense.AutoSize = true;
-            this.radioButtonExpense.Location = new System.Drawing.Point(363, 45);
+            this.radioButtonExpense.Location = new System.Drawing.Point(320, 34);
             this.radioButtonExpense.Margin = new System.Windows.Forms.Padding(2);
             this.radioButtonExpense.Name = "radioButtonExpense";
             this.radioButtonExpense.Size = new System.Drawing.Size(68, 17);
@@ -179,14 +174,14 @@
             // 
             this.chlb_uzytkownicy.CheckOnClick = true;
             this.chlb_uzytkownicy.FormattingEnabled = true;
-            this.chlb_uzytkownicy.Location = new System.Drawing.Point(20, 35);
+            this.chlb_uzytkownicy.Location = new System.Drawing.Point(19, 31);
             this.chlb_uzytkownicy.Name = "chlb_uzytkownicy";
-            this.chlb_uzytkownicy.Size = new System.Drawing.Size(120, 94);
+            this.chlb_uzytkownicy.Size = new System.Drawing.Size(153, 109);
             this.chlb_uzytkownicy.TabIndex = 28;
             // 
             // tb_nazwa
             // 
-            this.tb_nazwa.Location = new System.Drawing.Point(191, 44);
+            this.tb_nazwa.Location = new System.Drawing.Point(191, 60);
             this.tb_nazwa.Name = "tb_nazwa";
             this.tb_nazwa.Size = new System.Drawing.Size(100, 20);
             this.tb_nazwa.TabIndex = 27;
@@ -194,10 +189,11 @@
             // textBoxSzukajWOpisie
             // 
             this.textBoxSzukajWOpisie.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxSzukajWOpisie.Location = new System.Drawing.Point(549, 82);
+            this.textBoxSzukajWOpisie.Location = new System.Drawing.Point(479, 34);
             this.textBoxSzukajWOpisie.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSzukajWOpisie.Multiline = true;
             this.textBoxSzukajWOpisie.Name = "textBoxSzukajWOpisie";
-            this.textBoxSzukajWOpisie.Size = new System.Drawing.Size(145, 23);
+            this.textBoxSzukajWOpisie.Size = new System.Drawing.Size(145, 48);
             this.textBoxSzukajWOpisie.TabIndex = 22;
             // 
             // buttonWyszukaj
@@ -206,7 +202,7 @@
             this.buttonWyszukaj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonWyszukaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWyszukaj.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWyszukaj.Location = new System.Drawing.Point(1132, 112);
+            this.buttonWyszukaj.Location = new System.Drawing.Point(931, 116);
             this.buttonWyszukaj.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWyszukaj.Name = "buttonWyszukaj";
             this.buttonWyszukaj.Size = new System.Drawing.Size(135, 24);
@@ -219,7 +215,7 @@
             // 
             this.labelSzukajWOpisie.AutoSize = true;
             this.labelSzukajWOpisie.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSzukajWOpisie.Location = new System.Drawing.Point(546, 44);
+            this.labelSzukajWOpisie.Location = new System.Drawing.Point(476, 11);
             this.labelSzukajWOpisie.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSzukajWOpisie.Name = "labelSzukajWOpisie";
             this.labelSzukajWOpisie.Size = new System.Drawing.Size(109, 17);
@@ -231,10 +227,10 @@
             this.comboBoxFiltrKategoria.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.comboBoxFiltrKategoria.ForeColor = System.Drawing.Color.DimGray;
             this.comboBoxFiltrKategoria.FormattingEnabled = true;
-            this.comboBoxFiltrKategoria.Location = new System.Drawing.Point(320, 78);
+            this.comboBoxFiltrKategoria.Location = new System.Drawing.Point(320, 58);
             this.comboBoxFiltrKategoria.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxFiltrKategoria.Name = "comboBoxFiltrKategoria";
-            this.comboBoxFiltrKategoria.Size = new System.Drawing.Size(198, 24);
+            this.comboBoxFiltrKategoria.Size = new System.Drawing.Size(154, 24);
             this.comboBoxFiltrKategoria.TabIndex = 17;
             this.comboBoxFiltrKategoria.Text = "Wybierz kategorię";
             // 
@@ -242,7 +238,7 @@
             // 
             this.labelDoKwota.AutoSize = true;
             this.labelDoKwota.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelDoKwota.Location = new System.Drawing.Point(159, 108);
+            this.labelDoKwota.Location = new System.Drawing.Point(388, 103);
             this.labelDoKwota.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDoKwota.Name = "labelDoKwota";
             this.labelDoKwota.Size = new System.Drawing.Size(27, 17);
@@ -254,7 +250,7 @@
             this.labelOdKwota.AutoSize = true;
             this.labelOdKwota.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelOdKwota.ForeColor = System.Drawing.Color.Black;
-            this.labelOdKwota.Location = new System.Drawing.Point(158, 82);
+            this.labelOdKwota.Location = new System.Drawing.Point(188, 100);
             this.labelOdKwota.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelOdKwota.Name = "labelOdKwota";
             this.labelOdKwota.Size = new System.Drawing.Size(28, 17);
@@ -265,7 +261,7 @@
             // 
             this.checkBoxFiltrZaawansowany.AutoSize = true;
             this.checkBoxFiltrZaawansowany.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxFiltrZaawansowany.Location = new System.Drawing.Point(1095, 45);
+            this.checkBoxFiltrZaawansowany.Location = new System.Drawing.Point(931, 82);
             this.checkBoxFiltrZaawansowany.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxFiltrZaawansowany.Name = "checkBoxFiltrZaawansowany";
             this.checkBoxFiltrZaawansowany.Size = new System.Drawing.Size(172, 19);
@@ -294,7 +290,7 @@
             this.listViewGlowne.Location = new System.Drawing.Point(0, 0);
             this.listViewGlowne.Margin = new System.Windows.Forms.Padding(2);
             this.listViewGlowne.Name = "listViewGlowne";
-            this.listViewGlowne.Size = new System.Drawing.Size(1285, 727);
+            this.listViewGlowne.Size = new System.Drawing.Size(1403, 727);
             this.listViewGlowne.TabIndex = 3;
             this.listViewGlowne.UseCompatibleStateImageBehavior = false;
             this.listViewGlowne.View = System.Windows.Forms.View.Details;
@@ -344,6 +340,7 @@
             // columnForma
             // 
             this.columnForma.Text = "Forma platności";
+            this.columnForma.Width = 130;
             // 
             // columnOpis
             // 
@@ -358,21 +355,67 @@
             this.edytujToolStripMenuItem,
             this.usuńToolStripMenuItem});
             this.MenuEdycji.Name = "MenuEdycji";
-            this.MenuEdycji.Size = new System.Drawing.Size(181, 70);
+            this.MenuEdycji.Size = new System.Drawing.Size(108, 48);
             // 
             // edytujToolStripMenuItem
             // 
             this.edytujToolStripMenuItem.Name = "edytujToolStripMenuItem";
-            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.edytujToolStripMenuItem.Text = "Edytuj";
             this.edytujToolStripMenuItem.Click += new System.EventHandler(this.edytujToolStripMenuItem_Click);
             // 
             // usuńToolStripMenuItem
             // 
             this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
-            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.usuńToolStripMenuItem.Text = "Usuń";
             this.usuńToolStripMenuItem.Click += new System.EventHandler(this.usuńToolStripMenuItem_Click);
+            // 
+            // uc_dodaj_date1
+            // 
+            this.uc_dodaj_date1.AutoSize = true;
+            this.uc_dodaj_date1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.uc_dodaj_date1.BackColor = System.Drawing.Color.AliceBlue;
+            this.uc_dodaj_date1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.uc_dodaj_date1.Location = new System.Drawing.Point(629, 11);
+            this.uc_dodaj_date1.Name = "uc_dodaj_date1";
+            this.uc_dodaj_date1.Size = new System.Drawing.Size(296, 38);
+            this.uc_dodaj_date1.TabIndex = 101;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(188, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 17);
+            this.label1.TabIndex = 104;
+            this.label1.Text = "Nazwa operacji";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(16, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 17);
+            this.label2.TabIndex = 105;
+            this.label2.Text = "Wybierz użytkowników";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(317, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 17);
+            this.label3.TabIndex = 106;
+            this.label3.Text = "Typ operacji";
             // 
             // uc_tabela_filtr
             // 
@@ -380,7 +423,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "uc_tabela_filtr";
-            this.Size = new System.Drawing.Size(1285, 880);
+            this.Size = new System.Drawing.Size(1403, 880);
             this.Load += new System.EventHandler(this.uc_tabela_filtr_Load);
             this.panel1.ResumeLayout(false);
             this.splitContainerFiltr.Panel1.ResumeLayout(false);
@@ -426,5 +469,8 @@
         private System.Windows.Forms.ContextMenuStrip MenuEdycji;
         private System.Windows.Forms.ToolStripMenuItem edytujToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
