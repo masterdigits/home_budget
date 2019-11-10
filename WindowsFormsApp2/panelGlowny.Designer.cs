@@ -278,7 +278,7 @@
             this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.uc_formularz_operacja1.Location = new System.Drawing.Point(6, 19);
             this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
-            this.uc_formularz_operacja1.Size = new System.Drawing.Size(335, 354);
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(315, 354);
             this.uc_formularz_operacja1.TabIndex = 0;
             // 
             // panelGlowny

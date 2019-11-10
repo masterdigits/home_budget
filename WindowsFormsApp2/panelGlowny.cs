@@ -188,15 +188,16 @@ namespace WindowsFormsApp2
                 if (c.HasChildren)
                 {
                     if (c.GetType() == uc_formularz_operacja1.GetType())
+                        //|| c.GetType() == tlp_kontekst.GetType())
                     {
                         return;
                     }
+
                     ResizeFont(c.Controls, scaleFactor);
                 }
                 else
                 {
-
-                  c.Font = new Font(c.Font.FontFamily.Name, c.Font.Size * scaleFactor);
+                    //c.Font = new Font(c.Font.FontFamily.Name, c.Font.Size * scaleFactor);
                 }
             }
         }
