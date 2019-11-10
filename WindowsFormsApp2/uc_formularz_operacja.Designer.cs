@@ -94,7 +94,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(335, 362);
+            this.panel1.Size = new System.Drawing.Size(335, 354);
             this.panel1.TabIndex = 0;
             // 
             // tb_nazwa
@@ -400,9 +400,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.panel1);
-            this.MinimumSize = new System.Drawing.Size(335, 362);
             this.Name = "uc_formularz_operacja";
-            this.Size = new System.Drawing.Size(335, 362);
+            this.Size = new System.Drawing.Size(335, 354);
             this.Enter += new System.EventHandler(this.uc_formularz_operacja_Enter);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

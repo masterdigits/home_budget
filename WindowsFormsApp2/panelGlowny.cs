@@ -36,6 +36,7 @@ namespace WindowsFormsApp2
             InitializeComponent();
             this.Resize += new EventHandler(Form2_Resize);
             _lastFormSize = GetFormArea(this.Size);
+            
         }
 
 
@@ -169,6 +170,11 @@ namespace WindowsFormsApp2
             Control control = (Control)sender;
 
             float scaleFactor = (float)GetFormArea(control.Size) / (float)_lastFormSize;
+            if(scaleFactor>1)
+            {
+                MessageBox.Show(scaleFactor.ToString());
+                return;
+            }
             ResizeFont(this.Controls, scaleFactor);
             _lastFormSize = GetFormArea(control.Size);
 
@@ -178,10 +184,12 @@ namespace WindowsFormsApp2
         {
             foreach (Control c in coll)
             {
+                /*
                 if(c.GetType() == uc_formularz_operacja1.GetType())
                 {
                     return;
                 }
+                */
                 if (c.HasChildren)
                 {
                     ResizeFont(c.Controls, scaleFactor);
@@ -191,6 +199,10 @@ namespace WindowsFormsApp2
                   c.Font = new Font(c.Font.FontFamily.Name, c.Font.Size * scaleFactor);
                 }
             }
+        }
+
+        private void buttonDodajWydatek_Click(object sender, EventArgs e)
+        {
         }
     }
 }

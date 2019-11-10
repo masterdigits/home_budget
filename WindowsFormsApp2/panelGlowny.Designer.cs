@@ -37,7 +37,6 @@
             this.buttonDodajPrzychód = new System.Windows.Forms.Button();
             this.buttonDodajWydatek = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonWidokTabelka = new System.Windows.Forms.Button();
             this.buttonWidokLiniowy = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@
             this.buttonWidokKolumnowy = new System.Windows.Forms.Button();
             this.buttonWidokKolowy = new System.Windows.Forms.Button();
             this.panel_menu_glowne = new System.Windows.Forms.Panel();
+            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlp_menu_boczne.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -159,6 +159,7 @@
             this.buttonDodajWydatek.TabIndex = 1;
             this.buttonDodajWydatek.Text = "Dodaj wydatek";
             this.buttonDodajWydatek.UseVisualStyleBackColor = true;
+            this.buttonDodajWydatek.Click += new System.EventHandler(this.buttonDodajWydatek_Click);
             // 
             // panel2
             // 
@@ -169,19 +170,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(6, 165);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(344, 384);
+            this.panel2.Size = new System.Drawing.Size(344, 376);
             this.panel2.TabIndex = 1;
-            // 
-            // uc_formularz_operacja1
-            // 
-            this.uc_formularz_operacja1.AkualnieZalogowany = null;
-            this.uc_formularz_operacja1.AutoSize = true;
-            this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_formularz_operacja1.Location = new System.Drawing.Point(6, 19);
-            this.uc_formularz_operacja1.MinimumSize = new System.Drawing.Size(335, 362);
-            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
-            this.uc_formularz_operacja1.Size = new System.Drawing.Size(335, 362);
-            this.uc_formularz_operacja1.TabIndex = 0;
             // 
             // panel3
             // 
@@ -194,7 +184,7 @@
             this.panel3.Controls.Add(this.buttonWidokKolumnowy);
             this.panel3.Controls.Add(this.buttonWidokKolowy);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(6, 558);
+            this.panel3.Location = new System.Drawing.Point(6, 550);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(344, 281);
             this.panel3.TabIndex = 2;
@@ -280,6 +270,16 @@
             this.panel_menu_glowne.Name = "panel_menu_glowne";
             this.panel_menu_glowne.Size = new System.Drawing.Size(1800, 41);
             this.panel_menu_glowne.TabIndex = 0;
+            // 
+            // uc_formularz_operacja1
+            // 
+            this.uc_formularz_operacja1.AkualnieZalogowany = null;
+            this.uc_formularz_operacja1.AutoSize = true;
+            this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.uc_formularz_operacja1.Location = new System.Drawing.Point(6, 19);
+            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(335, 354);
+            this.uc_formularz_operacja1.TabIndex = 0;
             // 
             // panelGlowny
             // 
