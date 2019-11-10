@@ -31,8 +31,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_nazwa_dnia = new System.Windows.Forms.Label();
-            this.flP_dane_operacji = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.flP_dane_operacji = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -72,39 +72,41 @@
             this.lb_nazwa_dnia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_nazwa_dnia.AutoSize = true;
             this.lb_nazwa_dnia.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lb_nazwa_dnia.Location = new System.Drawing.Point(157, 5);
+            this.lb_nazwa_dnia.Location = new System.Drawing.Point(227, 5);
             this.lb_nazwa_dnia.Name = "lb_nazwa_dnia";
             this.lb_nazwa_dnia.Size = new System.Drawing.Size(44, 31);
             this.lb_nazwa_dnia.TabIndex = 0;
             this.lb_nazwa_dnia.Text = "30";
-            // 
-            // flP_dane_operacji
-            // 
-            this.flP_dane_operacji.AutoSize = true;
-            this.flP_dane_operacji.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flP_dane_operacji.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flP_dane_operacji.Location = new System.Drawing.Point(50, 3);
-            this.flP_dane_operacji.Name = "flP_dane_operacji";
-            this.flP_dane_operacji.Size = new System.Drawing.Size(0, 0);
-            this.flP_dane_operacji.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.AutoScroll = true;
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.flP_dane_operacji, 1, 0);
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.flP_dane_operacji, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 53);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.Size = new System.Drawing.Size(300, 14);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // flP_dane_operacji
+            // 
+            this.flP_dane_operacji.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flP_dane_operacji.AutoSize = true;
+            this.flP_dane_operacji.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flP_dane_operacji.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flP_dane_operacji.Location = new System.Drawing.Point(145, 7);
+            this.flP_dane_operacji.Name = "flP_dane_operacji";
+            this.flP_dane_operacji.Size = new System.Drawing.Size(0, 0);
+            this.flP_dane_operacji.TabIndex = 1;
+            this.flP_dane_operacji.WrapContents = false;
             // 
             // uc_panel_dnia
             // 
@@ -133,7 +135,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_nazwa_dnia;
-        private System.Windows.Forms.FlowLayoutPanel flP_dane_operacji;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flP_dane_operacji;
     }
 }
