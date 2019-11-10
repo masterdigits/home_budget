@@ -146,6 +146,7 @@
             // 
             // buttonDodajWydatek
             // 
+            this.buttonDodajWydatek.AutoSize = true;
             this.buttonDodajWydatek.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDodajWydatek.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonDodajWydatek.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -174,8 +175,10 @@
             // uc_formularz_operacja1
             // 
             this.uc_formularz_operacja1.AkualnieZalogowany = null;
+            this.uc_formularz_operacja1.AutoSize = true;
+            this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.uc_formularz_operacja1.Location = new System.Drawing.Point(6, 19);
-            this.uc_formularz_operacja1.MaximumSize = new System.Drawing.Size(335, 362);
+            this.uc_formularz_operacja1.MinimumSize = new System.Drawing.Size(335, 362);
             this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
             this.uc_formularz_operacja1.Size = new System.Drawing.Size(335, 362);
             this.uc_formularz_operacja1.TabIndex = 0;
@@ -280,17 +283,19 @@
             // 
             // panelGlowny
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1806, 890);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "panelGlowny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Budżet domowy";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.panelGlowny_Activated);
             this.Load += new System.EventHandler(this.panelGlowny_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -298,7 +303,9 @@
             this.tlp_menu_boczne.ResumeLayout(false);
             this.tlp_menu_boczne.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

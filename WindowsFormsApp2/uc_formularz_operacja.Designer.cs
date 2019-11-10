@@ -64,6 +64,8 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.tb_nazwa);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.checkBoxCykliczny);
@@ -97,6 +99,7 @@
             // 
             // tb_nazwa
             // 
+            this.tb_nazwa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_nazwa.Location = new System.Drawing.Point(138, 13);
             this.tb_nazwa.Name = "tb_nazwa";
             this.tb_nazwa.Size = new System.Drawing.Size(174, 20);
@@ -115,6 +118,7 @@
             // 
             // checkBoxCykliczny
             // 
+            this.checkBoxCykliczny.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxCykliczny.AutoSize = true;
             this.checkBoxCykliczny.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.checkBoxCykliczny.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -128,6 +132,7 @@
             // 
             // nm_kwota
             // 
+            this.nm_kwota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nm_kwota.Location = new System.Drawing.Point(135, 226);
             this.nm_kwota.Name = "nm_kwota";
             this.nm_kwota.Size = new System.Drawing.Size(177, 20);
@@ -135,6 +140,7 @@
             // 
             // labelWriteNumber
             // 
+            this.labelWriteNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelWriteNumber.AutoSize = true;
             this.labelWriteNumber.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelWriteNumber.ForeColor = System.Drawing.Color.Red;
@@ -148,6 +154,7 @@
             // 
             // labelWritePrice
             // 
+            this.labelWritePrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelWritePrice.AutoSize = true;
             this.labelWritePrice.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelWritePrice.ForeColor = System.Drawing.Color.Red;
@@ -161,6 +168,7 @@
             // 
             // labelChooseCategory
             // 
+            this.labelChooseCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelChooseCategory.AutoSize = true;
             this.labelChooseCategory.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelChooseCategory.ForeColor = System.Drawing.Color.Red;
@@ -174,6 +182,7 @@
             // 
             // labelChoosePaymentForm
             // 
+            this.labelChoosePaymentForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelChoosePaymentForm.AutoSize = true;
             this.labelChoosePaymentForm.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelChoosePaymentForm.ForeColor = System.Drawing.Color.Red;
@@ -187,6 +196,7 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(156, 251);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
@@ -199,6 +209,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(156, 198);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
@@ -211,6 +222,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(156, 143);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -223,6 +235,7 @@
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(135, 172);
             this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(2);
@@ -232,6 +245,7 @@
             // 
             // comboBoxOperationForm
             // 
+            this.comboBoxOperationForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxOperationForm.FormattingEnabled = true;
             this.comboBoxOperationForm.Location = new System.Drawing.Point(135, 118);
             this.comboBoxOperationForm.Margin = new System.Windows.Forms.Padding(2);
@@ -241,6 +255,7 @@
             // 
             // richTextBoxDescription
             // 
+            this.richTextBoxDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxDescription.Location = new System.Drawing.Point(135, 276);
             this.richTextBoxDescription.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxDescription.Name = "richTextBoxDescription";
@@ -261,6 +276,7 @@
             // 
             // radioButtonIncome
             // 
+            this.radioButtonIncome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonIncome.AutoSize = true;
             this.radioButtonIncome.Location = new System.Drawing.Point(240, 89);
             this.radioButtonIncome.Margin = new System.Windows.Forms.Padding(2);
@@ -274,6 +290,7 @@
             // 
             // radioButtonExpense
             // 
+            this.radioButtonExpense.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonExpense.AutoSize = true;
             this.radioButtonExpense.Location = new System.Drawing.Point(135, 89);
             this.radioButtonExpense.Margin = new System.Windows.Forms.Padding(2);
@@ -287,6 +304,7 @@
             // 
             // dateTimePickerDate
             // 
+            this.dateTimePickerDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerDate.Location = new System.Drawing.Point(135, 39);
             this.dateTimePickerDate.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
@@ -350,11 +368,13 @@
             // 
             // buttonReset
             // 
+            this.buttonReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonReset.AutoSize = true;
             this.buttonReset.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReset.Location = new System.Drawing.Point(156, 324);
             this.buttonReset.Margin = new System.Windows.Forms.Padding(2);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(156, 26);
+            this.buttonReset.Size = new System.Drawing.Size(156, 28);
             this.buttonReset.TabIndex = 90;
             this.buttonReset.Text = "Anuluj";
             this.buttonReset.UseVisualStyleBackColor = true;
@@ -362,11 +382,12 @@
             // 
             // buttonSave
             // 
+            this.buttonSave.AutoSize = true;
             this.buttonSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.Location = new System.Drawing.Point(29, 324);
+            this.buttonSave.Location = new System.Drawing.Point(19, 324);
             this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(117, 26);
+            this.buttonSave.Size = new System.Drawing.Size(117, 28);
             this.buttonSave.TabIndex = 89;
             this.buttonSave.Text = "Dodaj";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -376,8 +397,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(335, 362);
+            this.MinimumSize = new System.Drawing.Size(335, 362);
             this.Name = "uc_formularz_operacja";
             this.Size = new System.Drawing.Size(335, 362);
             this.Enter += new System.EventHandler(this.uc_formularz_operacja_Enter);
@@ -388,6 +411,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

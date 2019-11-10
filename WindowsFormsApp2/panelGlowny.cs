@@ -27,16 +27,15 @@ namespace WindowsFormsApp2
         public panelGlowny()
         {
             InitializeComponent();
-            this.Resize += new EventHandler(Form2_Resize);
-            _lastFormSize = GetFormArea(this.Size);
+
         }
 
         public panelGlowny(uzytkownicy u)
         {
             Aktualnie_zalogowany = u;
-            //Wyslij do kontrolki
-            // nazwa.AkualnieZalogowany = Aktualnie_zalogowany;
             InitializeComponent();
+            this.Resize += new EventHandler(Form2_Resize);
+            _lastFormSize = GetFormArea(this.Size);
         }
 
 
@@ -170,9 +169,7 @@ namespace WindowsFormsApp2
             Control control = (Control)sender;
 
             float scaleFactor = (float)GetFormArea(control.Size) / (float)_lastFormSize;
-
             ResizeFont(this.Controls, scaleFactor);
-
             _lastFormSize = GetFormArea(control.Size);
 
         }
@@ -181,18 +178,17 @@ namespace WindowsFormsApp2
         {
             foreach (Control c in coll)
             {
+                if(c.GetType() == uc_formularz_operacja1.GetType())
+                {
+                    return;
+                }
                 if (c.HasChildren)
                 {
                     ResizeFont(c.Controls, scaleFactor);
                 }
                 else
                 {
-                    //if (c.GetType().ToString() == "System.Windows.Form.Label")
-                    if (true)
-                    {
-                        // scale font
-                        c.Font = new Font(c.Font.FontFamily.Name, c.Font.Size * scaleFactor);
-                    }
+                  c.Font = new Font(c.Font.FontFamily.Name, c.Font.Size * scaleFactor);
                 }
             }
         }
