@@ -12,6 +12,7 @@ namespace WindowsFormsApp2
 {
     public partial class panelGlowny : Form
     {
+        private int _lastFormSize;
         uzytkownicy Aktualnie_zalogowany;
         uc_tabela_filtr tabela_fitlr;
         uc_kalendarz kalendarz;
@@ -26,6 +27,8 @@ namespace WindowsFormsApp2
         public panelGlowny()
         {
             InitializeComponent();
+            this.Resize += new EventHandler(Form2_Resize);
+            _lastFormSize = GetFormArea(this.Size);
         }
 
         public panelGlowny(uzytkownicy u)
@@ -155,6 +158,42 @@ namespace WindowsFormsApp2
                 timer_sesja.Stop();
                 MessageBox.Show("Ktoś zalogowal się na konto na innym urządzeniu!");
                 this.Close();
+            }
+        }
+        private int GetFormArea(Size size)
+        {
+            return size.Height * size.Width;
+        }
+
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+
+            float scaleFactor = (float)GetFormArea(control.Size) / (float)_lastFormSize;
+
+            ResizeFont(this.Controls, scaleFactor);
+
+            _lastFormSize = GetFormArea(control.Size);
+
+        }
+
+        private void ResizeFont(Control.ControlCollection coll, float scaleFactor)
+        {
+            foreach (Control c in coll)
+            {
+                if (c.HasChildren)
+                {
+                    ResizeFont(c.Controls, scaleFactor);
+                }
+                else
+                {
+                    //if (c.GetType().ToString() == "System.Windows.Form.Label")
+                    if (true)
+                    {
+                        // scale font
+                        c.Font = new Font(c.Font.FontFamily.Name, c.Font.Size * scaleFactor);
+                    }
+                }
             }
         }
     }
