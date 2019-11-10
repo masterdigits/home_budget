@@ -170,11 +170,6 @@ namespace WindowsFormsApp2
             Control control = (Control)sender;
 
             float scaleFactor = (float)GetFormArea(control.Size) / (float)_lastFormSize;
-            if(scaleFactor>1)
-            {
-                MessageBox.Show(scaleFactor.ToString());
-                return;
-            }
             ResizeFont(this.Controls, scaleFactor);
             _lastFormSize = GetFormArea(control.Size);
 
@@ -192,10 +187,15 @@ namespace WindowsFormsApp2
                 */
                 if (c.HasChildren)
                 {
+                    if (c.GetType() == uc_formularz_operacja1.GetType())
+                    {
+                        return;
+                    }
                     ResizeFont(c.Controls, scaleFactor);
                 }
                 else
                 {
+
                   c.Font = new Font(c.Font.FontFamily.Name, c.Font.Size * scaleFactor);
                 }
             }
