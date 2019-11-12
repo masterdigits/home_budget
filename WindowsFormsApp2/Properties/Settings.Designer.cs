@@ -56,5 +56,17 @@ namespace WindowsFormsApp2.Properties {
                 return ((string)(this["baza_danychConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=homebudget.database.windows.net;Initial Catalog=home_budget_db;User I" +
+            "D=hbAdmin;Password=Qwerty123;Connect Timeout=30;Encrypt=True;TrustServerCertific" +
+            "ate=False")]
+        public string home_budget_dbConnectionString {
+            get {
+                return ((string)(this["home_budget_dbConnectionString"]));
+            }
+        }
     }
 }
