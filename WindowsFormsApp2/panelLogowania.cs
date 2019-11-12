@@ -42,9 +42,9 @@ namespace WindowsFormsApp2
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-            groupBoxRejestracja.Left = (this.ClientSize.Width - groupBoxRejestracja.Width) / 2;
+            
             groupBoxLogin.Left = (this.ClientSize.Width - groupBoxLogin.Width) / 2;
-            groupBoxRejestracja.Top = (this.ClientSize.Height - groupBoxRejestracja.Height) / 2;
+            
             groupBoxLogin.Top = (this.ClientSize.Height - groupBoxLogin.Height) / 2;
         }
 
@@ -54,13 +54,13 @@ namespace WindowsFormsApp2
         }
         private void tryb_rejestracja()
         {
-            groupBoxRejestracja.Visible = true;
+            
             groupBoxLogin.Visible = false;
         }
         private void tryb_loguj()
         {
             groupBoxLogin.Visible = true;
-            groupBoxRejestracja.Visible = false;
+            
         }
 
         private void buttonZaloguj_Click(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace WindowsFormsApp2
 
         }
 
-        private void buttonRejestracja_Click(object sender, EventArgs e)
+       /* private void buttonRejestracja_Click(object sender, EventArgs e)
         {
             uzytkownicy nowy = new uzytkownicy();
             //Tutaj walidacja jest potrzebna oraz gdy dodajemy haslo funkcja hashujaca !!!
@@ -108,7 +108,7 @@ namespace WindowsFormsApp2
             panelLogowania PL = new panelLogowania();
             this.Hide();
             PL.ShowDialog();
-        }
+        }*/
 
         private void button1_Click(object sender, EventArgs e)
         {
