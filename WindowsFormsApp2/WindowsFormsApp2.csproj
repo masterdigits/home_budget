@@ -220,5 +220,23 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WykrzyknikIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WykrzyknikIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WykrzyknikIcon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WykrzyknikIcon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WykrzyknikIcon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-exclamation-mark-information-interjection-question-5adfd51503cdd9.8283211215246185170156.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

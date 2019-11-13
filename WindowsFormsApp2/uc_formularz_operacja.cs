@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp2
 {
     public partial class uc_formularz_operacja : UserControl
@@ -37,92 +38,110 @@ namespace WindowsFormsApp2
             InitializeComponent();
             this.operacjaDoEdycji = o;
 
-            tb_nazwa.Text = operacjaDoEdycji.nazwa;
-            dateTimePickerDate.Value = operacjaDoEdycji.data;
-            comboBoxCategory.SelectedItem = operacjaDoEdycji.kategoria;
-            comboBoxOperationForm.SelectedItem = operacjaDoEdycji.forma_platnosci;
-            nm_kwota.Value = operacjaDoEdycji.kwota;
-            richTextBoxDescription.Text = operacjaDoEdycji.opis;
+            textBoxNazwa.Text = operacjaDoEdycji.nazwa;
+            dateTimePickerOperacji.Value = operacjaDoEdycji.data;
+            comboBoxKategoria.SelectedItem = operacjaDoEdycji.kategoria;
+            comboBoxFormaOperacji.SelectedItem = operacjaDoEdycji.forma_platnosci;
+            numericUpDownKwota.Value = operacjaDoEdycji.kwota;
+            richTextBoxOpisOperacji.Text = operacjaDoEdycji.opis;
             
         }
         
         private void WczytajWszystko()
         {
-            if (radioButtonExpense.Checked)
+            if (radioButtonWydatek.Checked)
             {
-                comboBoxCategory.DataSource = SingletonBaza.Instance.BazaDC.kategoria.Where(x => x.typ == "wydatek");
+                comboBoxKategoria.DataSource = SingletonBaza.Instance.BazaDC.kategoria.Where(x => x.typ == "wydatek");
             }
-            else if (radioButtonIncome.Checked)
+            else if (radioButtonPrzychod.Checked)
             {
-                comboBoxCategory.DataSource = SingletonBaza.Instance.BazaDC.kategoria.Where(x => x.typ == "przychod");
+                comboBoxKategoria.DataSource = SingletonBaza.Instance.BazaDC.kategoria.Where(x => x.typ == "przychod");
             }
 
-            comboBoxOperationForm.DataSource = SingletonBaza.Instance.BazaDC.forma_platnosci;
+            comboBoxFormaOperacji.DataSource = SingletonBaza.Instance.BazaDC.forma_platnosci;
 
-            comboBoxCategory.DisplayMember = "nazwa";
-            comboBoxOperationForm.DisplayMember = "nazwa";
+            comboBoxKategoria.DisplayMember = "nazwa";
+            comboBoxFormaOperacji.DisplayMember = "nazwa";
             
         }
 
         private void CzyszcKategorie()
         {
-            comboBoxCategory.SelectedItem = null;
+            comboBoxKategoria.SelectedItem = null;
         }
 
         private void Czysc()
         {
             CzyszcKategorie();
-            tb_nazwa.Clear();
-            comboBoxOperationForm.SelectedItem = null;
-            nm_kwota.Value = 0;
-            richTextBoxDescription.Clear();
-            dateTimePickerDate.Value = DateTime.Today;
+            textBoxNazwa.Clear();
+            comboBoxFormaOperacji.SelectedItem = null;
+            numericUpDownKwota.Value = 0;
+            richTextBoxOpisOperacji.Clear();
+            dateTimePickerOperacji.Value = DateTime.Today;
         }
 
         private bool ValidationAddEditForm()
         {
             bool Check = false;
-            //Sprawdzanie tekstu???
 
-
-            if (comboBoxOperationForm.SelectedIndex == -1)
+            if (textBoxNazwa.Text == "")
             {
-                pictureBox2.Visible = true;
-                labelChoosePaymentForm.Visible = true;
+                pictureWykrzyknikNazwa.Visible = true;
+                textBoxNazwa.BackColor = Color.FromArgb(255, 204, 204);
                 Check = true;
             }
             else
             {
-                pictureBox2.Visible = false;
-                labelChoosePaymentForm.Visible = false;
+                pictureWykrzyknikNazwa.Visible = false;
+                textBoxNazwa.BackColor = Color.White;
             }
 
-            if (comboBoxCategory.SelectedIndex == -1)
+            if (comboBoxFormaOperacji.SelectedIndex == -1)
             {
-                pictureBox3.Visible = true;
-                labelChooseCategory.Visible = true;
+                pictureWykrzyknikForma.Visible = true;
+                comboBoxFormaOperacji.BackColor = Color.FromArgb(255, 204, 204);
                 Check = true;
             }
             else
             {
-                pictureBox3.Visible = false;
-                labelChooseCategory.Visible = false;
+                pictureWykrzyknikForma.Visible = false;
+                comboBoxFormaOperacji.BackColor = Color.White;
             }
 
-
-            if (nm_kwota.Value == 0)
+            if (comboBoxKategoria.SelectedIndex == -1)
             {
-                pictureBox5.Visible = true;
-                labelWritePrice.Visible = true;
+                pictureWykrzyknikKategoria.Visible = true;
+                comboBoxKategoria.BackColor = Color.FromArgb(255, 204, 204);
                 Check = true;
             }
             else
             {
-                pictureBox5.Visible = false;
-                labelWritePrice.Visible = false;
+                pictureWykrzyknikKategoria.Visible = false;
+                comboBoxKategoria.BackColor = Color.White;
             }
-            return Check;
+
+            if (numericUpDownKwota.Value == 0)
+            {
+                pictureWykrzyknikKwota.Visible = true;
+                numericUpDownKwota.BackColor = Color.FromArgb(255, 204, 204);
+                Check = true;
+            }
+            else
+            {
+                pictureWykrzyknikKwota.Visible = false;
+                numericUpDownKwota.BackColor = Color.White;
+            }
+
+            if (Check == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
         private void ResetOperacji()
         {
             operacjaDoEdycji = null;
@@ -143,13 +162,13 @@ namespace WindowsFormsApp2
                     SingletonBaza.Instance.BazaDC.operacje.InsertOnSubmit(operacjaDoEdycji);
                 }
                 DateTime stara_data = operacjaDoEdycji.data;
-                operacjaDoEdycji.nazwa = tb_nazwa.Text;
-                operacjaDoEdycji.kategoria = comboBoxCategory.SelectedItem as kategoria;
-                operacjaDoEdycji.forma_platnosci = comboBoxOperationForm.SelectedItem as forma_platnosci;
-                operacjaDoEdycji.data = dateTimePickerDate.Value;
-                operacjaDoEdycji.kwota = nm_kwota.Value;
+                operacjaDoEdycji.nazwa = textBoxNazwa.Text;
+                operacjaDoEdycji.kategoria = comboBoxKategoria.SelectedItem as kategoria;
+                operacjaDoEdycji.forma_platnosci = comboBoxFormaOperacji.SelectedItem as forma_platnosci;
+                operacjaDoEdycji.data = dateTimePickerOperacji.Value;
+                operacjaDoEdycji.kwota = numericUpDownKwota.Value;
                 operacjaDoEdycji.uzytkownicy = AkualnieZalogowany;
-                operacjaDoEdycji.opis = richTextBoxDescription.Text;
+                operacjaDoEdycji.opis = richTextBoxOpisOperacji.Text;
                 operacjaDoEdycji.uzytkownicy = AkualnieZalogowany;
                 SingletonBaza.Instance.BazaDC.SubmitChanges();
                 
@@ -187,7 +206,7 @@ namespace WindowsFormsApp2
         {
             if (operacjaDoEdycji == null)
             {
-                radioButtonExpense.Checked = true;
+                radioButtonWydatek.Checked = true;
                 WczytajWszystko();
                 Czysc();
             }
@@ -196,18 +215,18 @@ namespace WindowsFormsApp2
                 WczytajWszystko();
                 if (operacjaDoEdycji.kategoria.typ == "wydatek")
                 {
-                    radioButtonExpense.Checked = true;
+                    radioButtonWydatek.Checked = true;
                 }
                 else if (operacjaDoEdycji.kategoria.typ == "przychod")
                 {
-                    radioButtonIncome.Checked = true;
+                    radioButtonPrzychod.Checked = true;
                 }
-                tb_nazwa.Text = operacjaDoEdycji.nazwa;
-                comboBoxCategory.SelectedItem = operacjaDoEdycji.kategoria;
-                comboBoxOperationForm.SelectedItem = operacjaDoEdycji.forma_platnosci;
-                nm_kwota.Value = operacjaDoEdycji.kwota;
-                richTextBoxDescription.Text = operacjaDoEdycji.opis;
-                dateTimePickerDate.Value = operacjaDoEdycji.data;
+                textBoxNazwa.Text = operacjaDoEdycji.nazwa;
+                comboBoxKategoria.SelectedItem = operacjaDoEdycji.kategoria;
+                comboBoxFormaOperacji.SelectedItem = operacjaDoEdycji.forma_platnosci;
+                numericUpDownKwota.Value = operacjaDoEdycji.kwota;
+                richTextBoxOpisOperacji.Text = operacjaDoEdycji.opis;
+                dateTimePickerOperacji.Value = operacjaDoEdycji.data;
             }
         }
     }

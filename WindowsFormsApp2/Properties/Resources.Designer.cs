@@ -63,6 +63,17 @@ namespace WindowsFormsApp2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kisspng_exclamation_mark_information_interjection_question_5adfd51503cdd9_8283211215246185170156 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-exclamation-mark-information-interjection-question-5adfd51503cdd9.8283211" +
+                        "215246185170156", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logOutIcon {
             get {
                 object obj = ResourceManager.GetObject("logOutIcon", resourceCulture);
@@ -126,6 +137,56 @@ namespace WindowsFormsApp2.Properties {
         internal static System.Drawing.Bitmap shoppingCartScreen {
             get {
                 object obj = ResourceManager.GetObject("shoppingCartScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WykrzyknikIcon {
+            get {
+                object obj = ResourceManager.GetObject("WykrzyknikIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WykrzyknikIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("WykrzyknikIcon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WykrzyknikIcon2 {
+            get {
+                object obj = ResourceManager.GetObject("WykrzyknikIcon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WykrzyknikIcon3 {
+            get {
+                object obj = ResourceManager.GetObject("WykrzyknikIcon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WykrzyknikIcon4 {
+            get {
+                object obj = ResourceManager.GetObject("WykrzyknikIcon4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

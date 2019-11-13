@@ -28,370 +28,345 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_formularz_operacja));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tb_nazwa = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNazwa = new System.Windows.Forms.TextBox();
+            this.labelNazwaOperacji = new System.Windows.Forms.Label();
             this.checkBoxCykliczny = new System.Windows.Forms.CheckBox();
-            this.nm_kwota = new System.Windows.Forms.NumericUpDown();
-            this.labelWriteNumber = new System.Windows.Forms.Label();
-            this.labelWritePrice = new System.Windows.Forms.Label();
-            this.labelChooseCategory = new System.Windows.Forms.Label();
-            this.labelChoosePaymentForm = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.comboBoxOperationForm = new System.Windows.Forms.ComboBox();
-            this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.radioButtonIncome = new System.Windows.Forms.RadioButton();
-            this.radioButtonExpense = new System.Windows.Forms.RadioButton();
-            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDownKwota = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxKategoria = new System.Windows.Forms.ComboBox();
+            this.comboBoxFormaOperacji = new System.Windows.Forms.ComboBox();
+            this.richTextBoxOpisOperacji = new System.Windows.Forms.RichTextBox();
+            this.labelKategoria = new System.Windows.Forms.Label();
+            this.radioButtonPrzychod = new System.Windows.Forms.RadioButton();
+            this.radioButtonWydatek = new System.Windows.Forms.RadioButton();
+            this.dateTimePickerOperacji = new System.Windows.Forms.DateTimePicker();
+            this.labelOpisOperacji = new System.Windows.Forms.Label();
+            this.labelKwota = new System.Windows.Forms.Label();
+            this.labelFormaOperacji = new System.Windows.Forms.Label();
+            this.labelTypOperacji = new System.Windows.Forms.Label();
+            this.labelDataOperacji = new System.Windows.Forms.Label();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonZapisz = new System.Windows.Forms.Button();
+            this.pictureWykrzyknikKwota = new System.Windows.Forms.PictureBox();
+            this.pictureWykrzyknikKategoria = new System.Windows.Forms.PictureBox();
+            this.pictureWykrzyknikForma = new System.Windows.Forms.PictureBox();
+            this.pictureWykrzyknikNazwa = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nm_kwota)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKwota)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWykrzyknikKwota)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWykrzyknikKategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWykrzyknikForma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWykrzyknikNazwa)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.Controls.Add(this.tb_nazwa);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.pictureWykrzyknikKwota);
+            this.panel1.Controls.Add(this.pictureWykrzyknikKategoria);
+            this.panel1.Controls.Add(this.pictureWykrzyknikForma);
+            this.panel1.Controls.Add(this.pictureWykrzyknikNazwa);
+            this.panel1.Controls.Add(this.textBoxNazwa);
+            this.panel1.Controls.Add(this.labelNazwaOperacji);
             this.panel1.Controls.Add(this.checkBoxCykliczny);
-            this.panel1.Controls.Add(this.nm_kwota);
-            this.panel1.Controls.Add(this.labelWriteNumber);
-            this.panel1.Controls.Add(this.labelWritePrice);
-            this.panel1.Controls.Add(this.labelChooseCategory);
-            this.panel1.Controls.Add(this.labelChoosePaymentForm);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.comboBoxCategory);
-            this.panel1.Controls.Add(this.comboBoxOperationForm);
-            this.panel1.Controls.Add(this.richTextBoxDescription);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.radioButtonIncome);
-            this.panel1.Controls.Add(this.radioButtonExpense);
-            this.panel1.Controls.Add(this.dateTimePickerDate);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.numericUpDownKwota);
+            this.panel1.Controls.Add(this.comboBoxKategoria);
+            this.panel1.Controls.Add(this.comboBoxFormaOperacji);
+            this.panel1.Controls.Add(this.richTextBoxOpisOperacji);
+            this.panel1.Controls.Add(this.labelKategoria);
+            this.panel1.Controls.Add(this.radioButtonPrzychod);
+            this.panel1.Controls.Add(this.radioButtonWydatek);
+            this.panel1.Controls.Add(this.dateTimePickerOperacji);
+            this.panel1.Controls.Add(this.labelOpisOperacji);
+            this.panel1.Controls.Add(this.labelKwota);
+            this.panel1.Controls.Add(this.labelFormaOperacji);
+            this.panel1.Controls.Add(this.labelTypOperacji);
+            this.panel1.Controls.Add(this.labelDataOperacji);
             this.panel1.Controls.Add(this.buttonReset);
-            this.panel1.Controls.Add(this.buttonSave);
+            this.panel1.Controls.Add(this.buttonZapisz);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(332, 354);
+            this.panel1.Size = new System.Drawing.Size(451, 491);
             this.panel1.TabIndex = 0;
             // 
-            // tb_nazwa
+            // textBoxNazwa
             // 
-            this.tb_nazwa.Location = new System.Drawing.Point(138, 13);
-            this.tb_nazwa.Name = "tb_nazwa";
-            this.tb_nazwa.Size = new System.Drawing.Size(174, 20);
-            this.tb_nazwa.TabIndex = 0;
+            this.textBoxNazwa.BackColor = System.Drawing.Color.White;
+            this.textBoxNazwa.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxNazwa.Location = new System.Drawing.Point(180, 73);
+            this.textBoxNazwa.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNazwa.Name = "textBoxNazwa";
+            this.textBoxNazwa.Size = new System.Drawing.Size(235, 27);
+            this.textBoxNazwa.TabIndex = 0;
             // 
-            // label1
+            // labelNazwaOperacji
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 17);
-            this.label1.TabIndex = 121;
-            this.label1.Text = "Nazwa operacji";
+            this.labelNazwaOperacji.AutoSize = true;
+            this.labelNazwaOperacji.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelNazwaOperacji.Location = new System.Drawing.Point(28, 73);
+            this.labelNazwaOperacji.Name = "labelNazwaOperacji";
+            this.labelNazwaOperacji.Size = new System.Drawing.Size(120, 19);
+            this.labelNazwaOperacji.TabIndex = 121;
+            this.labelNazwaOperacji.Text = "Nazwa operacji";
             // 
             // checkBoxCykliczny
             // 
             this.checkBoxCykliczny.AutoSize = true;
-            this.checkBoxCykliczny.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.checkBoxCykliczny.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBoxCykliczny.Location = new System.Drawing.Point(135, 67);
-            this.checkBoxCykliczny.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBoxCykliczny.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxCykliczny.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBoxCykliczny.Location = new System.Drawing.Point(27, 389);
+            this.checkBoxCykliczny.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBoxCykliczny.Name = "checkBoxCykliczny";
-            this.checkBoxCykliczny.Size = new System.Drawing.Size(177, 18);
+            this.checkBoxCykliczny.Size = new System.Drawing.Size(254, 23);
             this.checkBoxCykliczny.TabIndex = 120;
             this.checkBoxCykliczny.Text = "Ustaw jako przychód cykliczny";
             this.checkBoxCykliczny.UseVisualStyleBackColor = false;
             // 
-            // nm_kwota
+            // numericUpDownKwota
             // 
-            this.nm_kwota.Location = new System.Drawing.Point(135, 226);
-            this.nm_kwota.Name = "nm_kwota";
-            this.nm_kwota.Size = new System.Drawing.Size(177, 20);
-            this.nm_kwota.TabIndex = 119;
+            this.numericUpDownKwota.BackColor = System.Drawing.Color.White;
+            this.numericUpDownKwota.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.numericUpDownKwota.Location = new System.Drawing.Point(180, 256);
+            this.numericUpDownKwota.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownKwota.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.numericUpDownKwota.Name = "numericUpDownKwota";
+            this.numericUpDownKwota.Size = new System.Drawing.Size(236, 27);
+            this.numericUpDownKwota.TabIndex = 119;
             // 
-            // labelWriteNumber
+            // comboBoxKategoria
             // 
-            this.labelWriteNumber.AutoSize = true;
-            this.labelWriteNumber.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelWriteNumber.ForeColor = System.Drawing.Color.Red;
-            this.labelWriteNumber.Location = new System.Drawing.Point(237, 251);
-            this.labelWriteNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelWriteNumber.Name = "labelWriteNumber";
-            this.labelWriteNumber.Size = new System.Drawing.Size(73, 14);
-            this.labelWriteNumber.TabIndex = 118;
-            this.labelWriteNumber.Text = "Wpisz liczbę!";
-            this.labelWriteNumber.Visible = false;
+            this.comboBoxKategoria.BackColor = System.Drawing.Color.White;
+            this.comboBoxKategoria.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxKategoria.FormattingEnabled = true;
+            this.comboBoxKategoria.Location = new System.Drawing.Point(180, 209);
+            this.comboBoxKategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxKategoria.Name = "comboBoxKategoria";
+            this.comboBoxKategoria.Size = new System.Drawing.Size(235, 27);
+            this.comboBoxKategoria.TabIndex = 104;
             // 
-            // labelWritePrice
+            // comboBoxFormaOperacji
             // 
-            this.labelWritePrice.AutoSize = true;
-            this.labelWritePrice.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelWritePrice.ForeColor = System.Drawing.Color.Red;
-            this.labelWritePrice.Location = new System.Drawing.Point(237, 251);
-            this.labelWritePrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelWritePrice.Name = "labelWritePrice";
-            this.labelWritePrice.Size = new System.Drawing.Size(75, 14);
-            this.labelWritePrice.TabIndex = 117;
-            this.labelWritePrice.Text = "Wpisz kwotę!";
-            this.labelWritePrice.Visible = false;
+            this.comboBoxFormaOperacji.BackColor = System.Drawing.Color.White;
+            this.comboBoxFormaOperacji.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxFormaOperacji.FormattingEnabled = true;
+            this.comboBoxFormaOperacji.Location = new System.Drawing.Point(180, 163);
+            this.comboBoxFormaOperacji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxFormaOperacji.Name = "comboBoxFormaOperacji";
+            this.comboBoxFormaOperacji.Size = new System.Drawing.Size(235, 27);
+            this.comboBoxFormaOperacji.TabIndex = 103;
             // 
-            // labelChooseCategory
+            // richTextBoxOpisOperacji
             // 
-            this.labelChooseCategory.AutoSize = true;
-            this.labelChooseCategory.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelChooseCategory.ForeColor = System.Drawing.Color.Red;
-            this.labelChooseCategory.Location = new System.Drawing.Point(193, 204);
-            this.labelChooseCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelChooseCategory.Name = "labelChooseCategory";
-            this.labelChooseCategory.Size = new System.Drawing.Size(104, 14);
-            this.labelChooseCategory.TabIndex = 115;
-            this.labelChooseCategory.Text = "Wybierz kategorię!";
-            this.labelChooseCategory.Visible = false;
+            this.richTextBoxOpisOperacji.BackColor = System.Drawing.Color.White;
+            this.richTextBoxOpisOperacji.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.richTextBoxOpisOperacji.Location = new System.Drawing.Point(181, 305);
+            this.richTextBoxOpisOperacji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBoxOpisOperacji.Name = "richTextBoxOpisOperacji";
+            this.richTextBoxOpisOperacji.Size = new System.Drawing.Size(235, 53);
+            this.richTextBoxOpisOperacji.TabIndex = 101;
+            this.richTextBoxOpisOperacji.Text = "";
             // 
-            // labelChoosePaymentForm
+            // labelKategoria
             // 
-            this.labelChoosePaymentForm.AutoSize = true;
-            this.labelChoosePaymentForm.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelChoosePaymentForm.ForeColor = System.Drawing.Color.Red;
-            this.labelChoosePaymentForm.Location = new System.Drawing.Point(193, 149);
-            this.labelChoosePaymentForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelChoosePaymentForm.Name = "labelChoosePaymentForm";
-            this.labelChoosePaymentForm.Size = new System.Drawing.Size(137, 14);
-            this.labelChoosePaymentForm.TabIndex = 114;
-            this.labelChoosePaymentForm.Text = "Wybierz formę płatności!";
-            this.labelChoosePaymentForm.Visible = false;
+            this.labelKategoria.AutoSize = true;
+            this.labelKategoria.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKategoria.Location = new System.Drawing.Point(28, 209);
+            this.labelKategoria.Name = "labelKategoria";
+            this.labelKategoria.Size = new System.Drawing.Size(79, 19);
+            this.labelKategoria.TabIndex = 99;
+            this.labelKategoria.Text = "Kategoria";
             // 
-            // pictureBox5
+            // radioButtonPrzychod
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(156, 251);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(33, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 112;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Visible = false;
+            this.radioButtonPrzychod.AutoSize = true;
+            this.radioButtonPrzychod.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonPrzychod.Location = new System.Drawing.Point(315, 25);
+            this.radioButtonPrzychod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButtonPrzychod.Name = "radioButtonPrzychod";
+            this.radioButtonPrzychod.Size = new System.Drawing.Size(100, 23);
+            this.radioButtonPrzychod.TabIndex = 98;
+            this.radioButtonPrzychod.TabStop = true;
+            this.radioButtonPrzychod.Text = "Przychód";
+            this.radioButtonPrzychod.UseVisualStyleBackColor = true;
+            this.radioButtonPrzychod.CheckedChanged += new System.EventHandler(this.radioButtonIncome_CheckedChanged);
             // 
-            // pictureBox3
+            // radioButtonWydatek
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(156, 198);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 110;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Visible = false;
+            this.radioButtonWydatek.AutoSize = true;
+            this.radioButtonWydatek.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.radioButtonWydatek.Location = new System.Drawing.Point(181, 25);
+            this.radioButtonWydatek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButtonWydatek.Name = "radioButtonWydatek";
+            this.radioButtonWydatek.Size = new System.Drawing.Size(95, 23);
+            this.radioButtonWydatek.TabIndex = 97;
+            this.radioButtonWydatek.TabStop = true;
+            this.radioButtonWydatek.Text = "Wydatek";
+            this.radioButtonWydatek.UseVisualStyleBackColor = true;
+            this.radioButtonWydatek.CheckedChanged += new System.EventHandler(this.radioButtonExpense_CheckedChanged);
             // 
-            // pictureBox2
+            // dateTimePickerOperacji
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(156, 143);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 109;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
+            this.dateTimePickerOperacji.CalendarMonthBackground = System.Drawing.Color.White;
+            this.dateTimePickerOperacji.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePickerOperacji.Location = new System.Drawing.Point(180, 119);
+            this.dateTimePickerOperacji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerOperacji.Name = "dateTimePickerOperacji";
+            this.dateTimePickerOperacji.Size = new System.Drawing.Size(235, 27);
+            this.dateTimePickerOperacji.TabIndex = 96;
             // 
-            // comboBoxCategory
+            // labelOpisOperacji
             // 
-            this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Location = new System.Drawing.Point(135, 172);
-            this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(177, 21);
-            this.comboBoxCategory.TabIndex = 104;
+            this.labelOpisOperacji.AutoSize = true;
+            this.labelOpisOperacji.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelOpisOperacji.Location = new System.Drawing.Point(28, 305);
+            this.labelOpisOperacji.Name = "labelOpisOperacji";
+            this.labelOpisOperacji.Size = new System.Drawing.Size(105, 19);
+            this.labelOpisOperacji.TabIndex = 95;
+            this.labelOpisOperacji.Text = "Opis operacji";
             // 
-            // comboBoxOperationForm
+            // labelKwota
             // 
-            this.comboBoxOperationForm.FormattingEnabled = true;
-            this.comboBoxOperationForm.Location = new System.Drawing.Point(135, 118);
-            this.comboBoxOperationForm.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxOperationForm.Name = "comboBoxOperationForm";
-            this.comboBoxOperationForm.Size = new System.Drawing.Size(177, 21);
-            this.comboBoxOperationForm.TabIndex = 103;
+            this.labelKwota.AutoSize = true;
+            this.labelKwota.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKwota.Location = new System.Drawing.Point(28, 256);
+            this.labelKwota.Name = "labelKwota";
+            this.labelKwota.Size = new System.Drawing.Size(81, 19);
+            this.labelKwota.TabIndex = 94;
+            this.labelKwota.Text = "Kwota (zł)";
             // 
-            // richTextBoxDescription
+            // labelFormaOperacji
             // 
-            this.richTextBoxDescription.Location = new System.Drawing.Point(135, 276);
-            this.richTextBoxDescription.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBoxDescription.Name = "richTextBoxDescription";
-            this.richTextBoxDescription.Size = new System.Drawing.Size(177, 44);
-            this.richTextBoxDescription.TabIndex = 101;
-            this.richTextBoxDescription.Text = "";
+            this.labelFormaOperacji.AutoSize = true;
+            this.labelFormaOperacji.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFormaOperacji.Location = new System.Drawing.Point(28, 163);
+            this.labelFormaOperacji.Name = "labelFormaOperacji";
+            this.labelFormaOperacji.Size = new System.Drawing.Size(119, 19);
+            this.labelFormaOperacji.TabIndex = 93;
+            this.labelFormaOperacji.Text = "Forma operacji";
             // 
-            // label7
+            // labelTypOperacji
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(49, 172);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 17);
-            this.label7.TabIndex = 99;
-            this.label7.Text = "Kategoria";
+            this.labelTypOperacji.AutoSize = true;
+            this.labelTypOperacji.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelTypOperacji.Location = new System.Drawing.Point(28, 27);
+            this.labelTypOperacji.Name = "labelTypOperacji";
+            this.labelTypOperacji.Size = new System.Drawing.Size(98, 19);
+            this.labelTypOperacji.TabIndex = 92;
+            this.labelTypOperacji.Text = "Typ operacji";
             // 
-            // radioButtonIncome
+            // labelDataOperacji
             // 
-            this.radioButtonIncome.AutoSize = true;
-            this.radioButtonIncome.Location = new System.Drawing.Point(240, 89);
-            this.radioButtonIncome.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonIncome.Name = "radioButtonIncome";
-            this.radioButtonIncome.Size = new System.Drawing.Size(69, 17);
-            this.radioButtonIncome.TabIndex = 98;
-            this.radioButtonIncome.TabStop = true;
-            this.radioButtonIncome.Text = "Przychód";
-            this.radioButtonIncome.UseVisualStyleBackColor = true;
-            this.radioButtonIncome.CheckedChanged += new System.EventHandler(this.radioButtonIncome_CheckedChanged);
-            // 
-            // radioButtonExpense
-            // 
-            this.radioButtonExpense.AutoSize = true;
-            this.radioButtonExpense.Location = new System.Drawing.Point(135, 89);
-            this.radioButtonExpense.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButtonExpense.Name = "radioButtonExpense";
-            this.radioButtonExpense.Size = new System.Drawing.Size(68, 17);
-            this.radioButtonExpense.TabIndex = 97;
-            this.radioButtonExpense.TabStop = true;
-            this.radioButtonExpense.Text = "Wydatek";
-            this.radioButtonExpense.UseVisualStyleBackColor = true;
-            this.radioButtonExpense.CheckedChanged += new System.EventHandler(this.radioButtonExpense_CheckedChanged);
-            // 
-            // dateTimePickerDate
-            // 
-            this.dateTimePickerDate.Location = new System.Drawing.Point(135, 39);
-            this.dateTimePickerDate.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(177, 20);
-            this.dateTimePickerDate.TabIndex = 96;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(27, 276);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 17);
-            this.label6.TabIndex = 95;
-            this.label6.Text = "Opis operacji";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 225);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 17);
-            this.label5.TabIndex = 94;
-            this.label5.Text = "Kwota (zł)";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 118);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 17);
-            this.label4.TabIndex = 93;
-            this.label4.Text = "Forma operacji";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 88);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 17);
-            this.label3.TabIndex = 92;
-            this.label3.Text = "Typ operacji";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 39);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 17);
-            this.label2.TabIndex = 91;
-            this.label2.Text = "Data operacji";
+            this.labelDataOperacji.AutoSize = true;
+            this.labelDataOperacji.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelDataOperacji.Location = new System.Drawing.Point(28, 119);
+            this.labelDataOperacji.Name = "labelDataOperacji";
+            this.labelDataOperacji.Size = new System.Drawing.Size(106, 19);
+            this.labelDataOperacji.TabIndex = 91;
+            this.labelDataOperacji.Text = "Data operacji";
             // 
             // buttonReset
             // 
             this.buttonReset.AutoSize = true;
-            this.buttonReset.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReset.Location = new System.Drawing.Point(156, 324);
-            this.buttonReset.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonReset.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReset.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReset.Location = new System.Drawing.Point(27, 438);
+            this.buttonReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(156, 28);
+            this.buttonReset.Size = new System.Drawing.Size(179, 51);
             this.buttonReset.TabIndex = 90;
-            this.buttonReset.Text = "Anuluj";
+            this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
-            // buttonSave
+            // buttonZapisz
             // 
-            this.buttonSave.AutoSize = true;
-            this.buttonSave.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.Location = new System.Drawing.Point(19, 324);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(117, 28);
-            this.buttonSave.TabIndex = 89;
-            this.buttonSave.Text = "Dodaj";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.buttonZapisz.AutoSize = true;
+            this.buttonZapisz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonZapisz.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.buttonZapisz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonZapisz.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonZapisz.Location = new System.Drawing.Point(236, 438);
+            this.buttonZapisz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonZapisz.Name = "buttonZapisz";
+            this.buttonZapisz.Size = new System.Drawing.Size(179, 51);
+            this.buttonZapisz.TabIndex = 89;
+            this.buttonZapisz.Text = "Zapisz";
+            this.buttonZapisz.UseVisualStyleBackColor = true;
+            this.buttonZapisz.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // pictureWykrzyknikKwota
+            // 
+            this.pictureWykrzyknikKwota.Image = global::WindowsFormsApp2.Properties.Resources.kisspng_exclamation_mark_information_interjection_question_5adfd51503cdd9_8283211215246185170156;
+            this.pictureWykrzyknikKwota.Location = new System.Drawing.Point(421, 257);
+            this.pictureWykrzyknikKwota.Name = "pictureWykrzyknikKwota";
+            this.pictureWykrzyknikKwota.Size = new System.Drawing.Size(27, 26);
+            this.pictureWykrzyknikKwota.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureWykrzyknikKwota.TabIndex = 125;
+            this.pictureWykrzyknikKwota.TabStop = false;
+            this.pictureWykrzyknikKwota.Visible = false;
+            // 
+            // pictureWykrzyknikKategoria
+            // 
+            this.pictureWykrzyknikKategoria.Image = global::WindowsFormsApp2.Properties.Resources.kisspng_exclamation_mark_information_interjection_question_5adfd51503cdd9_8283211215246185170156;
+            this.pictureWykrzyknikKategoria.Location = new System.Drawing.Point(421, 210);
+            this.pictureWykrzyknikKategoria.Name = "pictureWykrzyknikKategoria";
+            this.pictureWykrzyknikKategoria.Size = new System.Drawing.Size(27, 26);
+            this.pictureWykrzyknikKategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureWykrzyknikKategoria.TabIndex = 124;
+            this.pictureWykrzyknikKategoria.TabStop = false;
+            this.pictureWykrzyknikKategoria.Visible = false;
+            // 
+            // pictureWykrzyknikForma
+            // 
+            this.pictureWykrzyknikForma.Image = global::WindowsFormsApp2.Properties.Resources.kisspng_exclamation_mark_information_interjection_question_5adfd51503cdd9_8283211215246185170156;
+            this.pictureWykrzyknikForma.Location = new System.Drawing.Point(421, 163);
+            this.pictureWykrzyknikForma.Name = "pictureWykrzyknikForma";
+            this.pictureWykrzyknikForma.Size = new System.Drawing.Size(27, 26);
+            this.pictureWykrzyknikForma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureWykrzyknikForma.TabIndex = 123;
+            this.pictureWykrzyknikForma.TabStop = false;
+            this.pictureWykrzyknikForma.Visible = false;
+            // 
+            // pictureWykrzyknikNazwa
+            // 
+            this.pictureWykrzyknikNazwa.Image = global::WindowsFormsApp2.Properties.Resources.kisspng_exclamation_mark_information_interjection_question_5adfd51503cdd9_8283211215246185170156;
+            this.pictureWykrzyknikNazwa.Location = new System.Drawing.Point(421, 73);
+            this.pictureWykrzyknikNazwa.Name = "pictureWykrzyknikNazwa";
+            this.pictureWykrzyknikNazwa.Size = new System.Drawing.Size(27, 26);
+            this.pictureWykrzyknikNazwa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureWykrzyknikNazwa.TabIndex = 122;
+            this.pictureWykrzyknikNazwa.TabStop = false;
+            this.pictureWykrzyknikNazwa.Visible = false;
             // 
             // uc_formularz_operacja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "uc_formularz_operacja";
-            this.Size = new System.Drawing.Size(332, 354);
+            this.Size = new System.Drawing.Size(451, 491);
             this.Enter += new System.EventHandler(this.uc_formularz_operacja_Enter);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nm_kwota)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKwota)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWykrzyknikKwota)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWykrzyknikKategoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWykrzyknikForma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureWykrzyknikNazwa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,30 +375,27 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelWriteNumber;
-        private System.Windows.Forms.Label labelWritePrice;
-        private System.Windows.Forms.Label labelChoosePaymentForm;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ComboBox comboBoxCategory;
-        private System.Windows.Forms.ComboBox comboBoxOperationForm;
-        private System.Windows.Forms.RichTextBox richTextBoxDescription;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton radioButtonIncome;
-        private System.Windows.Forms.RadioButton radioButtonExpense;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDate;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxKategoria;
+        private System.Windows.Forms.ComboBox comboBoxFormaOperacji;
+        private System.Windows.Forms.RichTextBox richTextBoxOpisOperacji;
+        private System.Windows.Forms.Label labelKategoria;
+        private System.Windows.Forms.RadioButton radioButtonPrzychod;
+        private System.Windows.Forms.RadioButton radioButtonWydatek;
+        private System.Windows.Forms.DateTimePicker dateTimePickerOperacji;
+        private System.Windows.Forms.Label labelOpisOperacji;
+        private System.Windows.Forms.Label labelKwota;
+        private System.Windows.Forms.Label labelFormaOperacji;
+        private System.Windows.Forms.Label labelTypOperacji;
+        private System.Windows.Forms.Label labelDataOperacji;
         private System.Windows.Forms.Button buttonReset;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.NumericUpDown nm_kwota;
-        private System.Windows.Forms.Label labelChooseCategory;
+        private System.Windows.Forms.Button buttonZapisz;
+        private System.Windows.Forms.NumericUpDown numericUpDownKwota;
         private System.Windows.Forms.CheckBox checkBoxCykliczny;
-        private System.Windows.Forms.TextBox tb_nazwa;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxNazwa;
+        private System.Windows.Forms.Label labelNazwaOperacji;
+        private System.Windows.Forms.PictureBox pictureWykrzyknikNazwa;
+        private System.Windows.Forms.PictureBox pictureWykrzyknikKwota;
+        private System.Windows.Forms.PictureBox pictureWykrzyknikKategoria;
+        private System.Windows.Forms.PictureBox pictureWykrzyknikForma;
     }
 }
