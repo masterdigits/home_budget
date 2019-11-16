@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBoxButton = new System.Windows.Forms.GroupBox();
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.groupBoxAdd = new System.Windows.Forms.GroupBox();
+            this.ButtonMessage = new System.Windows.Forms.Button();
+            this.ButtonEdit = new System.Windows.Forms.Button();
+            this.ButtonAdd = new System.Windows.Forms.Button();
+            this.GroupBoxAdd = new System.Windows.Forms.GroupBox();
+            this.labelRola = new System.Windows.Forms.Label();
+            this.comboBoxRole = new System.Windows.Forms.ComboBox();
+            this.buttonAcept = new System.Windows.Forms.Button();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.numericUpDownMajątek = new System.Windows.Forms.NumericUpDown();
@@ -40,75 +44,115 @@
             this.labelHasło = new System.Windows.Forms.Label();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.labelLogin = new System.Windows.Forms.Label();
-            this.groupBoxEdit = new System.Windows.Forms.GroupBox();
+            this.GroupBoxEdit = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
             this.labelUsers = new System.Windows.Forms.Label();
-            this.buttonAcept = new System.Windows.Forms.Button();
-            this.Users = new System.Windows.Forms.ListBox();
-            this.radioButtonAdmin = new System.Windows.Forms.RadioButton();
-            this.radioButtonMod = new System.Windows.Forms.RadioButton();
-            this.radioButtonUser = new System.Windows.Forms.RadioButton();
-            this.radioButtonObser = new System.Windows.Forms.RadioButton();
-            this.buttonAcept2 = new System.Windows.Forms.Button();
+            this.GroupBoxMessage = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxButton.SuspendLayout();
-            this.groupBoxAdd.SuspendLayout();
+            this.GroupBoxAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMajątek)).BeginInit();
-            this.groupBoxEdit.SuspendLayout();
+            this.GroupBoxEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxButton
             // 
-            this.groupBoxButton.Controls.Add(this.buttonEdit);
-            this.groupBoxButton.Controls.Add(this.buttonAdd);
+            this.groupBoxButton.Controls.Add(this.ButtonMessage);
+            this.groupBoxButton.Controls.Add(this.ButtonEdit);
+            this.groupBoxButton.Controls.Add(this.ButtonAdd);
             this.groupBoxButton.Location = new System.Drawing.Point(3, 3);
             this.groupBoxButton.Name = "groupBoxButton";
-            this.groupBoxButton.Size = new System.Drawing.Size(385, 85);
+            this.groupBoxButton.Size = new System.Drawing.Size(572, 85);
             this.groupBoxButton.TabIndex = 0;
             this.groupBoxButton.TabStop = false;
             // 
-            // buttonEdit
+            // ButtonMessage
             // 
-            this.buttonEdit.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonEdit.Location = new System.Drawing.Point(194, 10);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(180, 69);
-            this.buttonEdit.TabIndex = 1;
-            this.buttonEdit.Text = "Zmień uprawnienia";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            this.ButtonMessage.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonMessage.Location = new System.Drawing.Point(380, 10);
+            this.ButtonMessage.Name = "ButtonMessage";
+            this.ButtonMessage.Size = new System.Drawing.Size(180, 69);
+            this.ButtonMessage.TabIndex = 2;
+            this.ButtonMessage.Text = "Wiadomości";
+            this.ButtonMessage.UseVisualStyleBackColor = true;
+            this.ButtonMessage.Click += new System.EventHandler(this.ButtonMessage_Click);
             // 
-            // buttonAdd
+            // ButtonEdit
             // 
-            this.buttonAdd.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAdd.Location = new System.Drawing.Point(7, 10);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(180, 69);
-            this.buttonAdd.TabIndex = 0;
-            this.buttonAdd.Text = "Dodaj użytkownika";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.ButtonEdit.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonEdit.Location = new System.Drawing.Point(194, 10);
+            this.ButtonEdit.Name = "ButtonEdit";
+            this.ButtonEdit.Size = new System.Drawing.Size(180, 69);
+            this.ButtonEdit.TabIndex = 1;
+            this.ButtonEdit.Text = "Edytuj Użytkowników";
+            this.ButtonEdit.UseVisualStyleBackColor = true;
+            this.ButtonEdit.Click += new System.EventHandler(this.ButtonEdit_Click);
             // 
-            // groupBoxAdd
+            // ButtonAdd
             // 
-            this.groupBoxAdd.Controls.Add(this.buttonAcept);
-            this.groupBoxAdd.Controls.Add(this.textBoxEmail);
-            this.groupBoxAdd.Controls.Add(this.labelEmail);
-            this.groupBoxAdd.Controls.Add(this.numericUpDownMajątek);
-            this.groupBoxAdd.Controls.Add(this.labelMajątek);
-            this.groupBoxAdd.Controls.Add(this.textBoxHasło);
-            this.groupBoxAdd.Controls.Add(this.labelHasło);
-            this.groupBoxAdd.Controls.Add(this.textBoxLogin);
-            this.groupBoxAdd.Controls.Add(this.labelLogin);
-            this.groupBoxAdd.Location = new System.Drawing.Point(4, 95);
-            this.groupBoxAdd.Name = "groupBoxAdd";
-            this.groupBoxAdd.Size = new System.Drawing.Size(384, 382);
-            this.groupBoxAdd.TabIndex = 1;
-            this.groupBoxAdd.TabStop = false;
+            this.ButtonAdd.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ButtonAdd.Location = new System.Drawing.Point(7, 10);
+            this.ButtonAdd.Name = "ButtonAdd";
+            this.ButtonAdd.Size = new System.Drawing.Size(180, 69);
+            this.ButtonAdd.TabIndex = 0;
+            this.ButtonAdd.Text = "Dodaj użytkownika";
+            this.ButtonAdd.UseVisualStyleBackColor = true;
+            // 
+            // GroupBoxAdd
+            // 
+            this.GroupBoxAdd.Controls.Add(this.labelRola);
+            this.GroupBoxAdd.Controls.Add(this.comboBoxRole);
+            this.GroupBoxAdd.Controls.Add(this.buttonAcept);
+            this.GroupBoxAdd.Controls.Add(this.textBoxEmail);
+            this.GroupBoxAdd.Controls.Add(this.labelEmail);
+            this.GroupBoxAdd.Controls.Add(this.numericUpDownMajątek);
+            this.GroupBoxAdd.Controls.Add(this.labelMajątek);
+            this.GroupBoxAdd.Controls.Add(this.textBoxHasło);
+            this.GroupBoxAdd.Controls.Add(this.labelHasło);
+            this.GroupBoxAdd.Controls.Add(this.textBoxLogin);
+            this.GroupBoxAdd.Controls.Add(this.labelLogin);
+            this.GroupBoxAdd.Location = new System.Drawing.Point(4, 95);
+            this.GroupBoxAdd.Name = "GroupBoxAdd";
+            this.GroupBoxAdd.Size = new System.Drawing.Size(145, 460);
+            this.GroupBoxAdd.TabIndex = 1;
+            this.GroupBoxAdd.TabStop = false;
+            // 
+            // labelRola
+            // 
+            this.labelRola.AutoSize = true;
+            this.labelRola.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelRola.Location = new System.Drawing.Point(7, 299);
+            this.labelRola.Name = "labelRola";
+            this.labelRola.Size = new System.Drawing.Size(62, 29);
+            this.labelRola.TabIndex = 10;
+            this.labelRola.Text = "Rola";
+            // 
+            // comboBoxRole
+            // 
+            this.comboBoxRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxRole.FormattingEnabled = true;
+            this.comboBoxRole.Location = new System.Drawing.Point(12, 331);
+            this.comboBoxRole.Name = "comboBoxRole";
+            this.comboBoxRole.Size = new System.Drawing.Size(547, 37);
+            this.comboBoxRole.TabIndex = 9;
+            // 
+            // buttonAcept
+            // 
+            this.buttonAcept.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAcept.Location = new System.Drawing.Point(12, 374);
+            this.buttonAcept.Name = "buttonAcept";
+            this.buttonAcept.Size = new System.Drawing.Size(180, 69);
+            this.buttonAcept.TabIndex = 3;
+            this.buttonAcept.Text = "Zatwierdź";
+            this.buttonAcept.UseVisualStyleBackColor = true;
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxEmail.Location = new System.Drawing.Point(12, 193);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(361, 34);
+            this.textBoxEmail.Size = new System.Drawing.Size(547, 34);
             this.textBoxEmail.TabIndex = 8;
             // 
             // labelEmail
@@ -126,7 +170,7 @@
             this.numericUpDownMajątek.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDownMajątek.Location = new System.Drawing.Point(12, 262);
             this.numericUpDownMajątek.Name = "numericUpDownMajątek";
-            this.numericUpDownMajątek.Size = new System.Drawing.Size(361, 34);
+            this.numericUpDownMajątek.Size = new System.Drawing.Size(547, 34);
             this.numericUpDownMajątek.TabIndex = 6;
             // 
             // labelMajątek
@@ -144,7 +188,7 @@
             this.textBoxHasło.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxHasło.Location = new System.Drawing.Point(12, 124);
             this.textBoxHasło.Name = "textBoxHasło";
-            this.textBoxHasło.Size = new System.Drawing.Size(361, 34);
+            this.textBoxHasło.Size = new System.Drawing.Size(547, 34);
             this.textBoxHasło.TabIndex = 3;
             // 
             // labelHasło
@@ -162,7 +206,7 @@
             this.textBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxLogin.Location = new System.Drawing.Point(12, 55);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(361, 34);
+            this.textBoxLogin.Size = new System.Drawing.Size(547, 34);
             this.textBoxLogin.TabIndex = 1;
             // 
             // labelLogin
@@ -175,130 +219,87 @@
             this.labelLogin.TabIndex = 0;
             this.labelLogin.Text = "Login";
             // 
-            // groupBoxEdit
+            // GroupBoxEdit
             // 
-            this.groupBoxEdit.Controls.Add(this.buttonAcept2);
-            this.groupBoxEdit.Controls.Add(this.radioButtonObser);
-            this.groupBoxEdit.Controls.Add(this.radioButtonUser);
-            this.groupBoxEdit.Controls.Add(this.radioButtonMod);
-            this.groupBoxEdit.Controls.Add(this.radioButtonAdmin);
-            this.groupBoxEdit.Controls.Add(this.labelUsers);
-            this.groupBoxEdit.Controls.Add(this.Users);
-            this.groupBoxEdit.Location = new System.Drawing.Point(394, 95);
-            this.groupBoxEdit.Name = "groupBoxEdit";
-            this.groupBoxEdit.Size = new System.Drawing.Size(384, 334);
-            this.groupBoxEdit.TabIndex = 2;
-            this.groupBoxEdit.TabStop = false;
+            this.GroupBoxEdit.Controls.Add(this.button1);
+            this.GroupBoxEdit.Controls.Add(this.listBox1);
+            this.GroupBoxEdit.Controls.Add(this.comboBoxUsers);
+            this.GroupBoxEdit.Controls.Add(this.labelUsers);
+            this.GroupBoxEdit.Location = new System.Drawing.Point(155, 95);
+            this.GroupBoxEdit.Name = "GroupBoxEdit";
+            this.GroupBoxEdit.Size = new System.Drawing.Size(408, 460);
+            this.GroupBoxEdit.TabIndex = 2;
+            this.GroupBoxEdit.TabStop = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(6, 96);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(547, 452);
+            this.listBox1.TabIndex = 8;
+            // 
+            // comboBoxUsers
+            // 
+            this.comboBoxUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBoxUsers.FormattingEnabled = true;
+            this.comboBoxUsers.Location = new System.Drawing.Point(6, 50);
+            this.comboBoxUsers.Name = "comboBoxUsers";
+            this.comboBoxUsers.Size = new System.Drawing.Size(366, 37);
+            this.comboBoxUsers.TabIndex = 7;
+            this.comboBoxUsers.Text = "Użytkonicy";
             // 
             // labelUsers
             // 
             this.labelUsers.AutoSize = true;
             this.labelUsers.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelUsers.Location = new System.Drawing.Point(6, 18);
+            this.labelUsers.Location = new System.Drawing.Point(1, 18);
             this.labelUsers.Name = "labelUsers";
             this.labelUsers.Size = new System.Drawing.Size(242, 29);
             this.labelUsers.TabIndex = 1;
             this.labelUsers.Text = "Wybierz użytkownika";
             // 
-            // buttonAcept
+            // GroupBoxMessage
             // 
-            this.buttonAcept.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAcept.Location = new System.Drawing.Point(11, 307);
-            this.buttonAcept.Name = "buttonAcept";
-            this.buttonAcept.Size = new System.Drawing.Size(180, 69);
-            this.buttonAcept.TabIndex = 3;
-            this.buttonAcept.Text = "Zatwierdź";
-            this.buttonAcept.UseVisualStyleBackColor = true;
+            this.GroupBoxMessage.Location = new System.Drawing.Point(289, 95);
+            this.GroupBoxMessage.Name = "GroupBoxMessage";
+            this.GroupBoxMessage.Size = new System.Drawing.Size(200, 100);
+            this.GroupBoxMessage.TabIndex = 3;
+            this.GroupBoxMessage.TabStop = false;
+            this.GroupBoxMessage.Text = "Work in progress";
             // 
-            // Users
+            // button1
             // 
-            this.Users.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Users.FormattingEnabled = true;
-            this.Users.ItemHeight = 29;
-            this.Users.Items.AddRange(new object[] {
-            "User1",
-            "User2",
-            "User3"});
-            this.Users.Location = new System.Drawing.Point(11, 50);
-            this.Users.Name = "Users";
-            this.Users.Size = new System.Drawing.Size(367, 33);
-            this.Users.TabIndex = 0;
-            // 
-            // radioButtonAdmin
-            // 
-            this.radioButtonAdmin.AutoSize = true;
-            this.radioButtonAdmin.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButtonAdmin.Location = new System.Drawing.Point(12, 96);
-            this.radioButtonAdmin.Name = "radioButtonAdmin";
-            this.radioButtonAdmin.Size = new System.Drawing.Size(184, 33);
-            this.radioButtonAdmin.TabIndex = 2;
-            this.radioButtonAdmin.TabStop = true;
-            this.radioButtonAdmin.Text = "Administrator";
-            this.radioButtonAdmin.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonMod
-            // 
-            this.radioButtonMod.AutoSize = true;
-            this.radioButtonMod.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButtonMod.Location = new System.Drawing.Point(12, 135);
-            this.radioButtonMod.Name = "radioButtonMod";
-            this.radioButtonMod.Size = new System.Drawing.Size(148, 33);
-            this.radioButtonMod.TabIndex = 3;
-            this.radioButtonMod.TabStop = true;
-            this.radioButtonMod.Text = "Moderator";
-            this.radioButtonMod.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonUser
-            // 
-            this.radioButtonUser.AutoSize = true;
-            this.radioButtonUser.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButtonUser.Location = new System.Drawing.Point(12, 174);
-            this.radioButtonUser.Name = "radioButtonUser";
-            this.radioButtonUser.Size = new System.Drawing.Size(161, 33);
-            this.radioButtonUser.TabIndex = 4;
-            this.radioButtonUser.TabStop = true;
-            this.radioButtonUser.Text = "Użytkownik";
-            this.radioButtonUser.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonObser
-            // 
-            this.radioButtonObser.AutoSize = true;
-            this.radioButtonObser.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButtonObser.Location = new System.Drawing.Point(12, 213);
-            this.radioButtonObser.Name = "radioButtonObser";
-            this.radioButtonObser.Size = new System.Drawing.Size(158, 33);
-            this.radioButtonObser.TabIndex = 5;
-            this.radioButtonObser.TabStop = true;
-            this.radioButtonObser.Text = "Obserwator";
-            this.radioButtonObser.UseVisualStyleBackColor = true;
-            // 
-            // buttonAcept2
-            // 
-            this.buttonAcept2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAcept2.Location = new System.Drawing.Point(6, 252);
-            this.buttonAcept2.Name = "buttonAcept2";
-            this.buttonAcept2.Size = new System.Drawing.Size(180, 69);
-            this.buttonAcept2.TabIndex = 6;
-            this.buttonAcept2.Text = "Zatwierdź";
-            this.buttonAcept2.UseVisualStyleBackColor = true;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(377, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 69);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Zatwierdź";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Controls.Add(this.groupBoxEdit);
-            this.Controls.Add(this.groupBoxAdd);
+            this.Controls.Add(this.GroupBoxMessage);
+            this.Controls.Add(this.GroupBoxEdit);
+            this.Controls.Add(this.GroupBoxAdd);
             this.Controls.Add(this.groupBoxButton);
             this.Name = "AdminPanel";
-            this.Size = new System.Drawing.Size(400, 480);
+            this.Size = new System.Drawing.Size(578, 558);
+            this.AutoSizeChanged += new System.EventHandler(this.AdminPanel_Load);
             this.Load += new System.EventHandler(this.AdminPanel_Load);
             this.groupBoxButton.ResumeLayout(false);
-            this.groupBoxAdd.ResumeLayout(false);
-            this.groupBoxAdd.PerformLayout();
+            this.GroupBoxAdd.ResumeLayout(false);
+            this.GroupBoxAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMajątek)).EndInit();
-            this.groupBoxEdit.ResumeLayout(false);
-            this.groupBoxEdit.PerformLayout();
+            this.GroupBoxEdit.ResumeLayout(false);
+            this.GroupBoxEdit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -306,9 +307,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxButton;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.GroupBox groupBoxAdd;
+        private System.Windows.Forms.Button ButtonEdit;
+        private System.Windows.Forms.Button ButtonAdd;
+        private System.Windows.Forms.GroupBox GroupBoxAdd;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.NumericUpDown numericUpDownMajątek;
@@ -317,14 +318,15 @@
         private System.Windows.Forms.Label labelHasło;
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.Label labelLogin;
-        private System.Windows.Forms.GroupBox groupBoxEdit;
+        private System.Windows.Forms.GroupBox GroupBoxEdit;
         private System.Windows.Forms.Label labelUsers;
         private System.Windows.Forms.Button buttonAcept;
-        private System.Windows.Forms.ListBox Users;
-        private System.Windows.Forms.Button buttonAcept2;
-        private System.Windows.Forms.RadioButton radioButtonObser;
-        private System.Windows.Forms.RadioButton radioButtonUser;
-        private System.Windows.Forms.RadioButton radioButtonMod;
-        private System.Windows.Forms.RadioButton radioButtonAdmin;
+        private System.Windows.Forms.Label labelRola;
+        private System.Windows.Forms.ComboBox comboBoxRole;
+        private System.Windows.Forms.Button ButtonMessage;
+        private System.Windows.Forms.ComboBox comboBoxUsers;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox GroupBoxMessage;
+        private System.Windows.Forms.Button button1;
     }
 }

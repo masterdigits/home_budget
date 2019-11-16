@@ -18,21 +18,40 @@ namespace WindowsFormsApp2
         }
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-            groupBoxAdd.Visible = true;
-            groupBoxEdit.Visible = false;
-            groupBoxEdit.Location = new Point(4,95);
+            GroupBoxAdd.Visible = true;
+            GroupBoxEdit.Visible = false;
+            GroupBoxMessage.Visible = false;
+            GroupBoxEdit.Location = new Point(4,95);
+            GroupBoxAdd.Location = new Point(4,95);
+            GroupBoxMessage.Location = new Point(4,95);
+            GroupBoxAdd.Size = new Size(569, 460);
+            GroupBoxEdit.Size = new Size(569, 460);
+            GroupBoxMessage.Size = new Size(569, 460);
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            groupBoxAdd.Visible = true;
-            groupBoxEdit.Visible = false;
+            GroupBoxAdd.Visible = true;
+            GroupBoxEdit.Visible = false;
+            GroupBoxMessage.Visible = false;
+            GroupBoxEdit.Size = new Size(569, 460);
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
+        private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            groupBoxAdd.Visible = false;
-            groupBoxEdit.Visible = true;
+            GroupBoxAdd.Visible = false;
+            GroupBoxMessage.Visible = false;
+            GroupBoxEdit.Visible = true;
+            GroupBoxEdit.Size = new Size(569, 560);
+
+        }
+
+        private void ButtonMessage_Click(object sender, EventArgs e)
+        {
+            GroupBoxAdd.Visible = false;
+            GroupBoxEdit.Visible = false;
+            GroupBoxMessage.Visible = true;
+            GroupBoxEdit.Size = new Size(569, 460);
         }
     }
 }
