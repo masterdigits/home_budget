@@ -124,29 +124,14 @@
   <data name="questionIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\questionIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WykrzyknikIcon4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WykrzyknikIcon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="questionIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\questionIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WykrzyknikIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WykrzyknikIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WykrzyknikIcon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WykrzyknikIcon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WykrzyknikIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WykrzyknikIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="moneyScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\moneyScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SettingIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SettingIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WykrzyknikIcon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WykrzyknikIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="powiadomieniaIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\powiadomieniaIcon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

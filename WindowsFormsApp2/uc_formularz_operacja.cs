@@ -44,7 +44,8 @@ namespace WindowsFormsApp2
             comboBoxFormaOperacji.SelectedItem = operacjaDoEdycji.forma_platnosci;
             numericUpDownKwota.Value = operacjaDoEdycji.kwota;
             richTextBoxOpisOperacji.Text = operacjaDoEdycji.opis;
-            
+            textBoxNazwa.BackColor = Color.FromArgb(255, 204, 204);
+
         }
         
         private void WczytajWszystko()
@@ -78,21 +79,29 @@ namespace WindowsFormsApp2
             numericUpDownKwota.Value = 0;
             richTextBoxOpisOperacji.Clear();
             dateTimePickerOperacji.Value = DateTime.Today;
+            textBoxNazwa.BackColor = Color.White;
+            comboBoxFormaOperacji.BackColor = Color.White;
+            comboBoxKategoria.BackColor = Color.White;
+            numericUpDownKwota.BackColor = Color.White;
+            pictureWykrzyknikForma.Visible = false;
+            pictureWykrzyknikKategoria.Visible = false;
+            pictureWykrzyknikKwota.Visible = false;
+            pictureBoxNazwaWykrzyknik.Visible = false;
         }
 
         private bool ValidationAddEditForm()
         {
             bool Check = false;
 
-            if (textBoxNazwa.Text == "")
+            if (textBoxNazwa.Text.Length > 20)
             {
-                pictureWykrzyknikNazwa.Visible = true;
+                pictureBoxNazwaWykrzyknik.Visible = true;
                 textBoxNazwa.BackColor = Color.FromArgb(255, 204, 204);
                 Check = true;
             }
             else
             {
-                pictureWykrzyknikNazwa.Visible = false;
+                pictureBoxNazwaWykrzyknik.Visible = false;
                 textBoxNazwa.BackColor = Color.White;
             }
 
@@ -228,6 +237,26 @@ namespace WindowsFormsApp2
                 richTextBoxOpisOperacji.Text = operacjaDoEdycji.opis;
                 dateTimePickerOperacji.Value = operacjaDoEdycji.data;
             }
+        }
+
+        private void pictureBoxNazwaWykrzyknik_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Limit znaków 20");
+        }
+
+        private void pictureWykrzyknikForma_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Wybierz formę płatności");
+        }
+
+        private void pictureWykrzyknikKategoria_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Wybierz kategorię");
+        }
+
+        private void pictureWykrzyknikKwota_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Kwota musi być większa od 0");
         }
     }
 }

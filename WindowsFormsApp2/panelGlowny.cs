@@ -36,7 +36,6 @@ namespace WindowsFormsApp2
             InitializeComponent();
             this.Resize += new EventHandler(Form2_Resize);
             _lastFormSize = GetFormArea(this.Size);
-            
         }
 
 
