@@ -163,7 +163,7 @@
             this.buttonDodajWydatek.TabIndex = 1;
             this.buttonDodajWydatek.Text = "Dodaj wydatek";
             this.buttonDodajWydatek.UseVisualStyleBackColor = true;
-            this.buttonDodajWydatek.Click += new System.EventHandler(this.buttonDodajWydatek_Click);
+            //this.buttonDodajWydatek.Click += new System.EventHandler(this.buttonDodajWydatek_Click);
             // 
             // panel2
             // 
