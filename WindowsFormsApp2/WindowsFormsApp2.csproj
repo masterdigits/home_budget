@@ -128,11 +128,23 @@
     <Compile Include="uc_panel_dnia.designer.cs">
       <DependentUpon>uc_panel_dnia.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_panel_uzytkownikow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_panel_uzytkownikow.Designer.cs">
+      <DependentUpon>uc_panel_uzytkownikow.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc_tabela_filtr.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="uc_tabela_filtr.Designer.cs">
       <DependentUpon>uc_tabela_filtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_uzytkownik.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_uzytkownik.Designer.cs">
+      <DependentUpon>uc_uzytkownik.cs</DependentUpon>
     </Compile>
     <Compile Include="uzytkownicy.cs" />
     <EmbeddedResource Include="AdminPanel.resx">
@@ -172,8 +184,14 @@
     <EmbeddedResource Include="uc_panel_dnia.resx">
       <DependentUpon>uc_panel_dnia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uc_panel_uzytkownikow.resx">
+      <DependentUpon>uc_panel_uzytkownikow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uc_tabela_filtr.resx">
       <DependentUpon>uc_tabela_filtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_uzytkownik.resx">
+      <DependentUpon>uc_uzytkownik.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Baza.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

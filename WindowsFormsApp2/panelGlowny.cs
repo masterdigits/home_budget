@@ -16,11 +16,13 @@ namespace WindowsFormsApp2
         uzytkownicy Aktualnie_zalogowany;
         uc_tabela_filtr tabela_fitlr;
         uc_kalendarz kalendarz;
+        uc_panel_uzytkownikow panel_admistratora;
 
         enum wybrana_kontrolka
         {
             tabela_fitlr =0,
-            kalendarz =1
+            kalendarz =1,
+            panel_administratora =2
         }
 
 
@@ -93,9 +95,27 @@ namespace WindowsFormsApp2
                     {
                         tabela_fitlr.Visible = false;
                     }
+                    if(panel_admistratora !=null)
+                    {
+                        panel_admistratora.Visible = false;
+                    }
                     break;
                 case wybrana_kontrolka.tabela_fitlr:
                     if (kalendarz != null)
+                    {
+                        kalendarz.Visible = false;
+                    }
+                    if(panel_admistratora != null)
+                    {
+                        panel_admistratora.Visible = false;
+                    }
+                    break;
+                case wybrana_kontrolka.panel_administratora:
+                    if(tabela_fitlr != null)
+                    {
+                        tabela_fitlr.Visible = false;
+                    }
+                    if(kalendarz !=null)
                     {
                         kalendarz.Visible = false;
                     }
@@ -118,7 +138,8 @@ namespace WindowsFormsApp2
                 tabela_fitlr = new uc_tabela_filtr(0);
                 tlp_kontekst.Controls.Add(tabela_fitlr);
                 tabela_fitlr.Dock = DockStyle.Fill;
-            }else if(!tabela_fitlr.Visible)
+            }
+            if(!tabela_fitlr.Visible)
             {
                 tabela_fitlr.Visible = true;
                 //tabela_fitlr.BringToFront();
@@ -199,6 +220,26 @@ namespace WindowsFormsApp2
                     //c.Font = new Font(c.Font.FontFamily.Name, c.Font.Size * scaleFactor);
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            schowaj_kontekts(wybrana_kontrolka.panel_administratora);
+            if (panel_admistratora == null)
+            {
+                if(SingletonBaza.Zalogowany.role.id_roli == 1)
+                {
+                    panel_admistratora = new uc_panel_uzytkownikow();
+                    tlp_kontekst.Controls.Add(panel_admistratora);
+                    panel_admistratora.Dock = DockStyle.Fill;
+                }
+
+            }
+            else if (!panel_admistratora.Visible)
+            {
+                panel_admistratora.Visible = true;
+            }
+
         }
     }
 }

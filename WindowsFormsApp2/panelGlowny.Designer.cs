@@ -124,9 +124,9 @@
             this.panel3.Controls.Add(this.buttonWidokKolumnowy);
             this.panel3.Controls.Add(this.buttonWidokKolowy);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(6, 380);
+            this.panel3.Location = new System.Drawing.Point(6, 426);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(345, 414);
+            this.panel3.Size = new System.Drawing.Size(345, 368);
             this.panel3.TabIndex = 2;
             // 
             // buttonWidokTabelka
@@ -210,7 +210,7 @@
             this.panelDodawanieOperacji.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDodawanieOperacji.Location = new System.Drawing.Point(6, 9);
             this.panelDodawanieOperacji.Name = "panelDodawanieOperacji";
-            this.panelDodawanieOperacji.Size = new System.Drawing.Size(345, 362);
+            this.panelDodawanieOperacji.Size = new System.Drawing.Size(345, 408);
             this.panelDodawanieOperacji.TabIndex = 1;
             // 
             // uc_formularz_operacja1
@@ -220,9 +220,9 @@
             this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.uc_formularz_operacja1.BackColor = System.Drawing.Color.Transparent;
             this.uc_formularz_operacja1.Location = new System.Drawing.Point(-9, 4);
-            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(4);
             this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
-            this.uc_formularz_operacja1.Size = new System.Drawing.Size(315, 354);
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(327, 400);
             this.uc_formularz_operacja1.TabIndex = 0;
             // 
             // panel_menu_glowne
@@ -247,12 +247,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button3.Location = new System.Drawing.Point(1000, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(174, 27);
             this.button3.TabIndex = 3;
             this.button3.Text = "Panel administratora";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -263,7 +264,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.Location = new System.Drawing.Point(1357, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(174, 27);
             this.button2.TabIndex = 2;
@@ -279,7 +280,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.Location = new System.Drawing.Point(1178, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 27);
             this.button1.TabIndex = 1;
