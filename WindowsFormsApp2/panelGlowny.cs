@@ -115,7 +115,7 @@ namespace WindowsFormsApp2
             schowaj_kontekts(wybrana_kontrolka.tabela_fitlr);
             if (tabela_fitlr == null)
             {
-                tabela_fitlr = new uc_tabela_filtr(Aktualnie_zalogowany);
+                tabela_fitlr = new uc_tabela_filtr(0);
                 tlp_kontekst.Controls.Add(tabela_fitlr);
                 tabela_fitlr.Dock = DockStyle.Fill;
             }else if(!tabela_fitlr.Visible)

@@ -38,6 +38,14 @@ namespace WindowsFormsApp2
                 return _sesja;
             }
         }
+        public static uzytkownicy Zalogowany
+        {
+            get
+            {
+                return Akt;
+            }
+        }
+
         public static bool sprawdz_sesje()
         {
             SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,

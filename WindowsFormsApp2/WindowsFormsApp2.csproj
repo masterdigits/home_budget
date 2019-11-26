@@ -98,6 +98,12 @@
     <Compile Include="uc_dodaj_date.Designer.cs">
       <DependentUpon>uc_dodaj_date.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_filtr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_filtr.Designer.cs">
+      <DependentUpon>uc_filtr.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc_formularz_operacja.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </Compile>
     <EmbeddedResource Include="uc_dodaj_date.resx">
       <DependentUpon>uc_dodaj_date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_filtr.resx">
+      <DependentUpon>uc_filtr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_formularz_operacja.resx">
       <DependentUpon>uc_formularz_operacja.cs</DependentUpon>

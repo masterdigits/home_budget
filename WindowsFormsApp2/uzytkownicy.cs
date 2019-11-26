@@ -15,6 +15,18 @@ namespace WindowsFormsApp2
                 return imie + " " + nazwisko;
             }
         }
+        public bool dostep_do_operacji(operacje sprawdzana)
+        {
+            if(this == sprawdzana.uzytkownicy 
+                || this.role.nazwa == "Administrator"
+                || this.role.nazwa == "Moderator")
+            {
+                return true;
+            }
+            return false; 
+        }
+
+
         public override string ToString()
         {
             return imie + " " + nazwisko;
