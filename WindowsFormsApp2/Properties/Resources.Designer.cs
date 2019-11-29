@@ -63,6 +63,16 @@ namespace WindowsFormsApp2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FAVPNG_question_mark_icon_wallpaper_v5jBEb5G {
+            get {
+                object obj = ResourceManager.GetObject("FAVPNG_question-mark-icon-wallpaper_v5jBEb5G", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kisspng_exclamation_mark_information_interjection_question_5adfd51503cdd9_8283211215246185170156 {
             get {
                 object obj = ResourceManager.GetObject("kisspng-exclamation-mark-information-interjection-question-5adfd51503cdd9.8283211" +

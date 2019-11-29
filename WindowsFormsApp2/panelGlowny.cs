@@ -227,7 +227,7 @@ namespace WindowsFormsApp2
             schowaj_kontekts(wybrana_kontrolka.panel_administratora);
             if (panel_admistratora == null)
             {
-                if(SingletonBaza.Zalogowany.role.id_roli == 1)
+                if (SingletonBaza.Zalogowany.role.id_roli == 1)
                 {
                     panel_admistratora = new uc_panel_uzytkownikow();
                     tlp_kontekst.Controls.Add(panel_admistratora);
@@ -239,7 +239,6 @@ namespace WindowsFormsApp2
             {
                 panel_admistratora.Visible = true;
             }
-
         }
     }
 }

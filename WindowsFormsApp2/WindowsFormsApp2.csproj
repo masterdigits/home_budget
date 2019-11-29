@@ -274,5 +274,8 @@
   <ItemGroup>
     <None Include="Resources\kisspng-exclamation-mark-information-interjection-question-5adfd51503cdd9.8283211215246185170156.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FAVPNG_question-mark-icon-wallpaper_v5jBEb5G.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

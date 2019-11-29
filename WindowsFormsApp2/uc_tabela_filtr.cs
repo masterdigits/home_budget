@@ -32,13 +32,13 @@ namespace WindowsFormsApp2
         }
         public uc_tabela_filtr(int tt)
         {
-
             InitializeComponent();
             tryb_tab = (Tryb_Tabelki)tt;
             AkualnieZalogowany = SingletonBaza.Zalogowany;
             filtr = new uc_filtr(listViewGlowne);
             tableLayoutPanel1.Controls.Add(filtr, 0, 0);
         }
+
         public void odswierz_dana_operacje(int id)
         {
            if(tryb_tab == Tryb_Tabelki.Zatwierdzone_operacje)

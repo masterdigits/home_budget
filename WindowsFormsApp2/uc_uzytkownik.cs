@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp2
 {
@@ -17,7 +18,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             wczytaj_role();
-            tb_haslo.Enabled= true;
+            tb_haslo.Enabled = true;
         }
         public uc_uzytkownik(uzytkownicy u)
         {
@@ -32,40 +33,155 @@ namespace WindowsFormsApp2
             nm_majatek.Value = 0;
             cb_role.SelectedItem = Edytowana.role;
         }
+
         private void wczytaj_role()
         {
             cb_role.DataSource = SingletonBaza.Instance.BazaDC.role;
             cb_role.DisplayMember = "nazwa";
         }
+
+        public static bool EmailIsValid(string email)
+        {
+            string expression = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+
+            if (Regex.IsMatch(email, expression))
+            {
+                if (Regex.Replace(email, expression, string.Empty).Length == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private bool Walidacja()
+        {
+            bool Check = false;
+
+            if (!EmailIsValid(tb_email.Text))
+            {
+                Check = true;
+                tb_email.BackColor = Color.FromArgb(255, 204, 204);
+            }
+            else
+            {
+                tb_email.BackColor = Color.White;
+                Check = false;
+            }
+
+            if (SingletonBaza.Instance.BazaDC.uzytkownicy.SingleOrDefault(x => x.login.Equals(tb_login.Text)) != null
+                || tb_login.Text == "" || tb_login.Text.Length > 50)
+            {
+                Check = true;
+                tb_login.BackColor = Color.FromArgb(255, 204, 204);
+            }
+            else
+            {
+                Check = false;
+                tb_login.BackColor = Color.White;
+            }
+
+            if (tb_imie.Text == "" || tb_imie.Text.Length > 50)
+            {
+                Check = true;
+                tb_imie.BackColor = Color.FromArgb(255, 204, 204);
+            }
+            else
+            {
+                Check = false;
+                tb_imie.BackColor = Color.White;
+            }
+
+            if (tb_nazwisko.Text == "" || tb_nazwisko.Text.Length > 50)
+            {
+                Check = true;
+                tb_nazwisko.BackColor = Color.FromArgb(255, 204, 204);
+            }
+            else
+            {
+                Check = false;
+                tb_nazwisko.BackColor = Color.White;
+            }
+
+            if (tb_haslo.Text == "" || tb_haslo.Text.Length < 6)
+            {
+                Check = true;
+                tb_haslo.BackColor = Color.FromArgb(255, 204, 204);
+            }
+            else
+            {
+                Check = false;
+                tb_haslo.BackColor = Color.White;
+            }
+
+            if (nm_majatek.Value == 0)
+            {
+                Check = true;
+                nm_majatek.BackColor = Color.FromArgb(255, 204, 204);
+            }
+            else
+            {
+                Check = false;
+                nm_majatek.BackColor = Color.White;
+            }
+
+            if (cb_role.SelectedIndex == -1)
+            {
+                Check = true;
+                cb_role.BackColor = Color.FromArgb(255, 204, 204);
+            }
+            else
+            {
+                Check = false;
+                cb_role.BackColor = Color.White;
+            }
+
+            if (Check == true)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         internal void Zapisz()
         {
-            uzytkownicy doZapisu = null;
-            if(Edytowana==null)
+            if (Walidacja() == false)
             {
-                doZapisu = new uzytkownicy();
+                return;
             }
             else
-            {
-                doZapisu = Edytowana;
-            }
-            if(Enabled)
-            {
-                doZapisu.imie = tb_imie.Text;
-                doZapisu.nazwisko = tb_nazwisko.Text;
-                doZapisu.email = tb_email.Text;
-                doZapisu.login = tb_login.Text;
-                if (tb_haslo.Enabled)
+            { 
+                uzytkownicy doZapisu = null;
+                if (Edytowana == null)
                 {
-                    doZapisu.haslo = hashowanie.GetHashString(tb_haslo.Text);
+                    doZapisu = new uzytkownicy();
                 }
-                tb_haslo.Enabled = false;
-            }
-            else
-            {
-                if (Edytowana != null)
+                else
                 {
-                    SingletonBaza.Instance.BazaDC.operacje.DeleteAllOnSubmit(SingletonBaza.Instance.BazaDC.operacje.Where(x => x.uzytkownicy == doZapisu));
-                    SingletonBaza.Instance.BazaDC.uzytkownicy.DeleteOnSubmit(doZapisu);
+                    doZapisu = Edytowana;
+                }
+                if (Enabled)
+                {
+                    doZapisu.imie = tb_imie.Text;
+                    doZapisu.nazwisko = tb_nazwisko.Text;
+                    doZapisu.email = tb_email.Text;
+                    doZapisu.login = tb_login.Text;
+                    if (tb_haslo.Enabled)
+                    {
+                        doZapisu.haslo = hashowanie.GetHashString(tb_haslo.Text);
+                    }
+                    tb_haslo.Enabled = false;
+                }
+                else
+                {
+                    if (Edytowana != null)
+                    {
+                        SingletonBaza.Instance.BazaDC.operacje.DeleteAllOnSubmit(SingletonBaza.Instance.BazaDC.operacje.Where(x => x.uzytkownicy == doZapisu));
+                        SingletonBaza.Instance.BazaDC.uzytkownicy.DeleteOnSubmit(doZapisu);
+                    }
                 }
             }
         }
@@ -89,6 +205,26 @@ namespace WindowsFormsApp2
         {
             tb_haslo.Text = "";
             tb_haslo.Enabled = false;
+        }
+
+        private void buttonZapisz_Click(object sender, EventArgs e)
+        {
+            Zapisz();
+        }
+
+        private void tb_login_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsSeparator(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
+        }
+
+        private void tb_imie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsSeparator(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
+        }
+
+        private void tb_nazwisko_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsSeparator(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
         }
     }
 }
