@@ -139,9 +139,10 @@
             // 
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 79);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(156, 1);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // uc_operacja
@@ -153,7 +154,6 @@
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(120, 80);
             this.Name = "uc_operacja";
             this.Size = new System.Drawing.Size(162, 82);
             this.tableLayoutPanel1.ResumeLayout(false);

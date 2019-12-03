@@ -58,11 +58,11 @@
             this.flP_dane_operacji.AutoScroll = true;
             this.flP_dane_operacji.AutoSize = true;
             this.flP_dane_operacji.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flP_dane_operacji.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flP_dane_operacji.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flP_dane_operacji.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flP_dane_operacji.Location = new System.Drawing.Point(3, 53);
             this.flP_dane_operacji.Name = "flP_dane_operacji";
-            this.flP_dane_operacji.Size = new System.Drawing.Size(0, 1);
+            this.flP_dane_operacji.Size = new System.Drawing.Size(252, 1);
             this.flP_dane_operacji.TabIndex = 1;
             this.flP_dane_operacji.WrapContents = false;
             // 
@@ -99,6 +99,7 @@
             this.Name = "uc_panel_dnia";
             this.Size = new System.Drawing.Size(258, 56);
             this.Load += new System.EventHandler(this.uc_panel_dnia_Load);
+            this.Resize += new System.EventHandler(this.uc_panel_dnia_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

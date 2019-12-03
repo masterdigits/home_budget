@@ -91,5 +91,12 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void uc_panel_dnia_Resize(object sender, EventArgs e)
+        {
+            foreach(uc_operacja uc_operacja in flP_dane_operacji.Controls)
+            {
+                uc_operacja.MaximumSize = new Size(Size.Width - 33, 0);
+            }
+        }
     }
 }
