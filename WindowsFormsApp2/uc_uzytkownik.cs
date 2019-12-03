@@ -174,6 +174,7 @@ namespace WindowsFormsApp2
                     {
                         doZapisu.haslo = hashowanie.GetHashString(tb_haslo.Text);
                     }
+                    doZapisu.role = cb_role.SelectedItem as role;
                     tb_haslo.Enabled = false;
                 }
                 else

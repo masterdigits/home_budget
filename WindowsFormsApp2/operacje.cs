@@ -8,6 +8,17 @@ namespace WindowsFormsApp2
 {
     partial class operacje
     {
+        public bool czy_ma_dostep()
+        {
+            if (this.uzytkownicy == SingletonBaza.Zalogowany
+                || SingletonBaza.Zalogowany.czy_admistrator()
+                || SingletonBaza.Zalogowany.czy_moderator())
+            {
+                return true;
+            }
+            return false;
+        }
+
         public bool filtr(String f_nazwa,
             List<uzytkownicy> f_uzyt, 
             DateTime od_data, DateTime do_data, 

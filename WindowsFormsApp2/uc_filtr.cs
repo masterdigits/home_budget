@@ -34,7 +34,7 @@ namespace WindowsFormsApp2
            //lv_operacje.Visible = true;
             lv_operacje.Items.Clear();
 
-            var query = SingletonBaza.Instance.BazaDC.operacje;
+            var query = SingletonBaza.Instance.BazaDC.operacje.Where(x => x.Zatwierdzone == true);
             foreach (var row in query)
             {
                 var
@@ -57,26 +57,34 @@ namespace WindowsFormsApp2
             var query = from op in SingletonBaza.Instance.BazaDC.operacje
                         where op.id_operacji == id
                         select op;
-            if (query.FirstOrDefault() != null)
+            operacje o = query.FirstOrDefault();
+            if (o != null)
             {
-                operacje o = query.FirstOrDefault();
-                dict_operacje[id] = o;
-                var
-                nowy_rekord = lv_operacje.Items.Add(o.id_operacji.ToString());
-                nowy_rekord.Name = o.id_operacji.ToString();
-                nowy_rekord.SubItems.Add(o.uzytkownicy.imie + " " + o.uzytkownicy.nazwisko);
-                nowy_rekord.SubItems.Add(o.nazwa);
-                nowy_rekord.SubItems.Add(o.kwota.ToString());
-                nowy_rekord.SubItems.Add(o.data.ToShortDateString());
-                nowy_rekord.SubItems.Add(o.kategoria.typ);
-                nowy_rekord.SubItems.Add(o.kategoria.nazwa);
-                nowy_rekord.SubItems.Add(o.forma_platnosci.nazwa);
-                nowy_rekord.SubItems.Add(o.opis);
-                if (dict_rekordy.ContainsKey(id))
+                if (o.Zatwierdzone == true)
                 {
+                    dict_operacje[id] = o;
+                    var
+                    nowy_rekord = lv_operacje.Items.Add(o.id_operacji.ToString());
+                    nowy_rekord.Name = o.id_operacji.ToString();
+                    nowy_rekord.SubItems.Add(o.uzytkownicy.imie + " " + o.uzytkownicy.nazwisko);
+                    nowy_rekord.SubItems.Add(o.nazwa);
+                    nowy_rekord.SubItems.Add(o.kwota.ToString());
+                    nowy_rekord.SubItems.Add(o.data.ToShortDateString());
+                    nowy_rekord.SubItems.Add(o.kategoria.typ);
+                    nowy_rekord.SubItems.Add(o.kategoria.nazwa);
+                    nowy_rekord.SubItems.Add(o.forma_platnosci.nazwa);
+                    nowy_rekord.SubItems.Add(o.opis);
+                    if (dict_rekordy.ContainsKey(id))
+                    {
+                        lv_operacje.Items.Remove(dict_rekordy[id]);
+                    }
+                    dict_rekordy[id] = nowy_rekord;
+                }else
+                {
+                    dict_operacje.Remove(id);
                     lv_operacje.Items.Remove(dict_rekordy[id]);
+                    dict_rekordy.Remove(id);
                 }
-                dict_rekordy[id] = nowy_rekord;
             }
         }
 

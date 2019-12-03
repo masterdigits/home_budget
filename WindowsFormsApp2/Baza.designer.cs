@@ -416,6 +416,8 @@ namespace WindowsFormsApp2
 		
 		private string _opis;
 		
+		private System.Nullable<bool> _Zatwierdzone;
+		
 		private EntitySet<sesja_operacja> _sesja_operacja;
 		
 		private EntityRef<forma_platnosci> _forma_platnosci;
@@ -446,6 +448,8 @@ namespace WindowsFormsApp2
     partial void OncyklicznoscChanged();
     partial void OnopisChanging(string value);
     partial void OnopisChanged();
+    partial void OnZatwierdzoneChanging(System.Nullable<bool> value);
+    partial void OnZatwierdzoneChanged();
     #endregion
 		
 		public operacje()
@@ -645,6 +649,26 @@ namespace WindowsFormsApp2
 					this._opis = value;
 					this.SendPropertyChanged("opis");
 					this.OnopisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Zatwierdzone", DbType="Bit")]
+		public System.Nullable<bool> Zatwierdzone
+		{
+			get
+			{
+				return this._Zatwierdzone;
+			}
+			set
+			{
+				if ((this._Zatwierdzone != value))
+				{
+					this.OnZatwierdzoneChanging(value);
+					this.SendPropertyChanging();
+					this._Zatwierdzone = value;
+					this.SendPropertyChanged("Zatwierdzone");
+					this.OnZatwierdzoneChanged();
 				}
 			}
 		}

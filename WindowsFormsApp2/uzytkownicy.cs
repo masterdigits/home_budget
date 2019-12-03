@@ -8,6 +8,38 @@ namespace WindowsFormsApp2
 {
     partial class uzytkownicy
     {
+        public bool czy_moderator()
+        {
+            if(this.role.nazwa == "Moderator")
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool czy_admistrator()
+        {
+            if (this.role.nazwa == "Administrator")
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool czy_obserwator()
+        {
+            if (this.role.nazwa == "Obserwator")
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool czy_uzytkownik()
+        {
+            if (this.role.nazwa == "Uzytkownik")
+            {
+                return true;
+            }
+            return false;
+        }
         public string ImieNaziwsko
         {
             get

@@ -14,15 +14,17 @@ namespace WindowsFormsApp2
     {
         private int _lastFormSize;
         uzytkownicy Aktualnie_zalogowany;
-        uc_tabela_filtr tabela_fitlr;
+        uc_tabela_filtr tabela_zatwierdzone;
+        uc_tabela_filtr tabela_niezatwierdzone;
         uc_kalendarz kalendarz;
         uc_panel_uzytkownikow panel_admistratora;
 
         enum wybrana_kontrolka
         {
-            tabela_fitlr =0,
+            tabela_zatwierdzone =0,
             kalendarz =1,
-            panel_administratora =2
+            panel_administratora =2,
+            tabela_niezatwierdzone = 3
         }
 
 
@@ -43,7 +45,6 @@ namespace WindowsFormsApp2
 
         private void panelGlowny_Load(object sender, EventArgs e)
         {
-            uc_formularz_operacja1.AkualnieZalogowany = Aktualnie_zalogowany;
             timer_sesja.Start();
         }
 
@@ -61,10 +62,6 @@ namespace WindowsFormsApp2
                 kalendarz = new uc_kalendarz(Aktualnie_zalogowany);
                 tlp_kontekst.Controls.Add(kalendarz);
                 kalendarz.Dock = DockStyle.Fill;
-            }else if(!kalendarz.Visible)
-            {
-                kalendarz.Visible = true;
-               // kalendarz.BringToFront();
             }
         }
 
@@ -91,16 +88,24 @@ namespace WindowsFormsApp2
             switch(wk)
             {
                 case wybrana_kontrolka.kalendarz:
-                    if (tabela_fitlr != null)
+                    if (tabela_zatwierdzone != null)
                     {
-                        tabela_fitlr.Visible = false;
+                        tabela_zatwierdzone.Visible = false;
                     }
                     if(panel_admistratora !=null)
                     {
                         panel_admistratora.Visible = false;
                     }
+                    if (tabela_niezatwierdzone != null)
+                    {
+                        tabela_niezatwierdzone.Visible = false;
+                    }
+                    if(kalendarz != null)
+                    {
+                        kalendarz.Visible = true;
+                    }
                     break;
-                case wybrana_kontrolka.tabela_fitlr:
+                case wybrana_kontrolka.tabela_zatwierdzone:
                     if (kalendarz != null)
                     {
                         kalendarz.Visible = false;
@@ -109,15 +114,49 @@ namespace WindowsFormsApp2
                     {
                         panel_admistratora.Visible = false;
                     }
+                    if (tabela_niezatwierdzone != null)
+                    {
+                        tabela_niezatwierdzone.Visible = false;
+                    }
+                    if(tabela_zatwierdzone!=null)
+                    {
+                        tabela_zatwierdzone.Visible = true;
+                    }
                     break;
                 case wybrana_kontrolka.panel_administratora:
-                    if(tabela_fitlr != null)
+                    if(tabela_zatwierdzone != null)
                     {
-                        tabela_fitlr.Visible = false;
+                        tabela_zatwierdzone.Visible = false;
                     }
                     if(kalendarz !=null)
                     {
                         kalendarz.Visible = false;
+                    }
+                    if(tabela_niezatwierdzone != null)
+                    {
+                        tabela_niezatwierdzone.Visible = false;
+                    }
+                    if(panel_admistratora != null)
+                    {
+                        panel_admistratora.Visible = true;
+                    }
+                    break;
+                case wybrana_kontrolka.tabela_niezatwierdzone:
+                    if (tabela_zatwierdzone != null)
+                    {
+                        tabela_zatwierdzone.Visible = false;
+                    }
+                    if (kalendarz != null)
+                    {
+                        kalendarz.Visible = false;
+                    }
+                    if(panel_admistratora !=null)
+                    {
+                        panel_admistratora.Visible = false;
+                    }
+                    if(tabela_niezatwierdzone !=null)
+                    {
+                        tabela_niezatwierdzone.Visible = true;
                     }
                     break;
             }
@@ -132,17 +171,12 @@ namespace WindowsFormsApp2
         private void buttonWidokTabelka_Click(object sender, EventArgs e)
         {
             
-            schowaj_kontekts(wybrana_kontrolka.tabela_fitlr);
-            if (tabela_fitlr == null)
+            schowaj_kontekts(wybrana_kontrolka.tabela_zatwierdzone);
+            if (tabela_zatwierdzone == null)
             {
-                tabela_fitlr = new uc_tabela_filtr(0);
-                tlp_kontekst.Controls.Add(tabela_fitlr);
-                tabela_fitlr.Dock = DockStyle.Fill;
-            }
-            if(!tabela_fitlr.Visible)
-            {
-                tabela_fitlr.Visible = true;
-                //tabela_fitlr.BringToFront();
+                tabela_zatwierdzone = new uc_tabela_filtr(0);
+                tlp_kontekst.Controls.Add(tabela_zatwierdzone);
+                tabela_zatwierdzone.Dock = DockStyle.Fill;
             }
         }
 
@@ -165,9 +199,15 @@ namespace WindowsFormsApp2
         }
         public void odsiwerz_dana_operacje_w_tabeli(int id)
         {
-            if (tabela_fitlr != null)
+
+            if (tabela_zatwierdzone != null)
             {
-                tabela_fitlr.odswierz_dana_operacje(id);
+                tabela_zatwierdzone.odswierz_dana_operacje(id);
+            }
+
+            if(tabela_niezatwierdzone != null)
+            {
+                tabela_niezatwierdzone.odswierz_dana_operacje(id);
             }
         }
 
@@ -227,7 +267,7 @@ namespace WindowsFormsApp2
             schowaj_kontekts(wybrana_kontrolka.panel_administratora);
             if (panel_admistratora == null)
             {
-                if (SingletonBaza.Zalogowany.role.id_roli == 1)
+                if (SingletonBaza.Zalogowany.czy_admistrator())
                 {
                     panel_admistratora = new uc_panel_uzytkownikow();
                     tlp_kontekst.Controls.Add(panel_admistratora);
@@ -235,9 +275,21 @@ namespace WindowsFormsApp2
                 }
 
             }
-            else if (!panel_admistratora.Visible)
+        }
+
+        private void buttonTabbelaNiezatwierdzonych_Click(object sender, EventArgs e)
+        {
+            schowaj_kontekts(wybrana_kontrolka.tabela_niezatwierdzone);
+            if (tabela_niezatwierdzone == null)
             {
-                panel_admistratora.Visible = true;
+                if (SingletonBaza.Zalogowany.czy_obserwator()
+                    || SingletonBaza.Zalogowany.czy_admistrator()
+                    || SingletonBaza.Zalogowany.czy_moderator())
+                {
+                    tabela_niezatwierdzone = new uc_tabela_filtr(1);
+                    tlp_kontekst.Controls.Add(tabela_niezatwierdzone);
+                    tabela_niezatwierdzone.Dock = DockStyle.Fill;
+                }
             }
         }
     }

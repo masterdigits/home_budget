@@ -14,7 +14,6 @@ namespace WindowsFormsApp2
     public partial class uc_formularz_operacja : UserControl
     {
         private operacje operacjaDoEdycji;
-        public uzytkownicy AkualnieZalogowany { get; set; }
 
         internal operacje Wybrana
         {
@@ -156,6 +155,11 @@ namespace WindowsFormsApp2
             operacjaDoEdycji = null;
             Czysc();
         }
+        enum Tryb_formularza
+        {
+            nowy = 0,
+            edycja = 1
+        }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
@@ -165,10 +169,16 @@ namespace WindowsFormsApp2
             }
             else
             {
+                Tryb_formularza tryb;
                 if (operacjaDoEdycji == null)
                 {
+                    tryb = Tryb_formularza.nowy;
                     operacjaDoEdycji = new operacje();
                     SingletonBaza.Instance.BazaDC.operacje.InsertOnSubmit(operacjaDoEdycji);
+                }
+                else
+                {
+                    tryb = Tryb_formularza.edycja;
                 }
                 DateTime stara_data = operacjaDoEdycji.data;
                 operacjaDoEdycji.nazwa = textBoxNazwa.Text;
@@ -176,11 +186,16 @@ namespace WindowsFormsApp2
                 operacjaDoEdycji.forma_platnosci = comboBoxFormaOperacji.SelectedItem as forma_platnosci;
                 operacjaDoEdycji.data = dateTimePickerOperacji.Value;
                 operacjaDoEdycji.kwota = numericUpDownKwota.Value;
-                operacjaDoEdycji.uzytkownicy = AkualnieZalogowany;
+                if(tryb == Tryb_formularza.nowy)
+                {
+                    operacjaDoEdycji.uzytkownicy = SingletonBaza.Zalogowany;
+                }
+                if(SingletonBaza.Zalogowany.czy_obserwator())
+                {
+                    operacjaDoEdycji.Zatwierdzone = false;
+                }
                 operacjaDoEdycji.opis = richTextBoxOpisOperacji.Text;
-                operacjaDoEdycji.uzytkownicy = AkualnieZalogowany;
                 SingletonBaza.Instance.BazaDC.SubmitChanges();
-                
                 ((panelGlowny) this.FindForm()).odswierz_dany_dzien(operacjaDoEdycji.data);
                 if(operacjaDoEdycji.data!= stara_data)
                 {
