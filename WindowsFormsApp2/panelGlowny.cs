@@ -227,12 +227,17 @@ namespace WindowsFormsApp2
 
         private void Form2_Resize(object sender, EventArgs e)
         {
+            if (kalendarz != null)
+            {
+                kalendarz.zmien_roziar();
+            }
+            /*
             Control control = (Control)sender;
 
             float scaleFactor = (float)GetFormArea(control.Size) / (float)_lastFormSize;
             ResizeFont(this.Controls, scaleFactor);
             _lastFormSize = GetFormArea(control.Size);
-
+            */
         }
 
         private void ResizeFont(Control.ControlCollection coll, float scaleFactor)
@@ -296,6 +301,12 @@ namespace WindowsFormsApp2
         private void uc_formularz_operacja1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tlp_kontekst_Resize(object sender, EventArgs e)
+        {
+            resizing_kalendarz.Szerokosc = tlp_kontekst.Size.Width;
+            resizing_kalendarz.Wysokosc = tlp_kontekst.Size.Height;
         }
     }
 }

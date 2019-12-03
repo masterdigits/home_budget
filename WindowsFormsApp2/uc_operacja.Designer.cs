@@ -37,8 +37,8 @@
             this.btn_usun = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_kwota = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_arrow = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,26 +60,25 @@
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(275, 70);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(206, 56);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.btn_usun);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lb_kwota);
             this.panel1.Controls.Add(this.btn_arrow);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 54);
+            this.panel1.Size = new System.Drawing.Size(200, 44);
             this.panel1.TabIndex = 0;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
@@ -89,10 +88,9 @@
             this.btn_usun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_usun.Font = new System.Drawing.Font("Microsoft Sans Serif", 4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btn_usun.ForeColor = System.Drawing.Color.Red;
-            this.btn_usun.Location = new System.Drawing.Point(236, 0);
-            this.btn_usun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_usun.Location = new System.Drawing.Point(177, 0);
             this.btn_usun.Name = "btn_usun";
-            this.btn_usun.Size = new System.Drawing.Size(31, 30);
+            this.btn_usun.Size = new System.Drawing.Size(23, 24);
             this.btn_usun.TabIndex = 6;
             this.btn_usun.Text = "X";
             this.btn_usun.UseVisualStyleBackColor = true;
@@ -103,39 +101,25 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(97, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.MaximumSize = new System.Drawing.Size(107, 37);
+            this.label1.Location = new System.Drawing.Point(73, 7);
+            this.label1.MaximumSize = new System.Drawing.Size(80, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 26);
+            this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Lokaty i konto oszczędnościowe";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.DoubleClick += new System.EventHandler(this.label1_Click);
             // 
             // lb_kwota
             // 
             this.lb_kwota.AutoSize = true;
             this.lb_kwota.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lb_kwota.ForeColor = System.Drawing.Color.Coral;
-            this.lb_kwota.Location = new System.Drawing.Point(4, 7);
-            this.lb_kwota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_kwota.Location = new System.Drawing.Point(3, 6);
             this.lb_kwota.Name = "lb_kwota";
-            this.lb_kwota.Size = new System.Drawing.Size(78, 31);
+            this.lb_kwota.Size = new System.Drawing.Size(64, 26);
             this.lb_kwota.TabIndex = 4;
             this.lb_kwota.Text = "1000";
-            this.lb_kwota.Click += new System.EventHandler(this.lb_kwota_Click);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 66);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(267, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(267, 1);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.lb_kwota.DoubleClick += new System.EventHandler(this.lb_kwota_Click);
             // 
             // btn_arrow
             // 
@@ -144,27 +128,35 @@
             this.btn_arrow.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_arrow.ImageIndex = 1;
             this.btn_arrow.ImageList = this.imageList1;
-            this.btn_arrow.Location = new System.Drawing.Point(236, 30);
-            this.btn_arrow.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_arrow.Location = new System.Drawing.Point(177, 24);
             this.btn_arrow.Name = "btn_arrow";
-            this.btn_arrow.Size = new System.Drawing.Size(27, 25);
+            this.btn_arrow.Size = new System.Drawing.Size(20, 20);
             this.btn_arrow.TabIndex = 3;
             this.btn_arrow.UseVisualStyleBackColor = true;
             this.btn_arrow.Click += new System.EventHandler(this.btn_arrow_Click);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 53);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 1);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
             // uc_operacja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(266, 61);
+            this.MinimumSize = new System.Drawing.Size(200, 50);
             this.Name = "uc_operacja";
-            this.Size = new System.Drawing.Size(275, 70);
+            this.Size = new System.Drawing.Size(206, 56);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

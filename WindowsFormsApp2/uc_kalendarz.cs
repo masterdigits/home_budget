@@ -209,6 +209,33 @@ namespace WindowsFormsApp2
                 panele_dnia[dzien].wyswietl_operacje();
             }
         }
+        public void zmien_roziar()
+        {
+            foreach( Control con in tlp_kalendarz.Controls)
+            {
+                if( con is uc_panel_dnia)
+                {
+                    (con as uc_panel_dnia).zmien_roziar(resizing_kalendarz.Szerokosc);
+                }
+            }
+        }
+
+        private void ResizeFont(Control.ControlCollection coll, float scaleFactor)
+        {
+            foreach (Control c in coll)
+            {
+
+                if (c.HasChildren)
+                {
+
+                    ResizeFont(c.Controls, scaleFactor);
+                }
+                else
+                {
+                   c.Font = new Font(c.Font.FontFamily.Name, c.Font.Size * scaleFactor);
+                }
+            }
+        }
 
     }
 }

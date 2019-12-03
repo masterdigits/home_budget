@@ -46,12 +46,11 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(344, 70);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(258, 56);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flP_dane_operacji
@@ -61,11 +60,9 @@
             this.flP_dane_operacji.AutoSize = true;
             this.flP_dane_operacji.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flP_dane_operacji.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flP_dane_operacji.Location = new System.Drawing.Point(14, 66);
-            this.flP_dane_operacji.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.flP_dane_operacji.MinimumSize = new System.Drawing.Size(315, 0);
+            this.flP_dane_operacji.Location = new System.Drawing.Point(129, 53);
             this.flP_dane_operacji.Name = "flP_dane_operacji";
-            this.flP_dane_operacji.Size = new System.Drawing.Size(315, 0);
+            this.flP_dane_operacji.Size = new System.Drawing.Size(0, 0);
             this.flP_dane_operacji.TabIndex = 1;
             this.flP_dane_operacji.WrapContents = false;
             // 
@@ -75,10 +72,9 @@
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.lb_nazwa_dnia);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 54);
+            this.panel1.Size = new System.Drawing.Size(252, 44);
             this.panel1.TabIndex = 0;
             // 
             // lb_nazwa_dnia
@@ -86,24 +82,22 @@
             this.lb_nazwa_dnia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_nazwa_dnia.AutoSize = true;
             this.lb_nazwa_dnia.Font = new System.Drawing.Font("Arial", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lb_nazwa_dnia.Location = new System.Drawing.Point(179, 0);
-            this.lb_nazwa_dnia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb_nazwa_dnia.Location = new System.Drawing.Point(134, 0);
             this.lb_nazwa_dnia.Name = "lb_nazwa_dnia";
-            this.lb_nazwa_dnia.Size = new System.Drawing.Size(70, 50);
+            this.lb_nazwa_dnia.Size = new System.Drawing.Size(55, 40);
             this.lb_nazwa_dnia.TabIndex = 0;
             this.lb_nazwa_dnia.Text = "30";
             // 
             // uc_panel_dnia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "uc_panel_dnia";
-            this.Size = new System.Drawing.Size(344, 70);
+            this.Size = new System.Drawing.Size(258, 56);
             this.Load += new System.EventHandler(this.uc_panel_dnia_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

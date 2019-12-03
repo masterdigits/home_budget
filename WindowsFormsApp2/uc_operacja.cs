@@ -87,50 +87,89 @@ namespace WindowsFormsApp2
         */
         private void panel1_DoubleClick(object sender, EventArgs e)
         {
-            uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
-                .FirstOrDefault() as uc_formularz_operacja;
-                    if (ucfo != null)
-                    {
-                        ucfo.Wybrana = wyswietlanaOperacja;
-                        ucfo.Focus();
-                        return;
-                    }          
+            if (wyswietlanaOperacja.uzytkownicy == SingletonBaza.Zalogowany 
+                || SingletonBaza.Zalogowany.czy_admistrator()
+                || SingletonBaza.Zalogowany.czy_moderator())
+            {
+                uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+                    .FirstOrDefault() as uc_formularz_operacja;
+                if (ucfo != null)
+                {
+                    ucfo.Wybrana = wyswietlanaOperacja;
+                    ucfo.Focus();
+                    return;
+                }
+            }else
+            {
+                MessageBox.Show("Brak dostepu do operacji");
+            }
         }
 
         private void lb_kwota_Click(object sender, EventArgs e)
         {
-            uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
-    .FirstOrDefault() as uc_formularz_operacja;
-            if (ucfo != null)
+            if (wyswietlanaOperacja.uzytkownicy == SingletonBaza.Zalogowany
+    || SingletonBaza.Zalogowany.czy_admistrator()
+    || SingletonBaza.Zalogowany.czy_moderator())
             {
-                ucfo.Wybrana = wyswietlanaOperacja;
-                ucfo.Focus();
-                return;
+                uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+                .FirstOrDefault() as uc_formularz_operacja;
+                if (ucfo != null)
+                {
+                    ucfo.Wybrana = wyswietlanaOperacja;
+                    ucfo.Focus();
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Brak dostepu do operacji");
             }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
-    .FirstOrDefault() as uc_formularz_operacja;
-            if (ucfo != null)
+            if (wyswietlanaOperacja.uzytkownicy == SingletonBaza.Zalogowany
+    || SingletonBaza.Zalogowany.czy_admistrator()
+    || SingletonBaza.Zalogowany.czy_moderator())
             {
-                ucfo.Wybrana = wyswietlanaOperacja;
-                ucfo.Focus();
-                return;
+                uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+                .FirstOrDefault() as uc_formularz_operacja;
+                if (ucfo != null)
+                {
+                    ucfo.Wybrana = wyswietlanaOperacja;
+                    ucfo.Focus();
+                    return;
+                }
+            }else
+            {
+                MessageBox.Show("Brak dostepu do operacji");
             }
         }
 
         private void btn_usun_Click(object sender, EventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Czy chcesz usunać operacje?", "Usuwanie operacji", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
+            if (wyswietlanaOperacja.uzytkownicy == SingletonBaza.Zalogowany
+    || SingletonBaza.Zalogowany.czy_admistrator()
+    || SingletonBaza.Zalogowany.czy_moderator())
             {
-                SingletonBaza.Instance.BazaDC.operacje.DeleteOnSubmit(wyswietlanaOperacja);
-                SingletonBaza.Instance.BazaDC.SubmitChanges();
-                this.Parent.Controls.Remove(this);
+                DialogResult dialog = MessageBox.Show("Czy chcesz usunać operacje?", "Usuwanie operacji", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    SingletonBaza.Instance.BazaDC.operacje.DeleteOnSubmit(wyswietlanaOperacja);
+                    SingletonBaza.Instance.BazaDC.SubmitChanges();
+                    this.Parent.Controls.Remove(this);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Brak dostepu do operacji");
             }
         }
+        public void zmien_roziar(int szerokosc)
+        {
+            this.Size = new Size(szerokosc, this.Size.Height);
+        }
+
 
         private void panel1_Click(object sender, EventArgs e)
         {

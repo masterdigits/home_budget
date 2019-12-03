@@ -54,6 +54,16 @@ namespace WindowsFormsApp2
         {
             wyswietl_operacje();
         }
+        public void zmien_roziar(int szerokosc)
+        {
+            int nowa_szerokosc = szerokosc / 7+33;
+            //Size = new Size(nowa_szerokosc, this.Size.Height);
+            foreach(uc_operacja uo in flP_dane_operacji.Controls)
+            {
+                uo.zmien_roziar(nowa_szerokosc);
+            }
+        }
+
         public void wyswietl_operacje()
         {
             flP_dane_operacji.Controls.Clear();
@@ -64,6 +74,7 @@ namespace WindowsFormsApp2
                 {
                     var query = from op in u.operacje
                                 where op.data == data
+                                && op.Zatwierdzone == true
                                 select op;
                     if (query != null)
                     {
@@ -71,6 +82,7 @@ namespace WindowsFormsApp2
                         {
                             uc_operacja nowy = new uc_operacja(o);
                             //nowy.Anchor = AnchorStyles.None;
+                            flP_dane_operacji.MinimumSize = new Size(nowy.Width + 33, 0);
                             flP_dane_operacji.Controls.Add(nowy);
                         }
                     }
