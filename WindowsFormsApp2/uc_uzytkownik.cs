@@ -186,7 +186,6 @@ namespace WindowsFormsApp2
                     
                 }
                 SingletonBaza.Instance.BazaDC.SubmitChanges();
-                MessageBox.Show("ee");
             }
         }
 
