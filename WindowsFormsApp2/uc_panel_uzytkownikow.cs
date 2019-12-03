@@ -32,13 +32,12 @@ namespace WindowsFormsApp2
             {
                 foreach (uc_uzytkownik u in flowLayoutPanel1.Controls)
                 {
-                    u.Zapisz();
                     if(u.Enabled==false)
                     {
                         flowLayoutPanel1.Controls.Remove(u);
                     }
                 }
-                SingletonBaza.Instance.BazaDC.SubmitChanges();
+                
             }
         }
 

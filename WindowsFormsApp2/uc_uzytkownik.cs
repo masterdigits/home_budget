@@ -103,7 +103,7 @@ namespace WindowsFormsApp2
                 tb_nazwisko.BackColor = Color.White;
             }
 
-            if (tb_haslo.Text == "" || tb_haslo.Text.Length < 6)
+            if (!Enabled && ( tb_haslo.Text == "" || tb_haslo.Text.Length < 6))
             {
                 Check = true;
                 tb_haslo.BackColor = Color.FromArgb(255, 204, 204);
@@ -158,6 +158,7 @@ namespace WindowsFormsApp2
                 if (Edytowana == null)
                 {
                     doZapisu = new uzytkownicy();
+                    SingletonBaza.Instance.BazaDC.uzytkownicy.InsertOnSubmit(doZapisu);
                 }
                 else
                 {
@@ -182,7 +183,10 @@ namespace WindowsFormsApp2
                         SingletonBaza.Instance.BazaDC.operacje.DeleteAllOnSubmit(SingletonBaza.Instance.BazaDC.operacje.Where(x => x.uzytkownicy == doZapisu));
                         SingletonBaza.Instance.BazaDC.uzytkownicy.DeleteOnSubmit(doZapisu);
                     }
+                    
                 }
+                SingletonBaza.Instance.BazaDC.SubmitChanges();
+                MessageBox.Show("ee");
             }
         }
 
