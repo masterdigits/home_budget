@@ -213,7 +213,18 @@ namespace WindowsFormsApp2
 
         private void buttonZapisz_Click(object sender, EventArgs e)
         {
+            role rola = Edytowana.role;
             Zapisz();
+            if(rola.nazwa == "Obserwator" && Edytowana.role.nazwa != "Obserwator")
+            {
+                foreach(operacje o in Edytowana.operacje.Where(x => x.Zatwierdzone == false))
+                {
+                    o.Zatwierdzone = true;
+                    ((panelGlowny)this.FindForm()).odsiwerz_dana_operacje_w_tabeli(o.id_operacji);
+                }
+                SingletonBaza.Instance.BazaDC.SubmitChanges();
+            }
+
         }
 
         private void tb_login_KeyPress(object sender, KeyPressEventArgs e)

@@ -30,7 +30,7 @@ namespace WindowsFormsApp2
 
                 filtr = new uc_filtr(listViewGlowne);
                 tableLayoutPanel1.Controls.Add(filtr, 0, 0);
-            }else if(tryb_tab == Tryb_Tabelki.Niezatwierdzone_operacje)
+            } else if (tryb_tab == Tryb_Tabelki.Niezatwierdzone_operacje)
             {
                 // Dodaje niezatwierdzone operacje
                 trybWidokTabelkaNiezatiwerdzone();
@@ -91,26 +91,35 @@ namespace WindowsFormsApp2
                 var query = from op in SingletonBaza.Instance.BazaDC.operacje
                             where op.id_operacji == id
                             select op;
-                if (query.FirstOrDefault() != null)
+                operacje o = query.FirstOrDefault();
+                if (o != null)
                 {
-                    operacje o = query.FirstOrDefault();
-                    dict_operacje[id] = o;
-                    var
-                    nowy_rekord = listViewGlowne.Items.Add(o.id_operacji.ToString());
-                    nowy_rekord.Name = o.id_operacji.ToString();
-                    nowy_rekord.SubItems.Add(o.uzytkownicy.imie + " " + o.uzytkownicy.nazwisko);
-                    nowy_rekord.SubItems.Add(o.nazwa);
-                    nowy_rekord.SubItems.Add(o.kwota.ToString());
-                    nowy_rekord.SubItems.Add(o.data.ToShortDateString());
-                    nowy_rekord.SubItems.Add(o.kategoria.typ);
-                    nowy_rekord.SubItems.Add(o.kategoria.nazwa);
-                    nowy_rekord.SubItems.Add(o.forma_platnosci.nazwa);
-                    nowy_rekord.SubItems.Add(o.opis);
-                    if (dict_rekordy.ContainsKey(id))
+                    if (o.Zatwierdzone == false)
                     {
-                        listViewGlowne.Items.Remove(dict_rekordy[id]);
+                        dict_operacje[id] = o;
+                        var
+                        nowy_rekord = listViewGlowne.Items.Add(o.id_operacji.ToString());
+                        nowy_rekord.Name = o.id_operacji.ToString();
+                        nowy_rekord.SubItems.Add(o.uzytkownicy.imie + " " + o.uzytkownicy.nazwisko);
+                        nowy_rekord.SubItems.Add(o.nazwa);
+                        nowy_rekord.SubItems.Add(o.kwota.ToString());
+                        nowy_rekord.SubItems.Add(o.data.ToShortDateString());
+                        nowy_rekord.SubItems.Add(o.kategoria.typ);
+                        nowy_rekord.SubItems.Add(o.kategoria.nazwa);
+                        nowy_rekord.SubItems.Add(o.forma_platnosci.nazwa);
+                        nowy_rekord.SubItems.Add(o.opis);
+                        if (dict_rekordy.ContainsKey(id))
+                        {
+                            listViewGlowne.Items.Remove(dict_rekordy[id]);
+                        }
+                        dict_rekordy[id] = nowy_rekord;
                     }
-                    dict_rekordy[id] = nowy_rekord;
+                    else if (dict_rekordy.ContainsKey(id))
+                    {
+                        dict_operacje.Remove(id);
+                        listViewGlowne.Items.Remove(dict_rekordy[id]);
+                        dict_rekordy.Remove(id);
+                    }
                 }
             }
         }

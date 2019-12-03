@@ -190,8 +190,10 @@ namespace WindowsFormsApp2
                 {
                     operacjaDoEdycji.uzytkownicy = SingletonBaza.Zalogowany;
                 }
+                operacjaDoEdycji.Zatwierdzone = true;
                 if(SingletonBaza.Zalogowany.czy_obserwator())
                 {
+                    MessageBox.Show("obserwator");
                     operacjaDoEdycji.Zatwierdzone = false;
                 }
                 operacjaDoEdycji.opis = richTextBoxOpisOperacji.Text;

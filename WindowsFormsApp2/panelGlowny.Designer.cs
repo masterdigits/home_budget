@@ -220,7 +220,7 @@
             this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.uc_formularz_operacja1.BackColor = System.Drawing.Color.Transparent;
             this.uc_formularz_operacja1.Location = new System.Drawing.Point(-9, 4);
-            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(4);
             this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
             this.uc_formularz_operacja1.Size = new System.Drawing.Size(327, 400);
             this.uc_formularz_operacja1.TabIndex = 0;

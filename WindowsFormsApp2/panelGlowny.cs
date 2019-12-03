@@ -292,5 +292,10 @@ namespace WindowsFormsApp2
                 }
             }
         }
+
+        private void uc_formularz_operacja1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

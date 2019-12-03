@@ -79,7 +79,8 @@ namespace WindowsFormsApp2
                         lv_operacje.Items.Remove(dict_rekordy[id]);
                     }
                     dict_rekordy[id] = nowy_rekord;
-                }else
+                }
+                else if (dict_rekordy.ContainsKey(id))
                 {
                     dict_operacje.Remove(id);
                     lv_operacje.Items.Remove(dict_rekordy[id]);
@@ -87,9 +88,6 @@ namespace WindowsFormsApp2
                 }
             }
         }
-
-
-
         private void wczytaj_kategorie()
         {
             if (radioButtonExpense.Checked)
