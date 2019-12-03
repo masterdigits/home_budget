@@ -95,7 +95,7 @@ namespace WindowsFormsApp2
         {
             foreach(uc_operacja uc_operacja in flP_dane_operacji.Controls)
             {
-                uc_operacja.MaximumSize = new Size(Size.Width - 33, 0);
+                uc_operacja.Size = new Size(Size.Width - 33, uc_operacja.Size.Height);
             }
         }
     }

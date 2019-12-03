@@ -239,5 +239,15 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void tlp_kalendarz_Resize(object sender, EventArgs e)
+        {
+            foreach (Control con in tlp_kalendarz.Controls)
+            {
+                if (con is uc_panel_dnia)
+                {
+                    con.Size = new Size( Size.Width / 7, con.Height);
+                }
+            }
+        }
     }
 }

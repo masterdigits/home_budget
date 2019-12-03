@@ -173,6 +173,7 @@
             this.tlp_kalendarz.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlp_kalendarz.Size = new System.Drawing.Size(1155, 294);
             this.tlp_kalendarz.TabIndex = 0;
+            this.tlp_kalendarz.Resize += new System.EventHandler(this.tlp_kalendarz_Resize);
             // 
             // label7
             // 
