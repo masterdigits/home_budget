@@ -87,6 +87,7 @@ namespace WindowsFormsApp2
         */
         private void panel1_DoubleClick(object sender, EventArgs e)
         {
+            MessageBox.Show(Size.Width.ToString());
             if (wyswietlanaOperacja.uzytkownicy == SingletonBaza.Zalogowany 
                 || SingletonBaza.Zalogowany.czy_admistrator()
                 || SingletonBaza.Zalogowany.czy_moderator())
@@ -167,7 +168,9 @@ namespace WindowsFormsApp2
         }
         public void zmien_roziar(int szerokosc)
         {
-            this.Size = new Size(szerokosc, this.Size.Height);
+            //MessageBox.Show(Parent.Size.Height.ToString());
+            //this.Size = new Size(szerokosc, this.Size.Height);
+
         }
 
 

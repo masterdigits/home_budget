@@ -211,6 +211,7 @@ namespace WindowsFormsApp2
         }
         public void zmien_roziar()
         {
+            /*
             foreach( Control con in tlp_kalendarz.Controls)
             {
                 if( con is uc_panel_dnia)
@@ -218,6 +219,7 @@ namespace WindowsFormsApp2
                     (con as uc_panel_dnia).zmien_roziar(resizing_kalendarz.Szerokosc);
                 }
             }
+            */
         }
 
         private void ResizeFont(Control.ControlCollection coll, float scaleFactor)

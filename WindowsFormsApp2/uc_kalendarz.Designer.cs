@@ -144,7 +144,6 @@
             // 
             // tlp_kalendarz
             // 
-            this.tlp_kalendarz.AutoSize = true;
             this.tlp_kalendarz.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tlp_kalendarz.ColumnCount = 7;
             this.tlp_kalendarz.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));

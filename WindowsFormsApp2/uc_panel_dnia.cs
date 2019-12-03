@@ -57,7 +57,7 @@ namespace WindowsFormsApp2
         public void zmien_roziar(int szerokosc)
         {
             int nowa_szerokosc = szerokosc / 7+33;
-            //Size = new Size(nowa_szerokosc, this.Size.Height);
+            Size = new Size(nowa_szerokosc, this.Size.Height);
             foreach(uc_operacja uo in flP_dane_operacji.Controls)
             {
                 uo.zmien_roziar(nowa_szerokosc);
@@ -81,6 +81,7 @@ namespace WindowsFormsApp2
                         foreach (operacje o in query)
                         {
                             uc_operacja nowy = new uc_operacja(o);
+                            nowy.Dock = DockStyle.Fill;
                             //nowy.Anchor = AnchorStyles.None;
                             flP_dane_operacji.MinimumSize = new Size(nowy.Width + 33, 0);
                             flP_dane_operacji.Controls.Add(nowy);

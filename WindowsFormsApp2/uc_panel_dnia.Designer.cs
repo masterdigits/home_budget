@@ -41,7 +41,7 @@
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.flP_dane_operacji, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -55,14 +55,14 @@
             // 
             // flP_dane_operacji
             // 
-            this.flP_dane_operacji.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flP_dane_operacji.AutoScroll = true;
             this.flP_dane_operacji.AutoSize = true;
             this.flP_dane_operacji.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flP_dane_operacji.Dock = System.Windows.Forms.DockStyle.Left;
             this.flP_dane_operacji.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flP_dane_operacji.Location = new System.Drawing.Point(129, 53);
+            this.flP_dane_operacji.Location = new System.Drawing.Point(3, 53);
             this.flP_dane_operacji.Name = "flP_dane_operacji";
-            this.flP_dane_operacji.Size = new System.Drawing.Size(0, 0);
+            this.flP_dane_operacji.Size = new System.Drawing.Size(0, 1);
             this.flP_dane_operacji.TabIndex = 1;
             this.flP_dane_operacji.WrapContents = false;
             // 
