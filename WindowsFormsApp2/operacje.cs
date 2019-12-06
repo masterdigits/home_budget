@@ -62,6 +62,7 @@ namespace WindowsFormsApp2
         {
             SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
 SingletonBaza.Instance.BazaDC.sesja_operacja);
+            SingletonBaza.Instance.BazaDC.sesja_operacja.GetNewBindingList();
             string odp="";
             foreach (sesja_operacja o in sesja_operacja)
             {

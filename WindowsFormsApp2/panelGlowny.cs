@@ -315,7 +315,7 @@ namespace WindowsFormsApp2
                 SingletonBaza.Instance.BazaDC.operacje);
             SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
                 SingletonBaza.Instance.BazaDC.uzytkownicy);
-            if(tabela_zatwierdzone != null)
+            if (tabela_zatwierdzone != null)
             {
                 tlp_kontekst.Controls.Remove(tabela_zatwierdzone);
                 tabela_zatwierdzone.Dispose();
