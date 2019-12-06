@@ -143,9 +143,10 @@ namespace WindowsFormsApp2
                 }
                 if (doEdycji.czy_ma_dostep())
                 {
-                    if (!doEdycji.czy_ktos_inny_edytuje_operacje())
+                    if (!SingletonBaza.czy_ktos_inny_edytuje_operacje(doEdycji.id_operacji)
+                        || SingletonBaza.czy_sesja_wygasla(doEdycji.id_operacji))
                     {
-                        doEdycji.stworz_sesje();
+                        SingletonBaza.stworz_sesje(doEdycji.id_operacji);
                         foreach(sesja_operacja o in doEdycji.sesja_operacja)
                         {
                             MessageBox.Show(o.data_stworzenia.ToString());
@@ -161,7 +162,7 @@ namespace WindowsFormsApp2
                         }
                     }else
                     {
-                        MessageBox.Show("Użytkownik teraz edytuje operacje: " + doEdycji.kto_edytuje_operacje());
+                        MessageBox.Show("Użytkownik teraz edytuje operacje: " + SingletonBaza.kto_edytuje_operacje(doEdycji.id_operacji));
                     }
                 }else
                 {

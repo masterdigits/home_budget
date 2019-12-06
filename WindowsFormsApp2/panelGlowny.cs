@@ -315,6 +315,13 @@ namespace WindowsFormsApp2
                 SingletonBaza.Instance.BazaDC.operacje);
             SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
                 SingletonBaza.Instance.BazaDC.uzytkownicy);
+            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+            SingletonBaza.Instance.BazaDC.sesja_operacja);
+            foreach(sesja_operacja so in SingletonBaza.Instance.BazaDC.sesja_operacja)
+            {
+                MessageBox.Show(so.data_stworzenia.ToString());
+            }
+            /*
             if (tabela_zatwierdzone != null)
             {
                 tlp_kontekst.Controls.Remove(tabela_zatwierdzone);
@@ -333,6 +340,7 @@ namespace WindowsFormsApp2
                 tabela_niezatwierdzone.Dispose();
                 tabela_niezatwierdzone = null;
             }
+            */
         }
     }
 }

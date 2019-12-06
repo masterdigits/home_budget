@@ -40,12 +40,12 @@
             this.buttonWidokKolumnowy = new System.Windows.Forms.Button();
             this.buttonWidokKolowy = new System.Windows.Forms.Button();
             this.panelDodawanieOperacji = new System.Windows.Forms.Panel();
-            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             this.panel_menu_glowne = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlp_menu_boczne.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -216,17 +216,6 @@
             this.panelDodawanieOperacji.Size = new System.Drawing.Size(345, 408);
             this.panelDodawanieOperacji.TabIndex = 1;
             // 
-            // uc_formularz_operacja1
-            // 
-            this.uc_formularz_operacja1.AutoSize = true;
-            this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_formularz_operacja1.BackColor = System.Drawing.Color.Transparent;
-            this.uc_formularz_operacja1.Location = new System.Drawing.Point(-9, 4);
-            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(4);
-            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
-            this.uc_formularz_operacja1.Size = new System.Drawing.Size(327, 400);
-            this.uc_formularz_operacja1.TabIndex = 0;
-            // 
             // panel_menu_glowne
             // 
             this.panel_menu_glowne.BackColor = System.Drawing.Color.White;
@@ -306,6 +295,17 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Powiadomienia";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // uc_formularz_operacja1
+            // 
+            this.uc_formularz_operacja1.AutoSize = true;
+            this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.uc_formularz_operacja1.BackColor = System.Drawing.Color.Transparent;
+            this.uc_formularz_operacja1.Location = new System.Drawing.Point(-9, 4);
+            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(4);
+            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(327, 400);
+            this.uc_formularz_operacja1.TabIndex = 0;
             // 
             // panelGlowny
             // 
