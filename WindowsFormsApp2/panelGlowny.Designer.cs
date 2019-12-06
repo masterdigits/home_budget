@@ -40,11 +40,12 @@
             this.buttonWidokKolumnowy = new System.Windows.Forms.Button();
             this.buttonWidokKolowy = new System.Windows.Forms.Button();
             this.panelDodawanieOperacji = new System.Windows.Forms.Panel();
-            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             this.panel_menu_glowne = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlp_menu_boczne.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -215,21 +216,11 @@
             this.panelDodawanieOperacji.Size = new System.Drawing.Size(345, 408);
             this.panelDodawanieOperacji.TabIndex = 1;
             // 
-            // uc_formularz_operacja1
-            // 
-            this.uc_formularz_operacja1.AutoSize = true;
-            this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_formularz_operacja1.BackColor = System.Drawing.Color.Transparent;
-            this.uc_formularz_operacja1.Location = new System.Drawing.Point(-9, 4);
-            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(4);
-            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
-            this.uc_formularz_operacja1.Size = new System.Drawing.Size(327, 400);
-            this.uc_formularz_operacja1.TabIndex = 0;
-            // 
             // panel_menu_glowne
             // 
             this.panel_menu_glowne.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.SetColumnSpan(this.panel_menu_glowne, 2);
+            this.panel_menu_glowne.Controls.Add(this.button4);
             this.panel_menu_glowne.Controls.Add(this.button3);
             this.panel_menu_glowne.Controls.Add(this.button2);
             this.panel_menu_glowne.Controls.Add(this.button1);
@@ -288,6 +279,34 @@
             this.button1.Text = "Powiadomienia";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // uc_formularz_operacja1
+            // 
+            this.uc_formularz_operacja1.AutoSize = true;
+            this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.uc_formularz_operacja1.BackColor = System.Drawing.Color.Transparent;
+            this.uc_formularz_operacja1.Location = new System.Drawing.Point(-9, 4);
+            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(4);
+            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(327, 400);
+            this.uc_formularz_operacja1.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.Location = new System.Drawing.Point(822, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(174, 27);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Odświerz";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // panelGlowny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -335,5 +354,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -308,5 +308,13 @@ namespace WindowsFormsApp2
             resizing_kalendarz.Szerokosc = tlp_kontekst.Size.Width;
             resizing_kalendarz.Wysokosc = tlp_kontekst.Size.Height;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+                SingletonBaza.Instance.BazaDC.operacje);
+            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+                SingletonBaza.Instance.BazaDC.uzytkownicy);
+        }
     }
 }
