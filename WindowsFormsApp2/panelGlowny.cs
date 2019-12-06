@@ -318,14 +318,20 @@ namespace WindowsFormsApp2
             if(tabela_zatwierdzone != null)
             {
                 tlp_kontekst.Controls.Remove(tabela_zatwierdzone);
+                tabela_zatwierdzone.Dispose();
+                tabela_zatwierdzone = null;
             }
             if (kalendarz !=null)
             {
                 tlp_kontekst.Controls.Remove(kalendarz);
+                kalendarz.Dispose();
+                kalendarz = null;
             }
             if (tabela_niezatwierdzone !=null)
             {
                 tlp_kontekst.Controls.Remove(tabela_niezatwierdzone);
+                tabela_niezatwierdzone.Dispose();
+                tabela_niezatwierdzone = null;
             }
         }
     }
