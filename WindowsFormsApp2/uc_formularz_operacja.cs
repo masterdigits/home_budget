@@ -152,6 +152,7 @@ namespace WindowsFormsApp2
 
         private void ResetOperacji()
         {
+            operacjaDoEdycji.usun_sesje();
             operacjaDoEdycji = null;
             Czysc();
         }

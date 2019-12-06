@@ -10,14 +10,13 @@ namespace WindowsFormsApp2
     {
         public bool czy_ma_dostep()
         {
-            bool odp = true;
-            if (this.uzytkownicy != SingletonBaza.Zalogowany
-                || !SingletonBaza.Zalogowany.czy_admistrator()
-                || !SingletonBaza.Zalogowany.czy_moderator())
+            if (this.uzytkownicy == SingletonBaza.Zalogowany
+                || SingletonBaza.Zalogowany.czy_admistrator()
+                || SingletonBaza.Zalogowany.czy_moderator())
             {
-                odp =false;
+                return true;
             }
-            return odp;
+            return false;
         }
         public bool czy_ktos_inny_edytuje_operacje()
         {
@@ -36,6 +35,8 @@ namespace WindowsFormsApp2
         }
         public bool czy_sesja_wygasla()
         {
+            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+            SingletonBaza.Instance.BazaDC.sesja_operacja);
             bool odp = false;
             foreach (sesja_operacja o in sesja_operacja)
             {
@@ -43,6 +44,8 @@ namespace WindowsFormsApp2
                 if (span.TotalMinutes >= 5)
                 {
                     odp = true;
+                    SingletonBaza.Instance.BazaDC.sesja_operacja.DeleteOnSubmit(o);
+                    SingletonBaza.Instance.BazaDC.SubmitChanges();
                 }
             }
             return odp;
@@ -66,9 +69,12 @@ namespace WindowsFormsApp2
             nowa.uzytkownicy = SingletonBaza.Zalogowany;
             SingletonBaza.Instance.BazaDC.sesja_operacja.InsertOnSubmit(nowa);
             SingletonBaza.Instance.BazaDC.SubmitChanges();
-
         }
-
+        public void usun_sesje()
+        {
+            SingletonBaza.Instance.BazaDC.sesja_operacja.DeleteAllOnSubmit(sesja_operacja);
+            SingletonBaza.Instance.BazaDC.SubmitChanges();
+        }
 
 
 
