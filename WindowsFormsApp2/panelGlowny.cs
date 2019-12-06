@@ -315,6 +315,18 @@ namespace WindowsFormsApp2
                 SingletonBaza.Instance.BazaDC.operacje);
             SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
                 SingletonBaza.Instance.BazaDC.uzytkownicy);
+            if(tabela_zatwierdzone != null)
+            {
+                tlp_kontekst.Controls.Remove(tabela_zatwierdzone);
+            }
+            if (kalendarz !=null)
+            {
+                tlp_kontekst.Controls.Remove(kalendarz);
+            }
+            if (tabela_niezatwierdzone !=null)
+            {
+                tlp_kontekst.Controls.Remove(tabela_niezatwierdzone);
+            }
         }
     }
 }
