@@ -154,7 +154,12 @@ namespace WindowsFormsApp2
         {
             if (operacjaDoEdycji != null)
             {
+                MessageBox.Show("Usuwam sesję!!!");
                 operacjaDoEdycji.usun_sesje();
+            }
+            foreach(sesja_operacja o in operacjaDoEdycji.sesja_operacja)
+            {
+                MessageBox.Show(o.data_stworzenia.ToString());
             }
             operacjaDoEdycji = null;
             Czysc();
