@@ -317,10 +317,15 @@ namespace WindowsFormsApp2
                 SingletonBaza.Instance.BazaDC.uzytkownicy);
             SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
             SingletonBaza.Instance.BazaDC.sesja_operacja);
-            foreach(sesja_operacja so in SingletonBaza.Instance.BazaDC.sesja_operacja)
-            {
-                MessageBox.Show(so.data_stworzenia.ToString());
-            }
+            var q = from se in SingletonBaza.Instance.BazaDC.sesja_operacja
+                    select se;
+            sesja_operacja so = q.FirstOrDefault();
+            DateTime end = DateTime.Now;
+            DateTime start = (DateTime)so.data_stworzenia;
+            TimeSpan span = end.Subtract(start);
+            MessageBox.Show((span.TotalMinutes >= 5).ToString());
+
+
             /*
             if (tabela_zatwierdzone != null)
             {

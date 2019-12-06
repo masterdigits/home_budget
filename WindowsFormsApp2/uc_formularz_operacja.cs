@@ -154,7 +154,6 @@ namespace WindowsFormsApp2
         {
             if (operacjaDoEdycji != null)
             {
-                MessageBox.Show("Usuwam sesję!!!");
                 SingletonBaza.usun_sesje(operacjaDoEdycji.id_operacji);
             }
             operacjaDoEdycji = null;
@@ -198,7 +197,7 @@ namespace WindowsFormsApp2
                 operacjaDoEdycji.Zatwierdzone = true;
                 if(SingletonBaza.Zalogowany.czy_obserwator())
                 {
-                    MessageBox.Show("obserwator");
+
                     operacjaDoEdycji.Zatwierdzone = false;
                 }
                 operacjaDoEdycji.opis = richTextBoxOpisOperacji.Text;

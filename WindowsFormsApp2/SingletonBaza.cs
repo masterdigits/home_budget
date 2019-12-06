@@ -48,9 +48,9 @@ namespace WindowsFormsApp2
 
         public static bool czy_ktos_inny_edytuje_operacje(int id)
         {
-            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
-            SingletonBaza.Instance.BazaDC.sesja_operacja);
-            var q = from se in SingletonBaza.Instance.BazaDC.sesja_operacja
+            Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+            Instance.BazaDC.sesja_operacja);
+            var q = from se in Instance.BazaDC.sesja_operacja
                     where se.id_operacji == id
                     select se;
 
@@ -68,7 +68,7 @@ namespace WindowsFormsApp2
         }
         public static bool czy_sesja_wygasla(int id)
         {
-            var q = from se in SingletonBaza.Instance.BazaDC.sesja_operacja
+            var q = from se in Instance.BazaDC.sesja_operacja
                     where se.id_operacji == id
                     select se;
             if (q.FirstOrDefault() == null)
@@ -81,8 +81,8 @@ namespace WindowsFormsApp2
             TimeSpan span = end.Subtract(start);
             if (span.TotalMinutes >= 5 || so.uzytkownicy == SingletonBaza.Zalogowany)
             {
-                SingletonBaza.Instance.BazaDC.sesja_operacja.DeleteOnSubmit(so);
-                SingletonBaza.Instance.BazaDC.SubmitChanges();
+                Instance.BazaDC.sesja_operacja.DeleteOnSubmit(so);
+                Instance.BazaDC.SubmitChanges();
                 return true;
             }
             return false;
@@ -90,7 +90,7 @@ namespace WindowsFormsApp2
 
         public static string kto_edytuje_operacje(int id)
         {
-            var q = from se in SingletonBaza.Instance.BazaDC.sesja_operacja
+            var q = from se in Instance.BazaDC.sesja_operacja
                     where se.id_operacji == id
                     select se;
             if(q.FirstOrDefault() != null)
@@ -100,31 +100,40 @@ namespace WindowsFormsApp2
             return "";
             
         }
+        public static void usun_moje_sesje()
+        {
+            var q = from se in SingletonBaza.Instance.BazaDC.sesja_operacja
+                    where se.uzytkownicy == Zalogowany
+                    select se;
+            Instance.BazaDC.sesja_operacja.DeleteAllOnSubmit(q);
+            Instance.BazaDC.SubmitChanges();
+        }
 
         public static void stworz_sesje(int id)
         {
+            usun_moje_sesje();
             sesja_operacja nowa = new sesja_operacja();
             nowa.id_operacji = id;
             nowa.uzytkownicy = SingletonBaza.Zalogowany;
             nowa.data_stworzenia = DateTime.Now;
-            SingletonBaza.Instance.BazaDC.sesja_operacja.InsertOnSubmit(nowa);
-            SingletonBaza.Instance.BazaDC.SubmitChanges();
+            Instance.BazaDC.sesja_operacja.InsertOnSubmit(nowa);
+            Instance.BazaDC.SubmitChanges();
         }
         public static void usun_sesje(int id)
         {
             var q = from se in SingletonBaza.Instance.BazaDC.sesja_operacja
                     where se.id_operacji == id
                     select se;
-            SingletonBaza.Instance.BazaDC.sesja_operacja.DeleteAllOnSubmit(q);
-            SingletonBaza.Instance.BazaDC.SubmitChanges();
+            Instance.BazaDC.sesja_operacja.DeleteAllOnSubmit(q);
+            Instance.BazaDC.SubmitChanges();
         }
 
 
         public static bool sprawdz_sesje()
         {
-            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
-            SingletonBaza.Instance.BazaDC.uzytkownicy);
-            var q = from u in SingletonBaza._instance.BazaDC.uzytkownicy
+            Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+            Instance.BazaDC.uzytkownicy);
+            var q = from u in Instance.BazaDC.uzytkownicy
                     where Akt.id_uzytkownika == u.id_uzytkownika
                     select u;
             if(q.FirstOrDefault()!= null && _sesja== q.FirstOrDefault().sesja)
