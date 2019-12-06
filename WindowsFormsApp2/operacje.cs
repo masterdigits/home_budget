@@ -25,6 +25,7 @@ namespace WindowsFormsApp2
             bool odp = false;
             foreach (sesja_operacja o in sesja_operacja)
             {
+                
                 if(o.uzytkownicy != SingletonBaza.Zalogowany )
                 {
                     odp = true;
@@ -58,10 +59,12 @@ namespace WindowsFormsApp2
 
         public string kto_edytuje_operacje()
         {
+            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+SingletonBaza.Instance.BazaDC.sesja_operacja);
             string odp="";
             foreach (sesja_operacja o in sesja_operacja)
             {
-                odp = o.uzytkownicy.ImieNaziwsko;
+                odp += o.uzytkownicy.ImieNaziwsko;
             }
             return odp;
         }
