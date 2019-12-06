@@ -67,6 +67,7 @@ namespace WindowsFormsApp2
             sesja_operacja nowa = new sesja_operacja();
             nowa.operacje = this;
             nowa.uzytkownicy = SingletonBaza.Zalogowany;
+            nowa.data_stworzenia = DateTime.Now;
             SingletonBaza.Instance.BazaDC.sesja_operacja.InsertOnSubmit(nowa);
             SingletonBaza.Instance.BazaDC.SubmitChanges();
         }
