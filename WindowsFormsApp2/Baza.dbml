@@ -39,6 +39,7 @@
       <Column Name="id_uzytkownika" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="nazwa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="opis" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="powiadomienia_powiadomienie_odbiorcy" Member="powiadomienie_odbiorcy" ThisKey="id_powiadomienia" OtherKey="id_powiadomienia" Type="powiadomienie_odbiorcy" />
       <Association Name="uzytkownicy_powiadomienia" Member="uzytkownicy" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="uzytkownicy" IsForeignKey="true" />
     </Type>
   </Table>
@@ -72,7 +73,16 @@
       <Association Name="uzytkownicy_operacje" Member="operacje" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="operacje" />
       <Association Name="uzytkownicy_powiadomienia" Member="powiadomienia" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="powiadomienia" />
       <Association Name="uzytkownicy_sesja_operacja" Member="sesja_operacja" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="sesja_operacja" />
+      <Association Name="uzytkownicy_powiadomienie_odbiorcy" Member="powiadomienie_odbiorcy" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="powiadomienie_odbiorcy" />
       <Association Name="role_uzytkownicy" Member="role" ThisKey="id_roli" OtherKey="id_roli" Type="role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.powiadomienie_odbiorcy" Member="powiadomienie_odbiorcy">
+    <Type Name="powiadomienie_odbiorcy">
+      <Column Name="id_uzytkownika" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_powiadomienia" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="powiadomienia_powiadomienie_odbiorcy" Member="powiadomienia" ThisKey="id_powiadomienia" OtherKey="id_powiadomienia" Type="powiadomienia" IsForeignKey="true" />
+      <Association Name="uzytkownicy_powiadomienie_odbiorcy" Member="uzytkownicy" ThisKey="id_uzytkownika" OtherKey="id_uzytkownika" Type="uzytkownicy" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

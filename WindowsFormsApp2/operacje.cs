@@ -10,14 +10,67 @@ namespace WindowsFormsApp2
     {
         public bool czy_ma_dostep()
         {
-            if (this.uzytkownicy == SingletonBaza.Zalogowany
-                || SingletonBaza.Zalogowany.czy_admistrator()
-                || SingletonBaza.Zalogowany.czy_moderator())
+            bool odp = true;
+            if (this.uzytkownicy != SingletonBaza.Zalogowany
+                || !SingletonBaza.Zalogowany.czy_admistrator()
+                || !SingletonBaza.Zalogowany.czy_moderator())
             {
-                return true;
+                odp =false;
             }
-            return false;
+            return odp;
         }
+        public bool czy_ktos_inny_edytuje_operacje()
+        {
+            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+            SingletonBaza.Instance.BazaDC.sesja_operacja);
+            bool odp = false;
+            foreach (sesja_operacja o in sesja_operacja)
+            {
+                if(o.uzytkownicy != SingletonBaza.Zalogowany )
+                {
+                    odp = true;
+                }
+            }
+            return odp;
+
+        }
+        public bool czy_sesja_wygasla()
+        {
+            bool odp = false;
+            foreach (sesja_operacja o in sesja_operacja)
+            {
+                TimeSpan span = DateTime.Now.Subtract((DateTime)o.data_stworzenia);
+                if (span.TotalMinutes >= 5)
+                {
+                    odp = true;
+                }
+            }
+            return odp;
+        }
+
+
+        public string kto_edytuje_operacje()
+        {
+            string odp="";
+            foreach (sesja_operacja o in sesja_operacja)
+            {
+                odp = o.uzytkownicy.ImieNaziwsko;
+            }
+            return odp;
+        }
+
+        public void stworz_sesje()
+        {
+            sesja_operacja nowa = new sesja_operacja();
+            nowa.operacje = this;
+            nowa.uzytkownicy = SingletonBaza.Zalogowany;
+            SingletonBaza.Instance.BazaDC.sesja_operacja.InsertOnSubmit(nowa);
+            SingletonBaza.Instance.BazaDC.SubmitChanges();
+
+        }
+
+
+
 
         public bool filtr(String f_nazwa,
             List<uzytkownicy> f_uzyt, 

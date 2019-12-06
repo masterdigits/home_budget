@@ -143,13 +143,20 @@ namespace WindowsFormsApp2
                 }
                 if (doEdycji.czy_ma_dostep())
                 {
-                    uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
-.FirstOrDefault() as uc_formularz_operacja;
-                    if (ucfo != null)
+                    if (!doEdycji.czy_ktos_inny_edytuje_operacje() && !doEdycji.czy_sesja_wygasla())
                     {
-                        ucfo.Wybrana = doEdycji;
-                        ucfo.Focus();
-                        return;
+                        doEdycji.stworz_sesje();
+                        uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+    .FirstOrDefault() as uc_formularz_operacja;
+                        if (ucfo != null)
+                        {
+                            ucfo.Wybrana = doEdycji;
+                            ucfo.Focus();
+                            return;
+                        }
+                    }else
+                    {
+                        MessageBox.Show("Użytkownik teraz edytuje operacje: " + doEdycji.kto_edytuje_operacje());
                     }
                 }else
                 {

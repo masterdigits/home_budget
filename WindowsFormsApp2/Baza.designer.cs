@@ -51,6 +51,9 @@ namespace WindowsFormsApp2
     partial void Insertuzytkownicy(uzytkownicy instance);
     partial void Updateuzytkownicy(uzytkownicy instance);
     partial void Deleteuzytkownicy(uzytkownicy instance);
+    partial void Insertpowiadomienie_odbiorcy(powiadomienie_odbiorcy instance);
+    partial void Updatepowiadomienie_odbiorcy(powiadomienie_odbiorcy instance);
+    partial void Deletepowiadomienie_odbiorcy(powiadomienie_odbiorcy instance);
     #endregion
 		
 		public BazaDataContext() : 
@@ -136,6 +139,14 @@ namespace WindowsFormsApp2
 			get
 			{
 				return this.GetTable<uzytkownicy>();
+			}
+		}
+		
+		public System.Data.Linq.Table<powiadomienie_odbiorcy> powiadomienie_odbiorcy
+		{
+			get
+			{
+				return this.GetTable<powiadomienie_odbiorcy>();
 			}
 		}
 	}
@@ -835,6 +846,8 @@ namespace WindowsFormsApp2
 		
 		private string _opis;
 		
+		private EntitySet<powiadomienie_odbiorcy> _powiadomienie_odbiorcy;
+		
 		private EntityRef<uzytkownicy> _uzytkownicy;
 		
     #region Extensibility Method Definitions
@@ -853,6 +866,7 @@ namespace WindowsFormsApp2
 		
 		public powiadomienia()
 		{
+			this._powiadomienie_odbiorcy = new EntitySet<powiadomienie_odbiorcy>(new Action<powiadomienie_odbiorcy>(this.attach_powiadomienie_odbiorcy), new Action<powiadomienie_odbiorcy>(this.detach_powiadomienie_odbiorcy));
 			this._uzytkownicy = default(EntityRef<uzytkownicy>);
 			OnCreated();
 		}
@@ -941,6 +955,19 @@ namespace WindowsFormsApp2
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="powiadomienia_powiadomienie_odbiorcy", Storage="_powiadomienie_odbiorcy", ThisKey="id_powiadomienia", OtherKey="id_powiadomienia")]
+		public EntitySet<powiadomienie_odbiorcy> powiadomienie_odbiorcy
+		{
+			get
+			{
+				return this._powiadomienie_odbiorcy;
+			}
+			set
+			{
+				this._powiadomienie_odbiorcy.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="uzytkownicy_powiadomienia", Storage="_uzytkownicy", ThisKey="id_uzytkownika", OtherKey="id_uzytkownika", IsForeignKey=true)]
 		public uzytkownicy uzytkownicy
 		{
@@ -993,6 +1020,18 @@ namespace WindowsFormsApp2
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_powiadomienie_odbiorcy(powiadomienie_odbiorcy entity)
+		{
+			this.SendPropertyChanging();
+			entity.powiadomienia = this;
+		}
+		
+		private void detach_powiadomienie_odbiorcy(powiadomienie_odbiorcy entity)
+		{
+			this.SendPropertyChanging();
+			entity.powiadomienia = null;
 		}
 	}
 	
@@ -1354,6 +1393,8 @@ namespace WindowsFormsApp2
 		
 		private EntitySet<sesja_operacja> _sesja_operacja;
 		
+		private EntitySet<powiadomienie_odbiorcy> _powiadomienie_odbiorcy;
+		
 		private EntityRef<role> _role;
 		
     #region Extensibility Method Definitions
@@ -1383,6 +1424,7 @@ namespace WindowsFormsApp2
 			this._operacje = new EntitySet<operacje>(new Action<operacje>(this.attach_operacje), new Action<operacje>(this.detach_operacje));
 			this._powiadomienia = new EntitySet<powiadomienia>(new Action<powiadomienia>(this.attach_powiadomienia), new Action<powiadomienia>(this.detach_powiadomienia));
 			this._sesja_operacja = new EntitySet<sesja_operacja>(new Action<sesja_operacja>(this.attach_sesja_operacja), new Action<sesja_operacja>(this.detach_sesja_operacja));
+			this._powiadomienie_odbiorcy = new EntitySet<powiadomienie_odbiorcy>(new Action<powiadomienie_odbiorcy>(this.attach_powiadomienie_odbiorcy), new Action<powiadomienie_odbiorcy>(this.detach_powiadomienie_odbiorcy));
 			this._role = default(EntityRef<role>);
 			OnCreated();
 		}
@@ -1590,6 +1632,19 @@ namespace WindowsFormsApp2
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="uzytkownicy_powiadomienie_odbiorcy", Storage="_powiadomienie_odbiorcy", ThisKey="id_uzytkownika", OtherKey="id_uzytkownika")]
+		public EntitySet<powiadomienie_odbiorcy> powiadomienie_odbiorcy
+		{
+			get
+			{
+				return this._powiadomienie_odbiorcy;
+			}
+			set
+			{
+				this._powiadomienie_odbiorcy.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="role_uzytkownicy", Storage="_role", ThisKey="id_roli", OtherKey="id_roli", IsForeignKey=true)]
 		public role role
 		{
@@ -1678,6 +1733,186 @@ namespace WindowsFormsApp2
 		{
 			this.SendPropertyChanging();
 			entity.uzytkownicy = null;
+		}
+		
+		private void attach_powiadomienie_odbiorcy(powiadomienie_odbiorcy entity)
+		{
+			this.SendPropertyChanging();
+			entity.uzytkownicy = this;
+		}
+		
+		private void detach_powiadomienie_odbiorcy(powiadomienie_odbiorcy entity)
+		{
+			this.SendPropertyChanging();
+			entity.uzytkownicy = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.powiadomienie_odbiorcy")]
+	public partial class powiadomienie_odbiorcy : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_uzytkownika;
+		
+		private int _id_powiadomienia;
+		
+		private EntityRef<powiadomienia> _powiadomienia;
+		
+		private EntityRef<uzytkownicy> _uzytkownicy;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_uzytkownikaChanging(int value);
+    partial void Onid_uzytkownikaChanged();
+    partial void Onid_powiadomieniaChanging(int value);
+    partial void Onid_powiadomieniaChanged();
+    #endregion
+		
+		public powiadomienie_odbiorcy()
+		{
+			this._powiadomienia = default(EntityRef<powiadomienia>);
+			this._uzytkownicy = default(EntityRef<uzytkownicy>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_uzytkownika", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_uzytkownika
+		{
+			get
+			{
+				return this._id_uzytkownika;
+			}
+			set
+			{
+				if ((this._id_uzytkownika != value))
+				{
+					if (this._uzytkownicy.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_uzytkownikaChanging(value);
+					this.SendPropertyChanging();
+					this._id_uzytkownika = value;
+					this.SendPropertyChanged("id_uzytkownika");
+					this.Onid_uzytkownikaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_powiadomienia", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_powiadomienia
+		{
+			get
+			{
+				return this._id_powiadomienia;
+			}
+			set
+			{
+				if ((this._id_powiadomienia != value))
+				{
+					if (this._powiadomienia.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_powiadomieniaChanging(value);
+					this.SendPropertyChanging();
+					this._id_powiadomienia = value;
+					this.SendPropertyChanged("id_powiadomienia");
+					this.Onid_powiadomieniaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="powiadomienia_powiadomienie_odbiorcy", Storage="_powiadomienia", ThisKey="id_powiadomienia", OtherKey="id_powiadomienia", IsForeignKey=true)]
+		public powiadomienia powiadomienia
+		{
+			get
+			{
+				return this._powiadomienia.Entity;
+			}
+			set
+			{
+				powiadomienia previousValue = this._powiadomienia.Entity;
+				if (((previousValue != value) 
+							|| (this._powiadomienia.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._powiadomienia.Entity = null;
+						previousValue.powiadomienie_odbiorcy.Remove(this);
+					}
+					this._powiadomienia.Entity = value;
+					if ((value != null))
+					{
+						value.powiadomienie_odbiorcy.Add(this);
+						this._id_powiadomienia = value.id_powiadomienia;
+					}
+					else
+					{
+						this._id_powiadomienia = default(int);
+					}
+					this.SendPropertyChanged("powiadomienia");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="uzytkownicy_powiadomienie_odbiorcy", Storage="_uzytkownicy", ThisKey="id_uzytkownika", OtherKey="id_uzytkownika", IsForeignKey=true)]
+		public uzytkownicy uzytkownicy
+		{
+			get
+			{
+				return this._uzytkownicy.Entity;
+			}
+			set
+			{
+				uzytkownicy previousValue = this._uzytkownicy.Entity;
+				if (((previousValue != value) 
+							|| (this._uzytkownicy.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._uzytkownicy.Entity = null;
+						previousValue.powiadomienie_odbiorcy.Remove(this);
+					}
+					this._uzytkownicy.Entity = value;
+					if ((value != null))
+					{
+						value.powiadomienie_odbiorcy.Add(this);
+						this._id_uzytkownika = value.id_uzytkownika;
+					}
+					else
+					{
+						this._id_uzytkownika = default(int);
+					}
+					this.SendPropertyChanged("uzytkownicy");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }
