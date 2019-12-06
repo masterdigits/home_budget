@@ -60,9 +60,6 @@ namespace WindowsFormsApp2
 
         public string kto_edytuje_operacje()
         {
-            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
-SingletonBaza.Instance.BazaDC.sesja_operacja);
-            SingletonBaza.Instance.BazaDC.sesja_operacja.GetNewBindingList();
             string odp="";
             foreach (sesja_operacja o in sesja_operacja)
             {
@@ -73,6 +70,12 @@ SingletonBaza.Instance.BazaDC.sesja_operacja);
 
         public void stworz_sesje()
         {
+            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
+SingletonBaza.Instance.BazaDC.sesja_operacja);
+            if (czy_ktos_inny_edytuje_operacje())
+            {
+                return;
+            }
             sesja_operacja nowa = new sesja_operacja();
             nowa.operacje = this;
             nowa.uzytkownicy = SingletonBaza.Zalogowany;

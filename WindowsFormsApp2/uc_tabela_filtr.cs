@@ -143,7 +143,7 @@ namespace WindowsFormsApp2
                 }
                 if (doEdycji.czy_ma_dostep())
                 {
-                    if (!doEdycji.czy_ktos_inny_edytuje_operacje() && !doEdycji.czy_sesja_wygasla())
+                    if (!doEdycji.czy_ktos_inny_edytuje_operacje())
                     {
                         doEdycji.stworz_sesje();
                         foreach(sesja_operacja o in doEdycji.sesja_operacja)
