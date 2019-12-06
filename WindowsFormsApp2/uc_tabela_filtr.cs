@@ -146,6 +146,11 @@ namespace WindowsFormsApp2
                     if (!doEdycji.czy_ktos_inny_edytuje_operacje() && !doEdycji.czy_sesja_wygasla())
                     {
                         doEdycji.stworz_sesje();
+                        foreach(sesja_operacja o in doEdycji.sesja_operacja)
+                        {
+                            MessageBox.Show(o.data_stworzenia.ToString());
+                        }
+
                         uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
     .FirstOrDefault() as uc_formularz_operacja;
                         if (ucfo != null)
