@@ -49,6 +49,7 @@ namespace WindowsFormsApp2
                     SingletonBaza.Instance.BazaDC.SubmitChanges();
                 }else if(o.uzytkownicy == SingletonBaza.Zalogowany)
                 {
+                    odp = true;
                     SingletonBaza.Instance.BazaDC.sesja_operacja.DeleteOnSubmit(o);
                     SingletonBaza.Instance.BazaDC.SubmitChanges();
                 }
