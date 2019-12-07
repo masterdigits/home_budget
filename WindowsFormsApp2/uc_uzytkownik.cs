@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Net;
+using System.Net.Mail;
 
 namespace WindowsFormsApp2
 {
@@ -187,6 +189,7 @@ namespace WindowsFormsApp2
                     
                 }
                 SingletonBaza.Instance.BazaDC.SubmitChanges();
+                //ZmiannaHasla();
             }
         }
 
@@ -241,5 +244,34 @@ namespace WindowsFormsApp2
         {
             e.Handled = e.KeyChar != (char)Keys.Back && !char.IsSeparator(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
         }
+
+        private void ZmiannaHasla()
+        {
+            var fromAddress = new MailAddress("homebudget12145@gmail.com", "Dawid LastName");
+            var toAddress = new MailAddress(Edytowana.email, "To Name");
+            const string fromPassword = "#Qwerty123";
+            const string subject = "HomeBudget -Twoje hasło zostało zmiennione";
+            string body = "Twoje hasło zostało zmiennione"+ tb_haslo.Text;
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+            };
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = subject,
+                Body = body
+            })
+            {
+                smtp.Send(message);
+            }
+        }
+
+
     }
 }
