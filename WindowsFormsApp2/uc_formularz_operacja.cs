@@ -167,6 +167,12 @@ namespace WindowsFormsApp2
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if(operacjaDoEdycji != null && SingletonBaza.czy_sesja_wygasla(operacjaDoEdycji.id_operacji))
+            {
+                MessageBox.Show("Czekałeś za długo na edycję! Nastąpiło wyjście z operacji.");
+                ResetOperacji();
+                return;
+            }
             if (ValidationAddEditForm() == true)
             {
                 return;

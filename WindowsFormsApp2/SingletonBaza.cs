@@ -79,7 +79,7 @@ namespace WindowsFormsApp2
             DateTime end = DateTime.Now;
             DateTime start = (DateTime)so.data_stworzenia;
             TimeSpan span = end.Subtract(start);
-            if (span.TotalMinutes >= 5 || so.uzytkownicy == SingletonBaza.Zalogowany)
+            if (span.TotalMinutes >= 5)
             {
                 Instance.BazaDC.sesja_operacja.DeleteOnSubmit(so);
                 Instance.BazaDC.SubmitChanges();

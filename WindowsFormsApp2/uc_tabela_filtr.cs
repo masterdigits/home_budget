@@ -157,9 +157,10 @@ namespace WindowsFormsApp2
                         }
                     }else
                     {
-                        MessageBox.Show("Użytkownik teraz edytuje operacje: " + SingletonBaza.kto_edytuje_operacje(doEdycji.id_operacji));
+                        MessageBox.Show("Użytkownik " + SingletonBaza.kto_edytuje_operacje(doEdycji.id_operacji) + " teraz edytuje operacje!");
                     }
-                }else
+                }
+                else
                 {
                     MessageBox.Show("Brak dostepu do operacji");
                 }
@@ -187,24 +188,32 @@ namespace WindowsFormsApp2
 
                 if (doUsuniecia.czy_ma_dostep())
                 {
-                    var confirmResult = MessageBox.Show("Czy na pewno chcesz usunąć ten rekord?",
+                    if (!SingletonBaza.czy_ktos_inny_edytuje_operacje(doUsuniecia.id_operacji)
+                        || SingletonBaza.czy_sesja_wygasla(doUsuniecia.id_operacji))
+                    {
+                        var confirmResult = MessageBox.Show("Czy na pewno chcesz usunąć ten rekord?",
                     "Potwierdź usunięcie",
                       MessageBoxButtons.YesNo);
-                    if (confirmResult == DialogResult.Yes)
-                    {
-                        SingletonBaza.Instance.BazaDC.operacje.DeleteOnSubmit(doUsuniecia);
-                        SingletonBaza.Instance.BazaDC.SubmitChanges();
-                        switch (tryb_tab)
+                        if (confirmResult == DialogResult.Yes)
                         {
-                            case Tryb_Tabelki.Zatwierdzone_operacje:
-                                filtr.usun_operacje(doUsuniecia.id_operacji);
-                                break;
-                            case Tryb_Tabelki.Niezatwierdzone_operacje:
-                                dict_operacje.Remove(doUsuniecia.id_operacji);
-                                listViewGlowne.Items.Remove(dict_rekordy[doUsuniecia.id_operacji]);
-                                dict_rekordy.Remove(doUsuniecia.id_operacji);
-                                break;
+                            SingletonBaza.Instance.BazaDC.operacje.DeleteOnSubmit(doUsuniecia);
+                            SingletonBaza.Instance.BazaDC.SubmitChanges();
+                            switch (tryb_tab)
+                            {
+                                case Tryb_Tabelki.Zatwierdzone_operacje:
+                                    filtr.usun_operacje(doUsuniecia.id_operacji);
+                                    break;
+                                case Tryb_Tabelki.Niezatwierdzone_operacje:
+                                    dict_operacje.Remove(doUsuniecia.id_operacji);
+                                    listViewGlowne.Items.Remove(dict_rekordy[doUsuniecia.id_operacji]);
+                                    dict_rekordy.Remove(doUsuniecia.id_operacji);
+                                    break;
+                            }
                         }
+                    }else
+                    {
+                        MessageBox.Show("Użytkownik " + SingletonBaza.kto_edytuje_operacje(doUsuniecia.id_operacji) + " teraz edytuje operacje!");
+
                     }
                 }
                 else

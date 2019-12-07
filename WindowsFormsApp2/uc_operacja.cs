@@ -57,108 +57,112 @@ namespace WindowsFormsApp2
                 pokaz_wiecej = !pokaz_wiecej;
             }
         }
-        //EventHandler doubleclick
-        // To nie dziala niżej :(
-        /*
-        protected override void OnControlAdded(ControlEventArgs e)
-        {
-            e.Control.DoubleClick += uc_operacja_DoubleClick;
-            
-            base.OnControlAdded(e);
-        }
 
-        private void uc_operacja_DoubleClick(object sender, EventArgs e)
+        private void panel1_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show("jestem");
-            foreach( Control c in ((panelGlowny)this.FindForm()).Controls)
+            if (wyswietlanaOperacja.czy_ma_dostep())
             {
-                if(c.Name == "uc_formularz_operacja1")
+                if (!SingletonBaza.czy_ktos_inny_edytuje_operacje(wyswietlanaOperacja.id_operacji)
+                    || SingletonBaza.czy_sesja_wygasla(wyswietlanaOperacja.id_operacji))
                 {
-                    uc_formularz_operacja ucfo = c as uc_formularz_operacja;
-                    if( ucfo != null)
+                    SingletonBaza.stworz_sesje(wyswietlanaOperacja.id_operacji);
+                    uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+                .FirstOrDefault() as uc_formularz_operacja;
+                    if (ucfo != null)
                     {
                         ucfo.Wybrana = wyswietlanaOperacja;
                         ucfo.Focus();
                         return;
                     }
                 }
-            }
-        }
-        */
-        private void panel1_DoubleClick(object sender, EventArgs e)
-        {
-            MessageBox.Show(Size.Width.ToString());
-            if (wyswietlanaOperacja.uzytkownicy == SingletonBaza.Zalogowany 
-                || SingletonBaza.Zalogowany.czy_admistrator()
-                || SingletonBaza.Zalogowany.czy_moderator())
-            {
-                uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
-                    .FirstOrDefault() as uc_formularz_operacja;
-                if (ucfo != null)
+                else
                 {
-                    ucfo.Wybrana = wyswietlanaOperacja;
-                    ucfo.Focus();
-                    return;
-                }
-            }else
-            {
-                MessageBox.Show("Brak dostepu do operacji");
-            }
-        }
-
-        private void lb_kwota_Click(object sender, EventArgs e)
-        {
-            if (wyswietlanaOperacja.uzytkownicy == SingletonBaza.Zalogowany
-    || SingletonBaza.Zalogowany.czy_admistrator()
-    || SingletonBaza.Zalogowany.czy_moderator())
-            {
-                uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
-                .FirstOrDefault() as uc_formularz_operacja;
-                if (ucfo != null)
-                {
-                    ucfo.Wybrana = wyswietlanaOperacja;
-                    ucfo.Focus();
-                    return;
+                    MessageBox.Show("Użytkownik " + SingletonBaza.kto_edytuje_operacje(wyswietlanaOperacja.id_operacji) + " teraz edytuje operacje!");
                 }
             }
             else
             {
                 MessageBox.Show("Brak dostepu do operacji");
             }
+
+        }
+
+        private void lb_kwota_Click(object sender, EventArgs e)
+        {
+            if (wyswietlanaOperacja.czy_ma_dostep())
+            {
+                if (!SingletonBaza.czy_ktos_inny_edytuje_operacje(wyswietlanaOperacja.id_operacji)
+                    || SingletonBaza.czy_sesja_wygasla(wyswietlanaOperacja.id_operacji))
+                {
+                    SingletonBaza.stworz_sesje(wyswietlanaOperacja.id_operacji);
+                    uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+                .FirstOrDefault() as uc_formularz_operacja;
+                    if (ucfo != null)
+                    {
+                        ucfo.Wybrana = wyswietlanaOperacja;
+                        ucfo.Focus();
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Użytkownik " + SingletonBaza.kto_edytuje_operacje(wyswietlanaOperacja.id_operacji) + " teraz edytuje operacje!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Brak dostepu do operacji");
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            if (wyswietlanaOperacja.uzytkownicy == SingletonBaza.Zalogowany
-    || SingletonBaza.Zalogowany.czy_admistrator()
-    || SingletonBaza.Zalogowany.czy_moderator())
+            if (wyswietlanaOperacja.czy_ma_dostep())
             {
-                uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
-                .FirstOrDefault() as uc_formularz_operacja;
-                if (ucfo != null)
+                if (!SingletonBaza.czy_ktos_inny_edytuje_operacje(wyswietlanaOperacja.id_operacji)
+                    || SingletonBaza.czy_sesja_wygasla(wyswietlanaOperacja.id_operacji))
                 {
-                    ucfo.Wybrana = wyswietlanaOperacja;
-                    ucfo.Focus();
-                    return;
+                    SingletonBaza.stworz_sesje(wyswietlanaOperacja.id_operacji);
+                    uc_formularz_operacja ucfo = ((panelGlowny)this.FindForm()).Controls.Find("uc_formularz_operacja1", true)
+                .FirstOrDefault() as uc_formularz_operacja;
+                    if (ucfo != null)
+                    {
+                        ucfo.Wybrana = wyswietlanaOperacja;
+                        ucfo.Focus();
+                        return;
+                    }
                 }
-            }else
+                else
+                {
+                    MessageBox.Show("Użytkownik " + SingletonBaza.kto_edytuje_operacje(wyswietlanaOperacja.id_operacji) + " teraz edytuje operacje!");
+                }
+            }
+            else
             {
                 MessageBox.Show("Brak dostepu do operacji");
             }
+
         }
 
         private void btn_usun_Click(object sender, EventArgs e)
         {
-            if (wyswietlanaOperacja.uzytkownicy == SingletonBaza.Zalogowany
-    || SingletonBaza.Zalogowany.czy_admistrator()
-    || SingletonBaza.Zalogowany.czy_moderator())
+            if (wyswietlanaOperacja.czy_ma_dostep())
             {
-                DialogResult dialog = MessageBox.Show("Czy chcesz usunać operacje?", "Usuwanie operacji", MessageBoxButtons.YesNo);
-                if (dialog == DialogResult.Yes)
+                if (!SingletonBaza.czy_ktos_inny_edytuje_operacje(wyswietlanaOperacja.id_operacji)
+                    || SingletonBaza.czy_sesja_wygasla(wyswietlanaOperacja.id_operacji))
                 {
-                    SingletonBaza.Instance.BazaDC.operacje.DeleteOnSubmit(wyswietlanaOperacja);
-                    SingletonBaza.Instance.BazaDC.SubmitChanges();
-                    this.Parent.Controls.Remove(this);
+                    DialogResult dialog = MessageBox.Show("Czy chcesz usunać operacje?", "Usuwanie operacji", MessageBoxButtons.YesNo);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        SingletonBaza.Instance.BazaDC.operacje.DeleteOnSubmit(wyswietlanaOperacja);
+                        SingletonBaza.Instance.BazaDC.SubmitChanges();
+                        this.Parent.Controls.Remove(this);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Użytkownik " + SingletonBaza.kto_edytuje_operacje(wyswietlanaOperacja.id_operacji) + " teraz edytuje operacje!");
                 }
             }
             else
