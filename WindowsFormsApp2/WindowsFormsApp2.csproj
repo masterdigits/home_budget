@@ -117,6 +117,12 @@
     <Compile Include="uc_kalendarz.designer.cs">
       <DependentUpon>uc_kalendarz.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_okno_powiadomienia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_okno_powiadomienia.Designer.cs">
+      <DependentUpon>uc_okno_powiadomienia.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc_operacja.cs">
       <SubType>UserControl</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -131,11 +137,23 @@
     <Compile Include="uc_panel_dnia.designer.cs">
       <DependentUpon>uc_panel_dnia.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_panel_powiadomień.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_panel_powiadomień.Designer.cs">
+      <DependentUpon>uc_panel_powiadomień.cs</DependentUpon>
+    </Compile>
     <Compile Include="uc_panel_uzytkownikow.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="uc_panel_uzytkownikow.Designer.cs">
       <DependentUpon>uc_panel_uzytkownikow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uc_powiadomienie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_powiadomienie.Designer.cs">
+      <DependentUpon>uc_powiadomienie.cs</DependentUpon>
     </Compile>
     <Compile Include="uc_tabela_filtr.cs">
       <SubType>UserControl</SubType>
@@ -181,6 +199,9 @@
     <EmbeddedResource Include="uc_kalendarz.resx">
       <DependentUpon>uc_kalendarz.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uc_okno_powiadomienia.resx">
+      <DependentUpon>uc_okno_powiadomienia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uc_operacja.resx">
       <DependentUpon>uc_operacja.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -188,8 +209,14 @@
     <EmbeddedResource Include="uc_panel_dnia.resx">
       <DependentUpon>uc_panel_dnia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uc_panel_powiadomień.resx">
+      <DependentUpon>uc_panel_powiadomień.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uc_panel_uzytkownikow.resx">
       <DependentUpon>uc_panel_uzytkownikow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_powiadomienie.resx">
+      <DependentUpon>uc_powiadomienie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_tabela_filtr.resx">
       <DependentUpon>uc_tabela_filtr.cs</DependentUpon>
