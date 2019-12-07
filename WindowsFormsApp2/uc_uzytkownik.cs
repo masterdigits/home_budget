@@ -155,7 +155,8 @@ namespace WindowsFormsApp2
                 return;
             }
             else
-            { 
+            {
+                bool haslo = false;
                 uzytkownicy doZapisu = null;
                 if (Edytowana == null)
                 {
@@ -174,6 +175,7 @@ namespace WindowsFormsApp2
                     doZapisu.login = tb_login.Text;
                     if (tb_haslo.Enabled)
                     {
+                        haslo = true;
                         doZapisu.haslo = hashowanie.GetHashString(tb_haslo.Text);
                     }
                     doZapisu.role = cb_role.SelectedItem as role;
@@ -189,7 +191,7 @@ namespace WindowsFormsApp2
                     
                 }
                 SingletonBaza.Instance.BazaDC.SubmitChanges();
-                if (tb_haslo.Enabled)
+                if (haslo)
                 {
                     ZmiannaHasla();
                 }
@@ -258,7 +260,7 @@ namespace WindowsFormsApp2
                 mail.From = new MailAddress("homebudget12145@gmail.com");
                 mail.To.Add(Edytowana.email);
                 mail.Subject = "HomeBudget -Twoje hasło zostało zmiennione";
-                mail.Body = "Twoje hasło zostało zmiennione" + tb_haslo.Text;
+                mail.Body = "Twoje hasło zostało zmiennione na \"" + tb_haslo.Text+"\"";
 
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("homebudget12145@gmail.com", "#Qwerty123");
