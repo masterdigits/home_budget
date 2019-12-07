@@ -31,7 +31,7 @@ namespace WindowsFormsApp2
             switch (tryb_aktualny)
             {
                 case Tryb_powiadomien.skrzynka:
-                    /*
+
                     var q = from pow in SingletonBaza.Instance.BazaDC.powiadomienia
                             join pow_odb in SingletonBaza.Instance.BazaDC.powiadomienie_odbiorcy
                             on pow.id_powiadomienia equals pow_odb.id_powiadomienia
@@ -39,16 +39,19 @@ namespace WindowsFormsApp2
                             on pow_odb.id_uzytkownika equals uzyt.id_uzytkownika
                             where pow_odb.id_uzytkownika == SingletonBaza.Zalogowany.id_uzytkownika
                             select pow;
-                    */
-                    foreach (powiadomienie_odbiorcy pow_odb in SingletonBaza.Zalogowany.powiadomienie_odbiorcy)
+                    foreach (powiadomienia pow in q)
                     {
-                        uc_powiadomienie nowy = new uc_powiadomienie(pow_odb.powiadomienia);
+                        uc_powiadomienie nowy = new uc_powiadomienie(pow);
                         nowy.Kontener = p_kontener;
                         flp_powiadomienia.Controls.Add(nowy);
                     }
                     break;
                 case Tryb_powiadomien.wyslane:
-                    foreach (powiadomienia pow in SingletonBaza.Zalogowany.powiadomienia)
+
+                    var qeury = from p in SingletonBaza.Instance.BazaDC.powiadomienia
+                                where p.id_uzytkownika == SingletonBaza.Zalogowany.id_uzytkownika
+                                select p;
+                    foreach (powiadomienia pow in qeury)
                     {
                         uc_powiadomienie nowy = new uc_powiadomienie(pow);
                         nowy.Kontener = p_kontener;
@@ -86,8 +89,6 @@ namespace WindowsFormsApp2
 
         private void odświerzToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
-            SingletonBaza.Instance.BazaDC.powiadomienia);
             wczytaj_powiadomienia();
         }
 

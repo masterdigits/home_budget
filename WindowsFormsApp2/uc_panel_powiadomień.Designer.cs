@@ -87,7 +87,7 @@
             this.odświerzToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(194, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(222, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -112,7 +112,7 @@
             this.wysłaneToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 24);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(194, 20);
+            this.menuStrip2.Size = new System.Drawing.Size(222, 20);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -139,7 +139,7 @@
             this.flp_powiadomienia.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp_powiadomienia.Location = new System.Drawing.Point(3, 47);
             this.flp_powiadomienia.Name = "flp_powiadomienia";
-            this.flp_powiadomienia.Size = new System.Drawing.Size(188, 744);
+            this.flp_powiadomienia.Size = new System.Drawing.Size(216, 744);
             this.flp_powiadomienia.TabIndex = 2;
             // 
             // p_kontener
