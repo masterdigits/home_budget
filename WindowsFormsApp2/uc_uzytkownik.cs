@@ -189,7 +189,10 @@ namespace WindowsFormsApp2
                     
                 }
                 SingletonBaza.Instance.BazaDC.SubmitChanges();
-                //ZmiannaHasla();
+                if (tb_haslo.Enabled)
+                {
+                    ZmiannaHasla();
+                }
             }
         }
 
@@ -247,28 +250,26 @@ namespace WindowsFormsApp2
 
         private void ZmiannaHasla()
         {
-            var fromAddress = new MailAddress("homebudget12145@gmail.com", "Dawid LastName");
-            var toAddress = new MailAddress(Edytowana.email, "To Name");
-            const string fromPassword = "#Qwerty123";
-            const string subject = "HomeBudget -Twoje hasło zostało zmiennione";
-            string body = "Twoje hasło zostało zmiennione"+ tb_haslo.Text;
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-            var smtp = new SmtpClient
+                mail.From = new MailAddress("homebudget12145@gmail.com");
+                mail.To.Add(Edytowana.email);
+                mail.Subject = "HomeBudget -Twoje hasło zostało zmiennione";
+                mail.Body = "Twoje hasło zostało zmiennione" + tb_haslo.Text;
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("homebudget12145@gmail.com", "#Qwerty123");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail);
+                MessageBox.Show("Mail został wysłany");
+            }
+            catch (Exception ex)
             {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-            };
-            using (var message = new MailMessage(fromAddress, toAddress)
-            {
-                Subject = subject,
-                Body = body
-            })
-            {
-                smtp.Send(message);
+                MessageBox.Show(ex.ToString());
             }
         }
 
