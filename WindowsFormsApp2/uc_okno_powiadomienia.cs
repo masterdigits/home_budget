@@ -101,6 +101,7 @@ namespace WindowsFormsApp2
                     );
             }
             SingletonBaza.Instance.BazaDC.SubmitChanges();
+            Dispose();
         }
 
         private void btn_anuluj_Click(object sender, EventArgs e)

@@ -78,6 +78,7 @@ namespace WindowsFormsApp2
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            p_kontener.Controls.Clear();
             uc_okno_powiadomienia nowe = new uc_okno_powiadomienia(1);
             nowe.Dock = DockStyle.Fill;
             p_kontener.Controls.Add(nowe);
@@ -87,6 +88,11 @@ namespace WindowsFormsApp2
         {
             SingletonBaza.Instance.BazaDC.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues,
             SingletonBaza.Instance.BazaDC.powiadomienia);
+            wczytaj_powiadomienia();
+        }
+
+        private void uc_panel_powiadomień_Load(object sender, EventArgs e)
+        {
             wczytaj_powiadomienia();
         }
     }

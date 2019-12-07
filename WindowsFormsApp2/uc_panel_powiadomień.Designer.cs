@@ -132,9 +132,11 @@
             // 
             // flp_powiadomienia
             // 
+            this.flp_powiadomienia.AutoScroll = true;
             this.flp_powiadomienia.AutoSize = true;
             this.flp_powiadomienia.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flp_powiadomienia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flp_powiadomienia.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flp_powiadomienia.Location = new System.Drawing.Point(3, 47);
             this.flp_powiadomienia.Name = "flp_powiadomienia";
             this.flp_powiadomienia.Size = new System.Drawing.Size(188, 744);
@@ -157,6 +159,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "uc_panel_powiadomień";
             this.Size = new System.Drawing.Size(1533, 800);
+            this.Load += new System.EventHandler(this.uc_panel_powiadomień_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
