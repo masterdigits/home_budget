@@ -59,7 +59,7 @@ namespace WindowsFormsApp2
 
         private void buttonWidokKalendarz_Click(object sender, EventArgs e)
         {
-            schowaj_kontekts(wybrana_kontrolka.kalendarz);
+            schowaj_kontekts();
             if (kalendarz == null)
             {
                 kalendarz = new uc_kalendarz(Aktualnie_zalogowany);
@@ -88,7 +88,7 @@ namespace WindowsFormsApp2
 
 
         }
-        private void schowaj_kontekts(wybrana_kontrolka wk)
+        private void schowaj_kontekts()
         {
             /*switch (wk)
             {
@@ -234,7 +234,7 @@ namespace WindowsFormsApp2
         private void buttonWidokTabelka_Click(object sender, EventArgs e)
         {
 
-            schowaj_kontekts(wybrana_kontrolka.tabela_zatwierdzone);
+            schowaj_kontekts();
             if (tabela_zatwierdzone == null)
             {
                 tabela_zatwierdzone = new uc_tabela_filtr(0);
@@ -242,7 +242,10 @@ namespace WindowsFormsApp2
                 tabela_zatwierdzone.Dock = DockStyle.Fill;
             }
             else
+            {
+                tabela_zatwierdzone.tryb_wyswietlania_danych = uc_tabela_filtr.Tryb_Tabelki.Zatwierdzone_operacje;
                 tabela_zatwierdzone.Visible = true;
+            }
         }
 
 
@@ -334,7 +337,7 @@ namespace WindowsFormsApp2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            schowaj_kontekts(wybrana_kontrolka.panel_administratora);
+            schowaj_kontekts();
             if (panel_admistratora == null)
             {
                 if (SingletonBaza.Zalogowany.czy_admistrator())
@@ -351,7 +354,7 @@ namespace WindowsFormsApp2
 
         private void buttonTabbelaNiezatwierdzonych_Click(object sender, EventArgs e)
         {
-            schowaj_kontekts(wybrana_kontrolka.tabela_niezatwierdzone);
+            schowaj_kontekts();
             if (tabela_niezatwierdzone == null)
             {
                 if (SingletonBaza.Zalogowany.czy_obserwator()
@@ -408,7 +411,7 @@ namespace WindowsFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            schowaj_kontekts(wybrana_kontrolka.panel_powiadomien);
+            schowaj_kontekts();
             if (panel_Powiadomien == null)
             {
 
@@ -422,7 +425,19 @@ namespace WindowsFormsApp2
 
         private void buttonWidokKolumnowy_Click_1(object sender, EventArgs e)
         {
-            schowaj_kontekts(wybrana_kontrolka.wykres_kolumnowy);
+            schowaj_kontekts();
+            if(tabela_zatwierdzone == null)
+            {
+                tabela_zatwierdzone = new uc_tabela_filtr(2);
+                tlp_kontekst.Controls.Add(tabela_zatwierdzone);
+                tabela_zatwierdzone.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                tabela_zatwierdzone.Visible = true;
+                tabela_zatwierdzone.tryb_wyswietlania_danych = uc_tabela_filtr.Tryb_Tabelki.wykres_kolumnowy;
+            }
+            /*
             if (wykres_kolumnowy == null)
             {
                 wykres_kolumnowy = new uc_wykres_kolumnowy();
@@ -433,9 +448,10 @@ namespace WindowsFormsApp2
                 wykres_kolumnowy.draw_month_chart();
                 tlp_kontekst.Controls.Add(wykres_kolumnowy);
             }
+            
             else
                 wykres_kolumnowy.Visible = true;
-            
+            */
         }
     }
 }

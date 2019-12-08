@@ -14,22 +14,57 @@ namespace WindowsFormsApp2
     {
         public Dictionary<int, operacje> dict_operacje = new Dictionary<int, operacje>();
         Dictionary<int, ListViewItem> dict_rekordy = new Dictionary<int, ListViewItem>();
-        enum Tryb_Tabelki
+        public enum Tryb_Tabelki
         {
             Zatwierdzone_operacje=0,
-            Niezatwierdzone_operacje=1
+            Niezatwierdzone_operacje=1,
+            wykres_kolumnowy =2
         }
         Tryb_Tabelki tryb_tab;
+        internal Tryb_Tabelki tryb_wyswietlania_danych
+        {
+            get
+            {
+                return tryb_tab;
+            }
+            set
+            {
+                // Zmianna trybu tej kontrolki powoduje ze zmieniamy odpowiednio tryb filtra wobec czego on wie co aktualizowac w tym momencie lub odswierzac//
+                if(value == Tryb_Tabelki.wykres_kolumnowy)
+                {
+                    filtr.Tryb_aktualny_filtra = uc_filtr.Tryb_filtra.wykres;
+                    listViewGlowne.Visible = false;
+                    wykres.Visible = true;
+                }
+                else
+                {
+                    filtr.Tryb_aktualny_filtra = uc_filtr.Tryb_filtra.tabela;
+                    listViewGlowne.Visible = true;
+                    wykres.Visible = false;
+                }
+                filtr.button1_Click(null, null);
+                tryb_tab = value;//to włąsciwie nie ma znaczenia ale jednak zotawię to tutaj 
+                
+            }
+        }
+
+
         uc_filtr filtr= null;
+        uc_wykres_kolumnowy wykres = null;
         public uc_tabela_filtr(int tt)
         {
+            //Kod do totalnej zmianny
+            //Tak samo funkcjonowanie filtra
             InitializeComponent();
             tryb_tab = (Tryb_Tabelki)tt;
             if (tryb_tab == Tryb_Tabelki.Zatwierdzone_operacje)
             {
-
-                filtr = new uc_filtr(listViewGlowne);
+                wykres = new uc_wykres_kolumnowy();
+                filtr = new uc_filtr(listViewGlowne,wykres);
                 tableLayoutPanel1.Controls.Add(filtr, 0, 0);
+                wykres.Dock = DockStyle.Fill;
+                tableLayoutPanel1.Controls.Add(wykres, 0, 1);
+                wykres.Visible = false;
             } else if (tryb_tab == Tryb_Tabelki.Niezatwierdzone_operacje)
             {
                 // Dodaje niezatwierdzone operacje
@@ -40,6 +75,15 @@ namespace WindowsFormsApp2
                 {
                     MenuEdycji.Items.Add("Zatwierdź", null, zatwierdzToolStripMenuItem_Click);
                 }
+            }else if(tryb_tab == Tryb_Tabelki.wykres_kolumnowy)
+            {
+                wykres = new uc_wykres_kolumnowy();
+                filtr = new uc_filtr(listViewGlowne, wykres);
+                tableLayoutPanel1.Controls.Add(filtr, 0, 0);
+                wykres.Dock = DockStyle.Fill;
+                tableLayoutPanel1.Controls.Add(wykres, 0, 1);
+                listViewGlowne.Visible = false;
+
             }
         }
         public void trybWidokTabelkaNiezatiwerdzone()

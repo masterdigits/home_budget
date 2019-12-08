@@ -12,6 +12,21 @@ namespace WindowsFormsApp2
 {
     public partial class uc_wykres_kolumnowy : UserControl
     {
+        List<operacje> dane_do_wykresu = new List<operacje>();
+
+        internal List<operacje> Dane_do_Wykresu
+        {
+            get
+            {
+                return dane_do_wykresu;
+            }
+            set
+            {
+                dane_do_wykresu = value;
+            }
+        }
+
+
         public uc_wykres_kolumnowy()
         {
             InitializeComponent();
@@ -19,10 +34,22 @@ namespace WindowsFormsApp2
 
         public void draw_year_chart() 
         {
+            chart1.ChartAreas.Clear();
             chart1.ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea("rok"));
-
+            
             System.Windows.Forms.DataVisualization.Charting.Series years = new System.Windows.Forms.DataVisualization.Charting.Series();
-            years.Points.DataBindXY(new double[] { 2015, 2016, 2017, 2018 }, new double[] { 34567, 35678, 36789, 41235 });
+            Dictionary<int, decimal> rok_suma = new Dictionary<int, decimal>();
+            //Rozróżniać wydatek od przychodu ???
+            foreach(operacje o in dane_do_wykresu)
+            {
+                if(!rok_suma.ContainsKey(o.data.Year))
+                {
+                    rok_suma[o.data.Year] = 0;
+                }
+                rok_suma[o.data.Year] += o.kwota; 
+            }
+
+            years.Points.DataBindXY(rok_suma.Keys, rok_suma.Values);
             years.ChartArea = "rok";
 
             chart1.Series.Clear();
@@ -32,11 +59,27 @@ namespace WindowsFormsApp2
 
         public void draw_month_chart()
         {
-            String[] months_names = { "styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień" };
+            // Jest jakiś wybór roku ?? 
+            //String[] months_names = { "styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień" };
+            chart2.ChartAreas.Clear();
             chart2.ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea("miesiąc"));
+            Dictionary<string, decimal> miesiac_suma = new Dictionary<string, decimal>();
+            //Rozróżniać wydatek od przychodu ???
+            foreach (operacje o in dane_do_wykresu)
+            {
+                string nazwa_miesiace =((uc_kalendarz.Miesiace) o.data.Month).ToString();
+
+                if (!miesiac_suma.ContainsKey(nazwa_miesiace))
+                {
+                    miesiac_suma[nazwa_miesiace] = 0;
+                }
+                miesiac_suma[nazwa_miesiace] += o.kwota;
+            }
+
 
             System.Windows.Forms.DataVisualization.Charting.Series months = new System.Windows.Forms.DataVisualization.Charting.Series();
-            months.Points.DataBindXY(months_names, new double[] { 1234, 2345, 3456, 4567,5678,6543,5423,4321,1432,2314,5321,7654 });
+            //months.Points.DataBindXY(months_names, new double[] { 1234, 2345, 3456, 4567,5678,6543,5423,4321,1432,2314,5321,7654 });
+            months.Points.DataBindXY(miesiac_suma.Keys, miesiac_suma.Values);
             months.ChartArea = "miesiąc";
 
             chart2.Series.Clear();
