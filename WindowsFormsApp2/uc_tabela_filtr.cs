@@ -53,19 +53,10 @@ namespace WindowsFormsApp2
         uc_wykres_kolumnowy wykres = null;
         public uc_tabela_filtr(int tt)
         {
-            //Kod do totalnej zmianny
-            //Tak samo funkcjonowanie filtra
+
             InitializeComponent();
             tryb_tab = (Tryb_Tabelki)tt;
-            if (tryb_tab == Tryb_Tabelki.Zatwierdzone_operacje)
-            {
-                wykres = new uc_wykres_kolumnowy();
-                filtr = new uc_filtr(listViewGlowne,wykres);
-                tableLayoutPanel1.Controls.Add(filtr, 0, 0);
-                wykres.Dock = DockStyle.Fill;
-                tableLayoutPanel1.Controls.Add(wykres, 0, 1);
-                wykres.Visible = false;
-            } else if (tryb_tab == Tryb_Tabelki.Niezatwierdzone_operacje)
+            if (tryb_tab == Tryb_Tabelki.Niezatwierdzone_operacje)
             {
                 // Dodaje niezatwierdzone operacje
                 trybWidokTabelkaNiezatiwerdzone();
@@ -75,15 +66,20 @@ namespace WindowsFormsApp2
                 {
                     MenuEdycji.Items.Add("Zatwierdź", null, zatwierdzToolStripMenuItem_Click);
                 }
-            }else if(tryb_tab == Tryb_Tabelki.wykres_kolumnowy)
+            }else 
             {
                 wykres = new uc_wykres_kolumnowy();
                 filtr = new uc_filtr(listViewGlowne, wykres);
                 tableLayoutPanel1.Controls.Add(filtr, 0, 0);
                 wykres.Dock = DockStyle.Fill;
                 tableLayoutPanel1.Controls.Add(wykres, 0, 1);
-                listViewGlowne.Visible = false;
-
+                if (tryb_tab == Tryb_Tabelki.wykres_kolumnowy)
+                {
+                    listViewGlowne.Visible = false;
+                }else
+                {
+                    wykres.Visible = false;
+                }
             }
         }
         public void trybWidokTabelkaNiezatiwerdzone()
