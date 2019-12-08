@@ -19,13 +19,15 @@ namespace WindowsFormsApp2
         uc_kalendarz kalendarz;
         uc_panel_uzytkownikow panel_admistratora;
         uc_panel_powiadomień panel_Powiadomien;
+        uc_wykres_kolumnowy wykres_kolumnowy;
         enum wybrana_kontrolka
         {
             tabela_zatwierdzone = 0,
             kalendarz = 1,
             panel_administratora = 2,
             tabela_niezatwierdzone = 3,
-            panel_powiadomien = 4
+            panel_powiadomien = 4,
+            wykres_kolumnowy = 6
         }
 
 
@@ -64,6 +66,8 @@ namespace WindowsFormsApp2
                 tlp_kontekst.Controls.Add(kalendarz);
                 kalendarz.Dock = DockStyle.Fill;
             }
+            else
+                kalendarz.Visible = true;
         }
 
         private void buttonWidokLiniowy_Click(object sender, EventArgs e)
@@ -86,7 +90,7 @@ namespace WindowsFormsApp2
         }
         private void schowaj_kontekts(wybrana_kontrolka wk)
         {
-            switch (wk)
+            /*switch (wk)
             {
                 case wybrana_kontrolka.kalendarz:
                     if (tabela_zatwierdzone != null)
@@ -198,13 +202,33 @@ namespace WindowsFormsApp2
                         panel_Powiadomien.Visible = true;
                     }
                     break;
-            }
+                case wybrana_kontrolka.wykres_kolumnowy:
+                    if (tabela_zatwierdzone != null)
+                    {
+                        tabela_zatwierdzone.Visible = false;
+                    }
+                    if (kalendarz != null)
+                    {
+                        kalendarz.Visible = false;
+                    }
+                    if (panel_admistratora != null)
+                    {
+                        panel_admistratora.Visible = false;
+                    }
+                    if (tabela_niezatwierdzone != null)
+                    {
+                        tabela_niezatwierdzone.Visible = false;
+                    }
+                    if (panel_Powiadomien != null)
+                    {
+                        panel_Powiadomien.Visible = true;
+                    }
+                    break;
+            }*/
 
-        }
+            foreach (Control item in tlp_kontekst.Controls)
+                item.Visible = false;
 
-        private void buttonWidokKolumnowy_Click(object sender, EventArgs e)
-        {
-            //trybKolumnowy();
         }
 
         private void buttonWidokTabelka_Click(object sender, EventArgs e)
@@ -217,6 +241,8 @@ namespace WindowsFormsApp2
                 tlp_kontekst.Controls.Add(tabela_zatwierdzone);
                 tabela_zatwierdzone.Dock = DockStyle.Fill;
             }
+            else
+                tabela_zatwierdzone.Visible = true;
         }
 
 
@@ -319,6 +345,8 @@ namespace WindowsFormsApp2
                 }
 
             }
+            else
+                panel_admistratora.Visible = true;
         }
 
         private void buttonTabbelaNiezatwierdzonych_Click(object sender, EventArgs e)
@@ -335,6 +363,8 @@ namespace WindowsFormsApp2
                     tabela_niezatwierdzone.Dock = DockStyle.Fill;
                 }
             }
+            else
+                tabela_niezatwierdzone.Visible = true;
         }
 
         private void uc_formularz_operacja1_Load(object sender, EventArgs e)
@@ -386,6 +416,26 @@ namespace WindowsFormsApp2
                 tlp_kontekst.Controls.Add(panel_Powiadomien);
                 panel_Powiadomien.Dock = DockStyle.Fill;
             }
+            else
+                panel_Powiadomien.Visible = true;
+        }
+
+        private void buttonWidokKolumnowy_Click_1(object sender, EventArgs e)
+        {
+            schowaj_kontekts(wybrana_kontrolka.wykres_kolumnowy);
+            if (wykres_kolumnowy == null)
+            {
+                wykres_kolumnowy = new uc_wykres_kolumnowy();
+                wykres_kolumnowy.Width = tlp_kontekst.Width - 6;
+                wykres_kolumnowy.Height = tlp_kontekst.Height - 6;
+                wykres_kolumnowy.set_size();
+                wykres_kolumnowy.draw_year_chart();
+                wykres_kolumnowy.draw_month_chart();
+                tlp_kontekst.Controls.Add(wykres_kolumnowy);
+            }
+            else
+                wykres_kolumnowy.Visible = true;
+            
         }
     }
 }

@@ -189,6 +189,7 @@
             this.buttonWidokKolumnowy.TabIndex = 4;
             this.buttonWidokKolumnowy.Text = "Wykres kolumnowy";
             this.buttonWidokKolumnowy.UseVisualStyleBackColor = true;
+            this.buttonWidokKolumnowy.Click += new System.EventHandler(this.buttonWidokKolumnowy_Click_1);
             // 
             // buttonWidokKolowy
             // 

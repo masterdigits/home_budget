@@ -167,6 +167,12 @@
     <Compile Include="uc_uzytkownik.Designer.cs">
       <DependentUpon>uc_uzytkownik.cs</DependentUpon>
     </Compile>
+    <Compile Include="uc_wykres_kolumnowy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uc_wykres_kolumnowy.Designer.cs">
+      <DependentUpon>uc_wykres_kolumnowy.cs</DependentUpon>
+    </Compile>
     <Compile Include="uzytkownicy.cs" />
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uc_uzytkownik.resx">
       <DependentUpon>uc_uzytkownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uc_wykres_kolumnowy.resx">
+      <DependentUpon>uc_wykres_kolumnowy.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Baza.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
