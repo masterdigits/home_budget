@@ -308,6 +308,7 @@ namespace WindowsFormsApp2
             uwk_operacje.Dane_do_Wykresu = dane;
             uwk_operacje.draw_year_chart();
             uwk_operacje.draw_month_chart();
+            uwk_operacje.piechart_year();
         }
 
         public void button1_Click(object sender, EventArgs e)

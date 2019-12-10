@@ -12,7 +12,8 @@ namespace WindowsFormsApp2
 {
     public partial class uc_wykres_kolumnowy : UserControl
     {
-        List<operacje> dane_do_wykresu = new List<operacje>();
+        List<operacje> dane_do_wykresu = SingletonBaza.Instance.BazaDC.operacje.ToList();
+
 
         internal List<operacje> Dane_do_Wykresu
         {
@@ -25,7 +26,6 @@ namespace WindowsFormsApp2
                 dane_do_wykresu = value;
             }
         }
-
 
         public uc_wykres_kolumnowy()
         {
@@ -55,6 +55,22 @@ namespace WindowsFormsApp2
             chart1.Series.Clear();
 
             chart1.Series.Add(years);
+        }
+
+        public void piechart_year()
+        {
+            //ch_kolowy.Series.Add("s1");
+            ch_kolowy.Series["s1"].Points.Clear();
+            ch_kolowy.Series["s1"]["PieLabelStyle"] = "Outside";
+            ch_kolowy.ChartAreas[0].Area3DStyle.Enable3D = true;
+            var q = SingletonBaza.Instance.BazaDC.kategoria;
+            List<kategoria> kategorie = q.ToList();
+
+            foreach (kategoria kat in kategorie)
+            {
+                decimal suma = dane_do_wykresu.Where(x => x.kategoria == kat).Sum(x => x.kwota);
+                ch_kolowy.Series["s1"].Points.AddXY(kat.nazwa, suma);
+            }
         }
 
         public void draw_month_chart()
@@ -97,6 +113,13 @@ namespace WindowsFormsApp2
             chart2.Height = tabControl1.Height - 24;
 
 
+        }
+
+        private void uc_wykres_kolumnowy_Load(object sender, EventArgs e)
+        {
+            piechart_year();
+            draw_month_chart();
+            draw_year_chart();
         }
     }
 }
