@@ -55,9 +55,8 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1871, 1083);
+            this.panel1.Size = new System.Drawing.Size(1403, 880);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -67,12 +66,11 @@
             this.tableLayoutPanel1.Controls.Add(this.listViewGlowne, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1871, 1083);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1403, 880);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // listViewGlowne
@@ -94,10 +92,10 @@
             this.listViewGlowne.GridLines = true;
             this.listViewGlowne.HideSelection = false;
             this.listViewGlowne.HoverSelection = true;
-            this.listViewGlowne.Location = new System.Drawing.Point(3, 2);
-            this.listViewGlowne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listViewGlowne.Location = new System.Drawing.Point(2, 2);
+            this.listViewGlowne.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listViewGlowne.Name = "listViewGlowne";
-            this.listViewGlowne.Size = new System.Drawing.Size(1865, 1079);
+            this.listViewGlowne.Size = new System.Drawing.Size(1400, 877);
             this.listViewGlowne.TabIndex = 112;
             this.listViewGlowne.UseCompatibleStateImageBehavior = false;
             this.listViewGlowne.View = System.Windows.Forms.View.Details;
@@ -163,30 +161,29 @@
             this.edytujToolStripMenuItem,
             this.usuńToolStripMenuItem});
             this.MenuEdycji.Name = "MenuEdycji";
-            this.MenuEdycji.Size = new System.Drawing.Size(120, 52);
+            this.MenuEdycji.Size = new System.Drawing.Size(108, 48);
             // 
             // edytujToolStripMenuItem
             // 
             this.edytujToolStripMenuItem.Name = "edytujToolStripMenuItem";
-            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
+            this.edytujToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.edytujToolStripMenuItem.Text = "Edytuj";
             this.edytujToolStripMenuItem.Click += new System.EventHandler(this.edytujToolStripMenuItem_Click);
             // 
             // usuńToolStripMenuItem
             // 
             this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
-            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
+            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.usuńToolStripMenuItem.Text = "Usuń";
             this.usuńToolStripMenuItem.Click += new System.EventHandler(this.usuńToolStripMenuItem_Click);
             // 
             // uc_tabela_filtr
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "uc_tabela_filtr";
-            this.Size = new System.Drawing.Size(1871, 1083);
+            this.Size = new System.Drawing.Size(1403, 880);
             this.Load += new System.EventHandler(this.uc_tabela_filtr_Load);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

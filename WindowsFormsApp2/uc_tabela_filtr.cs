@@ -55,6 +55,7 @@ namespace WindowsFormsApp2
         {
 
             InitializeComponent();
+
             tryb_tab = (Tryb_Tabelki)tt;
             if (tryb_tab == Tryb_Tabelki.Niezatwierdzone_operacje)
             {
@@ -70,6 +71,10 @@ namespace WindowsFormsApp2
             {
                 wykres = new uc_wykres_kolumnowy();
                 filtr = new uc_filtr(listViewGlowne, wykres);
+                wykres.Width = this.Width - 18;
+                wykres.Height = this.Height - filtr.Height - 18;
+                wykres.set_size();
+
                 tableLayoutPanel1.Controls.Add(filtr, 0, 0);
                 wykres.Dock = DockStyle.Fill;
                 tableLayoutPanel1.Controls.Add(wykres, 0, 1);

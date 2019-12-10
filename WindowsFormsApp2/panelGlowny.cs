@@ -19,7 +19,6 @@ namespace WindowsFormsApp2
         uc_kalendarz kalendarz;
         uc_panel_uzytkownikow panel_admistratora;
         uc_panel_powiadomień panel_Powiadomien;
-        uc_wykres_kolumnowy wykres_kolumnowy;
         enum wybrana_kontrolka
         {
             tabela_zatwierdzone = 0,
@@ -429,8 +428,13 @@ namespace WindowsFormsApp2
             if(tabela_zatwierdzone == null)
             {
                 tabela_zatwierdzone = new uc_tabela_filtr(2);
+                tabela_zatwierdzone.Width = tlp_kontekst.Width - 6;
+                tabela_zatwierdzone.Height = tlp_kontekst.Height - 6;
                 tlp_kontekst.Controls.Add(tabela_zatwierdzone);
                 tabela_zatwierdzone.Dock = DockStyle.Fill;
+
+                System.Console.WriteLine(tabela_zatwierdzone.Width);
+                System.Console.WriteLine(tabela_zatwierdzone.Width);
             }
             else
             {
