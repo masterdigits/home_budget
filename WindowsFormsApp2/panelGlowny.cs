@@ -19,7 +19,8 @@ namespace WindowsFormsApp2
         uc_kalendarz kalendarz;
         uc_panel_uzytkownikow panel_admistratora;
         uc_panel_powiadomień panel_Powiadomien;
-        uc_wykres_kolumnowy wykres_kolumnowy;
+        //uc_wykres_kolumnowy wykres_kolumnowy;
+
         enum wybrana_kontrolka
         {
             tabela_zatwierdzone = 0,
@@ -34,7 +35,6 @@ namespace WindowsFormsApp2
         public panelGlowny()
         {
             InitializeComponent();
-
         }
 
         public panelGlowny(uzytkownicy u)
@@ -77,17 +77,14 @@ namespace WindowsFormsApp2
 
         private void buttonWidokKolowy_Click(object sender, EventArgs e)
         {
-            //trybKolowy();
             //Kod do usunięcia testowanie focusu uc_form_operacji
             var q = from o in SingletonBaza.Instance.BazaDC.operacje
                     select o;
             operacje test = q.FirstOrDefault();
             uc_formularz_operacja1.Wybrana = test;
             uc_formularz_operacja1.Focus();
-
-
-
         }
+
         private void schowaj_kontekts()
         {
             /*switch (wk)
@@ -233,7 +230,6 @@ namespace WindowsFormsApp2
 
         private void buttonWidokTabelka_Click(object sender, EventArgs e)
         {
-
             schowaj_kontekts();
             if (tabela_zatwierdzone == null)
             {
@@ -256,7 +252,7 @@ namespace WindowsFormsApp2
             this.Hide();
             PL.ShowDialog();
         }
-        // Tutaj jest co dodałem do odswierzania kalendarza 
+        // Tutaj jest co dodałem do odswiezania kalendarza 
 
         public void odswierz_dany_dzien(DateTime dzien)
         {
@@ -265,9 +261,9 @@ namespace WindowsFormsApp2
                 kalendarz.odswierz_panel_dnia(dzien);
             }
         }
+
         public void odsiwerz_dana_operacje_w_tabeli(int id)
         {
-
             if (tabela_zatwierdzone != null)
             {
                 tabela_zatwierdzone.odswierz_dana_operacje(id);
@@ -368,11 +364,6 @@ namespace WindowsFormsApp2
             }
             else
                 tabela_niezatwierdzone.Visible = true;
-        }
-
-        private void uc_formularz_operacja1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void tlp_kontekst_Resize(object sender, EventArgs e)

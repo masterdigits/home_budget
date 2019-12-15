@@ -309,6 +309,7 @@ namespace WindowsFormsApp2
             uwk_operacje.draw_year_chart();
             uwk_operacje.draw_month_chart();
             uwk_operacje.piechart_year();
+            uwk_operacje.draw_line();
         }
 
         public void button1_Click(object sender, EventArgs e)

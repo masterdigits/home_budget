@@ -31,14 +31,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureRolaUżytkownika = new System.Windows.Forms.PictureBox();
-            this.pictureMajątek = new System.Windows.Forms.PictureBox();
             this.pictureHasło = new System.Windows.Forms.PictureBox();
             this.pictureLogin = new System.Windows.Forms.PictureBox();
             this.pictureEmail = new System.Windows.Forms.PictureBox();
             this.pictureNazwisko = new System.Windows.Forms.PictureBox();
             this.pictureImię = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Nazwisko = new System.Windows.Forms.Label();
@@ -49,7 +47,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRolaUżytkownika)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureMajątek)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHasło)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEmail)).BeginInit();
@@ -81,14 +78,12 @@
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.SandyBrown;
             this.panel1.Controls.Add(this.pictureRolaUżytkownika);
-            this.panel1.Controls.Add(this.pictureMajątek);
             this.panel1.Controls.Add(this.pictureHasło);
             this.panel1.Controls.Add(this.pictureLogin);
             this.panel1.Controls.Add(this.pictureEmail);
             this.panel1.Controls.Add(this.pictureNazwisko);
             this.panel1.Controls.Add(this.pictureImię);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.Nazwisko);
@@ -105,23 +100,12 @@
             // pictureRolaUżytkownika
             // 
             this.pictureRolaUżytkownika.Image = global::WindowsFormsApp2.Properties.Resources.FAVPNG_question_mark_icon_wallpaper_v5jBEb5G;
-            this.pictureRolaUżytkownika.Location = new System.Drawing.Point(1288, 19);
+            this.pictureRolaUżytkownika.Location = new System.Drawing.Point(1082, 19);
             this.pictureRolaUżytkownika.Name = "pictureRolaUżytkownika";
             this.pictureRolaUżytkownika.Size = new System.Drawing.Size(21, 20);
             this.pictureRolaUżytkownika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureRolaUżytkownika.TabIndex = 30;
             this.pictureRolaUżytkownika.TabStop = false;
-            // 
-            // pictureMajątek
-            // 
-            this.pictureMajątek.Image = global::WindowsFormsApp2.Properties.Resources.FAVPNG_question_mark_icon_wallpaper_v5jBEb5G;
-            this.pictureMajątek.Location = new System.Drawing.Point(1023, 19);
-            this.pictureMajątek.Name = "pictureMajątek";
-            this.pictureMajątek.Size = new System.Drawing.Size(21, 20);
-            this.pictureMajątek.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureMajątek.TabIndex = 29;
-            this.pictureMajątek.TabStop = false;
-            this.pictureMajątek.Click += new System.EventHandler(this.pictureMajątek_Click);
             // 
             // pictureHasło
             // 
@@ -182,23 +166,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(1112, 16);
+            this.label7.Location = new System.Drawing.Point(913, 19);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(162, 23);
             this.label7.TabIndex = 23;
             this.label7.Text = "Rola użytkownika";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(928, 19);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 23);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Majątek";
             // 
             // label5
             // 
@@ -263,7 +236,7 @@
             this.buttonDodaj.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Yellow;
             this.buttonDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDodaj.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonDodaj.Location = new System.Drawing.Point(1342, 8);
+            this.buttonDodaj.Location = new System.Drawing.Point(1150, 11);
             this.buttonDodaj.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDodaj.Name = "buttonDodaj";
             this.buttonDodaj.Size = new System.Drawing.Size(205, 38);
@@ -298,7 +271,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureRolaUżytkownika)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureMajątek)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHasło)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEmail)).EndInit();
@@ -321,12 +293,10 @@
         private System.Windows.Forms.Label labelImię;
         private System.Windows.Forms.Button buttonDodaj;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureImię;
         private System.Windows.Forms.PictureBox pictureNazwisko;
         private System.Windows.Forms.PictureBox pictureEmail;
         private System.Windows.Forms.PictureBox pictureLogin;
-        private System.Windows.Forms.PictureBox pictureMajątek;
         private System.Windows.Forms.PictureBox pictureHasło;
         private System.Windows.Forms.PictureBox pictureRolaUżytkownika;
     }

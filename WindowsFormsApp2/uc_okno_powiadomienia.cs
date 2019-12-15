@@ -109,5 +109,10 @@ namespace WindowsFormsApp2
             powiadomienieDoEdycji = null;
             Dispose();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

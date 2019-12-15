@@ -167,18 +167,6 @@
     <Compile Include="uc_uzytkownik.Designer.cs">
       <DependentUpon>uc_uzytkownik.cs</DependentUpon>
     </Compile>
-    <Compile Include="uc_wykresKolowy.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uc_wykresKolowy.Designer.cs">
-      <DependentUpon>uc_wykresKolowy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="uc_wykres_kolowy.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="uc_wykres_kolowy.Designer.cs">
-      <DependentUpon>uc_wykres_kolowy.cs</DependentUpon>
-    </Compile>
     <Compile Include="uc_wykres_kolumnowy.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,12 +229,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="uc_uzytkownik.resx">
       <DependentUpon>uc_uzytkownik.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uc_wykresKolowy.resx">
-      <DependentUpon>uc_wykresKolowy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uc_wykres_kolowy.resx">
-      <DependentUpon>uc_wykres_kolowy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uc_wykres_kolumnowy.resx">
       <DependentUpon>uc_wykres_kolumnowy.cs</DependentUpon>

@@ -120,6 +120,36 @@ namespace WindowsFormsApp2
             piechart_year();
             draw_month_chart();
             draw_year_chart();
+            draw_line();
+        }
+        public void draw_line()
+        {
+            chart3.ChartAreas.Clear();
+            chart3.ChartAreas.Add(new System.Windows.Forms.DataVisualization.Charting.ChartArea("miesiąc"));
+
+            Dictionary<DateTime, decimal> rok_suma = new Dictionary<DateTime, decimal>();
+            
+            //Rozróżniać wydatek od przychodu ???
+            foreach (operacje o in dane_do_wykresu)
+            {
+                if (!rok_suma.ContainsKey((DateTime)o.data))
+                {
+                    rok_suma[(DateTime)o.data] = 0;
+                }
+                rok_suma[(DateTime)o.data] += o.kwota;
+            }
+            System.Windows.Forms.DataVisualization.Charting.Series months = new System.Windows.Forms.DataVisualization.Charting.Series();
+            months.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            //months.Points.DataBindXY(months_names, new double[] { 1234, 2345, 3456, 4567,5678,6543,5423,4321,1432,2314,5321,7654 });
+            months.Points.DataBindXY(rok_suma.Keys, rok_suma.Values);
+           
+            months.ChartArea = "miesiąc";
+
+            chart3.Series.Clear();
+
+            chart3.Series.Add(months);
+
+
         }
     }
 }

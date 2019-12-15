@@ -38,14 +38,13 @@
             this.buttonTabbelaNiezatwierdzonych = new System.Windows.Forms.Button();
             this.buttonWidokKalendarz = new System.Windows.Forms.Button();
             this.buttonWidokKolumnowy = new System.Windows.Forms.Button();
-            this.buttonWidokKolowy = new System.Windows.Forms.Button();
             this.panelDodawanieOperacji = new System.Windows.Forms.Panel();
-            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             this.panel_menu_glowne = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.uc_formularz_operacja1 = new WindowsFormsApp2.uc_formularz_operacja();
             this.tableLayoutPanel1.SuspendLayout();
             this.tlp_menu_boczne.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,18 +62,19 @@
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 350F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 438F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.tlp_kontekst, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tlp_menu_boczne, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel_menu_glowne, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1539, 844);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1924, 1055);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tlp_kontekst
@@ -86,13 +86,14 @@
             this.tlp_kontekst.ColumnCount = 1;
             this.tlp_kontekst.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlp_kontekst.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_kontekst.Location = new System.Drawing.Point(353, 41);
+            this.tlp_kontekst.Location = new System.Drawing.Point(442, 52);
+            this.tlp_kontekst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tlp_kontekst.Name = "tlp_kontekst";
             this.tlp_kontekst.RowCount = 1;
             this.tlp_kontekst.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.56989F));
             this.tlp_kontekst.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.43011F));
-            this.tlp_kontekst.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 797F));
-            this.tlp_kontekst.Size = new System.Drawing.Size(1183, 800);
+            this.tlp_kontekst.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 996F));
+            this.tlp_kontekst.Size = new System.Drawing.Size(1478, 999);
             this.tlp_kontekst.TabIndex = 3;
             this.tlp_kontekst.Resize += new System.EventHandler(this.tlp_kontekst_Resize);
             // 
@@ -105,14 +106,15 @@
             this.tlp_menu_boczne.Controls.Add(this.panel3, 0, 2);
             this.tlp_menu_boczne.Controls.Add(this.panelDodawanieOperacji, 0, 1);
             this.tlp_menu_boczne.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_menu_boczne.Location = new System.Drawing.Point(3, 41);
-            this.tlp_menu_boczne.MinimumSize = new System.Drawing.Size(350, 0);
+            this.tlp_menu_boczne.Location = new System.Drawing.Point(4, 52);
+            this.tlp_menu_boczne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlp_menu_boczne.MinimumSize = new System.Drawing.Size(438, 0);
             this.tlp_menu_boczne.Name = "tlp_menu_boczne";
             this.tlp_menu_boczne.RowCount = 3;
             this.tlp_menu_boczne.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlp_menu_boczne.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlp_menu_boczne.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlp_menu_boczne.Size = new System.Drawing.Size(350, 800);
+            this.tlp_menu_boczne.Size = new System.Drawing.Size(438, 999);
             this.tlp_menu_boczne.TabIndex = 2;
             // 
             // panel3
@@ -124,11 +126,11 @@
             this.panel3.Controls.Add(this.buttonTabbelaNiezatwierdzonych);
             this.panel3.Controls.Add(this.buttonWidokKalendarz);
             this.panel3.Controls.Add(this.buttonWidokKolumnowy);
-            this.panel3.Controls.Add(this.buttonWidokKolowy);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(6, 426);
+            this.panel3.Location = new System.Drawing.Point(7, 523);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(345, 368);
+            this.panel3.Size = new System.Drawing.Size(431, 469);
             this.panel3.TabIndex = 2;
             // 
             // buttonWidokTabelka
@@ -137,10 +139,10 @@
             this.buttonWidokTabelka.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonWidokTabelka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWidokTabelka.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWidokTabelka.Location = new System.Drawing.Point(0, 26);
+            this.buttonWidokTabelka.Location = new System.Drawing.Point(0, 32);
             this.buttonWidokTabelka.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWidokTabelka.Name = "buttonWidokTabelka";
-            this.buttonWidokTabelka.Size = new System.Drawing.Size(343, 52);
+            this.buttonWidokTabelka.Size = new System.Drawing.Size(429, 81);
             this.buttonWidokTabelka.TabIndex = 5;
             this.buttonWidokTabelka.Text = "Tabela";
             this.buttonWidokTabelka.UseVisualStyleBackColor = true;
@@ -152,10 +154,10 @@
             this.buttonTabbelaNiezatwierdzonych.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonTabbelaNiezatwierdzonych.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTabbelaNiezatwierdzonych.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonTabbelaNiezatwierdzonych.Location = new System.Drawing.Point(0, 152);
+            this.buttonTabbelaNiezatwierdzonych.Location = new System.Drawing.Point(0, 230);
             this.buttonTabbelaNiezatwierdzonych.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTabbelaNiezatwierdzonych.Name = "buttonTabbelaNiezatwierdzonych";
-            this.buttonTabbelaNiezatwierdzonych.Size = new System.Drawing.Size(343, 52);
+            this.buttonTabbelaNiezatwierdzonych.Size = new System.Drawing.Size(429, 81);
             this.buttonTabbelaNiezatwierdzonych.TabIndex = 2;
             this.buttonTabbelaNiezatwierdzonych.Text = "Niezatwierdzone operacje";
             this.buttonTabbelaNiezatwierdzonych.UseVisualStyleBackColor = true;
@@ -167,10 +169,10 @@
             this.buttonWidokKalendarz.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonWidokKalendarz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWidokKalendarz.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWidokKalendarz.Location = new System.Drawing.Point(0, 91);
+            this.buttonWidokKalendarz.Location = new System.Drawing.Point(0, 131);
             this.buttonWidokKalendarz.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWidokKalendarz.Name = "buttonWidokKalendarz";
-            this.buttonWidokKalendarz.Size = new System.Drawing.Size(343, 48);
+            this.buttonWidokKalendarz.Size = new System.Drawing.Size(429, 76);
             this.buttonWidokKalendarz.TabIndex = 0;
             this.buttonWidokKalendarz.Text = "Kalendarz";
             this.buttonWidokKalendarz.UseVisualStyleBackColor = true;
@@ -182,28 +184,14 @@
             this.buttonWidokKolumnowy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.buttonWidokKolumnowy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonWidokKolumnowy.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWidokKolumnowy.Location = new System.Drawing.Point(0, 285);
+            this.buttonWidokKolumnowy.Location = new System.Drawing.Point(0, 334);
             this.buttonWidokKolumnowy.Margin = new System.Windows.Forms.Padding(2);
             this.buttonWidokKolumnowy.Name = "buttonWidokKolumnowy";
-            this.buttonWidokKolumnowy.Size = new System.Drawing.Size(343, 52);
+            this.buttonWidokKolumnowy.Size = new System.Drawing.Size(429, 81);
             this.buttonWidokKolumnowy.TabIndex = 4;
-            this.buttonWidokKolumnowy.Text = "Wykres kolumnowy";
+            this.buttonWidokKolumnowy.Text = "Wykresy";
             this.buttonWidokKolumnowy.UseVisualStyleBackColor = true;
             this.buttonWidokKolumnowy.Click += new System.EventHandler(this.buttonWidokKolumnowy_Click_1);
-            // 
-            // buttonWidokKolowy
-            // 
-            this.buttonWidokKolowy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonWidokKolowy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.buttonWidokKolowy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonWidokKolowy.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonWidokKolowy.Location = new System.Drawing.Point(0, 217);
-            this.buttonWidokKolowy.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonWidokKolowy.Name = "buttonWidokKolowy";
-            this.buttonWidokKolowy.Size = new System.Drawing.Size(343, 56);
-            this.buttonWidokKolowy.TabIndex = 3;
-            this.buttonWidokKolowy.Text = "Wykres kołowy";
-            this.buttonWidokKolowy.UseVisualStyleBackColor = true;
             // 
             // panelDodawanieOperacji
             // 
@@ -212,21 +200,11 @@
             this.panelDodawanieOperacji.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panelDodawanieOperacji.Controls.Add(this.uc_formularz_operacja1);
             this.panelDodawanieOperacji.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDodawanieOperacji.Location = new System.Drawing.Point(6, 9);
+            this.panelDodawanieOperacji.Location = new System.Drawing.Point(7, 10);
+            this.panelDodawanieOperacji.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelDodawanieOperacji.Name = "panelDodawanieOperacji";
-            this.panelDodawanieOperacji.Size = new System.Drawing.Size(345, 408);
+            this.panelDodawanieOperacji.Size = new System.Drawing.Size(431, 502);
             this.panelDodawanieOperacji.TabIndex = 1;
-            // 
-            // uc_formularz_operacja1
-            // 
-            this.uc_formularz_operacja1.AutoSize = true;
-            this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.uc_formularz_operacja1.BackColor = System.Drawing.Color.Transparent;
-            this.uc_formularz_operacja1.Location = new System.Drawing.Point(-9, 4);
-            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(4);
-            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
-            this.uc_formularz_operacja1.Size = new System.Drawing.Size(327, 400);
-            this.uc_formularz_operacja1.TabIndex = 0;
             // 
             // panel_menu_glowne
             // 
@@ -237,9 +215,10 @@
             this.panel_menu_glowne.Controls.Add(this.button2);
             this.panel_menu_glowne.Controls.Add(this.button1);
             this.panel_menu_glowne.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_menu_glowne.Location = new System.Drawing.Point(3, 3);
+            this.panel_menu_glowne.Location = new System.Drawing.Point(4, 4);
+            this.panel_menu_glowne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_menu_glowne.Name = "panel_menu_glowne";
-            this.panel_menu_glowne.Size = new System.Drawing.Size(1533, 32);
+            this.panel_menu_glowne.Size = new System.Drawing.Size(1916, 40);
             this.panel_menu_glowne.TabIndex = 0;
             // 
             // button4
@@ -250,12 +229,12 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(822, 2);
+            this.button4.Location = new System.Drawing.Point(1028, 2);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(174, 27);
+            this.button4.Size = new System.Drawing.Size(218, 34);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Odświerz";
+            this.button4.Text = "Odśwież";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -267,10 +246,10 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(1000, 2);
+            this.button3.Location = new System.Drawing.Point(1250, 2);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(174, 27);
+            this.button3.Size = new System.Drawing.Size(218, 34);
             this.button3.TabIndex = 3;
             this.button3.Text = "Panel administratora";
             this.button3.UseVisualStyleBackColor = true;
@@ -284,10 +263,10 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(1357, 2);
+            this.button2.Location = new System.Drawing.Point(1696, 2);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 27);
+            this.button2.Size = new System.Drawing.Size(218, 34);
             this.button2.TabIndex = 2;
             this.button2.Text = "Wyloguj mnie";
             this.button2.UseVisualStyleBackColor = true;
@@ -300,21 +279,32 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(1178, 2);
+            this.button1.Location = new System.Drawing.Point(1472, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 27);
+            this.button1.Size = new System.Drawing.Size(218, 34);
             this.button1.TabIndex = 1;
             this.button1.Text = "Powiadomienia";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // uc_formularz_operacja1
+            // 
+            this.uc_formularz_operacja1.AutoSize = true;
+            this.uc_formularz_operacja1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.uc_formularz_operacja1.BackColor = System.Drawing.Color.Transparent;
+            this.uc_formularz_operacja1.Location = new System.Drawing.Point(-11, 5);
+            this.uc_formularz_operacja1.Margin = new System.Windows.Forms.Padding(5);
+            this.uc_formularz_operacja1.Name = "uc_formularz_operacja1";
+            this.uc_formularz_operacja1.Size = new System.Drawing.Size(435, 492);
+            this.uc_formularz_operacja1.TabIndex = 0;
+            // 
             // panelGlowny
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1539, 844);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -350,7 +340,6 @@
         private System.Windows.Forms.Button buttonTabbelaNiezatwierdzonych;
         private System.Windows.Forms.Button buttonWidokKalendarz;
         private System.Windows.Forms.Button buttonWidokKolumnowy;
-        private System.Windows.Forms.Button buttonWidokKolowy;
         private System.Windows.Forms.TableLayoutPanel tlp_kontekst;
         private System.Windows.Forms.Panel panel_menu_glowne;
         private System.Windows.Forms.Button button2;

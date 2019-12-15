@@ -39,10 +39,8 @@
             this.anulujZmiannęToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cb_role = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.nm_majatek = new System.Windows.Forms.NumericUpDown();
             this.buttonZapisz = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nm_majatek)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_imie
@@ -122,7 +120,7 @@
             // 
             this.cb_role.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cb_role.FormattingEnabled = true;
-            this.cb_role.Location = new System.Drawing.Point(1096, 5);
+            this.cb_role.Location = new System.Drawing.Point(883, 5);
             this.cb_role.Margin = new System.Windows.Forms.Padding(4);
             this.cb_role.Name = "cb_role";
             this.cb_role.Size = new System.Drawing.Size(241, 27);
@@ -136,7 +134,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(1464, 5);
+            this.button1.Location = new System.Drawing.Point(1274, 6);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 28);
@@ -144,15 +142,6 @@
             this.button1.Text = "Usuń";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // nm_majatek
-            // 
-            this.nm_majatek.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nm_majatek.Location = new System.Drawing.Point(887, 4);
-            this.nm_majatek.Margin = new System.Windows.Forms.Padding(4);
-            this.nm_majatek.Name = "nm_majatek";
-            this.nm_majatek.Size = new System.Drawing.Size(184, 27);
-            this.nm_majatek.TabIndex = 8;
             // 
             // buttonZapisz
             // 
@@ -162,7 +151,7 @@
             this.buttonZapisz.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.buttonZapisz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonZapisz.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonZapisz.Location = new System.Drawing.Point(1355, 5);
+            this.buttonZapisz.Location = new System.Drawing.Point(1155, 6);
             this.buttonZapisz.Margin = new System.Windows.Forms.Padding(4);
             this.buttonZapisz.Name = "buttonZapisz";
             this.buttonZapisz.Size = new System.Drawing.Size(101, 28);
@@ -177,7 +166,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.buttonZapisz);
-            this.Controls.Add(this.nm_majatek);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cb_role);
             this.Controls.Add(this.tb_haslo);
@@ -189,7 +177,6 @@
             this.Name = "uc_uzytkownik";
             this.Size = new System.Drawing.Size(1577, 34);
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nm_majatek)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,7 +191,6 @@
         private System.Windows.Forms.TextBox tb_haslo;
         private System.Windows.Forms.ComboBox cb_role;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.NumericUpDown nm_majatek;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem zmieńHasłoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem anulujZmiannęToolStripMenuItem;

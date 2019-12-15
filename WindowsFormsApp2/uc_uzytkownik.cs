@@ -32,7 +32,7 @@ namespace WindowsFormsApp2
             tb_email.Text = Edytowana.email;
             tb_login.Text = Edytowana.login;
             //Brak majątku w bazie :D
-            nm_majatek.Value = 0;
+            //nm_majatek.Value = 0;
             cb_role.SelectedItem = Edytowana.role;
         }
 
@@ -116,17 +116,6 @@ namespace WindowsFormsApp2
                 tb_haslo.BackColor = Color.White;
             }
 
-            if (nm_majatek.Value == 0)
-            {
-                Check = true;
-                nm_majatek.BackColor = Color.FromArgb(255, 204, 204);
-            }
-            else
-            {
-                Check = false;
-                nm_majatek.BackColor = Color.White;
-            }
-
             if (cb_role.SelectedIndex == -1)
             {
                 Check = true;
@@ -150,9 +139,13 @@ namespace WindowsFormsApp2
 
         internal void Zapisz()
         {
-            if (Walidacja() == false)
+            // edytowana
+            if (Edytowana != null)
             {
-                return;
+                if (Walidacja() == false)
+                {
+                    return;
+                }
             }
             else
             {
