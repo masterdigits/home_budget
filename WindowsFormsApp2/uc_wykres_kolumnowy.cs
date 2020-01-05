@@ -68,8 +68,32 @@ namespace WindowsFormsApp2
 
             foreach (kategoria kat in kategorie)
             {
+
+                if (kat.typ == "wydatek")
+                    continue;
+
                 decimal suma = dane_do_wykresu.Where(x => x.kategoria == kat).Sum(x => x.kwota);
                 ch_kolowy.Series["s1"].Points.AddXY(kat.nazwa, suma);
+            }
+        }
+
+        public void piechart_wydatki()
+        {
+            //ch_kolowy2.Series.Add("s2");
+            ch_kolowy2.Series["s2"].Points.Clear();
+            ch_kolowy2.Series["s2"]["PieLabelStyle"] = "Outside";
+            ch_kolowy2.ChartAreas[0].Area3DStyle.Enable3D = true;
+            var q = SingletonBaza.Instance.BazaDC.kategoria;
+            List<kategoria> kategorie = q.ToList();
+
+            foreach (kategoria kat in kategorie)
+            {
+
+                if (kat.typ == "przychod")
+                    continue;
+
+                decimal suma = dane_do_wykresu.Where(x => x.kategoria == kat).Sum(x => x.kwota);
+                ch_kolowy2.Series["s2"].Points.AddXY(kat.nazwa, suma);
             }
         }
 
@@ -83,6 +107,7 @@ namespace WindowsFormsApp2
             //Rozróżniać wydatek od przychodu ???
             foreach (operacje o in dane_do_wykresu)
             {
+
                 string nazwa_miesiace =((uc_kalendarz.Miesiace) o.data.Month).ToString();
 
                 if (!miesiac_suma.ContainsKey(nazwa_miesiace))
@@ -118,6 +143,7 @@ namespace WindowsFormsApp2
         private void uc_wykres_kolumnowy_Load(object sender, EventArgs e)
         {
             piechart_year();
+            piechart_wydatki();
             draw_month_chart();
             draw_year_chart();
             draw_line();
@@ -136,10 +162,10 @@ namespace WindowsFormsApp2
                 {
                     rok_suma[(DateTime)o.data] = 0;
                 }
-                rok_suma[(DateTime)o.data] += o.kwota;
+                rok_suma[(DateTime)o.data] += o.kategoria.typ == "przychod" ? o.kwota : o.kwota * (-1);
             }
             System.Windows.Forms.DataVisualization.Charting.Series months = new System.Windows.Forms.DataVisualization.Charting.Series();
-            months.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            months.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             //months.Points.DataBindXY(months_names, new double[] { 1234, 2345, 3456, 4567,5678,6543,5423,4321,1432,2314,5321,7654 });
             months.Points.DataBindXY(rok_suma.Keys, rok_suma.Values);
            
