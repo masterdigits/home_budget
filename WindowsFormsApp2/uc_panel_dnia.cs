@@ -54,6 +54,7 @@ namespace WindowsFormsApp2
         {
             wyswietl_operacje();
         }
+        /*
         public void zmien_roziar(int szerokosc)
         {
             int nowa_szerokosc = szerokosc / 7+33;
@@ -63,7 +64,7 @@ namespace WindowsFormsApp2
                 uo.zmien_roziar(nowa_szerokosc);
             }
         }
-
+        */
         public void wyswietl_operacje()
         {
             flP_dane_operacji.Controls.Clear();
@@ -82,9 +83,11 @@ namespace WindowsFormsApp2
                         {
                             uc_operacja nowy = new uc_operacja(o);
                             nowy.Dock = DockStyle.Fill;
-                            //nowy.Anchor = AnchorStyles.None;
+                            nowy.Anchor = AnchorStyles.None;
+                            
                             flP_dane_operacji.MinimumSize = new Size(nowy.Width + 33, 0);
                             flP_dane_operacji.Controls.Add(nowy);
+                            nowy.zmienRozmiar(flP_dane_operacji.Width);
                         }
                     }
                 }
@@ -95,7 +98,8 @@ namespace WindowsFormsApp2
         {
             foreach(uc_operacja uc_operacja in flP_dane_operacji.Controls)
             {
-                uc_operacja.Size = new Size(Size.Width - 33, uc_operacja.Size.Height);
+                uc_operacja.zmienRozmiar(flP_dane_operacji.Width);
+                //uc_operacja.Size = new Size(Size.Width - 33, uc_operacja.Size.Height);
             }
         }
     }

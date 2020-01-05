@@ -80,18 +80,20 @@
             this.pn_ustawienia_kal.Controls.Add(this.cb_miesiac);
             this.pn_ustawienia_kal.Controls.Add(this.btn_poprzedni_miesiac);
             this.pn_ustawienia_kal.Controls.Add(this.btn_nast_miesiac);
+            this.pn_ustawienia_kal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pn_ustawienia_kal.Location = new System.Drawing.Point(3, 3);
             this.pn_ustawienia_kal.Name = "pn_ustawienia_kal";
-            this.pn_ustawienia_kal.Size = new System.Drawing.Size(1155, 68);
+            this.pn_ustawienia_kal.Size = new System.Drawing.Size(1155, 94);
             this.pn_ustawienia_kal.TabIndex = 2;
             // 
             // chlb_uzytkownicy
             // 
+            this.chlb_uzytkownicy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chlb_uzytkownicy.CheckOnClick = true;
             this.chlb_uzytkownicy.FormattingEnabled = true;
-            this.chlb_uzytkownicy.Location = new System.Drawing.Point(29, 14);
+            this.chlb_uzytkownicy.Location = new System.Drawing.Point(564, 14);
             this.chlb_uzytkownicy.Name = "chlb_uzytkownicy";
-            this.chlb_uzytkownicy.Size = new System.Drawing.Size(120, 49);
+            this.chlb_uzytkownicy.Size = new System.Drawing.Size(120, 64);
             this.chlb_uzytkownicy.TabIndex = 6;
             this.chlb_uzytkownicy.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chlb_uzytkownicy_ItemCheck);
             this.chlb_uzytkownicy.SelectedIndexChanged += new System.EventHandler(this.chlb_uzytkownicy_SelectedIndexChanged);
@@ -101,7 +103,7 @@
             this.cb_rok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cb_rok.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cb_rok.FormattingEnabled = true;
-            this.cb_rok.Location = new System.Drawing.Point(704, 27);
+            this.cb_rok.Location = new System.Drawing.Point(699, 14);
             this.cb_rok.Name = "cb_rok";
             this.cb_rok.Size = new System.Drawing.Size(121, 37);
             this.cb_rok.TabIndex = 4;
@@ -112,7 +114,7 @@
             this.cb_miesiac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cb_miesiac.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cb_miesiac.FormattingEnabled = true;
-            this.cb_miesiac.Location = new System.Drawing.Point(837, 27);
+            this.cb_miesiac.Location = new System.Drawing.Point(832, 14);
             this.cb_miesiac.Name = "cb_miesiac";
             this.cb_miesiac.Size = new System.Drawing.Size(121, 37);
             this.cb_miesiac.TabIndex = 3;
@@ -122,7 +124,7 @@
             // 
             this.btn_poprzedni_miesiac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_poprzedni_miesiac.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_poprzedni_miesiac.Location = new System.Drawing.Point(976, 23);
+            this.btn_poprzedni_miesiac.Location = new System.Drawing.Point(971, 11);
             this.btn_poprzedni_miesiac.Name = "btn_poprzedni_miesiac";
             this.btn_poprzedni_miesiac.Size = new System.Drawing.Size(83, 42);
             this.btn_poprzedni_miesiac.TabIndex = 2;
@@ -134,7 +136,7 @@
             // 
             this.btn_nast_miesiac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_nast_miesiac.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_nast_miesiac.Location = new System.Drawing.Point(1072, 23);
+            this.btn_nast_miesiac.Location = new System.Drawing.Point(1067, 11);
             this.btn_nast_miesiac.Name = "btn_nast_miesiac";
             this.btn_nast_miesiac.Size = new System.Drawing.Size(80, 42);
             this.btn_nast_miesiac.TabIndex = 1;

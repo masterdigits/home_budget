@@ -170,13 +170,22 @@ namespace WindowsFormsApp2
                 MessageBox.Show("Brak dostepu do operacji");
             }
         }
-        public void zmien_roziar(int szerokosc)
+
+        public void zmienRozmiar(int rozmiar)
         {
-            //MessageBox.Show(Parent.Size.Height.ToString());
-            //this.Size = new Size(szerokosc, this.Size.Height);
+            int stary_rozmiar = this.Width;
+            this.Size = new Size(rozmiar - 33, this.Height);
+            //panel1.Size = new Size(rozmiar - 33, panel1.Height);
+            //panel1.Dock = DockStyle.Fill;
 
+            float scaleFactor = (float)this.Width / (float)stary_rozmiar;
+            if (scaleFactor>1)
+            {
+                Font nowa = new Font(label1.Font.FontFamily.Name, label1.Font.Size * scaleFactor);
+                lb_kwota.Font = nowa;
+                label1.Font = nowa;
+            }
         }
-
 
         private void panel1_Click(object sender, EventArgs e)
         {
